@@ -11,4 +11,9 @@
   top: 90px;
   left: 0;
   z-index: $sidebar-index;
+  transition: 300ms;
+
+  @media only screen and (max-width: 800px) {
+    transform: translateX(-100%);
+  }
 }

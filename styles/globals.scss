@@ -18,9 +18,17 @@ a {
   border: none;
   font-family: $font-1;
   font-weight: normal;
-  font-size: inherit;
   text-decoration: none;
   cursor: pointer;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+input {
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid black;
 }
 
 html {
@@ -35,4 +43,13 @@ main {
   min-height: 100vh;
   padding-top: $navbar-height;
   padding-left: $sidebar-width;
+
+  @media only screen and (max-width: 800px) {
+    padding-left: 0;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
 }

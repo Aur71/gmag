@@ -11,4 +11,145 @@
   top: 0;
   left: 0;
   z-index: $navbar-index;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  gap: 10px;
+
+  @media only screen and (max-width: 450px) {
+    padding: 15px;
+  }
+
+  //
+  // LOGO CONTAINER BELOW
+  //
+  .logoContainer {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      color: $text-clr-1;
+      font-size: 2rem;
+      display: none;
+
+      @media only screen and (max-width: 800px) {
+        display: flex;
+      }
+    }
+
+    a img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  //
+  // SEARCH CONTAINER BELOW
+  //
+  .search_container {
+    display: grid;
+    grid-template-columns: 400px auto;
+
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: 300px auto;
+    }
+
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
+
+    input {
+      border: 2px solid $border-clr-1;
+      color: $text-clr-2;
+      background-color: $searchbar-bk-clr;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+
+    button {
+      padding: 10px;
+      background-color: $acc-clr-1;
+      color: $text-clr-1;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+  //
+  // ICONS CONTAINER BELOW
+  //
+  .icons_container {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(10px, 1.6vw, 30px);
+
+    li a {
+      color: $text-clr-1;
+      font-size: 1.6rem;
+      padding: 12px;
+      position: relative;
+
+      @media only screen and (max-width: 350px) {
+        padding: 10px;
+      }
+    }
+
+    .cart_link a {
+      background-color: $acc-clr-1;
+      border-radius: 10px;
+
+      span {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: $white;
+        color: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        // display: none;
+
+        &.active {
+          display: flex;
+        }
+      }
+    }
+
+    .account_link a img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border: 1px solid $acc-clr-1;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 3px;
+    }
+
+    .account_link {
+      @media only screen and (max-width: 450px) {
+        display: none;
+      }
+    }
+  }
 }
