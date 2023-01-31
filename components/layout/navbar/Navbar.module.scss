@@ -1,0 +1,14 @@
+@import '../../../styles/variables.module.scss';
+
+.navbar {
+  width: 100%;
+  height: $navbar-height;
+  background-color: $secondary-clr;
+  border-bottom: 2px solid $border-clr-1;
+  color: $text-clr-2;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $navbar-index;
+}

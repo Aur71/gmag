@@ -1,0 +1,38 @@
+@import './variables.module.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-1;
+}
+
+button,
+a {
+  display: flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  font-family: $font-1;
+  font-weight: normal;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $main-clr;
+}
+
+main {
+  min-height: 100vh;
+  padding-top: $navbar-height;
+  padding-left: $sidebar-width;
+}
