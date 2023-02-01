@@ -1,6 +1,7 @@
 import styles from './Navbar.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useGlobalContext } from '@/context/globalContext';
 import logo from '../../../public/logo.png';
 import { AiOutlineMenuFold } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
@@ -8,15 +9,17 @@ import { BsSuitHeart, BsCart3 } from 'react-icons/bs';
 import userImg from '../../../public/user.png';
 
 const Navbar = () => {
+  const { showSidebar, setShowSidebar } = useGlobalContext();
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoContainer}>
-        <button>
+        <button onClick={() => setShowSidebar(!showSidebar)}>
           <AiOutlineMenuFold />
         </button>
 
         <Link href='/'>
-          <Image src={logo} alt='logo' />
+          <Image src={logo} alt='logo' priority={true} />
         </Link>
       </div>
 
