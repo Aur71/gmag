@@ -141,6 +141,23 @@
   }
 
   //
+  // LOGOUT BTN
+  //
+  .logout_btn {
+    display: flex;
+    align-items: center;
+    color: $text-clr-1;
+    gap: 10px;
+    font-size: 1.1rem;
+    padding: 0 30px;
+    margin-top: auto;
+
+    .icon {
+      font-size: 1.3rem;
+    }
+  }
+
+  //
   // USER CONTAINER
   //
   .user_container {

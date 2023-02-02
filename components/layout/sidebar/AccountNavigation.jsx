@@ -32,12 +32,10 @@ const AccountNavigation = () => {
         </ul>
       </div>
 
-      <div className={styles.user_container}>
-        <button className={styles.active}>
-          <RxExit className={styles.icon} />
-          Log Out
-        </button>
-      </div>
+      <button className={styles.logout_btn}>
+        <RxExit className={styles.icon} />
+        Log Out
+      </button>
     </>
   );
 };
