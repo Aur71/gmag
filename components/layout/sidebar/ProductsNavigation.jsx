@@ -11,6 +11,12 @@ import userImg from '../../../public/user.png';
 const ProductsNavigation = () => {
   const router = useRouter();
 
+  const handleLogBtn = () => {
+    // if there is a user router.push('/account/id');
+
+    router.push('/login');
+  };
+
   return (
     <>
       <div className={styles.searchbar_container}>
@@ -47,16 +53,17 @@ const ProductsNavigation = () => {
         Help
       </Link>
 
-      <div className={styles.user_container}>
-        <Link href='#' className={styles.account_link}>
-          <Image src={userImg} alt='default user img' />
-        </Link>
+      <button className={styles.log_btn} onClick={handleLogBtn}>
+        <RxExit className={styles.icon} />
+        {`${1 === 1 ? 'Log In' : 'Log Out'}`}
+      </button>
 
-        <button>
-          <RxExit className={styles.icon} />
-          Log In
-        </button>
-      </div>
+      <Link
+        href={`${1 === 1 ? '/login' : '/account/userid'}`}
+        className={styles.account_link}
+      >
+        <Image src={userImg} alt='default user img' />
+      </Link>
     </>
   );
 };

@@ -158,50 +158,46 @@
   }
 
   //
-  // USER CONTAINER
+  // LOG BTN
   //
-  .user_container {
-    width: 100%;
+  .log_btn {
+    display: flex;
+    align-items: center;
+    color: $text-clr-1;
+    gap: 10px;
+    font-size: 1.1rem;
+    padding: 0 30px;
     margin-top: auto;
 
-    .account_link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      display: none;
-
-      @media only screen and (max-width: 450px) {
-        display: flex;
-      }
-
-      img {
-        width: 70px;
-        height: 70px;
-        border: 1px solid $acc-clr-1;
-        border-radius: 50%;
-        padding: 5px;
-      }
+    .icon {
+      font-size: 1.3rem;
     }
 
-    button {
+    @media only screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  //
+  // ACCOUNT LINK
+  //
+  .account_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    margin-top: auto;
+
+    @media only screen and (max-width: 450px) {
       display: flex;
-      align-items: center;
-      color: $text-clr-1;
-      gap: 10px;
-      font-size: 1.1rem;
-      padding: 0 30px;
+    }
 
-      @media only screen and (max-width: 450px) {
-        display: none;
-
-        &.active {
-          display: flex;
-        }
-      }
-
-      .icon {
-        font-size: 1.3rem;
-      }
+    img {
+      width: 70px;
+      height: 70px;
+      border: 1px solid $acc-clr-1;
+      border-radius: 50%;
+      padding: 5px;
     }
   }
 }

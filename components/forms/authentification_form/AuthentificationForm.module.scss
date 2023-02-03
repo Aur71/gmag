@@ -50,6 +50,15 @@
     padding-left: 15px;
     font-size: 0.9rem;
     margin: 10px 0;
+
+    span {
+      display: none;
+
+      &.active {
+        color: $error-clr;
+        display: inline-block;
+      }
+    }
   }
 
   input {
@@ -67,6 +76,10 @@
 
     &::placeholder {
       color: $text-clr-3;
+    }
+
+    &.error {
+      border-color: $error-clr;
     }
   }
 
