@@ -13,7 +13,6 @@ const ProductsNavigation = () => {
 
   const handleLogBtn = () => {
     // if there is a user router.push('/account/id');
-
     router.push('/login');
   };
 
@@ -55,13 +54,12 @@ const ProductsNavigation = () => {
 
       <button className={styles.log_btn} onClick={handleLogBtn}>
         <RxExit className={styles.icon} />
-        {`${1 === 1 ? 'Log In' : 'Log Out'}`}
+        {/* user === false ? 'Log In' : 'Log Out' */}
+        Log In
       </button>
 
-      <Link
-        href={`${1 === 1 ? '/login' : '/account/userid'}`}
-        className={styles.account_link}
-      >
+      {/* user === false ? '/login' : '/account/userid' */}
+      <Link href='/login' className={styles.account_link}>
         <Image src={userImg} alt='default user img' />
       </Link>
     </>

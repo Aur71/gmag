@@ -51,6 +51,10 @@
     font-size: 0.9rem;
     margin: 10px 0;
 
+    @media only screen and (max-width: 280px) {
+      padding-left: 10px;
+    }
+
     span {
       display: none;
 
@@ -69,6 +73,11 @@
     padding: 10px 15px;
     border-radius: 20px;
     transition: 300ms;
+
+    @media only screen and (max-width: 280px) {
+      border-radius: 10px;
+      padding: 10px;
+    }
 
     &:focus {
       border-color: $acc-clr-1;
