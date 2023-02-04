@@ -1,4 +1,4 @@
-import AuthentificationForm from '@/components/forms/authentification_form/AuthentificationForm';
+import AuthentificationForm from '@/components/forms/authentification_forms/AuthentificationForm';
 
 const Register = () => {
   return <AuthentificationForm formType='register' />;

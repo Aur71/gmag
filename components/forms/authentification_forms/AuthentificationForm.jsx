@@ -1,4 +1,4 @@
-import styles from './AuthentificationForm.module.scss';
+import styles from './AuthentificationForms.module.scss';
 import { useState, useEffect } from 'react';
 import { emailValidation } from '@/utils/emailValidation';
 import { passwordValidation } from '@/utils/passwordValidation';
@@ -123,12 +123,13 @@ const AuthentificationForm = ({ formType }) => {
           </button>
         </form>
 
-        <Link
-          href={`${formType === 'login' ? '/register' : '/login'}`}
-          className={styles.auth_link}
-        >
-          {`${formType === 'login' ? 'Register' : 'Login'}`}
-        </Link>
+        <div className={styles.links_container}>
+          <Link href={`${formType === 'login' ? '/register' : '/login'}`}>
+            {`${formType === 'login' ? 'Register' : 'Login'}`}
+          </Link>
+
+          <Link href='/password_recovery'>Forgot password?</Link>
+        </div>
       </div>
     </div>
   );

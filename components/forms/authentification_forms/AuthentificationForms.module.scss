@@ -16,9 +16,17 @@
     object-fit: contain;
   }
 
-  .auth_link {
-    color: $acc-clr-1;
-    font-weight: 500;
+  .links_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      color: $acc-clr-1;
+      font-weight: 500;
+    }
   }
 }
 
@@ -42,6 +50,10 @@
     color: $text-clr-3;
     font-weight: 400;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: 350px) {
+      font-size: 23px;
+    }
   }
 
   label {
@@ -60,6 +72,16 @@
 
       &.active {
         color: $error-clr;
+        display: inline-block;
+      }
+
+      &.error {
+        color: $error-clr;
+        display: inline-block;
+      }
+
+      &.no_error {
+        color: $no-error-clr;
         display: inline-block;
       }
     }
@@ -89,6 +111,10 @@
 
     &.error {
       border-color: $error-clr;
+    }
+
+    &.no_error {
+      border-color: $no-error-clr;
     }
   }
 
