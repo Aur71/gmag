@@ -24,7 +24,7 @@ const Navbar = () => {
       </div>
 
       <div className={styles.search_container}>
-        <input type='text' placeholder='Search...' />
+        <input type='search' placeholder='Search...' />
 
         <button>
           <CiSearch />

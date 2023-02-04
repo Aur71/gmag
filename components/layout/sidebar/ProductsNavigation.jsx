@@ -19,7 +19,7 @@ const ProductsNavigation = () => {
   return (
     <>
       <div className={styles.searchbar_container}>
-        <input type='text' placeholder='Search...' />
+        <input type='search' placeholder='Search...' />
         <button>
           <BiSearchAlt />
         </button>
