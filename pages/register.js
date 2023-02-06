@@ -7,5 +7,5 @@ const Register = () => {
 export default Register;
 
 Register.getLayout = function PageLayout(page) {
-  return <>{page}</>;
+  return <main className='page-center'>{page}</main>;
 };

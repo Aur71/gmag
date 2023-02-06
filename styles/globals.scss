@@ -2,10 +2,16 @@
 
 :root {
   --navbar-height: 90px;
-  --navbar-index: 888;
   --sidebar-width: 240px;
-  --sidebar-index: 888;
   --padding-side: 70px;
+
+  @media only screen and (max-width: 800px) {
+    --navbar-height: 70px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    --padding-side: 15px;
+  }
 }
 
 *,
@@ -49,8 +55,8 @@ body {
 
 main {
   min-height: 100vh;
-  padding-top: $navbar-height;
-  padding-left: $sidebar-width;
+  padding-top: var(--navbar-height);
+  padding-left: var(--sidebar-width);
 
   @media only screen and (max-width: 800px) {
     padding-left: 0;
@@ -68,4 +74,5 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }

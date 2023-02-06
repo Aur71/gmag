@@ -66,70 +66,68 @@ const AuthentificationForm = ({ formType }) => {
   }, [showEmailError, showPasswordError]);
 
   return (
-    <div className='page-center'>
-      <div className={styles.form_wrapper}>
-        <Link href='/' className={styles.logo}>
-          <Image src={logo} alt='logo' priority={true} />
+    <div className={styles.form_wrapper}>
+      <Link href='/' className={styles.logo}>
+        <Image src={logo} alt='logo' priority={true} />
+      </Link>
+
+      <form className={styles.form}>
+        <h1>{formType}</h1>
+
+        <label htmlFor='email'>
+          Email:{' '}
+          <span className={`${showEmailError && styles.active}`}>
+            {emailError}
+          </span>
+        </label>
+        <input
+          type='email'
+          name='email'
+          placeholder='email@gmail.com'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={`${showEmailError && styles.error}`}
+        />
+
+        <label htmlFor='password'>
+          Password:{' '}
+          <span className={`${showPasswordError && styles.active}`}>
+            {passwordError}
+          </span>
+        </label>
+        <input
+          type='password'
+          name='password'
+          placeholder='QweAsd12!'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className={`${showPasswordError && styles.error}`}
+        />
+
+        <button type='submit' onClick={handleSubmit}>
+          {formType === 'login' ? 'Sign In' : 'Sign Up'}
+        </button>
+
+        <div className={styles.line}>
+          <span></span>
+          <span>or</span>
+          <span></span>
+        </div>
+
+        <button className={styles.google_btn}>
+          <span>
+            <AiOutlineGoogle />
+          </span>
+          <span>Google</span>
+        </button>
+      </form>
+
+      <div className={styles.links_container}>
+        <Link href={`${formType === 'login' ? '/register' : '/login'}`}>
+          {`${formType === 'login' ? 'Register' : 'Login'}`}
         </Link>
 
-        <form className={styles.form}>
-          <h1>{formType}</h1>
-
-          <label htmlFor='email'>
-            Email:{' '}
-            <span className={`${showEmailError && styles.active}`}>
-              {emailError}
-            </span>
-          </label>
-          <input
-            type='email'
-            name='email'
-            placeholder='email@gmail.com'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={`${showEmailError && styles.error}`}
-          />
-
-          <label htmlFor='password'>
-            Password:{' '}
-            <span className={`${showPasswordError && styles.active}`}>
-              {passwordError}
-            </span>
-          </label>
-          <input
-            type='password'
-            name='password'
-            placeholder='QweAsd12!'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className={`${showPasswordError && styles.error}`}
-          />
-
-          <button type='submit' onClick={handleSubmit}>
-            {formType === 'login' ? 'Sign In' : 'Sign Up'}
-          </button>
-
-          <div className={styles.line}>
-            <span></span>
-            <span>or</span>
-            <span></span>
-          </div>
-
-          <button className={styles.google_btn}>
-            <span>
-              <AiOutlineGoogle />
-            </span>
-            <span>Google</span>
-          </button>
-        </form>
-
-        <div className={styles.links_container}>
-          <Link href={`${formType === 'login' ? '/register' : '/login'}`}>
-            {`${formType === 'login' ? 'Register' : 'Login'}`}
-          </Link>
-
-          <Link href='/password_recovery'>Forgot password?</Link>
-        </div>
+        <Link href='/password_recovery'>Forgot password?</Link>
       </div>
     </div>
   );

@@ -7,14 +7,13 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 30px 70px 30px calc($sidebar-width + 70px);
-
-  @media only screen and (max-width: 1200px) {
-    padding: 30px 15px 30px calc($sidebar-width + 15px);
-  }
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: calc(var(--sidebar-width) + var(--padding-side));
+  padding-right: var(--padding-side);
 
   @media only screen and (max-width: 800px) {
-    padding: 30px;
+    padding: 30px 15px;
   }
 
   //

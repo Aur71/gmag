@@ -2,11 +2,7 @@
 
 .wrapper {
   width: 100%;
-  padding: 30px 70px;
-
-  @media only screen and (max-width: 1200px) {
-    padding: 30px 15px;
-  }
+  padding: 30px var(--padding-side);
 
   @media only screen and (max-width: 800px) {
     padding: 0;
@@ -20,7 +16,7 @@
 
 .slider {
   width: 100%;
-  aspect-ratio: 1540 / 500;
+  aspect-ratio: 1540 / 600;
   position: relative;
   display: flex;
   justify-content: center;
@@ -50,6 +46,11 @@
     &:hover {
       color: $acc-clr-3;
     }
+
+    @media only screen and (max-width: 800px) {
+      padding: 5px;
+      font-size: 2rem;
+    }
   }
 
   .left_btn {
@@ -72,6 +73,14 @@
     gap: 20px;
     padding: 20px;
 
+    @media only screen and (max-width: 800px) {
+      padding: 15px;
+      gap: 15px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
     button {
       width: 20px;
       height: 20px;
@@ -80,6 +89,11 @@
       overflow: hidden;
       background-color: $white;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+      @media only screen and (max-width: 800px) {
+        width: 15px;
+        height: 15px;
+      }
 
       &:hover {
         transform: scale(1.1);

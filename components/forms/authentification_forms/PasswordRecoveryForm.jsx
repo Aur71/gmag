@@ -39,47 +39,45 @@ const PasswordRecoveryForm = () => {
   }, [showEmailError]);
 
   return (
-    <div className='page-center'>
-      <div className={styles.form_wrapper}>
-        <Link href='/' className={styles.logo}>
-          <Image src={logo} alt='logo' priority={true} />
-        </Link>
+    <div className={styles.form_wrapper}>
+      <Link href='/' className={styles.logo}>
+        <Image src={logo} alt='logo' priority={true} />
+      </Link>
 
-        <form className={styles.form}>
-          <h1>Password Recovery</h1>
+      <form className={styles.form}>
+        <h1>Password Recovery</h1>
 
-          <label htmlFor='email'>
-            Email:{' '}
-            <span
-              className={`${showEmailError === 'no error' && styles.no_error} ${
-                showEmailError === 'error' && styles.error
-              }`}
-            >
-              {emailError}
-            </span>
-          </label>
-
-          <input
-            type='email'
-            name='email'
-            placeholder='email@gmail.com'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+        <label htmlFor='email'>
+          Email:{' '}
+          <span
             className={`${showEmailError === 'no error' && styles.no_error} ${
               showEmailError === 'error' && styles.error
             }`}
-          />
+          >
+            {emailError}
+          </span>
+        </label>
 
-          <button type='submit' onClick={handleSubmit}>
-            Submit
-          </button>
-        </form>
+        <input
+          type='email'
+          name='email'
+          placeholder='email@gmail.com'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={`${showEmailError === 'no error' && styles.no_error} ${
+            showEmailError === 'error' && styles.error
+          }`}
+        />
 
-        <div className={styles.links_container}>
-          <Link href='/login'>Login</Link>
+        <button type='submit' onClick={handleSubmit}>
+          Submit
+        </button>
+      </form>
 
-          <Link href='/register'>Register</Link>
-        </div>
+      <div className={styles.links_container}>
+        <Link href='/login'>Login</Link>
+
+        <Link href='/register'>Register</Link>
       </div>
     </div>
   );

@@ -7,5 +7,5 @@ const PasswordRecovery = () => {
 export default PasswordRecovery;
 
 PasswordRecovery.getLayout = function PageLayout(page) {
-  return <>{page}</>;
+  return <main className='page-center'>{page}</main>;
 };

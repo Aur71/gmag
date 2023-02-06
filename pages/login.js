@@ -7,5 +7,5 @@ const Login = () => {
 export default Login;
 
 Login.getLayout = function PageLayout(page) {
-  return <>{page}</>;
+  return <main className='page-center'>{page}</main>;
 };

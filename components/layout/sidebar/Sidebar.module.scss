@@ -1,16 +1,16 @@
 @import '../../../styles/variables.module.scss';
 
 .sidebar {
-  width: $sidebar-width;
-  min-height: calc(100vh - $navbar-height);
+  width: var(--sidebar-width);
+  min-height: calc(100vh - var(--navbar-height));
   background-color: $secondary-clr;
   border-right: 2px solid $border-clr-1;
   color: $text-clr-2;
 
   position: fixed;
-  top: 90px;
+  top: var(--navbar-height);
   left: 0;
-  z-index: $sidebar-index;
+  z-index: 888;
   transition: 300ms;
 
   display: flex;

@@ -2,7 +2,7 @@
 
 .navbar {
   width: 100%;
-  height: $navbar-height;
+  height: var(--navbar-height);
   background-color: $secondary-clr;
   border-bottom: 2px solid $border-clr-1;
   color: $text-clr-2;
@@ -10,7 +10,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $navbar-index;
+  z-index: 888;
   overflow: hidden;
 
   display: flex;
@@ -19,7 +19,7 @@
   padding: 15px 30px;
   gap: 10px;
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 800px) {
     padding: 15px;
   }
 
@@ -36,17 +36,23 @@
 
     button {
       color: $text-clr-1;
-      font-size: 2rem;
+      font-size: 1.7rem;
       display: none;
-
-      @media only screen and (max-width: 800px) {
-        display: flex;
-      }
     }
 
     a img {
       width: 100px;
       height: auto;
+    }
+
+    @media only screen and (max-width: 800px) {
+      button {
+        display: flex;
+      }
+
+      a img {
+        width: 80px;
+      }
     }
   }
 
@@ -106,7 +112,8 @@
       padding: 12px;
       position: relative;
 
-      @media only screen and (max-width: 450px) {
+      @media only screen and (max-width: 800px) {
+        font-size: 1.2rem;
         padding: 10px;
       }
     }
@@ -144,6 +151,11 @@
       border-radius: 50%;
       overflow: hidden;
       padding: 3px;
+
+      @media only screen and (max-width: 800px) {
+        width: 48px;
+        height: 48px;
+      }
     }
 
     .account_link {
