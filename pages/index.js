@@ -1,3 +1,9 @@
+import PromotionSlider from '@/components/sliders/promotion_slider/PromotionSlider';
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <PromotionSlider />
+    </div>
+  );
 }

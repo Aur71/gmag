@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+// FONTS
+$font-1: 'Lato', sans-serif;
+
+// COLORS
 $main-clr: #f2f2f5;
 $secondary-clr: #161d25;
-
-$white: white;
-$black: black;
 
 $acc-clr-1: #ff9900;
 $acc-clr-2: #1a7f91;
 $acc-clr-3: #a5700f;
 
+$text-clr-1: #ffffff;
+$text-clr-2: #e2e3e4;
+$text-clr-3: #3b404a;
+$text-clr-4: #999;
+
 $border-clr-1: #424b54;
 $border-clr-2: #d5dee6;
+
+$white: white;
+$black: black;
 
 $searchbar-bk-clr: #222f3e;
 
@@ -24,19 +33,10 @@ $star-clr: #ffca0d;
 $icon-clr-1: #969aa3;
 $icon-clr-2: #6f7581;
 
-$text-clr-1: #ffffff;
-$text-clr-2: #e2e3e4;
-$text-clr-3: #3b404a;
-$text-clr-4: #999;
-
-$font-1: 'Lato', sans-serif;
-
 $navbar-height: 90px;
 $navbar-index: 888;
 $sidebar-width: 240px;
 $sidebar-index: 888;
-
-$footer-bk-clr: white;
 
 $authentification-form-bk: white;
 $google-btn-bk: #cf553d;

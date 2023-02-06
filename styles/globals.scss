@@ -1,5 +1,13 @@
 @import './variables.module.scss';
 
+:root {
+  --navbar-height: 90px;
+  --navbar-index: 888;
+  --sidebar-width: 240px;
+  --sidebar-index: 888;
+  --padding-side: 70px;
+}
+
 *,
 *::before,
 *::after {
