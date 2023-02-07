@@ -51,6 +51,7 @@ html {
 
 body {
   background-color: $main-clr;
+  color: $text-clr-3;
 }
 
 main {
@@ -75,4 +76,21 @@ ol {
   justify-content: center;
   align-items: center;
   padding: 0;
+}
+
+// COLOR STYLES
+.red {
+  color: rgb(255, 72, 0);
+}
+
+// HOME STYLES
+.home {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media only screen and (max-width: 800px) {
+    padding-top: 0;
+  }
 }
