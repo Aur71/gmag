@@ -1,0 +1,156 @@
+@import '../../../styles/variables.module.scss';
+
+.wrapper {
+  width: 100%;
+  padding: 0 var(--padding-side);
+}
+
+.center {
+  max-width: 1540px;
+  margin: 0 auto;
+  height: 200px;
+  position: relative;
+
+  background: linear-gradient(to right, #434343 0%, black 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+
+  @media only screen and (max-width: 1450px) {
+    gap: 10px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    height: auto;
+  }
+
+  & > img {
+    display: block;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    transform: translateY(-10px);
+
+    @media only screen and (max-width: 1450px) {
+      width: 350px;
+      height: 100%;
+      transform: translateY(0);
+    }
+
+    @media only screen and (max-width: 1150px) {
+      width: 300px;
+      height: auto;
+      align-self: flex-end;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: $text-clr-2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @media only screen and (max-width: 1000px) {
+      gap: 10px;
+      padding: 30px 20px;
+    }
+
+    @media only screen and (max-width: 450px) {
+      padding: 25px 15px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+
+      @media only screen and (max-width: 1450px) {
+        font-size: 1.5rem;
+      }
+
+      @media only screen and (max-width: 1150px) {
+        font-size: 1.3rem;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $text-clr-4;
+
+      @media only screen and (max-width: 1150px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    .input_container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      place-items: center;
+      gap: 20px;
+      margin-top: auto;
+
+      @media only screen and (max-width: 1450px) {
+        gap: 10px;
+      }
+
+      @media only screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid $border-clr-2;
+        font-size: 1rem;
+        padding: 8px 20px;
+        border-radius: 20px;
+        color: $text-clr-2;
+        transition: border 300ms;
+
+        @media only screen and (max-width: 650px) {
+          padding: 10px 20px;
+        }
+
+        &:focus {
+          border-color: $acc-clr-1;
+        }
+
+        &::placeholder {
+          color: $text-clr-6;
+        }
+      }
+
+      button {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        padding: 8px;
+
+        border-radius: 20px;
+        background-color: $acc-clr-1;
+        color: $text-clr-1;
+        transition: background-color 300ms;
+
+        &:hover {
+          background-color: $acc-clr-3;
+        }
+
+        @media only screen and (max-width: 650px) {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
