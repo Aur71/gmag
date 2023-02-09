@@ -86,15 +86,3 @@ ol {
 .star-clr {
   color: $star-clr;
 }
-
-// HOME STYLES
-.home {
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  @media only screen and (max-width: 800px) {
-    padding-top: 0;
-  }
-}

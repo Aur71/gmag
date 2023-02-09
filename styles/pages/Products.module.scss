@@ -1,0 +1,23 @@
+@import '../variables.module.scss';
+
+.products {
+  width: 100%;
+  padding: 40px var(--padding-side);
+
+  .center {
+    max-width: 1540px;
+    margin: 0 auto;
+    display: grid;
+
+    grid-template-columns: 290px 1fr;
+    gap: 20px;
+
+    .column {
+      width: 100%;
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
