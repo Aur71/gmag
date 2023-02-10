@@ -19,23 +19,27 @@ const FilterBlock = ({ name, options }) => {
     }
   }, [showBlock]);
 
-  const filteredOptions = options.filter((option) => {
-    const { name } = option;
+  const filteredOptions = options
+    .filter((option) => {
+      const { name } = option;
+      if (name === null || name === undefined) return false;
+      return (
+        !searchTerm ||
+        name.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    })
+    .sort((a, b) => {
+      const nameA = a.name ? a.name.toString().toLowerCase() : '';
+      const nameB = b.name ? b.name.toString().toLowerCase() : '';
 
-    if (name === null || name === undefined) return false;
+      if (typeof a.name === 'number' && typeof b.name === 'number') {
+        return a.name - b.name;
+      }
 
-    if (!searchTerm) return true;
-
-    if (typeof name === 'string') {
-      return name.toLowerCase().includes(searchTerm.toLowerCase());
-    }
-
-    if (typeof name === 'number') {
-      return name.toString().toLowerCase().includes(searchTerm.toLowerCase());
-    }
-
-    return true;
-  });
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      return 0;
+    });
 
   return (
     <div className={styles.filter_block} ref={filterBlockRef}>

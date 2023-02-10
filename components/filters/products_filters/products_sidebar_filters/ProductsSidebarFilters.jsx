@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
-
-import ProductsFilterBlock from '../products_filter_block/ProductsFilterBlock';
 import { findCommonProperties } from '@/utils/findCommonProperties';
 
 const ProductsSidebarFilters = ({ data }) => {
