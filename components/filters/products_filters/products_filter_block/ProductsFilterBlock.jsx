@@ -19,8 +19,9 @@ const ProductsFilterBlock = ({ filter }) => {
   }, [showFilters]);
 
   // NEED TO CHECK THE TYPE OF NAME
+  // ADD SCROLL IF THERE ARE TOO MANY FILTERS
   // IF THE NAME IS RATING ADD STARS
-  // IF THE NAME IS PRICE ADD A PRICE RANGE
+  // REMOVE THE SEARCH BAR AT PRICE AND ADD A PRICE RANGE
 
   return (
     <div className={styles.filter_block}>
@@ -38,35 +39,14 @@ const ProductsFilterBlock = ({ filter }) => {
       </div>
 
       <div className={styles.filters} ref={filtersRef}>
-        {filter.options.length > 5 ? (
-          <input
-            type='search'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder='Search...'
-          />
-        ) : null}
-
-        {filter.options
-          .filter((option) => {
-            if (typeof option.name === 'number') {
-              return true;
-            } else if (typeof option.name === 'string') {
-              return option.name
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase());
-            } else {
-              return false;
-            }
-          })
-          .map((option) => {
-            return (
-              <label key={option.name}>
-                <input type='checkbox' />
-                {option.name} <span>({option.count})</span>
-              </label>
-            );
-          })}
+        {filter.options.map((option) => {
+          return (
+            <label key={option.name}>
+              <input type='checkbox' />
+              {option.name} <span>({option.count})</span>
+            </label>
+          );
+        })}
       </div>
     </div>
   );

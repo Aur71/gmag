@@ -3,7 +3,7 @@
 .filter_block {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  // max-height: 500px;
   background-color: $white;
   border-radius: 3px;
   box-shadow: $box-shadow-2;
@@ -13,6 +13,7 @@
   flex-direction: column;
   transition: height 300ms;
 
+  // HEADER
   .header {
     width: 100%;
     padding: 15px;
@@ -34,6 +35,9 @@
     }
   }
 
+  //
+  // FILTERS
+  //
   .filters {
     padding: 0px 15px 15px 15px;
     width: 100%;
@@ -42,6 +46,7 @@
     gap: 10px;
 
     & > input[type='search'] {
+      width: 100%;
       padding: 8px 10px;
       border: 1px solid $border-clr-2;
       border-radius: 3px;

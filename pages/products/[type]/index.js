@@ -7,6 +7,7 @@ import ProductsPagination from '@/components/filters/products_filters/products_p
 import { computers } from '@/data/temp/computers';
 
 const ProductType = ({ productData }) => {
+  // temporary data
   const data = [...computers];
 
   console.log(productData);
