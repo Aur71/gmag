@@ -1,5 +1,6 @@
 import styles from './ProductsSidebarFilters.module.scss';
 import { useState, useEffect } from 'react';
+import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFiltersBlock';
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
@@ -14,6 +15,8 @@ const ProductsSidebarFilters = ({ data }) => {
 
   return (
     <div className={styles.products_sidebar_filters}>
+      {/* IF THERE ARE FILTERS DISPLAY ACTIVEFILTERBLOCK */}
+      {/* <ActiveFiltersBlock /> */}
       {commonProps.map((filter, index) => {
         const { name, options } = filter;
 
