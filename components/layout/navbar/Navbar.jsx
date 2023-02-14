@@ -1,6 +1,6 @@
 import styles from './Navbar.module.scss';
 import { useDispatch } from 'react-redux';
-import { handleSidebar } from '@/redux/layout/layoutSlice';
+import { handleSidebar } from '@/redux/reducers/layoutSlice';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../../public/logo.png';

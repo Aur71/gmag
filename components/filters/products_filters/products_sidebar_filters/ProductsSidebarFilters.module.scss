@@ -6,4 +6,23 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  & > button {
+    width: 100%;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: $box-shadow-2;
+    overflow: hidden;
+    transition: color 300ms;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    color: $text-clr-2;
+    background-color: $remove-all-filters-btn-bk;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
 }

@@ -4,13 +4,17 @@
 $font-1: 'Lato', sans-serif;
 
 // COLORS
+$white: white;
+$black: black;
 $main-clr: #f2f2f5;
 $secondary-clr: #161d25;
 
+// ACCENT COLORS
 $acc-clr-1: #ff9900;
 $acc-clr-2: #1a7f91;
 $acc-clr-3: #a5700f;
 
+// TEXT COLORS
 $text-clr-1: #ffffff;
 $text-clr-2: #e2e3e4;
 $text-clr-3: #3b404a;
@@ -18,36 +22,35 @@ $text-clr-4: #999;
 $text-clr-5: #63676e;
 $text-clr-6: #c5c5c5;
 
+// BORDER COLORS
 $border-clr-1: #424b54;
 $border-clr-2: #d5dee6;
 
-$white: white;
-$black: black;
-
-$searchbar-bk-clr: #222f3e;
-
-$category-bk-clr: #2d3c4c;
-
-$product-card-clr: #ffffff;
-
-$star-clr: #ffca0d;
-
+// ICON CLRS
 $icon-clr-1: #969aa3;
 $icon-clr-2: #6f7581;
 
+// LAYOUT
 $navbar-height: 90px;
 $navbar-index: 888;
 $sidebar-width: 240px;
 $sidebar-index: 888;
 
+// OTHER COLORS
+$searchbar-bk-clr: #222f3e;
+$category-bk-clr: #2d3c4c;
+$product-card-clr: #ffffff;
+$star-clr: #ffca0d;
 $authentification-form-bk: white;
 $google-btn-bk: #cf553d;
 $google-btn-bk-hover: #ff2a00;
 $error-clr: rgb(187, 78, 78);
 $no-error-clr: rgb(28, 138, 28);
-
 $box-shadow-1: 1px 2px 5px #ccc;
 $box-shadow-2: 0 0 5px #d6d6d6;
-
-$star-clr: rgb(255, 208, 0);
 $cart-clr: rgb(255, 255, 255);
+$remove-all-filters-btn-bk: rgb(150, 45, 45);
+
+// BOX SHADOWS
+$box-shadow-1: 1px 2px 5px #ccc;
+$box-shadow-2: 0 0 5px #d6d6d6;
