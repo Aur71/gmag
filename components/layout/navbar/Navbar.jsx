@@ -1,7 +1,8 @@
 import styles from './Navbar.module.scss';
+import { useDispatch } from 'react-redux';
+import { handleSidebar } from '@/redux/layout/layoutSlice';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useGlobalContext } from '@/context/globalContext';
 import logo from '../../../public/logo.png';
 import { AiOutlineMenuFold } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
@@ -9,12 +10,12 @@ import { BsSuitHeart, BsCart3 } from 'react-icons/bs';
 import userImg from '../../../public/user.png';
 
 const Navbar = () => {
-  const { showSidebar, setShowSidebar } = useGlobalContext();
+  const dispatch = useDispatch();
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoContainer}>
-        <button onClick={() => setShowSidebar(!showSidebar)}>
+        <button onClick={() => dispatch(handleSidebar())}>
           <AiOutlineMenuFold />
         </button>
 

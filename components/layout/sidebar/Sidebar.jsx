@@ -1,11 +1,11 @@
 import styles from './Sidebar.module.scss';
+import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import { useGlobalContext } from '@/context/globalContext';
 import ProductsNavigation from './ProductsNavigation';
 import AccountNavigation from './AccountNavigation';
 
 const Sidebar = () => {
-  const { showSidebar } = useGlobalContext();
+  const showSidebar = useSelector((state) => state.layoutSlice.showSidebar);
   const router = useRouter();
 
   if (router.pathname === '/account/[id]') {
