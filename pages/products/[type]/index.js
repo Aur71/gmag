@@ -25,6 +25,31 @@ const ProductType = ({ data }) => {
   );
 };
 
+// export async function getStaticProps({ params }) {
+//   try {
+//     // FETCHING THE DATA BASED ON THE URL
+//     // const res = await axios.get(`api/products/${params.type}`);
+
+//     const res = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+//     const data = res.data;
+//     return {
+//       props: { data, params },
+//       revalidate: 60,
+//     };
+//   } catch (error) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+// }
+
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: 'blocking',
+//   };
+// }
+
 export const getServerSideProps = async ({ params }) => {
   try {
     // FETCHING THE DATA BASED ON THE URL
@@ -37,4 +62,5 @@ export const getServerSideProps = async ({ params }) => {
     return { props: { data: [] } };
   }
 };
+
 export default ProductType;
