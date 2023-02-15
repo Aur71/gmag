@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const layout = createSlice({
+const layoutSlice = createSlice({
   name: 'layout',
   initialState: {
     showSidebar: false,
@@ -12,5 +12,5 @@ const layout = createSlice({
   },
 });
 
-export default layout.reducer;
-export const { handleSidebar } = layout.actions;
+export default layoutSlice.reducer;
+export const { handleSidebar } = layoutSlice.actions;

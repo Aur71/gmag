@@ -3,7 +3,7 @@ import layoutReducer from './reducers/layoutSlice';
 
 const store = configureStore({
   reducer: {
-    layoutSlice: layoutReducer,
+    layout: layoutReducer,
   },
 });
 

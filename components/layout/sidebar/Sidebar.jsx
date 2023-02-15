@@ -5,7 +5,7 @@ import ProductsNavigation from './ProductsNavigation';
 import AccountNavigation from './AccountNavigation';
 
 const Sidebar = () => {
-  const showSidebar = useSelector((state) => state.layoutSlice.showSidebar);
+  const showSidebar = useSelector((state) => state.layout.showSidebar);
   const router = useRouter();
 
   if (router.pathname === '/account/[id]') {
