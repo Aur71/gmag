@@ -1,9 +1,12 @@
 import styles from './ProductsGeneralFilters.module.scss';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { openFilters } from '@/redux/reducers/layoutSlice';
 import { FiChevronDown } from 'react-icons/fi';
 import { sort, products } from '@/data/products-general-filters-options';
 
 const ProductsGeneralFilters = () => {
+  const dispatch = useDispatch();
   const [showSortBy, setShowSortBy] = useState(false);
   const [sortBy, setSortBy] = useState('The most popular');
   const [showProductsPerPage, setShowProductsPerPage] = useState(false);
@@ -77,7 +80,12 @@ const ProductsGeneralFilters = () => {
         </ul>
       </div>
 
-      <button className={styles.show_filters_btn}>Filters</button>
+      <button
+        onClick={() => dispatch(openFilters())}
+        className={styles.show_filters_btn}
+      >
+        Filters
+      </button>
     </div>
   );
 };

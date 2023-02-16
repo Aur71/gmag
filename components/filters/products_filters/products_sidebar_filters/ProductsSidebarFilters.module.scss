@@ -6,35 +6,32 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: 300ms;
+
+  & * {
+    flex: 0 0 auto;
+  }
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
   @media only screen and (max-width: 1200px) {
-    display: none;
-
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    background-color: $main-clr;
+    width: 450px;
+    height: 100vh;
+    background-color: $white;
+    padding: 15px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 
-  & > button {
+  @media only screen and (max-width: 500px) {
     width: 100%;
-    background-color: $white;
-    border-radius: 3px;
-    box-shadow: $box-shadow-2;
-    overflow: hidden;
-    transition: color 300ms;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-
-    color: $text-clr-2;
-    background-color: $remove-all-filters-btn-bk;
-
-    .icon {
-      font-size: 1.2rem;
-    }
   }
 }
