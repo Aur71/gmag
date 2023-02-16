@@ -2,5 +2,97 @@
 
 .products_general_filters {
   width: 100%;
-  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media only screen and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dropdown {
+    background-color: $white;
+    box-shadow: $box-shadow-1;
+    border-radius: 3px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    @media only screen and (max-width: 800px) {
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    &.active {
+      overflow: visible;
+    }
+
+    &:first-of-type span {
+      min-width: 125px;
+    }
+
+    &:last-of-type span {
+      min-width: 92px;
+    }
+
+    .options {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      background-color: $white;
+      box-shadow: $box-shadow-1;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      overflow: hidden;
+
+      button {
+        width: 100%;
+        padding: 5px 15px;
+        user-select: none;
+
+        &.active {
+          background-color: $acc-clr-1;
+          color: $text-clr-1;
+        }
+
+        &:hover {
+          background-color: $acc-clr-1;
+          color: $text-clr-1;
+        }
+      }
+    }
+  }
+
+  .show_filters_btn {
+    background-color: $white;
+    box-shadow: $box-shadow-1;
+    border-radius: 3px;
+    padding: 10px 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    @media only screen and (max-width: 1200px) {
+      display: flex;
+    }
+  }
 }
