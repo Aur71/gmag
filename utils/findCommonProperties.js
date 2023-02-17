@@ -35,5 +35,22 @@ export function findCommonProperties(list) {
     }
   });
 
-  return data;
+  const sortedData = data.map((item) => {
+    const sortedOptions = item.options.sort((a, b) => {
+      const nameA = a.name ? a.name.toString().toLowerCase() : '';
+      const nameB = b.name ? b.name.toString().toLowerCase() : '';
+
+      if (typeof a.name === 'number' && typeof b.name === 'number') {
+        return a.name - b.name;
+      }
+
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      return 0;
+    });
+
+    return { ...item, options: sortedOptions };
+  });
+
+  return sortedData;
 }

@@ -10,16 +10,11 @@ import { findCommonProperties } from '@/utils/findCommonProperties';
 
 const ProductsSidebarFilters = ({ data }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-
   const [commonProps, setCommonProps] = useState([]);
 
   useEffect(() => {
     setCommonProps(findCommonProperties(data));
   }, [data]);
-
-  const handleFilter = (e) => {
-    console.log(e.target);
-  };
 
   return (
     <div
@@ -34,35 +29,14 @@ const ProductsSidebarFilters = ({ data }) => {
         const { name, options } = filter;
 
         if (name === 'price') {
-          return (
-            <PriceBlock
-              key={index}
-              name={name}
-              options={options}
-              handleFilter={handleFilter}
-            />
-          );
+          return <PriceBlock key={index} name={name} options={options} />;
         }
 
         if (name === 'rating') {
-          return (
-            <RatingBlock
-              key={index}
-              name={name}
-              options={options}
-              handleFilter={handleFilter}
-            />
-          );
+          return <RatingBlock key={index} name={name} options={options} />;
         }
 
-        return (
-          <FilterBlock
-            key={index}
-            name={name}
-            options={options}
-            handleFilter={handleFilter}
-          />
-        );
+        return <FilterBlock key={index} name={name} options={options} />;
       })}
     </div>
   );
