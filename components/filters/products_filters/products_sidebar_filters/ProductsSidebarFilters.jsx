@@ -1,5 +1,5 @@
 import styles from './ProductsSidebarFilters.module.scss';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CloseFiltersBlock from './filter_blocks/close_filters_block/CloseFiltersBlock';
 import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFiltersBlock';
@@ -29,11 +29,13 @@ const ProductsSidebarFilters = ({ data }) => {
         const { name, options } = filter;
 
         if (name === 'price') {
-          return <PriceBlock key={index} name={name} options={options} />;
+          return <PriceBlock key='price block' name={name} options={options} />;
         }
 
         if (name === 'rating') {
-          return <RatingBlock key={index} name={name} options={options} />;
+          return (
+            <RatingBlock key='rating block' name={name} options={options} />
+          );
         }
 
         return <FilterBlock key={index} name={name} options={options} />;

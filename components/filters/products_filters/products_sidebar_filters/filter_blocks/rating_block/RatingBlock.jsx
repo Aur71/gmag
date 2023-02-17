@@ -1,5 +1,5 @@
 import styles from './RatingBlock.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import { BsStarFill } from 'react-icons/bs';
 
@@ -36,8 +36,6 @@ const RatingBlock = ({ name, options }) => {
     },
   ]);
 
-  //NEED TO A A FUNCTION THAT CHANGES THE COUNT OF EVERY OPTION BASED ON THE CURRENT DATA
-
   const handleCheckBox = (e) => {
     const value = Number(e.target.value);
     console.log(value);
@@ -47,6 +45,29 @@ const RatingBlock = ({ name, options }) => {
       // dispath an action that removes the filter
     }
   };
+
+  //CHANGES THE COUNT OF EVERY OPTION BASED ON THE CURRENT DATA
+  const updateCount = () => {
+    options.forEach((option) => {
+      const roundedValue = Math.round(option.name);
+      const valueCount = option.count;
+
+      const updatedStars = stars.map((item) => {
+        if (item.value === roundedValue) {
+          item.count += valueCount;
+        }
+
+        return item;
+      });
+
+      setStars(updatedStars);
+    });
+  };
+
+  useEffect(() => {
+    // I`M USING A CLEAN UP FUNCTION BECUSE THIS CODE IS RAN TWICE, THE FUNCTION WILL RUN WHEN THE COMPONENT UNMOUNTS THE FIRST
+    return () => updateCount();
+  }, []);
 
   return (
     <div className={styles.rating_block}>
