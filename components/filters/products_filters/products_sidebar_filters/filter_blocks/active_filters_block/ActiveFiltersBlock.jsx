@@ -10,7 +10,7 @@ const activeFilters = [
   },
   {
     category: 'Processor',
-    options: ['Intel Core i7-11400', 'Intel Core i7-11400'],
+    options: ['Intel Core i7-11400', 'Intel Core i7-11300'],
   },
 
   {

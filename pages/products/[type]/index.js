@@ -1,5 +1,4 @@
 import styles from '../../../styles/pages/Products.module.scss';
-import { useState } from 'react';
 import axios from 'axios';
 import ProductsSidebarFilters from '@/components/filters/products_filters/products_sidebar_filters/ProductsSidebarFilters';
 import ProductsGeneralFilters from '@/components/filters/products_filters/products_general_filters/ProductsGeneralFilters';
@@ -10,8 +9,6 @@ import ProductsPagination from '@/components/filters/products_filters/products_p
 import { computers } from '@/data/temp/computers';
 
 const ProductType = ({ data }) => {
-  const [filters, setFilters] = useState([]);
-
   if (!data.length) {
     return <h1>error</h1>;
   }
