@@ -1,130 +1,107 @@
 export const computers = [
   {
-    price: 1000,
-    destinedFor: 'Gaming',
-    processorManufacturer: 'Intel',
-    processorSocket: 'LGA 1151',
-    processor: 'Intel Core i7-9700K',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia GeForce RTX 3080',
-    memoryCapacity: 16,
-    storageType: 'Hybrid',
-    ssdCapacity: 500,
-    hddCapacity: 2,
-    brand: 'ASUS',
-    operatingSystem: 'Windows 10',
+    id: 1,
+    name: 'PC Gaming GRT RGB with Intel® Core™ i5-10400F processor up to 4.30GHz, 16GB DDR4, 1TB HDD, 480GB SSD, GeForce® RTX 2060 6GB GDDR6',
+    img: 'api/img/link',
+    currentPrice: 1000,
+    oldPrice: null,
+    discount: '0%',
+
+    // currentPrice: 1000,
+    // oldPrice: 1100,
+    // discount: '9%',
+
     rating: 4.7,
+    reviewsCount: 20,
+
+    //
+    //
+    // DESCRIPTION FORMAT
+    description: [
+      {
+        id: 'some random id',
+        element: 'h1',
+        content:
+          'PC Gaming GRT RGB with Intel® Core™ i5-10400F processor up to 4.30GHz, 16GB DDR4, 1TB HDD, 480GB SSD, GeForce® RTX 2060 6GB GDDR6',
+      },
+      {
+        id: 'some random id',
+        element: 'img',
+        path: 'link to the img',
+      },
+      {
+        id: 'some random id',
+        element: 'h2',
+        content: 'About',
+      },
+      {
+        id: 'some random id',
+        element: 'p',
+        content:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rem non qui, facilis nam harum ullam? Alias veritatis architecto culpa.',
+      },
+
+      {
+        id: 'some random id',
+        element: 'ul',
+        items: [
+          'Operating system - Windows 11 Pro',
+          'Processor - Quad-Core Intel Celeron J4125 (up to 2.7 GHz)',
+        ],
+      },
+    ],
+
+    //
+    //
+    // SPECIFICATIONS FORMAT
+    specifications: {},
+
+    //
+    //
+    // REVIEWS FORMAT
+    reviewsData: {
+      rating: 4.7,
+      reviewsCount: 20,
+      starsCount: {
+        5: 10,
+        4: 5,
+        3: 5,
+        2: 0,
+        1: 0,
+      },
+      reviews: [
+        {
+          stars: 5,
+          title: 'Good stuff',
+          content: 'Perfect for fps games like csgo.',
+          likes: 0,
+          postedOn: '22 Aug 2022',
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+            userImg: 'user img',
+          },
+          comments: [
+            {
+              comment: 'Lorem ipsum dolor sit amet.',
+              postedOn: '27 Oct 2022',
+              postedBy: {
+                userId: 'some user id',
+                userImg: 'some url to an img',
+                userName: 'Gigel',
+              },
+            },
+          ],
+        },
+      ],
+    },
   },
-  {
-    price: 800,
-    destinedFor: 'Workstation',
-    processorManufacturer: 'AMD',
-    processorSocket: 'AM4',
-    processor: 'AMD Ryzen 9 5900X',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia Quadro P4000',
-    memoryCapacity: 32,
-    storageType: 'SSD',
-    ssdCapacity: 1,
-    hddCapacity: 0,
-    brand: 'HP',
-    operatingSystem: 'Windows 10 Pro',
-    rating: 4.5,
-  },
-  {
-    price: 700,
-    destinedFor: 'Home and Office',
-    processorManufacturer: 'Intel',
-    processorSocket: 'LGA 1200',
-    processor: 'Intel Core i5-11400',
-    videoCardType: 'Integrated',
-    videoCardModel: 'Intel UHD Graphics 630',
-    memoryCapacity: 8,
-    storageType: 'SSD',
-    ssdCapacity: 512,
-    hddCapacity: 0,
-    brand: 'Dell',
-    operatingSystem: 'Windows 10 Home',
-    rating: 5,
-  },
-  {
-    price: 1200,
-    destinedFor: 'Gaming',
-    processorManufacturer: 'AMD',
-    processorSocket: 'AM4',
-    processor: 'AMD Ryzen 7 5800X',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia GeForce RTX 3070',
-    memoryCapacity: 16,
-    storageType: 'Hybrid',
-    ssdCapacity: 512,
-    hddCapacity: 2,
-    brand: 'MSI',
-    operatingSystem: 'Windows 10',
-    rating: 4.5,
-  },
-  {
-    price: 1500,
-    destinedFor: 'Content Creation',
-    processorManufacturer: 'AMD',
-    processorSocket: 'TRX4',
-    processor: 'AMD Threadripper 3990X',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia Titan RTX',
-    memoryCapacity: 64,
-    storageType: 'SSD',
-    ssdCapacity: 2,
-    hddCapacity: 500,
-    brand: 'Alienware',
-    operatingSystem: 'Windows 10 Pro',
-    rating: 3.5,
-  },
-  {
-    price: 800,
-    destinedFor: 'Home and Office',
-    processorManufacturer: 'AMD',
-    processorSocket: 'AM4',
-    processor: 'AMD Ryzen 5 5600X',
-    videoCardType: 'Integrated',
-    videoCardModel: 'AMD Radeon RX Vega 11',
-    memoryCapacity: 16,
-    storageType: 'Hybrid',
-    ssdCapacity: 256,
-    hddCapacity: 1,
-    brand: 'Acer',
-    operatingSystem: 'Windows 10 Home',
-    rating: 4.5,
-  },
-  {
-    price: 1200,
-    destinedFor: 'Gaming',
-    processorManufacturer: 'Intel',
-    processorSocket: 'LGA 1200',
-    processor: 'Intel Core i9-11900K',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia GeForce RTX 3060 Ti',
-    memoryCapacity: 32,
-    storageType: 'Hybrid',
-    ssdCapacity: 512,
-    hddCapacity: null,
-    brand: 'ASUS',
-    operatingSystem: 'Windows 10',
-    rating: 3.5,
-  },
-  {
-    price: 1700,
-    destinedFor: 'Content Creation',
-    processorManufacturer: 'Intel',
-    processorSocket: 'LGA 2066',
-    processor: 'Intel Core X-series i9-10980XE',
-    videoCardType: 'Nvidia',
-    videoCardModel: 'Nvidia GeForce RTX 3090',
-    memoryCapacity: 64,
-    storageType: 'SSD',
-    ssdCapacity: 2,
-    hddCapacity: '1TB',
-    brand: 'Dell',
-    operatingSystem: 'Windows 10 Pro',
-    rating: 4.2,
-  },
+
+  //
+  //
+  // QUESTIONS FORMAT
+
+  //
+  //
+  // RECOMANDATIONS FORMAT
 ];

@@ -36,6 +36,8 @@ const RatingBlock = ({ name, options }) => {
     },
   ]);
 
+  // ADD THE COUNT FROM THE FINDCOMONPROPS FUNCTION
+
   const handleCheckBox = (e) => {
     const value = Number(e.target.value);
     console.log(value);

@@ -6,7 +6,7 @@ import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFilte
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
-import { findCommonProperties } from '@/utils/findCommonProperties';
+import { findCommonProperties } from './findCommonProperties';
 
 const ProductsSidebarFilters = ({ data }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
@@ -25,7 +25,7 @@ const ProductsSidebarFilters = ({ data }) => {
       <CloseFiltersBlock />
       <ActiveFiltersBlock />
 
-      {commonProps.map((filter, index) => {
+      {/* {commonProps.map((filter, index) => {
         const { name, options } = filter;
 
         if (name === 'price') {
@@ -39,7 +39,7 @@ const ProductsSidebarFilters = ({ data }) => {
         }
 
         return <FilterBlock key={index} name={name} options={options} />;
-      })}
+      })} */}
     </div>
   );
 };
