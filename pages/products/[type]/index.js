@@ -6,7 +6,7 @@ import ProductsContainer from '@/components/containers/products_container/Produc
 import ProductsPagination from '@/components/filters/products_filters/products_pagination/ProductsPagination.jsx/ProductsPagination';
 
 // TEMP DATA
-import { computers } from '@/data/temp/computers';
+import { data } from '@/data/temp/computers';
 
 const ProductType = ({ data }) => {
   if (!data.length) {
@@ -20,7 +20,7 @@ const ProductType = ({ data }) => {
 
         <div className={styles.column}>
           <ProductsGeneralFilters />
-          <ProductsContainer data={computers} />
+          <ProductsContainer data={data} />
           <ProductsPagination />
         </div>
       </div>

@@ -6,15 +6,15 @@ import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFilte
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
-import { findCommonProperties } from './findCommonProperties';
+import { findCommonProperties } from './get_filters/findCommonProperties';
 
 const ProductsSidebarFilters = ({ data }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
   const [commonProps, setCommonProps] = useState([]);
 
-  useEffect(() => {
-    setCommonProps(findCommonProperties(data));
-  }, [data]);
+  // useEffect(() => {
+  //   setCommonProps(findCommonProperties(data));
+  // }, [data]);
 
   return (
     <div
