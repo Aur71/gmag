@@ -1,20 +1,15 @@
 import styles from './ProductsSidebarFilters.module.scss';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CloseFiltersBlock from './filter_blocks/close_filters_block/CloseFiltersBlock';
 import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFiltersBlock';
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
-import { findCommonProperties } from './get_filters/findCommonProperties';
 
-const ProductsSidebarFilters = ({ data }) => {
+const ProductsSidebarFilters = ({ filters }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-  const [commonProps, setCommonProps] = useState([]);
 
-  // useEffect(() => {
-  //   setCommonProps(findCommonProperties(data));
-  // }, [data]);
+  console.log(filters);
 
   return (
     <div
