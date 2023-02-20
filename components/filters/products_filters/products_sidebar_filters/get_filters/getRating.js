@@ -1,3 +1,3 @@
 export default function getRating(list) {
-  return 'rating';
+  return { name: 'rating' };
 }
