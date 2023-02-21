@@ -10,7 +10,7 @@ export const computers = [
     currentPrice: 1000,
     oldPrice: null,
     discount: 0,
-    rating: 4.7,
+    rating: 4.3,
     reviewsCount: 20,
 
     specifications: [
@@ -81,7 +81,7 @@ export const computers = [
     currentPrice: 2600,
     oldPrice: 2800,
     discount: 7,
-    rating: 4.9,
+    rating: 3.4,
     reviewsCount: 25,
     specifications: [
       {
@@ -281,7 +281,7 @@ export const computers = [
     currentPrice: 2499,
     oldPrice: null,
     discount: 0,
-    rating: 4.9,
+    rating: 4.2,
     reviewsCount: 15,
     specifications: [
       {
@@ -346,7 +346,7 @@ export const computers = [
     currentPrice: 2600,
     oldPrice: 2800,
     discount: 7,
-    rating: 4.9,
+    rating: 5,
     reviewsCount: 25,
     specifications: [
       {
@@ -416,7 +416,7 @@ export const computers = [
     currentPrice: 2600,
     oldPrice: 2800,
     discount: 7,
-    rating: 4.9,
+    rating: 2.5,
     reviewsCount: 25,
     specifications: [
       {
