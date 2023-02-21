@@ -1,5 +1,4 @@
 import styles from '../../../styles/pages/Products.module.scss';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductsSidebarFilters from '@/components/filters/products_filters/products_sidebar_filters/ProductsSidebarFilters';
 import ProductsGeneralFilters from '@/components/filters/products_filters/products_general_filters/ProductsGeneralFilters';

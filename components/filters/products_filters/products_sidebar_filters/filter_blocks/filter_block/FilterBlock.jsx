@@ -1,23 +1,22 @@
 import styles from './FilterBlock.module.scss';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import BlockSearchbar from '../block_components/block_searchbar/BlockSearchbar';
 
 const FilterBlock = ({ name, options }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const filterBlockRef = useRef(null);
 
   const filteredOptions = options.filter((option) => {
-    const { name } = option;
-    if (name === null || name === undefined) return false;
+    const optionName = option.optionName.toString().toLowerCase();
+    if (optionName === null || optionName === undefined) return false;
+
     return (
-      !searchTerm ||
-      name.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      !searchTerm || optionName.includes(searchTerm.toString().toLowerCase())
     );
   });
 
   return (
-    <div className={styles.filter_block} ref={filterBlockRef}>
+    <div className={styles.filter_block}>
       <BlockHeader name={name} />
 
       <div className={styles.options}>
@@ -29,12 +28,14 @@ const FilterBlock = ({ name, options }) => {
         ) : null}
 
         <ul>
-          {filteredOptions.map((option, index) => {
+          {filteredOptions.map((option) => {
+            const { optionName, count } = option;
+
             return (
-              <li key={index}>
+              <li key={optionName}>
                 <label>
                   <input type='checkbox' />
-                  {option.name} <span>({option.count})</span>
+                  {optionName} <span>({count})</span>
                 </label>
               </li>
             );

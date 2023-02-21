@@ -18,5 +18,5 @@ export default function getPrice(list) {
     return;
   });
 
-  return { name: 'price', min, max };
+  return { name: 'price', options: { min, max } };
 }

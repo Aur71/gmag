@@ -39,5 +39,5 @@ export default function getRating(list) {
     });
   });
 
-  return { name: 'rating', rating };
+  return { name: 'rating', options: rating };
 }

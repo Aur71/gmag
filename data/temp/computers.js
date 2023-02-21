@@ -199,10 +199,16 @@ export const computers = [
         key: 'SSD capacity',
         value: '1 TB',
       },
+
       {
         showAsFilter: true,
         key: 'Processor socket',
         value: 'LGA 1200',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '1.5 TB',
       },
     ],
   },
@@ -263,6 +269,11 @@ export const computers = [
         showAsFilter: true,
         key: 'SSD capacity',
         value: '1 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '10 TB',
       },
       {
         showAsFilter: true,
@@ -328,6 +339,11 @@ export const computers = [
         showAsFilter: true,
         key: 'SSD capacity',
         value: '1 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '9 TB',
       },
       {
         showAsFilter: true,
@@ -397,7 +413,7 @@ export const computers = [
       {
         showAsFilter: true,
         key: 'HDD capacity',
-        value: '2 TB',
+        value: '3 TB',
       },
       {
         showAsFilter: true,
@@ -467,7 +483,7 @@ export const computers = [
       {
         showAsFilter: true,
         key: 'HDD capacity',
-        value: '2 TB',
+        value: '4 TB',
       },
       {
         showAsFilter: true,
@@ -537,7 +553,7 @@ export const computers = [
       {
         showAsFilter: true,
         key: 'HDD capacity',
-        value: '2 TB',
+        value: '5 TB',
       },
       {
         showAsFilter: true,

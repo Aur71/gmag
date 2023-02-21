@@ -6,10 +6,12 @@ import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
 
+// NEED TO REMOVE THE BLOCK IF THERE IS ONLY ONE OPTION INSIDE OPTIONS ARRAY
+// NEED TO SORT THE OPTIONS ARRAY
+// NEED TO FINISH THE PRICE BLOCK
+
 const ProductsSidebarFilters = ({ filters }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-
-  console.log(filters);
 
   return (
     <div
@@ -20,7 +22,7 @@ const ProductsSidebarFilters = ({ filters }) => {
       <CloseFiltersBlock />
       <ActiveFiltersBlock />
 
-      {/* {filters.map((filter, index) => {
+      {filters.map((filter) => {
         const { name, options } = filter;
 
         if (name === 'price') {
@@ -33,8 +35,8 @@ const ProductsSidebarFilters = ({ filters }) => {
           );
         }
 
-        return <FilterBlock key={index} name={name} options={options} />;
-      })} */}
+        return <FilterBlock key={name} name={name} options={options} />;
+      })}
     </div>
   );
 };
