@@ -10,7 +10,62 @@
 
   .options {
     width: 100%;
-    height: 100px;
-    border: 1px solid red;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .slider {
+      cursor: pointer;
+      width: 100%;
+      height: 10px;
+
+      .track {
+        height: 5px;
+        background-color: $track-clr-1;
+      }
+
+      .track:nth-child(2) {
+        background-color: $track-clr-2;
+      }
+
+      .thumb {
+        width: 15px;
+        height: 15px;
+        background: $thumb-clr-1;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        top: -5px;
+        outline: none;
+      }
+    }
+
+    .inputs_container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      place-items: center;
+      gap: 10px;
+
+      input {
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid $border-clr-3;
+        color: $text-clr-5;
+        text-align: center;
+        padding: 5px;
+        font-size: 0.9rem;
+
+        -moz-appearance: textfield;
+        appearance: textfield;
+        margin: 0;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
   }
 }
