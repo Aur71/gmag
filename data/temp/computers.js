@@ -61,7 +61,7 @@ export const computers = [
       },
       {
         showAsFilter: true,
-        key: 'SSD capacity',
+        key: 'HDD capacity',
         value: '1 TB',
       },
       {

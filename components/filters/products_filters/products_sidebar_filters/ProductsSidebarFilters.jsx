@@ -20,7 +20,7 @@ const ProductsSidebarFilters = ({ filters }) => {
       <CloseFiltersBlock />
       <ActiveFiltersBlock />
 
-      {/* {commonProps.map((filter, index) => {
+      {/* {filters.map((filter, index) => {
         const { name, options } = filter;
 
         if (name === 'price') {

@@ -7,7 +7,7 @@ export default function getFilters(list) {
   const rating = getRating(list);
   const filters = getFilter(list);
 
-  const data = [price, rating, filters];
+  const data = [price, rating, ...filters];
 
   return data;
 }
