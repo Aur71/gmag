@@ -2,13 +2,15 @@ import styles from './ProductCardResponseve.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsSuitHeart } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai';
+import { MdShoppingCart } from 'react-icons/md';
 // import { BsSuitHeartFill } from 'react-icons/bs';
 
 // TEMP
 import img from '../../../public/temp/computer.png';
 
 const ProductCardResponseve = () => {
-  const rating = 4.5;
+  const rating = 4.4;
   const reviewsCount = 50;
 
   return (
@@ -32,16 +34,49 @@ const ProductCardResponseve = () => {
           </Link>
         </h2>
 
-        <div className={styles.rating}></div>
-
-        <p className={styles.bonus}></p>
-
-        <div className={styles.priceing}>
-          <p>100</p>
-          <p>200</p>
+        <div className={styles.rating}>
+          <AiFillStar
+            className={`${styles.star} ${
+              Math.round(rating) >= 1 && styles.active
+            }`}
+          />
+          <AiFillStar
+            className={`${styles.star} ${
+              Math.round(rating) >= 2 && styles.active
+            }`}
+          />
+          <AiFillStar
+            className={`${styles.star} ${
+              Math.round(rating) >= 3 && styles.active
+            }`}
+          />
+          <AiFillStar
+            className={`${styles.star} ${
+              Math.round(rating) >= 4 && styles.active
+            }`}
+          />
+          <AiFillStar
+            className={`${styles.star} ${
+              Math.round(rating) >= 5 && styles.active
+            }`}
+          />
+          <p>{rating}</p>
+          <p>({reviewsCount})</p>
         </div>
 
-        <button className={styles.cart_btn}>buy</button>
+        <p className={styles.bonus}>
+          Delivery: <span>tomorrow</span>
+        </p>
+
+        <div className={styles.priceing}>
+          <p>4900.99 $</p>
+          <p>4500.99 $</p>
+        </div>
+
+        <button className={styles.cart_btn}>
+          <MdShoppingCart className={styles.icon} />
+          <span>Add to cart</span>
+        </button>
       </div>
     </article>
   );
