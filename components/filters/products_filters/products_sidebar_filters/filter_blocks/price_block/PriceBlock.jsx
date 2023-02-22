@@ -12,14 +12,6 @@ const PriceBlock = ({ name, options }) => {
     setMax(parseInt(values[1]));
   }
 
-  function handleMinChange(event) {
-    setMin(parseInt(event.target.value));
-  }
-
-  function handleMaxChange(event) {
-    setMax(parseInt(event.target.value));
-  }
-
   return (
     <div className={styles.price_block}>
       <BlockHeader name={name} />
@@ -31,9 +23,9 @@ const PriceBlock = ({ name, options }) => {
           trackClassName={styles.tracker}
           min={options.min}
           max={options.max}
-          minDistance={50}
-          step={50}
-          pearling={true}
+          minDistance={5}
+          step={5}
+          pearling={false}
           renderThumb={(props) => {
             return <div {...props} className={styles.thumb}></div>;
           }}
@@ -44,23 +36,9 @@ const PriceBlock = ({ name, options }) => {
         />
 
         <div className={styles.inputs_container}>
-          <input
-            type='number'
-            min={options.min}
-            max={options.max}
-            value={min}
-            onChange={handleMinChange}
-          />
-
+          <p>{min}</p>
           <span>-</span>
-
-          <input
-            type='number'
-            min={options.min}
-            max={options.max}
-            value={max}
-            onChange={handleMaxChange}
-          />
+          <p>{max}</p>
         </div>
       </div>
     </div>

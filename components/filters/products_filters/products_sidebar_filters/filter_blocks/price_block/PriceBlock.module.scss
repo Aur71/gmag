@@ -48,23 +48,16 @@
       place-items: center;
       gap: 10px;
 
-      input {
+      p {
+        display: block;
         width: 100%;
+        text-align: center;
+        padding: 5px;
         border-radius: 3px;
         border: 1px solid $border-clr-3;
         color: $text-clr-5;
-        text-align: center;
-        padding: 5px;
         font-size: 0.9rem;
-
-        -moz-appearance: textfield;
-        appearance: textfield;
-        margin: 0;
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
+        pointer-events: none;
       }
     }
   }
