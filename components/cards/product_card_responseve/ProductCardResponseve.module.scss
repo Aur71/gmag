@@ -1,0 +1,117 @@
+@import '../../../styles/variables.module.scss';
+
+.card {
+  width: 100%;
+  background-color: $white;
+  border-radius: 15px;
+  box-sizing: $box-shadow-1;
+  transition: 300ms ease-in-out box-shadow;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: $box-shadow-3;
+  }
+
+  .img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 250/250;
+    position: relative;
+    padding: 15px;
+
+    @media only screen and (max-width: 500px) {
+      padding: 0px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.3rem;
+      color: $icon-clr-1;
+      transition: 300ms color;
+      padding: 5px;
+      background-color: $white;
+      border-radius: 50%;
+
+      @media only screen and (max-width: 500px) {
+        top: 5px;
+        right: 5px;
+        font-size: 1rem;
+      }
+
+      &:hover {
+        color: $acc-clr-1;
+      }
+    }
+  }
+
+  .info_container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    padding-top: 0;
+
+    @media only screen and (max-width: 500px) {
+      padding: 10px;
+    }
+
+    h2 {
+      height: 58px;
+
+      a {
+        color: $text-clr-3;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1rem;
+
+        @media only screen and (max-width: 500px) {
+          font-size: 0.9rem;
+        }
+
+        @media only screen and (max-width: 350px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .rating {
+      width: 100%;
+      height: 20px;
+      background-color: orange;
+    }
+
+    .bonus {
+      width: 100%;
+      height: 20px;
+      background-color: rgb(9, 255, 0);
+    }
+
+    .priceing {
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+    }
+
+    .cart_btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid black;
+    }
+  }
+}
