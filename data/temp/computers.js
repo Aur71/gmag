@@ -137,7 +137,7 @@ export const computers = [
       {
         showAsFilter: true,
         key: 'Processor socket',
-        value: 'LGA 1200',
+        value: 'LGA 1100',
       },
     ],
   },

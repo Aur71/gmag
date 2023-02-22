@@ -53,5 +53,38 @@ export default function getFilter(list) {
     });
   });
 
-  return data;
+  const sortedData = sortOptions(data);
+
+  return sortedData;
 }
+
+const sortOptions = (list) => {
+  // IF THERE IS ONLY ONE OPTIONS REMOVE THE FILTER
+  const filteredOptions = list.filter((item) => {
+    const { options } = item;
+    if (options.length <= 1) return false;
+    return true;
+  });
+
+  // SORTING THE OPTIONS ARRAY INSIDE EVERY FILTER
+  const sortedOptions = filteredOptions.map((item) => {
+    const { options } = item;
+
+    options.sort((a, b) => {
+      const nameA = a.optionName.toString().toUpperCase();
+      const nameB = b.optionName.toString().toUpperCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return item;
+  });
+
+  return sortedOptions;
+};

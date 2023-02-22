@@ -6,10 +6,6 @@ import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
 
-// NEED TO REMOVE THE BLOCK IF THERE IS ONLY ONE OPTION INSIDE OPTIONS ARRAY
-// NEED TO SORT THE OPTIONS ARRAY
-// NEED TO FINISH THE PRICE BLOCK
-
 const ProductsSidebarFilters = ({ filters }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
 
