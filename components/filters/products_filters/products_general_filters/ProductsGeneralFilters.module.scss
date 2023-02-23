@@ -17,7 +17,8 @@
     gap: 0;
   }
 
-  & > button {
+  & > button,
+  & > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +30,8 @@
     border-radius: 20px;
     transition: color 300ms, background-color 300ms;
     position: relative;
+    cursor: pointer;
+    user-select: none;
 
     &:hover {
       background-color: $searchbar-bk-clr;
@@ -54,20 +57,20 @@
       padding: 5px 8px;
     }
 
-    &:last-of-type {
-      display: none;
-
-      @media only screen and (max-width: 1200px) {
-        display: flex;
-      }
-    }
-
     .icon {
       font-size: 1rem;
 
       @media only screen and (max-width: 380px) {
         font-size: 0.8rem;
       }
+    }
+  }
+
+  & > button {
+    display: none;
+
+    @media only screen and (max-width: 1200px) {
+      display: flex;
     }
   }
 

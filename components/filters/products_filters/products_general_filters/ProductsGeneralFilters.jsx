@@ -25,7 +25,7 @@ const ProductsGeneralFilters = () => {
   return (
     <div className={styles.products_general_filters}>
       {/* SORT BTN */}
-      <button
+      <div
         className={`${showSortDropdown && styles.active}`}
         onClick={handleShowDropdown}
       >
@@ -39,10 +39,10 @@ const ProductsGeneralFilters = () => {
             return <button key={item.id}>{item.name}</button>;
           })}
         </div>
-      </button>
+      </div>
 
       {/* DISPLAY BTN */}
-      <button
+      <div
         className={`${showDisplayDropdown && styles.active}`}
         onClick={handleDisplayDropdown}
       >
@@ -59,7 +59,7 @@ const ProductsGeneralFilters = () => {
             return <button key={item.id}>{item.name}</button>;
           })}
         </div>
-      </button>
+      </div>
 
       {/* FILTERS BTN */}
       <button onClick={() => dispatch(handleFilters())}>
