@@ -10,14 +10,11 @@ const layoutSlice = createSlice({
     handleSidebar: (state) => {
       state.showSidebar = !state.showSidebar;
     },
-    openFilters: (state) => {
-      state.showFilters = true;
-    },
-    closeFilters: (state) => {
-      state.showFilters = false;
+    handleFilters: (state) => {
+      state.showFilters = !state.showFilters;
     },
   },
 });
 
 export default layoutSlice.reducer;
-export const { handleSidebar, openFilters, closeFilters } = layoutSlice.actions;
+export const { handleSidebar, handleFilters } = layoutSlice.actions;

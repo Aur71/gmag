@@ -4,9 +4,9 @@
   width: 100%;
   padding: 40px var(--padding-side);
 
-  // @media only screen and (max-width: 800px) {
-  //   padding: 0;
-  // }
+  @media only screen and (max-width: 380px) {
+    padding: 10px 0;
+  }
 
   .center {
     max-width: 1540px;

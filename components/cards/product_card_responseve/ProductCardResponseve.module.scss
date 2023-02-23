@@ -8,12 +8,17 @@
   transition: 300ms ease-in-out box-shadow;
   overflow: hidden;
 
+  &:hover {
+    box-shadow: $box-shadow-3;
+  }
+
   @media only screen and (max-width: 500px) {
     border-radius: 10px;
   }
 
-  &:hover {
-    box-shadow: $box-shadow-3;
+  @media only screen and (max-width: 380px) {
+    display: grid;
+    grid-template-columns: 120px 1fr;
   }
 
   .img_container {
@@ -27,6 +32,10 @@
 
     @media only screen and (max-width: 500px) {
       padding: 0px;
+    }
+
+    @media only screen and (max-width: 380px) {
+      height: 100%;
     }
 
     img {
@@ -151,10 +160,6 @@
 
         &:last-of-type {
           color: $text-clr-4;
-
-          @media only screen and (max-width: 350px) {
-            display: none;
-          }
         }
       }
     }
@@ -178,10 +183,6 @@
 
       @media only screen and (max-width: 500px) {
         font-size: 0.75rem;
-      }
-
-      @media only screen and (max-width: 350px) {
-        display: none;
       }
     }
 

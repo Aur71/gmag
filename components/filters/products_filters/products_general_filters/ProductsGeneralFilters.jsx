@@ -1,90 +1,70 @@
 import styles from './ProductsGeneralFilters.module.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { openFilters } from '@/redux/reducers/layoutSlice';
-import { FiChevronDown } from 'react-icons/fi';
-import { sort, products } from '@/data/products-general-filters-options';
+import { sort, display } from '@/data/products-general-filters-options';
+import { handleFilters } from '@/redux/reducers/layoutSlice';
+import { CgArrowsVAlt } from 'react-icons/cg';
+import { BsFillGrid1X2Fill } from 'react-icons/bs';
+import { FiSliders } from 'react-icons/fi';
 
 const ProductsGeneralFilters = () => {
   const dispatch = useDispatch();
-  const [showSortBy, setShowSortBy] = useState(false);
-  const [sortBy, setSortBy] = useState('The most popular');
-  const [showProductsPerPage, setShowProductsPerPage] = useState(false);
-  const [productsPerPage, setProductsPerPage] = useState('60 per page');
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [showDisplayDropdown, setShowDisplayDropdown] = useState(false);
 
-  const openSortBy = () => {
-    setShowProductsPerPage(false);
-    setShowSortBy(!showSortBy);
+  const handleShowDropdown = () => {
+    setShowDisplayDropdown(false);
+    setShowSortDropdown(!showSortDropdown);
   };
 
-  const openProductsPerPage = () => {
-    setShowSortBy(false);
-    setShowProductsPerPage(!showProductsPerPage);
-  };
-
-  const handleSortBy = (name) => {
-    setSortBy(name);
-    // dispatch an action
-  };
-
-  const handleProductsPerPage = (name) => {
-    setProductsPerPage(name);
-    // dispatch an action
+  const handleDisplayDropdown = () => {
+    setShowSortDropdown(false);
+    setShowDisplayDropdown(!showDisplayDropdown);
   };
 
   return (
     <div className={styles.products_general_filters}>
-      <div
-        className={`${styles.dropdown} ${showSortBy && styles.active}`}
-        onClick={openSortBy}
-      >
-        <span>{sortBy}</span>
-        <FiChevronDown />
-        <ul className={styles.options}>
-          {sort.map((option) => {
-            return (
-              <li key={option.id}>
-                <button
-                  onClick={() => handleSortBy(option.name)}
-                  className={`${sortBy === option.name && styles.active}`}
-                >
-                  {option.name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      <div
-        className={`${styles.dropdown} ${showProductsPerPage && styles.active}`}
-        onClick={openProductsPerPage}
-      >
-        <span>{productsPerPage}</span>
-        <FiChevronDown />
-        <ul className={styles.options}>
-          {products.map((option) => {
-            return (
-              <li key={option.id}>
-                <button
-                  onClick={() => handleProductsPerPage(option.name)}
-                  className={`${
-                    productsPerPage === option.name && styles.active
-                  }`}
-                >
-                  {option.name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
+      {/* SORT BTN */}
       <button
-        onClick={() => dispatch(openFilters())}
-        className={styles.show_filters_btn}
+        className={`${showSortDropdown && styles.active}`}
+        onClick={handleShowDropdown}
       >
-        Filters
+        <CgArrowsVAlt className={styles.icon} />
+        <span>Sort</span>
+        <div
+          className={`${styles.dropdown} ${showSortDropdown && styles.active}`}
+        >
+          {sort.map((item) => {
+            // WHEN A BUTTON IS CLIKED AN ACTION WILL BE DISPACHED
+            return <button key={item.id}>{item.name}</button>;
+          })}
+        </div>
+      </button>
+
+      {/* DISPLAY BTN */}
+      <button
+        className={`${showDisplayDropdown && styles.active}`}
+        onClick={handleDisplayDropdown}
+      >
+        <BsFillGrid1X2Fill className={styles.icon} />
+        <span>Display</span>
+        <div
+          className={`${styles.dropdown} ${
+            showDisplayDropdown && styles.active
+          }`}
+        >
+          {' '}
+          {display.map((item) => {
+            // WHEN A BUTTON IS CLIKED AN ACTION WILL BE DISPACHED
+            return <button key={item.id}>{item.name}</button>;
+          })}
+        </div>
+      </button>
+
+      {/* FILTERS BTN */}
+      <button onClick={() => dispatch(handleFilters())}>
+        <FiSliders className={styles.icon} />
+        <span>Filter</span>
       </button>
     </div>
   );

@@ -18,7 +18,8 @@ const ProductType = ({ data, filters }) => {
     return (
       <div className={styles.products}>
         <div className={`${styles.center} ${styles.no_column}`}>
-          <ProductsContainer data={computers} />
+          <ProductsGeneralFilters />
+          <ProductsContainer data={computers} layout='no sidebar' />
           <ProductsPagination />
         </div>
       </div>
