@@ -39,6 +39,7 @@ const ProductsPagination = () => {
       <button key={i} onClick={() => handlePage(i)}>
         <span className={`${currentPage === i && styles.active}`}>{i}</span>
       </button>
+    );
   }
 
   useEffect(() => {
