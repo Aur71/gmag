@@ -2,5 +2,75 @@
 
 .products_pagination {
   width: 100%;
-  border: 1px solid blue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0;
+
+  @media only screen and (max-width: 380px) {
+    justify-content: center;
+  }
+
+  & > button {
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 1px solid $acc-clr-1;
+    padding: 5px 10px;
+
+    @media only screen and (max-width: 380px) {
+      font-size: 0.9rem;
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      padding: 5px;
+      border: 1px solid $acc-clr-1;
+      border-radius: 3px;
+      font-size: 1.2rem;
+      transition: background-color 300ms, color 300ms;
+
+      @media only screen and (max-width: 380px) {
+        font-size: 1.1rem;
+        padding: 4px;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $acc-clr-1;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  .buttons_container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    button {
+      padding: 2px;
+
+      span {
+        font-size: 1rem;
+        border-radius: 3px;
+        border: 1px solid $acc-clr-1;
+        padding: 5px 10px;
+        width: 40px;
+
+        @media only screen and (max-width: 380px) {
+          font-size: 0.9rem;
+        }
+
+        &.active {
+          color: $text-clr-1;
+          background-color: $acc-clr-1;
+        }
+      }
+    }
+  }
 }
