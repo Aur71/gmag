@@ -1,41 +1,41 @@
 import styles from './ProductsPagination.module.scss';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { handleCurrentPage } from '@/redux/reducers/productsSlice';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 const ProductsPagination = () => {
-  const buttonsContainerRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const pages = 20;
   const buttons = [];
+  const buttonsContainerRef = useRef(null);
+  const dispatch = useDispatch();
+  const { currentPage, pages } = useSelector((state) => state.products);
 
+  // CHANGEING THE PAGE WHEN A BUTTON IS CLICKED
   const handlePage = (num) => {
-    setCurrentPage(num);
+    dispatch(handleCurrentPage(num));
     const buttonWidth =
       buttonsContainerRef.current.children[0].getBoundingClientRect().width;
     buttonsContainerRef.current.scrollLeft =
       num * buttonWidth - buttonWidth * 2;
   };
 
-  const checkNum = (num) => {
-    if (num <= 0) return 1;
-    if (num > pages) return pages;
-    return num;
-  };
-
+  // DECREASEING THE PAGE ON CLICK
   const pageDecrease = () => {
-    setCurrentPage(checkNum(currentPage - 1));
+    dispatch(handleCurrentPage(currentPage - 1));
     const buttonWidth =
       buttonsContainerRef.current.children[0].getBoundingClientRect().width;
     buttonsContainerRef.current.scrollLeft -= buttonWidth;
   };
 
+  // INCREASEING THE PAGE ON CLICK
   const pageIncrease = () => {
-    setCurrentPage(checkNum(currentPage + 1));
+    dispatch(handleCurrentPage(currentPage + 1));
     const buttonWidth =
       buttonsContainerRef.current.children[0].getBoundingClientRect().width;
     buttonsContainerRef.current.scrollLeft += buttonWidth;
   };
 
+  // CREATING BUTTONS BASED ON THE NUMBER OF PAGES
   for (let i = 1; i <= pages; i++) {
     buttons.push(
       <button key={i} onClick={() => handlePage(i)}>
@@ -44,6 +44,7 @@ const ProductsPagination = () => {
     );
   }
 
+  // SETTING THE WIDTH OF BUTTONS_CONTAINER BASED ON THE NUMBER OF PAGES
   useEffect(() => {
     const buttonWidth =
       buttonsContainerRef.current.children[0].getBoundingClientRect().width;

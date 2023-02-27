@@ -11,6 +11,9 @@ export const productFormat = {
   // discount: '9%',
   rating: 4.7,
   reviewsCount: 20,
+  stock: 10,
+  numOfOrders: 52,
+  date: 'Aug 17, 2023',
 
   //
   //

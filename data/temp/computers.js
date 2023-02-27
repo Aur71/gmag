@@ -12,7 +12,8 @@ export const computers = [
     discount: 0,
     rating: 4.3,
     reviewsCount: 20,
-
+    stock: 10,
+    numOfOrders: 52,
     specifications: [
       {
         showAsFilter: true,
@@ -83,6 +84,8 @@ export const computers = [
     discount: 7,
     rating: 3.4,
     reviewsCount: 25,
+    stock: 5,
+    numOfOrders: 45,
     specifications: [
       {
         showAsFilter: true,
@@ -153,6 +156,8 @@ export const computers = [
     discount: 0,
     rating: 4.9,
     reviewsCount: 15,
+    stock: 10,
+    numOfOrders: 23,
     specifications: [
       {
         showAsFilter: true,
@@ -224,6 +229,8 @@ export const computers = [
     discount: 0,
     rating: 4.9,
     reviewsCount: 15,
+    stock: 10,
+    numOfOrders: 26,
     specifications: [
       {
         showAsFilter: true,
@@ -294,6 +301,8 @@ export const computers = [
     discount: 0,
     rating: 4.2,
     reviewsCount: 15,
+    stock: 10,
+    numOfOrders: 62,
     specifications: [
       {
         showAsFilter: true,
@@ -364,6 +373,8 @@ export const computers = [
     discount: 7,
     rating: 5,
     reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 72,
     specifications: [
       {
         showAsFilter: true,
@@ -434,6 +445,8 @@ export const computers = [
     discount: 7,
     rating: 2.5,
     reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
     specifications: [
       {
         showAsFilter: true,
@@ -504,6 +517,8 @@ export const computers = [
     discount: 7,
     rating: 4.9,
     reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 45,
     specifications: [
       {
         showAsFilter: true,
@@ -554,6 +569,1485 @@ export const computers = [
         showAsFilter: true,
         key: 'HDD capacity',
         value: '5 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 10,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+  //
+  //
+  //
+  {
+    id: 11,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 12,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 13,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 14,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 15,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 16,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 17,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 18,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 19,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 20,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 21,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 22,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 23,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 24,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 25,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 26,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 28,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 29,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor socket',
+        value: 'LGA 1200',
+      },
+    ],
+  },
+
+  //
+  //
+  //
+  {
+    id: 30,
+    productType: 'computer',
+    name: 'PC Desktop ZTX with Intel® Core™ i5-10700K processor up to 5.10GHz, 32GB DDR4, 2TB HDD, 512GB SSD, GeForce® RTX 3040 10GB GDDR6X',
+    img: 'api/img/link',
+    currentPrice: 2600,
+    oldPrice: 2800,
+    discount: 7,
+    rating: 2.5,
+    reviewsCount: 25,
+    stock: 10,
+    numOfOrders: 31,
+    specifications: [
+      {
+        showAsFilter: true,
+        key: 'Destined for',
+        value: 'Gaming',
+      },
+      {
+        showAsFilter: true,
+        key: 'Brand',
+        value: 'ZTX',
+      },
+      {
+        showAsFilter: true,
+        key: 'Operating system',
+        value: 'Windows 10',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor model',
+        value: 'Intel® Core™ i5-10700K',
+      },
+      {
+        showAsFilter: true,
+        key: 'Processor manufacturer',
+        value: 'Intel',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card type',
+        value: 'Dedicated',
+      },
+      {
+        showAsFilter: true,
+        key: 'Video card model',
+        value: 'GeForce® RTX 3040',
+      },
+      {
+        showAsFilter: true,
+        key: 'RAM capacity',
+        value: '32 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'SSD capacity',
+        value: '512 GB',
+      },
+      {
+        showAsFilter: true,
+        key: 'HDD capacity',
+        value: '4 TB',
       },
       {
         showAsFilter: true,

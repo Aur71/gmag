@@ -9,9 +9,9 @@ import { MdShoppingCart } from 'react-icons/md';
 // TEMP
 import img from '../../../public/temp/computer.png';
 
-const ProductCardResponseve = () => {
-  const rating = 4.4;
-  const reviewsCount = 50;
+const ProductCardResponseve = ({ item }) => {
+  const rating = item.rating;
+  const reviewsCount = item.reviewsCount;
 
   return (
     <article className={styles.card}>
@@ -27,11 +27,7 @@ const ProductCardResponseve = () => {
 
       <div className={styles.info_container}>
         <h2>
-          <Link href='#'>
-            Sistem Desktop PC Gaming Serioux Powered by ASUS cu procesor Intel®
-            Core™ i3-10100F pana la 4.30GHz, 8GB DDR4, 480GB SSD, GeForce® GTX
-            1650 4GB GDDR5, No OS
-          </Link>
+          <Link href='#'>{item.name}</Link>
         </h2>
 
         <div className={styles.rating}>
@@ -69,8 +65,10 @@ const ProductCardResponseve = () => {
         </p>
 
         <div className={styles.priceing}>
-          <p>4900.99 $</p>
-          <p>4500.99 $</p>
+          <p className={`${!item.oldPrice && styles.inactive}`}>
+            {item.oldPrice} $
+          </p>
+          <p>{item.currentPrice} $</p>
         </div>
 
         <button className={styles.cart_btn}>

@@ -1,6 +1,10 @@
 import styles from './ProductsGeneralFilters.module.scss';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  handleSort,
+  handleProductsPerPage,
+} from '@/redux/reducers/productsSlice';
 import { sort, display } from '@/data/products-general-filters-options';
 import { handleFilters } from '@/redux/reducers/layoutSlice';
 import { CgArrowsVAlt } from 'react-icons/cg';
@@ -11,6 +15,7 @@ const ProductsGeneralFilters = () => {
   const dispatch = useDispatch();
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [showDisplayDropdown, setShowDisplayDropdown] = useState(false);
+  const { sortBy, productsPerPage } = useSelector((state) => state.products);
 
   const handleShowDropdown = () => {
     setShowDisplayDropdown(false);
@@ -35,12 +40,20 @@ const ProductsGeneralFilters = () => {
           className={`${styles.dropdown} ${showSortDropdown && styles.active}`}
         >
           {sort.map((item) => {
-            // WHEN A BUTTON IS CLIKED AN ACTION WILL BE DISPACHED
-            return <button key={item.id}>{item.name}</button>;
+            return (
+              <button
+                key={item.id}
+                onClick={() => dispatch(handleSort(item.name))}
+                className={`${
+                  sortBy === item.name.toLowerCase() && styles.active
+                }`}
+              >
+                {item.name}
+              </button>
+            );
           })}
         </div>
       </div>
-
       {/* DISPLAY BTN */}
       <div
         className={`${showDisplayDropdown && styles.active}`}
@@ -55,12 +68,18 @@ const ProductsGeneralFilters = () => {
         >
           {' '}
           {display.map((item) => {
-            // WHEN A BUTTON IS CLIKED AN ACTION WILL BE DISPACHED
-            return <button key={item.id}>{item.name}</button>;
+            return (
+              <button
+                key={item.id}
+                onClick={() => dispatch(handleProductsPerPage(item.value))}
+                className={`${productsPerPage === item.value && styles.active}`}
+              >
+                {item.name}
+              </button>
+            );
           })}
         </div>
       </div>
-
       {/* FILTERS BTN */}
       <button onClick={() => dispatch(handleFilters())}>
         <FiSliders className={styles.icon} />
