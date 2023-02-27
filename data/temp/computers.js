@@ -14,6 +14,7 @@ export const computers = [
     reviewsCount: 20,
     stock: 10,
     numOfOrders: 52,
+    date: 16775158509999,
     specifications: [
       {
         showAsFilter: true,
@@ -86,6 +87,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 5,
     numOfOrders: 45,
+    date: 1677515850852,
     specifications: [
       {
         showAsFilter: true,
@@ -158,6 +160,7 @@ export const computers = [
     reviewsCount: 15,
     stock: 10,
     numOfOrders: 23,
+    date: 1677515850525,
     specifications: [
       {
         showAsFilter: true,
@@ -231,6 +234,7 @@ export const computers = [
     reviewsCount: 15,
     stock: 10,
     numOfOrders: 26,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -303,6 +307,7 @@ export const computers = [
     reviewsCount: 15,
     stock: 10,
     numOfOrders: 62,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -375,6 +380,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 72,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -447,6 +453,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850839,
     specifications: [
       {
         showAsFilter: true,
@@ -519,6 +526,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 45,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -593,6 +601,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -666,6 +675,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -740,6 +750,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -814,6 +825,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -888,6 +900,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -962,6 +975,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1036,6 +1050,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1110,6 +1125,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1184,6 +1200,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1258,6 +1275,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1332,6 +1350,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1406,6 +1425,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1480,6 +1500,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1554,6 +1575,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1628,6 +1650,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1702,6 +1725,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1776,6 +1800,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1850,6 +1875,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1924,6 +1950,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,
@@ -1998,6 +2025,7 @@ export const computers = [
     reviewsCount: 25,
     stock: 10,
     numOfOrders: 31,
+    date: 1677515850836,
     specifications: [
       {
         showAsFilter: true,

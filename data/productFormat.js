@@ -13,7 +13,8 @@ export const productFormat = {
   reviewsCount: 20,
   stock: 10,
   numOfOrders: 52,
-  date: 'Aug 17, 2023',
+  // MILISECONDS FORMAT
+  date: 1677515850836,
 
   //
   //
