@@ -10,6 +10,7 @@
 
   @media only screen and (max-width: 380px) {
     justify-content: center;
+    gap: 3px;
   }
 
   & > button {
@@ -20,6 +21,9 @@
 
     @media only screen and (max-width: 380px) {
       font-size: 0.9rem;
+      border: none;
+      padding: 3px 5px;
+      border-radius: 0;
     }
 
     &:first-of-type,
@@ -31,13 +35,20 @@
       transition: background-color 300ms, color 300ms;
 
       @media only screen and (max-width: 380px) {
-        font-size: 1.1rem;
-        padding: 4px;
+        font-size: 1rem;
+        border: none;
+        padding: 3px 5px;
+        border-radius: 0;
       }
 
       &:hover {
         background-color: $white;
         color: $acc-clr-1;
+
+        @media only screen and (max-width: 380px) {
+          color: $acc-clr-1;
+          background-color: transparent;
+        }
       }
     }
 
@@ -64,6 +75,9 @@
 
         @media only screen and (max-width: 380px) {
           font-size: 0.9rem;
+          border: none;
+          padding: 3px 5px;
+          width: 35px;
         }
 
         &.active {

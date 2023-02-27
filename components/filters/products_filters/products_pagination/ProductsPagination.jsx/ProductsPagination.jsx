@@ -10,6 +10,10 @@ const ProductsPagination = () => {
 
   const handlePage = (num) => {
     setCurrentPage(num);
+    const buttonWidth =
+      buttonsContainerRef.current.children[0].getBoundingClientRect().width;
+    buttonsContainerRef.current.scrollLeft =
+      num * buttonWidth - buttonWidth * 2;
   };
 
   const checkNum = (num) => {
@@ -32,8 +36,6 @@ const ProductsPagination = () => {
     buttonsContainerRef.current.scrollLeft += buttonWidth;
   };
 
-  // RENDERING BUTTONS BASED ON THE NUMBER OF PAGES
-  // PROBLEM WITH THE WIDTH WHEN THERE ARE MORE THAN 1 CHARACTER
   for (let i = 1; i <= pages; i++) {
     buttons.push(
       <button key={i} onClick={() => handlePage(i)}>
@@ -43,16 +45,15 @@ const ProductsPagination = () => {
   }
 
   useEffect(() => {
-    // SETTING THE WIDTH OF THE CONTAINER ON THE INITIAL RENDER
     const buttonWidth =
       buttonsContainerRef.current.children[0].getBoundingClientRect().width;
 
-    if (pages <= 3) {
-      buttonsContainerRef.current.style.width = `${pages * buttonWidth}px`;
+    if (pages < 3) {
+      buttonsContainerRef.current.style.width = `${buttonWidth * pages}px`;
     } else {
-      buttonsContainerRef.current.style.width = `${3 * buttonWidth}px`;
+      buttonsContainerRef.current.style.width = `${buttonWidth * 3}px`;
     }
-  }, []);
+  }, [pages]);
 
   return (
     <div className={styles.products_pagination}>
@@ -60,7 +61,7 @@ const ProductsPagination = () => {
         <AiOutlineLeft className={styles.icon} />
       </button>
 
-      {currentPage >= pages - 3 ? (
+      {currentPage >= pages - 1 && pages > 3 ? (
         <>
           <button onClick={() => handlePage(1)}>1</button>
           <button className={styles.disabled}>...</button>
@@ -71,10 +72,10 @@ const ProductsPagination = () => {
         {buttons}
       </div>
 
-      {currentPage <= pages - 3 ? (
+      {currentPage <= pages - 2 && pages > 3 ? (
         <>
           <button className={styles.disabled}>...</button>
-          <button onClick={() => handlePage(20)}>{pages}</button>
+          <button onClick={() => handlePage(pages)}>{pages}</button>
         </>
       ) : null}
 
