@@ -18,6 +18,9 @@ const ProductsContainer = ({ data, layout }) => {
       if (sortBy === 'discount %') return b.discount - a.discount;
       return 0;
     })
+    .filter((item) => {
+      return item;
+    })
     .slice(firstProductIndex, lastProductIndex);
 
   return (

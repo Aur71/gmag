@@ -1,41 +1,45 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFilter, clearFilters } from '@/redux/reducers/productsSlice';
 import styles from './ActiveFiltersBlock.module.scss';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import { IoClose } from 'react-icons/io5';
 
-// TEMP DATA
-const activeFilters = [
-  {
-    category: 'Processor Manufacturer',
-    options: ['Intel'],
-  },
-  {
-    category: 'Processor',
-    options: ['Intel Core i7-11400', 'Intel Core i7-11300'],
-  },
-
-  {
-    category: 'Video Card Model',
-    options: ['Nvidia GeForce RTX 3060 Ti'],
-  },
-];
-
+// HEIGHT DOSENT CHANGE WHEN FILTERS ARE ADDED OR REMOVED
+//
+//
+//
+//
 const ActiveFiltersBlock = () => {
+  const dispatch = useDispatch();
+  const { filters } = useSelector((state) => state.products);
+
+  const dispatchRemoveFilter = (name, optionName) => {
+    const objectFormat = { name, option: { optionName } };
+    dispatch(removeFilter(objectFormat));
+  };
+
   return (
     <div className={styles.active_filters_block}>
       <BlockHeader name='Active filters' />
 
       <div className={styles.active_filters_container}>
-        <button>Clear all filters</button>
+        <button onClick={() => dispatch(clearFilters())}>
+          Clear all filters
+        </button>
 
         <ul>
-          {activeFilters.map((item, index) => {
+          {filters.map((item) => {
+            const { filterName, options } = item;
             return (
-              <li key={index}>
-                <h5>{item.category}:</h5>
+              <li key={filterName}>
+                <h5>{filterName}:</h5>
 
-                {item.options.map((option, index) => {
+                {options.map((option, index) => {
                   return (
-                    <button key={index}>
+                    <button
+                      key={index}
+                      onClick={() => dispatchRemoveFilter(filterName, option)}
+                    >
                       <span>{option}</span>
                       <IoClose className={styles.icon} />
                     </button>

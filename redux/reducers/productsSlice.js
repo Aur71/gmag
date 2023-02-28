@@ -8,6 +8,7 @@ const productsSlice = createSlice({
     productsPerPage: 40,
     pages: 1,
     sortBy: 'the most popular',
+    filters: [],
   },
   reducers: {
     handleTotalProducts: (state, action) => {
@@ -30,6 +31,46 @@ const productsSlice = createSlice({
     handleSort: (state, action) => {
       state.sortBy = action.payload.toLowerCase();
     },
+    clearFilters: (state) => {
+      state.filters = [];
+    },
+    addFilter: (state, action) => {
+      const filterName = action.payload.name;
+      const { optionName } = action.payload.option;
+      const hasFilterName = state.filters.some(
+        (obj) => obj.filterName === filterName
+      );
+      if (!hasFilterName) {
+        const newFilter = { filterName, options: [optionName] };
+        state.filters = [newFilter, ...state.filters];
+        return;
+      }
+      const newState = JSON.parse(JSON.stringify(state.filters));
+      const newFilters = newState.map((item) => {
+        if (item.filterName === filterName) item.options.push(optionName);
+        return item;
+      });
+      state.filters = newFilters;
+    },
+    removeFilter: (state, action) => {
+      const filterName = action.payload.name;
+      const { optionName } = action.payload.option;
+      const newState = JSON.parse(JSON.stringify(state.filters));
+
+      const newFilters = newState
+        .map((item) => {
+          if (item.filterName === filterName) {
+            const newOptions = item.options.filter(
+              (option) => option !== optionName
+            );
+            return { ...item, options: newOptions };
+          }
+          return item;
+        })
+        .filter((item) => item.options.length !== 0);
+
+      state.filters = newFilters;
+    },
   },
 });
 
@@ -40,4 +81,7 @@ export const {
   handleCurrentPage,
   handleProductsPerPage,
   handleSort,
+  addFilter,
+  removeFilter,
+  clearFilters,
 } = productsSlice.actions;
