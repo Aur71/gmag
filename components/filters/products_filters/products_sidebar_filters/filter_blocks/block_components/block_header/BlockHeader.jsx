@@ -2,7 +2,7 @@ import styles from './BlockHeader.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import { RxCaretUp } from 'react-icons/rx';
 
-const BlockHeader = ({ name }) => {
+const BlockHeader = ({ name, dependencies }) => {
   const [showBlock, setShowBlock] = useState(true);
   const headerRef = useRef(null);
 
@@ -16,7 +16,7 @@ const BlockHeader = ({ name }) => {
     } else {
       parent.style.height = `${headerHeight + optionsHeight}px`;
     }
-  }, [showBlock]);
+  }, [showBlock, dependencies]);
 
   return (
     <header className={styles.block_header} ref={headerRef}>

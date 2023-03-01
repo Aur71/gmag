@@ -32,11 +32,20 @@ const productsSlice = createSlice({
       state.sortBy = action.payload.toLowerCase();
     },
     clearFilters: (state) => {
+      const newState = JSON.parse(JSON.stringify(state.filters));
+      newState.forEach((item) => {
+        item.options.forEach((option) => {
+          const target = document.getElementById(option);
+          target.checked = false;
+        });
+      });
+
       state.filters = [];
     },
     addFilter: (state, action) => {
       const filterName = action.payload.name;
       const { optionName } = action.payload.option;
+
       const hasFilterName = state.filters.some(
         (obj) => obj.filterName === filterName
       );
@@ -56,6 +65,7 @@ const productsSlice = createSlice({
       const filterName = action.payload.name;
       const { optionName } = action.payload.option;
       const newState = JSON.parse(JSON.stringify(state.filters));
+      document.getElementById(optionName).checked = false;
 
       const newFilters = newState
         .map((item) => {

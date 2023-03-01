@@ -4,11 +4,6 @@ import styles from './ActiveFiltersBlock.module.scss';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import { IoClose } from 'react-icons/io5';
 
-// HEIGHT DOSENT CHANGE WHEN FILTERS ARE ADDED OR REMOVED
-//
-//
-//
-//
 const ActiveFiltersBlock = () => {
   const dispatch = useDispatch();
   const { filters } = useSelector((state) => state.products);
@@ -20,7 +15,7 @@ const ActiveFiltersBlock = () => {
 
   return (
     <div className={styles.active_filters_block}>
-      <BlockHeader name='Active filters' />
+      <BlockHeader name='Active filters' dependencies={filters} />
 
       <div className={styles.active_filters_container}>
         <button onClick={() => dispatch(clearFilters())}>

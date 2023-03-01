@@ -8,6 +8,7 @@ import FilterBlock from './filter_blocks/filter_block/FilterBlock';
 
 const ProductsSidebarFilters = ({ filters }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
+  const activeFilters = useSelector((state) => state.products.filters);
 
   return (
     <div
@@ -16,7 +17,7 @@ const ProductsSidebarFilters = ({ filters }) => {
       }`}
     >
       <CloseFiltersBlock />
-      <ActiveFiltersBlock />
+      {activeFilters.length ? <ActiveFiltersBlock /> : null}
 
       {filters.map((filter) => {
         const { name, options } = filter;

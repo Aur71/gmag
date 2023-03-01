@@ -45,6 +45,7 @@ const FilterBlock = ({ name, options }) => {
                   <input
                     type='checkbox'
                     onChange={(e) => handleCheckbox(e, option)}
+                    id={optionName}
                   />
                   {optionName} <span>({count})</span>
                 </label>
