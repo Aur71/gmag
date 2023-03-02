@@ -8,8 +8,7 @@ const ProductsContainer = ({ data, layout }) => {
   );
   const lastProductIndex = currentPage * productsPerPage;
   const firstProductIndex = lastProductIndex - productsPerPage;
-  // NEED TO SINCRONYZE THE FILTERS WITH THE DATA THAT IS DISPLAYED
-  const paginatedData = data
+  const filteredData = data
     .sort((a, b) => {
       if (sortBy === 'the most popular') return b.numOfOrders - a.numOfOrders;
       if (sortBy === 'newest') return b.date - a.date;
@@ -20,17 +19,20 @@ const ProductsContainer = ({ data, layout }) => {
       return 0;
     })
     .filter((item) => {
+      if (!filters.length) return item;
+      console.log(filters);
+      // NEED TO ADD THE PRICE FILTER
+      // NEED TO ADD THE RATING FILTER
+
       return item;
     })
     .slice(firstProductIndex, lastProductIndex);
-
-  console.log(filters);
 
   return (
     <div
       className={`${styles.products_container} ${layout && styles.no_sidebar}`}
     >
-      {paginatedData.map((item) => {
+      {filteredData.map((item) => {
         return <ProductCardResponseve item={item} key={item.id} />;
       })}
     </div>

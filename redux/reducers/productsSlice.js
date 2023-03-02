@@ -8,6 +8,9 @@ const productsSlice = createSlice({
     productsPerPage: 40,
     pages: 1,
     sortBy: 'the most popular',
+    minPrice: null,
+    maxPrice: null,
+    rating: null,
     filters: [],
   },
   reducers: {
