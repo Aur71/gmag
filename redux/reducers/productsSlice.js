@@ -18,21 +18,33 @@ const productsSlice = createSlice({
       state.totalProducts = action.payload;
     },
     handlePages: (state) => {
-      state.pages = Math.ceil(state.totalProducts / state.productsPerPage);
+      let pages = Math.ceil(state.totalProducts / state.productsPerPage);
+      if (!pages) pages = 1;
+      state.pages = pages;
+      if (state.currentPage > state.pages) state.currentPage = state.pages;
     },
     handleCurrentPage: (state, action) => {
       let page = action.payload;
       if (page <= 0) page = 1;
       if (page > state.pages) page = state.pages;
       state.currentPage = page;
+      window.scrollTo(0, 0);
     },
     handleProductsPerPage: (state, action) => {
       state.productsPerPage = action.payload;
       state.pages = Math.ceil(state.totalProducts / action.payload);
-      state.currentPage = 1;
+      if (state.currentPage > state.pages) state.currentPage = state.pages;
     },
     handleSort: (state, action) => {
       state.sortBy = action.payload.toLowerCase();
+    },
+    setPrice: (state, action) => {
+      const { min, max } = action.payload;
+      state.minPrice = min;
+      state.maxPrice = max;
+    },
+    setRating: (state, action) => {
+      state.rating = action.payload;
     },
     clearFilters: (state) => {
       const newState = JSON.parse(JSON.stringify(state.filters));
@@ -45,6 +57,7 @@ const productsSlice = createSlice({
 
       state.filters = [];
     },
+
     addFilter: (state, action) => {
       const filterName = action.payload.name;
       const { optionName } = action.payload.option;
@@ -94,6 +107,8 @@ export const {
   handleCurrentPage,
   handleProductsPerPage,
   handleSort,
+  setPrice,
+  setRating,
   addFilter,
   removeFilter,
   clearFilters,

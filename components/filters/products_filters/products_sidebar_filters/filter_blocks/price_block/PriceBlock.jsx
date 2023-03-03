@@ -1,15 +1,19 @@
 import styles from './PriceBlock.module.scss';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setPrice } from '@/redux/reducers/productsSlice';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import ReactSlider from 'react-slider';
 
 const PriceBlock = ({ name, options }) => {
+  const dispatch = useDispatch();
   const [min, setMin] = useState(options.min);
   const [max, setMax] = useState(options.max);
 
   function handleSliderChange(values) {
     setMin(parseInt(values[0]));
     setMax(parseInt(values[1]));
+    dispatch(setPrice({ min: parseInt(values[0]), max: parseInt(values[1]) }));
   }
 
   return (

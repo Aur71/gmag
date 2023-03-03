@@ -47,7 +47,7 @@ const ProductsPagination = () => {
   // SETTING THE WIDTH OF BUTTONS_CONTAINER BASED ON THE NUMBER OF PAGES
   useEffect(() => {
     const buttonWidth =
-      buttonsContainerRef.current.children[0].getBoundingClientRect().width;
+      buttonsContainerRef.current.children[0]?.getBoundingClientRect().width;
 
     if (pages < 3) {
       buttonsContainerRef.current.style.width = `${buttonWidth * pages}px`;

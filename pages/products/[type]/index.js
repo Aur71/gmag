@@ -10,7 +10,7 @@ import ProductsSidebarFilters from '@/components/filters/products_filters/produc
 import ProductsGeneralFilters from '@/components/filters/products_filters/products_general_filters/ProductsGeneralFilters';
 import ProductsContainer from '@/components/containers/products_container/ProductsContainer';
 import ProductsPagination from '@/components/filters/products_filters/products_pagination/ProductsPagination.jsx/ProductsPagination';
-import getFilters from '@/components/filters/products_filters/products_sidebar_filters/get_filters/getFilters';
+import getFilters from '@/components/filters/products_filters/products_sidebar_filters/functions/getFilters';
 
 // TEMP DATA
 import { computers } from '@/data/temp/computers';

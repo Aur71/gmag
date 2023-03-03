@@ -1,16 +1,17 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './RatingBlock.module.scss';
 import BlockHeader from '../block_components/block_header/BlockHeader';
+import { setRating } from '@/redux/reducers/productsSlice';
 import { BsStarFill } from 'react-icons/bs';
 
 const RatingBlock = ({ name, options }) => {
+  const dispatch = useDispatch();
+  const { rating } = useSelector((state) => state.products);
+
   const handleCheckBox = (e) => {
     const value = Number(e.target.value);
-    console.log(value);
-    if (e.target.checked) {
-      // if is true dispath an action that filters based on rating(value)
-    } else {
-      // dispath an action that removes the filter
-    }
+    if (e.target.checked) return dispatch(setRating(value));
+    dispatch(setRating(null));
   };
 
   return (
@@ -23,7 +24,12 @@ const RatingBlock = ({ name, options }) => {
 
           return (
             <div className={styles.option} key={id}>
-              <input type='checkbox' value={value} onChange={handleCheckBox} />
+              <input
+                type='checkbox'
+                checked={rating === value}
+                value={value}
+                onChange={handleCheckBox}
+              />
               <div className={styles.stars_container}>
                 <BsStarFill className={`${value >= 1 && styles.active_star}`} />
                 <BsStarFill className={`${value >= 2 && styles.active_star}`} />
