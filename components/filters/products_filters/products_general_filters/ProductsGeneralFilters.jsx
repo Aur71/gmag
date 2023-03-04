@@ -66,7 +66,6 @@ const ProductsGeneralFilters = () => {
             showDisplayDropdown && styles.active
           }`}
         >
-          {' '}
           {display.map((item) => {
             return (
               <button

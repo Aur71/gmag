@@ -8,7 +8,9 @@ import FilterBlock from './filter_blocks/filter_block/FilterBlock';
 
 const ProductsSidebarFilters = ({ filters }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-  const activeFilters = useSelector((state) => state.products.filters);
+  const { allFilters, activeFilters } = useSelector(
+    (state) => state.filtersSidebar
+  );
 
   return (
     <div
@@ -19,20 +21,17 @@ const ProductsSidebarFilters = ({ filters }) => {
       <CloseFiltersBlock />
       {activeFilters.length ? <ActiveFiltersBlock /> : null}
 
-      {filters.map((filter) => {
+      {allFilters.map((filter) => {
         const { name, options } = filter;
+        const key = `${name}_block`;
 
-        if (name === 'price') {
-          return <PriceBlock key='price block' name={name} options={options} />;
-        }
+        if (name === 'price')
+          return <PriceBlock key={key} name={name} options={options} />;
 
-        if (name === 'rating') {
-          return (
-            <RatingBlock key='rating block' name={name} options={options} />
-          );
-        }
+        if (name === 'rating')
+          return <RatingBlock key={key} name={name} options={options} />;
 
-        return <FilterBlock key={name} name={name} options={options} />;
+        return <FilterBlock key={key} name={name} options={options} />;
       })}
     </div>
   );

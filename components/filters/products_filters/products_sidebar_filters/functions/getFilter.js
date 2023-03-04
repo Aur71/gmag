@@ -59,10 +59,9 @@ export default function getFilter(list) {
 }
 
 const sortOptions = (list) => {
-  // IF THERE IS ONLY ONE OPTIONS REMOVE THE FILTER
   const filteredOptions = list.filter((item) => {
     const { options } = item;
-    if (options.length <= 1) return false;
+    if (options.length === 0) return false;
     return true;
   });
 

@@ -1,36 +1,45 @@
 export default function filterByFilters(data, filters) {
   if (!filters.length) return data;
-  const items = [];
+  const productsIds = [];
 
   filters.forEach((filter) => {
     const { filterName, options } = filter;
 
     data.forEach((item) => {
       const { specifications } = item;
-      // IF THE OBJECT IS NOT FOUND IT RETUNS UNDEFIUNED
       const specification = specifications.find(
         (spec) => spec.key === filterName
       );
+      if (!specification) return;
       const { value } = specification;
       const hasValue = options.some((option) => option === value);
-      if (hasValue) items.push(item.id);
+      if (hasValue) productsIds.push(item.id);
     });
   });
 
-  const counts = {};
+  const countedIds = [];
 
-  for (let i = 0; i < items.length; i++) {
-    const num = items[i];
-    if (counts[num]) {
-      counts[num]++;
-    } else {
-      counts[num] = 1;
-    }
-  }
+  productsIds.forEach((id) => {
+    const hasId = countedIds.some((obj) => obj.id === id);
+    if (hasId)
+      return countedIds.forEach((obj) => {
+        if (obj.id === id) return obj.count++;
+      });
 
-  console.log(counts);
+    const obj = { id, count: 1 };
+    countedIds.push(obj);
+  });
 
-  // WHEN THE NEW ARRAY OF ITEMS IS RETUNRED BASED ON THE INITIAL FILTERS BLOCK(BRAND / PROCESSOR) THE FILTER SIDEBAR NEEDS TO BE UPDATED WITH THE INITIAL FILTER BLOCK THE SAME AND ALL OTHER FILTER BLOCK UPDATED BASED ON THE NEW ARRAY OF ITEMS
+  // Filtering the data based on the countedIds.
+  // Return true if countedIds[0].id === item.id && countedIds[0].count === filter.length
+  const filteredData = data.filter((item) => {
+    const { id } = item;
+    const hasId = countedIds.some((obj) => {
+      if (obj.id === id && obj.count === filters.length) return true;
+      return false;
+    });
+    return hasId;
+  });
 
-  return data;
+  return filteredData;
 }

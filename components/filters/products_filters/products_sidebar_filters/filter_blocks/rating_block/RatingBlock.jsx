@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './RatingBlock.module.scss';
 import BlockHeader from '../block_components/block_header/BlockHeader';
-import { setRating } from '@/redux/reducers/productsSlice';
+import styles from './RatingBlock.module.scss';
 import { BsStarFill } from 'react-icons/bs';
+import { handleRating } from '@/redux/reducers/filtersSidebarSlice';
 
 const RatingBlock = ({ name, options }) => {
   const dispatch = useDispatch();
-  const { rating } = useSelector((state) => state.products);
+  const { rating } = useSelector((state) => state.filtersSidebar);
 
   const handleCheckBox = (e) => {
     const value = Number(e.target.value);
-    if (e.target.checked) return dispatch(setRating(value));
-    dispatch(setRating(null));
+    if (e.target.checked) return dispatch(handleRating(value));
+    dispatch(handleRating(null));
   };
 
   return (

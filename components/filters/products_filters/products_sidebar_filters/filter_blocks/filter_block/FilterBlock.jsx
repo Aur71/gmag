@@ -1,7 +1,7 @@
 import styles from './FilterBlock.module.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addFilter, removeFilter } from '@/redux/reducers/productsSlice';
+import { addFilter, removeFilter } from '@/redux/reducers/filtersSidebarSlice';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import BlockSearchbar from '../block_components/block_searchbar/BlockSearchbar';
 
@@ -12,7 +12,6 @@ const FilterBlock = ({ name, options }) => {
   const filteredOptions = options.filter((option) => {
     const optionName = option.optionName.toString().toLowerCase();
     if (optionName === null || optionName === undefined) return false;
-
     return (
       !searchTerm || optionName.includes(searchTerm.toString().toLowerCase())
     );
@@ -38,6 +37,7 @@ const FilterBlock = ({ name, options }) => {
         <ul>
           {filteredOptions.map((option) => {
             const { optionName, count } = option;
+            const id = `${name}_${optionName}`;
 
             return (
               <li key={optionName}>
@@ -45,7 +45,7 @@ const FilterBlock = ({ name, options }) => {
                   <input
                     type='checkbox'
                     onChange={(e) => handleCheckbox(e, option)}
-                    id={optionName}
+                    id={id}
                   />
                   {optionName} <span>({count})</span>
                 </label>
