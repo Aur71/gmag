@@ -30,7 +30,6 @@ const ProductsContainer = ({ data, layout }) => {
 
   useEffect(() => {
     dispatch(handleTotalProducts(sortedData.length));
-    dispatch(handlePages());
   }, [sortedData, dispatch]);
 
   return (

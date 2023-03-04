@@ -12,16 +12,15 @@ const productsSlice = createSlice({
   reducers: {
     handleProductsPerPage: (state, action) => {
       state.productsPerPage = action.payload;
-      state.pages = Math.ceil(state.totalProducts / action.payload);
-      if (state.currentPage > state.pages) state.currentPage = state.pages;
+      const pages = Math.ceil(state.totalProducts / action.payload);
+      state.pages = pages;
+      if (state.currentPage > pages) state.currentPage = pages;
+      if (state.currentPage < 1) state.currentPage = 1;
     },
 
     handleTotalProducts: (state, action) => {
       state.totalProducts = action.payload;
-    },
-
-    handlePages: (state) => {
-      let pages = Math.ceil(state.totalProducts / state.productsPerPage);
+      let pages = Math.ceil(action.payload / state.productsPerPage);
       if (!pages) pages = 1;
       state.pages = pages;
       if (state.currentPage > state.pages) state.currentPage = state.pages;
@@ -44,7 +43,6 @@ const productsSlice = createSlice({
 export default productsSlice.reducer;
 export const {
   handleTotalProducts,
-  handlePages,
   handleCurrentPage,
   handleProductsPerPage,
   handleSort,

@@ -6,10 +6,7 @@ import ProductsContainer from '@/components/containers/products_container/Produc
 import ProductsPagination from '@/components/filters/products_filters/products_pagination/ProductsPagination.jsx/ProductsPagination';
 import styles from '../../../styles/pages/Products.module.scss';
 import { handleAllFilters } from '@/redux/reducers/filtersSidebarSlice';
-import {
-  handleTotalProducts,
-  handlePages,
-} from '@/redux/reducers/productsSlice';
+import { handleTotalProducts } from '@/redux/reducers/productsSlice';
 
 // import axios from 'axios';
 
@@ -23,7 +20,6 @@ const ProductType = ({ data }) => {
   useEffect(() => {
     dispatch(handleAllFilters(data));
     dispatch(handleTotalProducts(data.length));
-    dispatch(handlePages());
   }, [data]);
 
   // if (!data.length) {
