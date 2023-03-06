@@ -1,12 +1,13 @@
 import styles from './FilterBlock.module.scss';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFilter, removeFilter } from '@/redux/reducers/filtersSidebarSlice';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import BlockSearchbar from '../block_components/block_searchbar/BlockSearchbar';
 
 const FilterBlock = ({ name, options }) => {
   const dispatch = useDispatch();
+  const { activeFilters } = useSelector((state) => state.filtersSidebar);
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredOptions = options.filter((option) => {
@@ -24,7 +25,7 @@ const FilterBlock = ({ name, options }) => {
 
   return (
     <div className={styles.filter_block}>
-      <BlockHeader name={name} />
+      <BlockHeader name={name} dependencies={activeFilters} />
 
       <div className={styles.options}>
         {options.length > 7 ? (

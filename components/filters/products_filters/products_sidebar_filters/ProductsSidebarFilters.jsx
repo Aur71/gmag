@@ -1,16 +1,17 @@
-import styles from './ProductsSidebarFilters.module.scss';
 import { useSelector } from 'react-redux';
 import CloseFiltersBlock from './filter_blocks/close_filters_block/CloseFiltersBlock';
 import ActiveFiltersBlock from './filter_blocks/active_filters_block/ActiveFiltersBlock';
 import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
+import styles from './ProductsSidebarFilters.module.scss';
+import updateFilters from './functions/updateFilters';
 
-const ProductsSidebarFilters = ({ filters }) => {
+const ProductsSidebarFilters = ({ data }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-  const { allFilters, activeFilters } = useSelector(
-    (state) => state.filtersSidebar
-  );
+  const { activeFilters } = useSelector((state) => state.filtersSidebar);
+
+  const filters = updateFilters(activeFilters, data);
 
   return (
     <div
@@ -21,7 +22,7 @@ const ProductsSidebarFilters = ({ filters }) => {
       <CloseFiltersBlock />
       {activeFilters.length ? <ActiveFiltersBlock /> : null}
 
-      {allFilters.map((filter) => {
+      {filters.map((filter) => {
         const { name, options } = filter;
         const key = `${name}_block`;
 

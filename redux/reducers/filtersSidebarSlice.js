@@ -1,23 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getFilters from '@/components/filters/products_filters/products_sidebar_filters/functions/getFilters';
 
 const filtersSidebarSlice = createSlice({
   name: 'filtersSidebar',
   initialState: {
-    allFilters: [],
-    currentFilters: [],
     activeFilters: [],
-    initialFilter: null,
     minPrice: null,
     maxPrice: null,
     rating: null,
   },
   reducers: {
-    handleAllFilters: (state, action) => {
-      const data = action.payload;
-      state.allFilters = getFilters(data);
-    },
-
     handlePrice: (state, action) => {
       state.minPrice = action.payload.min;
       state.maxPrice = action.payload.max;
@@ -93,7 +84,6 @@ const filtersSidebarSlice = createSlice({
 
 export default filtersSidebarSlice.reducer;
 export const {
-  handleAllFilters,
   handlePrice,
   handleRating,
   addFilter,

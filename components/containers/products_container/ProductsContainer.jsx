@@ -6,10 +6,7 @@ import filterByPrice from '@/components/filters/products_filters/products_sideba
 import filterByRating from '@/components/filters/products_filters/products_sidebar_filters/functions/filterByRating';
 import filterByFilters from '@/components/filters/products_filters/products_sidebar_filters/functions/filterByFilters';
 import sortData from '../../filters/products_filters/products_sidebar_filters/functions/sortData';
-import {
-  handleTotalProducts,
-  handlePages,
-} from '@/redux/reducers/productsSlice';
+import { handleTotalProducts } from '@/redux/reducers/productsSlice';
 
 const ProductsContainer = ({ data, layout }) => {
   const dispatch = useDispatch();

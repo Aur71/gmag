@@ -1,5 +1,5 @@
 import ReactSlider from 'react-slider';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import styles from './PriceBlock.module.scss';
@@ -17,6 +17,11 @@ const PriceBlock = ({ name, options }) => {
     setMax(maxValue);
     dispatch(handlePrice({ min: minValue, max: maxValue }));
   }
+
+  useEffect(() => {
+    setMin(options.min);
+    setMax(options.max);
+  }, [options]);
 
   return (
     <div className={styles.price_block}>
