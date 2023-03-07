@@ -6,6 +6,7 @@ import {
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import styles from './ActiveFiltersBlock.module.scss';
 import { IoClose } from 'react-icons/io5';
+import { removePriceFilter } from '@/redux/reducers/filtersSidebarSlice';
 
 const ActiveFiltersBlock = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,24 @@ const ActiveFiltersBlock = () => {
 
         <ul>
           {activeFilters.map((item) => {
+            if (item.filterName === 'Price') {
+              const { filterName, min, max } = item;
+
+              return (
+                <li key={filterName}>
+                  <h5>{filterName}:</h5>
+                  <button onClick={() => dispatch(removePriceFilter())}>
+                    {min}$ - {max}$ <IoClose className={styles.icon} />
+                  </button>
+                </li>
+              );
+            }
+
+            if (item.filterName === 'Rating') {
+              const { filterName, options } = item;
+              return <li key={filterName}>{filterName}</li>;
+            }
+
             const { filterName, options } = item;
 
             return (

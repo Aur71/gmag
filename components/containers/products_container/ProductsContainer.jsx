@@ -2,10 +2,8 @@ import ProductCardResponseve from '@/components/cards/product_card_responseve/Pr
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import styles from './ProductsContainer.module.scss';
-import filterByPrice from '@/components/filters/products_filters/products_sidebar_filters/functions/filterByPrice';
-import filterByRating from '@/components/filters/products_filters/products_sidebar_filters/functions/filterByRating';
-import filterByFilters from '@/components/filters/products_filters/products_sidebar_filters/functions/filterByFilters';
-import sortData from '../../filters/products_filters/products_sidebar_filters/functions/sortData';
+import filterByFilters from '@/components/filters/products_filters/functions/filter_products/filterByActiveFilters';
+import sortData from '@/components/filters/products_filters/functions/filter_products/sortData';
 import { handleTotalProducts } from '@/redux/reducers/productsSlice';
 
 const ProductsContainer = ({ data, layout }) => {
@@ -13,13 +11,9 @@ const ProductsContainer = ({ data, layout }) => {
   const { currentPage, productsPerPage, sortBy } = useSelector(
     (state) => state.products
   );
-  const { minPrice, maxPrice, rating, activeFilters } = useSelector(
-    (state) => state.filtersSidebar
-  );
+  const { activeFilters } = useSelector((state) => state.filtersSidebar);
 
-  const filteredByPrice = filterByPrice(data, minPrice, maxPrice);
-  const filteredByRating = filterByRating(filteredByPrice, rating);
-  const filteredByFilters = filterByFilters(filteredByRating, activeFilters);
+  const filteredByFilters = filterByFilters(data, activeFilters);
   const sortedData = sortData(filteredByFilters, sortBy);
   const lastProductIndex = currentPage * productsPerPage;
   const firstProductIndex = lastProductIndex - productsPerPage;

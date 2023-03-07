@@ -4,20 +4,74 @@ const filtersSidebarSlice = createSlice({
   name: 'filtersSidebar',
   initialState: {
     activeFilters: [],
-    minPrice: null,
-    maxPrice: null,
-    rating: null,
   },
   reducers: {
-    handlePrice: (state, action) => {
-      state.minPrice = action.payload.min;
-      state.maxPrice = action.payload.max;
+    //
+    // HANDLEING PRICE FILTER
+    //
+    addPriceFilter: (state, action) => {
+      const hasPriceFilter = state.activeFilters.some(
+        (activeFilter) => activeFilter.filterName === 'Price'
+      );
+
+      // IF THERE IS NO PRICE FILTER WE ADD A NEW PRICE FILTER
+      if (!hasPriceFilter) {
+        const newPriceFilter = {
+          filterName: 'Price',
+          min: action.payload.min,
+          max: action.payload.max,
+        };
+
+        state.activeFilters = [newPriceFilter, ...state.activeFilters];
+        return;
+      }
+
+      // IF THERE IS A PRICE FILTER WE UPDATE IT
+      const newStateActiveFilters = JSON.parse(
+        JSON.stringify(state.activeFilters)
+      );
+
+      state.activeFilters = newStateActiveFilters.map((activeFilter) => {
+        const { filterName } = activeFilter;
+        if (filterName === 'Price') {
+          activeFilter.min = action.payload.min;
+          activeFilter.max = action.payload.max;
+        }
+        return activeFilter;
+      });
     },
 
-    handleRating: (state, action) => {
-      state.rating = action.payload;
+    removePriceFilter: (state, action) => {
+      console.log(state, action);
     },
 
+    //
+    // HANDLEING RATING FILTER
+    //
+    addRatingFilter: (state, action) => {
+      const hasRatingFilter = state.activeFilters.some(
+        (activeFilter) => activeFilter.filterName === 'Rating'
+      );
+
+      if (!hasRatingFilter) {
+        const newRatingFilter = {
+          filterName: 'Rating',
+          options: [action.payload],
+        };
+        state.activeFilters = [newRatingFilter, ...state.activeFilters];
+        return;
+      }
+
+      console.log('add new option to the rating options array');
+    },
+
+    removeRatingFilter: (state, action) => {
+      console.log(state, action);
+    },
+
+    //
+    // HANDLEING A SPECIFICATION FILTER
+    //
     addFilter: (state, action) => {
       const filterName = action.payload.name;
       const option = action.payload.option.optionName;
@@ -84,8 +138,10 @@ const filtersSidebarSlice = createSlice({
 
 export default filtersSidebarSlice.reducer;
 export const {
-  handlePrice,
-  handleRating,
+  addPriceFilter,
+  removePriceFilter,
+  addRatingFilter,
+  removeRatingFilter,
   addFilter,
   removeFilter,
   clearFilters,

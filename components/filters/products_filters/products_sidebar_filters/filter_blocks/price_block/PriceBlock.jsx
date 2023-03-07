@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import styles from './PriceBlock.module.scss';
-import { handlePrice } from '@/redux/reducers/filtersSidebarSlice';
+import { addPriceFilter } from '@/redux/reducers/filtersSidebarSlice';
 
 const PriceBlock = ({ name, options }) => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const PriceBlock = ({ name, options }) => {
     const maxValue = parseInt(values[1]);
     setMin(minValue);
     setMax(maxValue);
-    dispatch(handlePrice({ min: minValue, max: maxValue }));
+    dispatch(addPriceFilter({ min: minValue, max: maxValue }));
   }
 
   useEffect(() => {

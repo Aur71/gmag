@@ -1,4 +1,5 @@
 export default function getRating(list) {
+  // CREATES A RATING ARRAY AND FOR EACH PRODUCT RATING THAT MACHES A STAR VALUE THE COUNT WILL BE INCREMENTED BY 1
   const rating = [
     {
       id: '5 stars',
@@ -39,5 +40,5 @@ export default function getRating(list) {
     });
   });
 
-  return { name: 'rating', options: rating };
+  return { name: 'Rating', options: rating };
 }

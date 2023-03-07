@@ -1,8 +1,17 @@
-export default function filterByFilters(data, filters) {
+import filterByPrice from './filterByPrice';
+import filterByRating from './filterByRating';
+
+export default function filterByActiveFilters(data, filters) {
+  // A FUNCTION THE FILTERS A LIST OF PRODUCTS BASED ON THE ACTIVE FILTERS
   if (!filters.length) return data;
   const productsIds = [];
 
   filters.forEach((filter) => {
+    console.log(filter);
+
+    if (filter.name === 'Price') return filterByPrice(filter);
+    if (filter.name === 'Rating') return filterByRating(filter);
+
     const { filterName, options } = filter;
 
     data.forEach((item) => {
@@ -32,6 +41,7 @@ export default function filterByFilters(data, filters) {
 
   // Filtering the data based on the countedIds.
   // Return true if countedIds[0].id === item.id && countedIds[0].count === filter.length
+  // NEED TO ADD FILTERING BY IF THE FILTERNAME IS PRICE AND RATING
   const filteredData = data.filter((item) => {
     const { id } = item;
     const hasId = countedIds.some((obj) => {

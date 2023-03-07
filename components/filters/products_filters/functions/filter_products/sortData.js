@@ -1,4 +1,5 @@
 export default function sortData(data, sortBy) {
+  // USED TO SORT THE DATA BASED ON A SORT CRITERIA: sortBy
   const sortedData = data.sort((a, b) => {
     if (sortBy === 'the most popular') return b.numOfOrders - a.numOfOrders;
     if (sortBy === 'newest') return b.date - a.date;

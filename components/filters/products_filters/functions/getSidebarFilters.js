@@ -1,9 +1,7 @@
-import filterByFilters from './filterByFilters';
-import getFilters from './getFilters';
-// THE FILTER SIDEBAR UPDATES BASED ON EVERY FILTER, ALSO ADD THE RATING AND PRICE RANGE TO THE FILTERS WHEN NEEDED
-// CREATE A FUNCTION THAT TAKES THE CURRENT FILTERS AND THE NEW DATA, IT WILL RETURN THE NEW FILTERS BASED ON THE NEW DATA
+import getFilters from './get_filters/getFilters';
+import filterByFilters from './filter_products/filterByActiveFilters';
 
-export default function updateFilters(activeFilters, data) {
+export default function getSidebarFilters(activeFilters, data) {
   const originalFilters = getFilters(data);
   const initialFilters = originalFilters.filter((filter) => {
     const isFilterActive = activeFilters.some(

@@ -1,4 +1,9 @@
-export default function getFilter(list) {
+export default function getSpecificationsFilters(list) {
+  // A FUNCTION THE GETS ALL THE FILTERS FROM ALL THE PRODUCTS SPECIFICATIONS ARRAY AND RETURNS AN OBJECT
+  // const obj = {
+  //   optionName: 'Intel',
+  //   count: 1,
+  // };
   const data = [];
 
   list.forEach((item) => {
@@ -58,10 +63,11 @@ export default function getFilter(list) {
   return sortedData;
 }
 
+// A FUNCTION THE SORTS THE OPTIONS OF AN FILTER
 const sortOptions = (list) => {
   const filteredOptions = list.filter((item) => {
     const { options } = item;
-    if (options.length === 0) return false;
+    if (!options.length) return false;
     return true;
   });
 

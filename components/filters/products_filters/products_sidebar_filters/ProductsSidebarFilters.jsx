@@ -5,13 +5,13 @@ import PriceBlock from './filter_blocks/price_block/PriceBlock';
 import RatingBlock from './filter_blocks/rating_block/RatingBlock';
 import FilterBlock from './filter_blocks/filter_block/FilterBlock';
 import styles from './ProductsSidebarFilters.module.scss';
-import updateFilters from './functions/updateFilters';
+import getSidebarFilters from '../functions/getSidebarFilters';
 
 const ProductsSidebarFilters = ({ data }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
   const { activeFilters } = useSelector((state) => state.filtersSidebar);
 
-  const filters = updateFilters(activeFilters, data);
+  const filters = getSidebarFilters(activeFilters, data);
 
   return (
     <div
@@ -26,10 +26,10 @@ const ProductsSidebarFilters = ({ data }) => {
         const { name, options } = filter;
         const key = `${name}_block`;
 
-        if (name === 'price')
+        if (name === 'Price')
           return <PriceBlock key={key} name={name} options={options} />;
 
-        if (name === 'rating')
+        if (name === 'Rating')
           return <RatingBlock key={key} name={name} options={options} />;
 
         return <FilterBlock key={key} name={name} options={options} />;
