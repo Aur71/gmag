@@ -1,16 +1,31 @@
-import filterByPrice from './filterByPrice';
-import filterByRating from './filterByRating';
-
 export default function filterByActiveFilters(data, filters) {
   // A FUNCTION THE FILTERS A LIST OF PRODUCTS BASED ON THE ACTIVE FILTERS
   if (!filters.length) return data;
   const productsIds = [];
 
   filters.forEach((filter) => {
-    console.log(filter);
+    // HANDLEING THE PRICE FILTERING
+    if (filter.filterName === 'Price') {
+      const { min, max } = filter;
+      data.forEach((item) => {
+        const { currentPrice } = item;
+        if (currentPrice >= min && currentPrice <= max)
+          productsIds.push(item.id);
+      });
+      return;
+    }
 
-    if (filter.name === 'Price') return filterByPrice(filter);
-    if (filter.name === 'Rating') return filterByRating(filter);
+    // HANDLEING THE RATING FILTERING
+    if (filter.filterName === 'Rating') {
+      const { options } = filter;
+
+      data.forEach((item) => {
+        const rating = Math.round(item.rating);
+        const hasRating = options.some((option) => option === rating);
+        if (hasRating) productsIds.push(item.id);
+      });
+      return;
+    }
 
     const { filterName, options } = filter;
 
@@ -41,7 +56,6 @@ export default function filterByActiveFilters(data, filters) {
 
   // Filtering the data based on the countedIds.
   // Return true if countedIds[0].id === item.id && countedIds[0].count === filter.length
-  // NEED TO ADD FILTERING BY IF THE FILTERNAME IS PRICE AND RATING
   const filteredData = data.filter((item) => {
     const { id } = item;
     const hasId = countedIds.some((obj) => {
