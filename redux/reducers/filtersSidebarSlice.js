@@ -4,8 +4,6 @@ const filtersSidebarSlice = createSlice({
   name: 'filtersSidebar',
   initialState: {
     activeFilters: [],
-    // priceRage: { min: null, max: null },
-    // activePriceRange: { min: null, max: null },
   },
   reducers: {
     // HANDLEING PRICE FILTER
