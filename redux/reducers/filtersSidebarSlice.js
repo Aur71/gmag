@@ -4,8 +4,8 @@ const filtersSidebarSlice = createSlice({
   name: 'filtersSidebar',
   initialState: {
     activeFilters: [],
-    priceRage: { min: null, max: null },
-    activePriceRange: { min: null, max: null },
+    // priceRage: { min: null, max: null },
+    // activePriceRange: { min: null, max: null },
   },
   reducers: {
     // HANDLEING PRICE FILTER
@@ -161,9 +161,7 @@ const filtersSidebarSlice = createSlice({
       );
 
       newStateActiveFilters.forEach((filter) => {
-        if (filter.filterName === 'Price') {
-          return;
-        }
+        if (filter.filterName === 'Price') return;
 
         if (filter.filterName === 'Rating') {
           document.getElementById('1_stars').checked = false;

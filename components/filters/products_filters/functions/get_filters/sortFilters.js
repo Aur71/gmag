@@ -6,9 +6,8 @@ export default function sortFilters(data) {
     return secondFilterName.localeCompare(firstFilterName);
   });
 
-  return initialSort.sort((a, b) => {
+  return initialSort.sort((a) => {
     const firstFilterName = a.name;
-    const secondFilterName = b.name;
     if (firstFilterName === 'Price') return -1;
     if (firstFilterName === 'Rating') return -1;
     return 0;
