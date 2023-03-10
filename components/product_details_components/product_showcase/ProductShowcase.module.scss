@@ -1,0 +1,22 @@
+@import '../../../styles/variables.module.scss';
+
+.product_showcase {
+  width: 100%;
+  height: auto;
+  background-color: $white;
+  padding: 20px var(--padding-side) 40px var(--padding-side);
+
+  @media only screen and (max-width: 800px) {
+    padding: 30px var(--padding-side);
+  }
+
+  .center {
+    max-width: 1540px;
+    margin: 0 auto;
+
+    .columns_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

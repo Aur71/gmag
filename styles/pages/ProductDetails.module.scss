@@ -1,0 +1,8 @@
+@import '../variables.module.scss';
+
+.product_details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
