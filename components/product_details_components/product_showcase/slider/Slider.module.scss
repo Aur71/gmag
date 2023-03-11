@@ -2,6 +2,127 @@
 
 .slider {
   width: 100%;
-  height: 100px;
-  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
+
+  //
+  //
+  // BUTTONS CONTAINER
+  .btns_container {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+
+    @media only screen and (max-width: 1400px) {
+      order: 2;
+    }
+
+    .slide_btn {
+      width: 100%;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      transition: color 300ms;
+      position: absolute;
+      background-color: $white;
+
+      @media only screen and (max-width: 1400px) {
+        height: 100%;
+        width: 25px;
+      }
+
+      &:hover {
+        color: $acc-clr-1;
+      }
+
+      &.disabled {
+        color: rgba(128, 128, 128, 0.5);
+
+        &:hover {
+          color: rgba(128, 128, 128, 0.5);
+        }
+      }
+
+      &:first-of-type {
+        top: 0;
+
+        @media only screen and (max-width: 1400px) {
+          left: 0;
+        }
+      }
+
+      &:last-of-type {
+        bottom: 0;
+
+        @media only screen and (max-width: 1400px) {
+          right: 0;
+        }
+      }
+    }
+
+    //
+    //
+    // BUTTONS SLIDER
+    .btns_slider {
+      width: 100%;
+      height: 100%;
+      padding: 25px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @media only screen and (max-width: 1400px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 25px;
+      }
+
+      .img_btn {
+        width: 100px;
+        height: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        overflow: hidden;
+
+        &:hover {
+          border: 1px solid $acc-clr-1;
+        }
+
+        &.active {
+          border: 1px solid $acc-clr-1;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .img_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
+    }
+  }
 }
