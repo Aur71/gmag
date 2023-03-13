@@ -87,6 +87,10 @@
         padding: 0 25px;
       }
 
+      @media only screen and (max-width: 1150px) {
+        gap: 10px;
+      }
+
       .img_btn {
         width: 100px;
         height: 100px;
@@ -124,6 +128,11 @@
       width: 500px;
       height: 500px;
       object-fit: contain;
+
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

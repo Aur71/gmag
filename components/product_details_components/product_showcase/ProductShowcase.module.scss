@@ -10,6 +10,10 @@
     padding: 30px 90px;
   }
 
+  @media only screen and (max-width: 1150px) {
+    padding: 0;
+  }
+
   .center {
     max-width: 1540px;
     margin: 0 auto;
