@@ -6,8 +6,8 @@
   background-color: $white;
   padding: 20px var(--padding-side) 40px var(--padding-side);
 
-  @media only screen and (max-width: 800px) {
-    padding: 30px var(--padding-side);
+  @media only screen and (max-width: 1400px) {
+    padding: 30px 90px;
   }
 
   .center {
@@ -17,6 +17,15 @@
     .columns_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      @media only screen and (max-width: 1600px) {
+        gap: 20px;
+      }
+
+      @media only screen and (max-width: 1400px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
