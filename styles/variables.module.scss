@@ -31,6 +31,9 @@ $border-clr-3: #a7a7a7;
 $icon-clr-1: #969aa3;
 $icon-clr-2: #6f7581;
 
+// DISABLED CLRS
+$disabled-clr-1: rgba(128, 128, 128, 0.6);
+
 // LAYOUT
 $navbar-height: 90px;
 $navbar-index: 888;
@@ -61,5 +64,3 @@ $box-shadow-3: 0 0 50px #c9c9c9;
 $track-clr-1: $acc-clr-1;
 $track-clr-2: rgb(170, 170, 170);
 $thumb-clr-1: $acc-clr-1;
-
-// PRODUCTS OPTIONS DROPDOWN
