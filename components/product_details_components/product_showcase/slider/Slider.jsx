@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useDraggable } from 'react-use-draggable-scroll';
 import Image from 'next/image';
 import styles from './Slider.module.scss';
@@ -8,6 +9,10 @@ import {
   BsChevronLeft,
   BsChevronRight,
 } from 'react-icons/bs';
+import {
+  handleActiveImageIndex,
+  handleShowImageViewer,
+} from '@/redux/reducers/singleProductSlice';
 
 // TEMP
 import img1 from '../../../../public/temp/computer.png';
@@ -61,12 +66,13 @@ const images = [
 ];
 
 const Slider = () => {
+  const dispatch = useDispatch();
   const [windowWidth, setWindowWidth] = useState(0);
   const btnsSliderRef = useRef(null);
   const { events } = useDraggable(btnsSliderRef);
   const [disableTopLeftBtn, setDisableTopLeftBtn] = useState(false);
   const [disableBottomRightBtn, setDisableBottomRightBtn] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
+  const { activeImageIndex } = useSelector((state) => state.singleProduct);
 
   const slideUp = () => {
     const sliderHeight = btnsSliderRef.current.getBoundingClientRect().height;
@@ -170,13 +176,15 @@ const Slider = () => {
           onScroll={handleScroll}
         >
           {images.map((image, index) => {
+            const key = `showcase_${image.name}_${index}`;
             return (
               <button
-                key={index}
+                key={key}
                 className={`${styles.img_btn} ${
-                  activeImage === index && styles.active
+                  activeImageIndex === index && styles.active
                 }`}
-                onMouseOver={() => setActiveImage(index)}
+                onMouseOver={() => dispatch(handleActiveImageIndex(index))}
+                onClick={() => dispatch(handleShowImageViewer(true))}
               >
                 <Image
                   src={image.img}
@@ -202,11 +210,12 @@ const Slider = () => {
 
       <div className={styles.img_container}>
         <Image
-          src={images[activeImage].img}
+          src={images[activeImageIndex].img}
           alt='temporary img'
           width={500}
           height={500}
           priority={true}
+          onClick={() => dispatch(handleShowImageViewer(true))}
         />
       </div>
     </div>
