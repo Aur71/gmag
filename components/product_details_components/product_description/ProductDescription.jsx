@@ -1,7 +1,9 @@
 import styles from './ProductDescription.module.scss';
 
 const ProductDescription = () => {
-  return <div className={styles.product_description}>ProductDescription</div>;
+  return (
+    <section className={styles.product_description}>ProductDescription</section>
+  );
 };
 
 export default ProductDescription;

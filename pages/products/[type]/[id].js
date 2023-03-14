@@ -6,6 +6,8 @@ import ProductQuestions from '@/components/product_details_components/product_qu
 import ProductRecommendations from '@/components/product_details_components/product_recommendations/ProductRecommendations';
 import ProductNavigation from '@/components/product_details_components/product_navigation/ProductNavigation';
 import ProductShare from '@/components/product_details_components/product_share/ProductShare';
+import ImageViewer from '@/components/product_details_components/image_viewer/ImageViewer';
+import AllBuyingOptions from '@/components/product_details_components/all_buying_options/AllBuyingOptions';
 // import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
@@ -22,6 +24,8 @@ const ProductDetails = ({ data }) => {
       <ProductRecommendations />
       <ProductNavigation />
       <ProductShare />
+      <ImageViewer />
+      <AllBuyingOptions />
     </div>
   );
 };

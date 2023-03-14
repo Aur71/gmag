@@ -1,0 +1,26 @@
+@import '../../../../styles/variables.module.scss';
+
+.header {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid $border-clr-2;
+
+  @media only screen and (max-width: 1000px) {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    padding: 5px;
+    border-bottom: none;
+  }
+
+  button {
+    font-size: 2.5rem;
+    color: $text-clr-5;
+  }
+}

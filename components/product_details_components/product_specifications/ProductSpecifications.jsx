@@ -2,7 +2,9 @@ import styles from './ProductSpecifications.module.scss';
 
 const ProductSpecifications = () => {
   return (
-    <div className={styles.product_specifications}>ProductSpecifications</div>
+    <section className={styles.product_specifications}>
+      ProductSpecifications
+    </section>
   );
 };
 

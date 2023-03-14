@@ -5,7 +5,7 @@ import styles from './ProductShowcase.module.scss';
 
 const ProductShowcase = () => {
   return (
-    <div className={styles.product_showcase}>
+    <section className={styles.product_showcase}>
       <div className={styles.center}>
         <Path />
 
@@ -14,7 +14,7 @@ const ProductShowcase = () => {
           <Info />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,9 @@
 import styles from './ProductQuestions.module.scss';
 
 const ProductQuestions = () => {
-  return <div className={styles.product_questions}>ProductQuestions</div>;
+  return (
+    <section className={styles.product_questions}>ProductQuestions</section>
+  );
 };
 
 export default ProductQuestions;

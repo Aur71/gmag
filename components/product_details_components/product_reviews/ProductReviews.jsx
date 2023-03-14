@@ -1,7 +1,7 @@
 import styles from './ProductReviews.module.scss';
 
 const ProductReviews = () => {
-  return <div className={styles.product_reviews}>ProductReviews</div>;
+  return <section className={styles.product_reviews}>ProductReviews</section>;
 };
 
 export default ProductReviews;

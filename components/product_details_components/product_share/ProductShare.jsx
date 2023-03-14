@@ -1,7 +1,7 @@
 import styles from './ProductShare.module.scss';
 
 const ProductShare = () => {
-  return <div className={styles.product_share}>ProductShare</div>;
+  return <section className={styles.product_share}>ProductShare</section>;
 };
 
 export default ProductShare;
