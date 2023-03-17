@@ -13,7 +13,7 @@ import Ul from './elements/lists/unordered/Ul';
 import Img from './elements/image/Img';
 import Video from './elements/video/Video';
 import YouTubeVideo from './elements/youtube_video/YouTubeVideo';
-
+import Container from './elements/container/Container';
 import styles from './ProductDescription.module.scss';
 
 // TEMP DATA
@@ -83,6 +83,10 @@ const description = [
   {
     element: 'youtube video',
   },
+
+  {
+    element: 'container',
+  },
 ];
 
 const ProductDescription = () => {
@@ -109,6 +113,8 @@ const ProductDescription = () => {
           if (element === 'video') return <Video key={key} item={item} />;
           if (element === 'youtube video')
             return <YouTubeVideo key={key} item={item} />;
+          if (element === 'container')
+            return <Container key={key} item={item} />;
         })}
       </div>
     </section>
