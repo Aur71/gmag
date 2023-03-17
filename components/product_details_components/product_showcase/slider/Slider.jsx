@@ -15,53 +15,50 @@ import {
 } from '@/redux/reducers/singleProductSlice';
 
 // TEMP
-import img1 from '../../../../public/temp/computer.png';
-import img2 from '../../../../public/temp/laptop.png';
-
 const images = [
   {
     name: 'img1',
-    img: img1,
+    img: '/temp/computer.png',
   },
   {
     name: 'img2',
-    img: img2,
+    img: '/temp/laptop.png',
   },
   {
     name: 'img3',
-    img: img1,
+    img: '/temp/computer.png',
   },
   {
     name: 'img4',
-    img: img2,
+    img: '/temp/computer.png',
   },
   {
     name: 'img5',
-    img: img1,
+    img: '/temp/laptop.png',
   },
   {
     name: 'img6',
-    img: img2,
+    img: '/temp/computer.png',
   },
   {
     name: 'img7',
-    img: img2,
+    img: '/temp/laptop.png',
   },
   {
     name: 'img8',
-    img: img1,
+    img: '/temp/computer.png',
   },
   {
     name: 'img9',
-    img: img2,
+    img: '/temp/laptop.png',
   },
   {
     name: 'img10',
-    img: img1,
+    img: '/temp/computer.png',
   },
   {
     name: 'img11',
-    img: img2,
+    img: '/temp/laptop.png',
   },
 ];
 
@@ -187,11 +184,11 @@ const Slider = () => {
                 onClick={() => dispatch(handleShowImageViewer(true))}
               >
                 <Image
+                  priority={true}
                   src={image.img}
                   alt={image.name}
                   width={100}
                   height={100}
-                  priority={true}
                 />
               </button>
             );
@@ -210,11 +207,11 @@ const Slider = () => {
 
       <div className={styles.img_container}>
         <Image
+          priority={true}
           src={images[activeImageIndex].img}
           alt='temporary img'
           width={500}
           height={500}
-          priority={true}
           onClick={() => dispatch(handleShowImageViewer(true))}
         />
       </div>

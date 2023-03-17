@@ -1,0 +1,11 @@
+.default {
+  width: 100%;
+  height: auto;
+  display: flex;
+
+  iframe {
+    aspect-ratio: 640 / 360;
+    width: 100%;
+    height: auto;
+  }
+}
