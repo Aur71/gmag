@@ -1,19 +1,27 @@
+import { useDispatch } from 'react-redux';
 import styles from './Actions.module.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BiMinus, BiReset } from 'react-icons/bi';
+import {
+  increaseZoom,
+  decreaseZoom,
+  resetZoom,
+} from '@/redux/reducers/singleProductSlice';
 
 const Actions = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.actions}>
-      <button>
+      <button onClick={() => dispatch(increaseZoom())}>
         <AiOutlinePlus />
       </button>
 
-      <button>
+      <button onClick={() => dispatch(decreaseZoom())}>
         <BiMinus />
       </button>
 
-      <button>
+      <button onClick={() => dispatch(resetZoom())}>
         <BiReset />
       </button>
     </div>

@@ -6,6 +6,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import {
   increaseActiveImageIndex,
   decreaseActiveImageIndex,
+  handleZoomOrigin,
 } from '@/redux/reducers/singleProductSlice';
 
 // TEMP IMG
@@ -61,49 +62,74 @@ const images = [
 const Slider = () => {
   const dispatch = useDispatch();
   const imagesContainerRef = useRef(null);
-  const { activeImageIndex } = useSelector((state) => state.singleProduct);
+  const { activeImageIndex, zoom, zoomOrigin } = useSelector(
+    (state) => state.singleProduct
+  );
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [initialMousePosition, setInitialMousePosition] = useState(null);
   const [currentMousePosition, setCurrentMousePosition] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
   const handleMouseDown = (e) => {
+    e.preventDefault();
     setIsMouseDown(true);
     setInitialMousePosition(e.pageX);
     setCurrentImageIndex(activeImageIndex);
     imagesContainerRef.current.style.cursor = 'all-scroll';
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
+    e.preventDefault();
     setIsMouseDown(false);
-    imagesContainerRef.current.style.cursor = 'all-scroll';
+    imagesContainerRef.current.style.cursor = 'zoom-in';
     if (!currentMousePosition) return;
 
-    if (currentMousePosition < initialMousePosition - 20) {
-      dispatch(
-        decreaseActiveImageIndex({
-          num: currentImageIndex,
-          max: images.length - 1,
-        })
-      );
-      return;
-    }
-
-    if (currentMousePosition > initialMousePosition + 20) {
+    if (currentMousePosition < initialMousePosition - 50) {
       dispatch(
         increaseActiveImageIndex({
           num: currentImageIndex,
           max: images.length - 1,
         })
       );
+      setCurrentMousePosition(null);
+      return;
     }
-    setCurrentMousePosition(null);
+
+    if (currentMousePosition > initialMousePosition + 50) {
+      dispatch(
+        decreaseActiveImageIndex({
+          num: currentImageIndex,
+          max: images.length - 1,
+        })
+      );
+      setCurrentMousePosition(null);
+      return;
+    }
   };
 
   const handleMouseMove = (e) => {
     e.preventDefault();
     if (!isMouseDown) return;
     setCurrentMousePosition(e.pageX);
+  };
+
+  const handleZoom = (e) => {
+    e.preventDefault();
+    if (typeof window === 'undefined') return; // Check if window is defined
+    const containerOffset = e.target.getBoundingClientRect();
+    const centerX = containerOffset.width / 2;
+    const centerY = containerOffset.height / 2;
+    const x = e.clientX - containerOffset.left;
+    const y = e.clientY - containerOffset.top;
+    const translateX = centerX - x;
+    const translateY = centerY - y;
+    const transfromOrigin = `${translateX}px, ${translateY}px`;
+    dispatch(handleZoomOrigin(transfromOrigin));
+    if (zoom === 2.5) {
+      imagesContainerRef.current.style.cursor = 'zoom-out';
+      return;
+    }
+    imagesContainerRef.current.style.cursor = 'zoom-in';
   };
 
   return (
@@ -148,40 +174,50 @@ const Slider = () => {
 
           if (activeImageIndex === index)
             return (
-              <Image
-                className={styles.current}
+              <div
                 key={key}
-                src={image.img}
-                alt={image.name}
-                width={1000}
-                height={1000}
-              />
+                className={`${styles.img_container} ${styles.current}`}
+                onClick={handleZoom}
+              >
+                <Image
+                  src={image.img}
+                  alt={image.name}
+                  width={1000}
+                  height={1000}
+                  style={{
+                    transform: `scale(${zoom}) translate(${zoomOrigin})`,
+                  }}
+                />
+              </div>
             );
 
           if (
-            activeImageIndex === index - 1 ||
-            (index === 0 && activeImageIndex === images.length - 1)
+            index === activeImageIndex - 1 ||
+            (activeImageIndex === 0 && index === images.length - 1)
           )
             return (
-              <Image
-                className={styles.prev}
+              <div
                 key={key}
+                className={`${styles.img_container} ${styles.prev}`}
+              >
+                <Image
+                  src={image.img}
+                  alt={image.name}
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            );
+
+          return (
+            <div key={key} className={`${styles.img_container} ${styles.next}`}>
+              <Image
                 src={image.img}
                 alt={image.name}
                 width={1000}
                 height={1000}
               />
-            );
-
-          return (
-            <Image
-              className={styles.next}
-              key={key}
-              src={image.img}
-              alt={image.name}
-              width={1000}
-              height={1000}
-            />
+            </div>
           );
         })}
       </div>
