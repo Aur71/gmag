@@ -9,57 +9,7 @@ import {
   handleZoomOrigin,
 } from '@/redux/reducers/singleProductSlice';
 
-// TEMP IMG
-import img1 from '../../../../public/temp/computer.png';
-import img2 from '../../../../public/temp/laptop.png';
-const images = [
-  {
-    name: 'img1',
-    img: img1,
-  },
-  {
-    name: 'img2',
-    img: img2,
-  },
-  {
-    name: 'img3',
-    img: img1,
-  },
-  {
-    name: 'img4',
-    img: img2,
-  },
-  {
-    name: 'img5',
-    img: img1,
-  },
-  {
-    name: 'img6',
-    img: img2,
-  },
-  {
-    name: 'img7',
-    img: img2,
-  },
-  {
-    name: 'img8',
-    img: img1,
-  },
-  {
-    name: 'img9',
-    img: img2,
-  },
-  {
-    name: 'img10',
-    img: img1,
-  },
-  {
-    name: 'img11',
-    img: img2,
-  },
-];
-
-const Slider = () => {
+const Slider = ({ images }) => {
   const dispatch = useDispatch();
   const imagesContainerRef = useRef(null);
   const { activeImageIndex, zoom, zoomOrigin } = useSelector(
@@ -169,7 +119,7 @@ const Slider = () => {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {images.map((image, index) => {
+        {images?.map((image, index) => {
           const key = `image_viewer_slider_${image.name}_${index}`;
 
           if (activeImageIndex === index)

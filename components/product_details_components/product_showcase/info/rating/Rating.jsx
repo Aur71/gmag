@@ -1,9 +1,7 @@
 import styles from './Rating.module.scss';
 import { BsStarFill } from 'react-icons/bs';
 
-const Rating = () => {
-  const rating = 4.5;
-
+const Rating = ({ rating, reviewsCount }) => {
   return (
     <div className={styles.rating}>
       <BsStarFill
@@ -21,8 +19,8 @@ const Rating = () => {
       <BsStarFill
         className={`${styles.icon} ${5 <= rating && styles.active}`}
       />
-      <p>{rating}</p>
-      <p>(20)</p>
+      <p>{rating ? rating : 0}</p>
+      <p>{reviewsCount ? reviewsCount : 0}</p>
     </div>
   );
 };

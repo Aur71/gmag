@@ -7,7 +7,7 @@ import Actions from './actions/Actions';
 import styles from './ImageViewer.module.scss';
 import { handleShowImageViewer } from '@/redux/reducers/singleProductSlice';
 
-const ImageViewer = () => {
+const ImageViewer = ({ images }) => {
   const dispatch = useDispatch();
   const { showImageViewer } = useSelector((state) => state.singleProduct);
 
@@ -27,8 +27,8 @@ const ImageViewer = () => {
         <Header />
 
         <div className={styles.grid_container}>
-          <Sidebar />
-          <Slider />
+          <Sidebar images={images} />
+          <Slider images={images} />
           <Actions />
         </div>
       </div>

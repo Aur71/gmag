@@ -4,33 +4,7 @@ import { useDraggable } from 'react-use-draggable-scroll';
 import styles from './Colors.module.scss';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
-const colors = [
-  {
-    name: 'Black',
-    color: '#000000',
-    stock: 1,
-  },
-
-  {
-    name: 'White',
-    color: '#FFFFFF',
-    stock: 1,
-  },
-
-  {
-    name: 'Red',
-    color: '#B54040',
-    stock: 1,
-  },
-
-  {
-    name: 'Skyblue',
-    color: '#43D2CF',
-    stock: 1,
-  },
-];
-
-const Colors = () => {
+const Colors = ({ colors }) => {
   const colorsContainerRef = useRef(null);
   const { events } = useDraggable(colorsContainerRef);
   const [disableScrollLeftBtn, setDisableScrollLeftBtn] = useState(false);
@@ -105,7 +79,7 @@ const Colors = () => {
           {...events}
           onScroll={handleScroll}
         >
-          {colors.map((color, index) => {
+          {colors?.map((color, index) => {
             return (
               <Color
                 key={index}

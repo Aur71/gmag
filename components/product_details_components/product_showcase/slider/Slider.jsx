@@ -14,55 +14,7 @@ import {
   handleShowImageViewer,
 } from '@/redux/reducers/singleProductSlice';
 
-// TEMP
-const images = [
-  {
-    name: 'img1',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img2',
-    img: '/temp/laptop.png',
-  },
-  {
-    name: 'img3',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img4',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img5',
-    img: '/temp/laptop.png',
-  },
-  {
-    name: 'img6',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img7',
-    img: '/temp/laptop.png',
-  },
-  {
-    name: 'img8',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img9',
-    img: '/temp/laptop.png',
-  },
-  {
-    name: 'img10',
-    img: '/temp/computer.png',
-  },
-  {
-    name: 'img11',
-    img: '/temp/laptop.png',
-  },
-];
-
-const Slider = () => {
+const Slider = ({ images }) => {
   const dispatch = useDispatch();
   const [windowWidth, setWindowWidth] = useState(0);
   const btnsSliderRef = useRef(null);
@@ -172,7 +124,7 @@ const Slider = () => {
           {...events}
           onScroll={handleScroll}
         >
-          {images.map((image, index) => {
+          {images?.map((image, index) => {
             const key = `showcase_${image.name}_${index}`;
             return (
               <button

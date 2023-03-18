@@ -11,20 +11,23 @@ import AllBuyingOptions from '@/components/product_details_components/all_buying
 // import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
+// TEMP DATA
+import { singleProduct } from '@/data/temp/singleProduct';
+
 const ProductDetails = ({ data }) => {
   console.log(data);
 
   return (
     <div className={styles.product_details}>
-      <ProductShowcase />
-      <ProductDescription />
+      <ProductShowcase data={singleProduct} />
+      <ProductDescription description={singleProduct.description} />
       <ProductSpecifications />
       <ProductReviews />
       <ProductQuestions />
       <ProductRecommendations />
       <ProductNavigation />
       <ProductShare />
-      <ImageViewer />
+      <ImageViewer images={singleProduct.images} />
       <AllBuyingOptions />
     </div>
   );

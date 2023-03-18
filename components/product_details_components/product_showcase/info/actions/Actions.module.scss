@@ -41,6 +41,12 @@
     color: $text-clr-1;
     border: 1px solid transparent;
 
+    &.disabled {
+      opacity: 0.5;
+      user-select: none;
+      pointer-events: none;
+    }
+
     &:hover {
       background-color: transparent;
       border: 1px solid $acc-clr-1;
