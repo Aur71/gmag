@@ -14,34 +14,9 @@ export const singleProduct = {
   totalStock: 10,
   numOfOrders: 52,
   date: 1677515850836,
-
+  //
   // ADD ALL BUYING OPTIONS AND COLORS
-
-  colors: [
-    {
-      name: 'Black',
-      color: '#000000',
-      stock: 3,
-    },
-
-    {
-      name: 'White',
-      color: '#FFFFFF',
-      stock: 3,
-    },
-
-    {
-      name: 'Red',
-      color: '#B54040',
-      stock: 2,
-    },
-
-    {
-      name: 'Skyblue',
-      color: '#43D2CF',
-      stock: 2,
-    },
-  ],
+  //
 
   //
   //
@@ -93,17 +68,107 @@ export const singleProduct = {
     },
   ],
 
+  colors: [
+    {
+      name: 'Black',
+      color: '#000000',
+      stock: 3,
+    },
+    {
+      name: 'White',
+      color: '#FFFFFF',
+      stock: 3,
+    },
+    {
+      name: 'Red',
+      color: '#B54040',
+      stock: 2,
+    },
+    {
+      name: 'Skyblue',
+      color: '#43D2CF',
+      stock: 2,
+    },
+  ],
+
   //
   //
   // SPECIFICATIONS FORMAT
-
-  // IF SHOW IS FILTER TRUE THE BACKEND WILL ALSO SEND THIS OBJECT TO THE FRONT END ELSE THIS OBJECT CAN BE ACCEST ONLY WHEN THE PRODUCT IS REQUESTED
-  specifications: {},
+  specifications: [
+    {
+      showAsFilter: true,
+      key: 'Destined for',
+      value: 'Gaming',
+      category: 'general information',
+    },
+    {
+      showAsFilter: true,
+      key: 'Brand',
+      value: 'GRT',
+      category: 'general information',
+    },
+    {
+      showAsFilter: true,
+      key: 'Operating system',
+      value: 'Windows',
+      category: 'general information',
+    },
+    {
+      showAsFilter: true,
+      key: 'Processor model',
+      value: 'Intel® Core™ i5-10400F',
+      category: 'processor',
+    },
+    {
+      showAsFilter: true,
+      key: 'Processor manufacturer',
+      value: 'Intel',
+      category: 'processor',
+    },
+    {
+      showAsFilter: true,
+      key: 'Video card type',
+      value: 'Dedicated',
+      category: 'video card',
+    },
+    {
+      showAsFilter: true,
+      key: 'Video card model',
+      value: 'GeForce® RTX 2060',
+      category: 'video card',
+    },
+    {
+      showAsFilter: true,
+      key: 'RAM capacity',
+      value: '16 GB',
+      category: 'memory',
+    },
+    {
+      showAsFilter: true,
+      key: 'SSD capacity',
+      value: '128 GB',
+      category: 'ssd',
+    },
+    {
+      showAsFilter: true,
+      key: 'HDD capacity',
+      value: '1 TB',
+      category: 'hard disk',
+    },
+    {
+      showAsFilter: true,
+      key: 'Processor socket',
+      value: 'LGA 1200',
+      category: 'processor',
+    },
+  ],
 
   //
   //
   // DESCRIPTION FORMAT
   description: [
+    //
+    //
     // LINK MODEL
     {
       element: 'a',
@@ -113,39 +178,83 @@ export const singleProduct = {
         fontWeight: 900,
       },
     },
-
+    //
+    //
     // BOLD MODEL
     {
       element: 'b',
       content: 'this text is a bold text',
-      styles: {
-        fontSize: '20px',
-      },
     },
-
+    //
+    //
     // ITALIC MODEL
     {
       element: 'i',
       content: 'this text is italic',
-      styles: {
-        fontSize: '20px',
-      },
     },
-
+    //
+    //
     // SPAN MODEL
     {
       element: 'span',
       content: 'this is a span',
-      styles: {
-        fontSize: '20px',
-      },
     },
-
-    // HEADING MODEL h2 - h6 (h1 is used in the showcase above)
+    //
+    //
+    // HEADINGS MODEL
     {
       element: 'h2',
       content: [
-        'This is a string',
+        'This is an h2',
+        {
+          element: 'b',
+          content: 'this text is a bold text',
+        },
+        {
+          element: 'i',
+          content: 'this text is italic',
+        },
+        {
+          element: 'a',
+          content: 'this text is a link',
+          path: '#',
+        },
+        {
+          element: 'span',
+          content: 'this text is a span',
+          styles: {
+            color: 'red',
+          },
+        },
+        'this is another string.',
+      ],
+      styles: {
+        color: 'green',
+      },
+    },
+    {
+      element: 'h3',
+      content: ['This is an h3'],
+    },
+    {
+      element: 'h4',
+      content: ['This is an h4'],
+    },
+    {
+      element: 'h5',
+      content: ['This is an h5'],
+    },
+    {
+      element: 'h6',
+      content: ['This is an h6'],
+    },
+    //
+    //
+    // PARAGRAPH MODEL
+    {
+      element: 'p',
+      content: [
+        'This is a paragraph',
         {
           element: 'b',
           content: 'this text is a bold text',
@@ -169,151 +278,63 @@ export const singleProduct = {
         'this is another string.',
       ],
     },
-
-    {
-      element: 'h3',
-      content: [
-        'This is a string',
-        {
-          element: 'b',
-          content: 'this text is a bold text',
-        },
-        {
-          element: 'i',
-          content: 'this text is italic',
-        },
-        {
-          element: 'a',
-          content: 'this text is a link',
-          path: '#',
-        },
-        {
-          element: 'span',
-          content: 'this text is a span',
-          styles: {
-            color: 'red',
-          },
-        },
-      ],
-    },
-
-    {
-      element: 'h4',
-      content: [
-        'This is a string',
-        {
-          element: 'b',
-          content: 'this text is a bold text',
-        },
-        {
-          element: 'i',
-          content: 'this text is italic',
-        },
-        {
-          element: 'a',
-          content: 'this text is a link',
-          path: '#',
-        },
-        {
-          element: 'span',
-          content: 'this text is a span',
-          styles: {
-            color: 'red',
-          },
-        },
-      ],
-    },
-
-    {
-      element: 'h5',
-      content: [
-        'This is a string',
-        {
-          element: 'b',
-          content: 'this text is a bold text',
-        },
-        {
-          element: 'i',
-          content: 'this text is italic',
-        },
-        {
-          element: 'a',
-          content: 'this text is a link',
-          path: '#',
-        },
-        {
-          element: 'span',
-          content: 'this text is a span',
-          styles: {
-            color: 'red',
-          },
-        },
-      ],
-    },
-
-    {
-      element: 'h6',
-      content: [
-        'This is a string',
-        {
-          element: 'b',
-          content: 'this text is a bold text',
-        },
-        {
-          element: 'i',
-          content: 'this text is italic',
-        },
-        {
-          element: 'a',
-          content: 'this text is a link',
-          path: '#',
-        },
-        {
-          element: 'span',
-          content: 'this text is a span',
-          styles: {
-            color: 'red',
-          },
-        },
-      ],
-    },
-
-    // PARAGRAPH MODEL
-    {
-      element: 'p',
-    },
-
+    //
+    //
     // LIST MODEL
     {
       element: 'ol',
+      content: ['List item 1', 'List item 2', 'List item 3'],
     },
-
     {
       element: 'ul',
+      content: ['List item 1', 'List item 2', 'List item 3'],
     },
-
+    //
+    //
     // IMG MODEL
     {
       element: 'img',
-      src: '/temp/laptop.png',
+      src: '/temp/computer.png',
       alt: 'laptop',
-      width: 1000,
-      height: 1000,
+      width: 500,
+      height: 500,
     },
 
-    // VIDEO MODEL
-    {
-      element: 'video',
-    },
-
+    //
+    //
     // YOUTUBE VIDEO MODEL
     {
       element: 'youtube video',
+      videoId: 'gJMXmsG9ZSI',
+      videoTitle: 'YouTube video player',
     },
-
+    //
+    //
     // CONTAINER MODEL
     {
       element: 'container',
+      content: [
+        {
+          element: 'img',
+          src: '/temp/computer.png',
+          alt: 'laptop',
+          width: 500,
+          height: 500,
+          styles: {
+            margin: '0 auto',
+          },
+        },
+
+        {
+          element: 'p',
+          content: [
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ab corporis natus recusandae earum omnis fugiat qui assumenda corrupti incidunt odio repellat rem quos nesciunt possimus, laboriosam necessitatibus quod. Cupiditate laborum voluptatum ab velit sint nam consectetur ea molestias accusamus aliquam. Assumenda quod inventore non ea, magni cum id porro eveniet amet velit qui harum dolor perferendis perspiciatis incidunt laboriosam facilis. Omnis corporis nobis ipsam mollitia aut illo corrupti expedita ducimus iste facere illum nulla quos soluta vel, rem quae officiis ratione qui. Saepe at beatae fuga dolor sed amet, illum quibusdam est. Dolor rerum fugiat dolorem nulla fuga obcaecati.',
+          ],
+          styles: {
+            margin: 'auto 0',
+          },
+        },
+      ],
     },
   ],
 

@@ -1,12 +1,11 @@
-import Li from '../list_item/Li';
 import styles from './Ul.module.scss';
 
-const Ul = () => {
+const Ul = ({ data }) => {
   return (
-    <ul className={styles.default}>
-      <Li />
-      <Li />
-      <Li />
+    <ul className={styles.default} style={data?.styles}>
+      {data?.content?.map((item, index) => {
+        return <li key={index}>{item}</li>;
+      })}
     </ul>
   );
 };

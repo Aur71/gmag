@@ -11,7 +11,6 @@ import P from './elements/medium_elements/paragraph/P';
 import Ol from './elements/medium_elements/lists/ordered/Ol';
 import Ul from './elements/medium_elements/lists/unordered/Ul';
 import Img from './elements/medium_elements/image/Img';
-import Video from './elements/medium_elements/video/Video';
 import YouTubeVideo from './elements/medium_elements/youtube_video/YouTubeVideo';
 import Container from './elements/large_elements/container/Container';
 import styles from './ProductDescription.module.scss';
@@ -37,7 +36,6 @@ const ProductDescription = ({ description }) => {
           if (element === 'ol') return <Ol key={key} data={item} />;
           if (element === 'ul') return <Ul key={key} data={item} />;
           if (element === 'img') return <Img key={key} data={item} />;
-          if (element === 'video') return <Video key={key} data={item} />;
           if (element === 'youtube video')
             return <YouTubeVideo key={key} data={item} />;
           if (element === 'container')

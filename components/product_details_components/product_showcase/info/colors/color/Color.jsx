@@ -4,8 +4,6 @@ import styles from './Color.module.scss';
 const Color = ({ color, active, handleActiveColor }) => {
   const colorContainerRef = useRef(null);
 
-  console.log(color);
-
   useEffect(() => {
     colorContainerRef.current.style.backgroundColor = color.color;
   }, [color]);
