@@ -1,15 +1,17 @@
 import Color from './color/Color';
 import { useRef, useState, useEffect } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
+import { useDispatch } from 'react-redux';
 import styles from './Colors.module.scss';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { handleActiveColor } from '@/redux/reducers/singleProductSlice';
 
 const Colors = ({ colors }) => {
+  const dispatch = useDispatch();
   const colorsContainerRef = useRef(null);
   const { events } = useDraggable(colorsContainerRef);
   const [disableScrollLeftBtn, setDisableScrollLeftBtn] = useState(false);
   const [disableScrollRightBtn, setDisableScrollRightBtn] = useState(false);
-  const [activeColor, setActiveColor] = useState(colors[0].name);
 
   const handleScroll = () => {
     const target = colorsContainerRef.current;
@@ -53,11 +55,9 @@ const Colors = ({ colors }) => {
 
   useEffect(() => {
     handleScroll();
-  }, []);
-
-  const handleActiveColor = (color) => {
-    setActiveColor(color);
-  };
+    const initialColor = colors.find((color) => color.stock >= 1);
+    dispatch(handleActiveColor(initialColor));
+  }, [colors, dispatch]);
 
   return (
     <div className={styles.colors}>
@@ -80,14 +80,7 @@ const Colors = ({ colors }) => {
           onScroll={handleScroll}
         >
           {colors?.map((color, index) => {
-            return (
-              <Color
-                key={index}
-                active={activeColor === color.name ? true : false}
-                color={color}
-                handleActiveColor={handleActiveColor}
-              />
-            );
+            return <Color key={index} color={color} />;
           })}
         </div>
 

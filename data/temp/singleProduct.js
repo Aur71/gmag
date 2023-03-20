@@ -14,9 +14,6 @@ export const singleProduct = {
   totalStock: 10,
   numOfOrders: 52,
   date: 1677515850836,
-  //
-  // ADD ALL BUYING OPTIONS AND COLORS
-  //
 
   //
   //
@@ -67,27 +64,29 @@ export const singleProduct = {
       img: '/temp/laptop.png',
     },
   ],
-
+  //
+  //
+  // COLORS FORMAT
   colors: [
     {
       name: 'Black',
       color: '#000000',
-      stock: 3,
+      stock: 2,
     },
     {
       name: 'White',
       color: '#FFFFFF',
-      stock: 3,
+      stock: 2,
     },
     {
       name: 'Red',
       color: '#B54040',
-      stock: 2,
+      stock: 3,
     },
     {
       name: 'Skyblue',
       color: '#43D2CF',
-      stock: 2,
+      stock: 3,
     },
   ],
 

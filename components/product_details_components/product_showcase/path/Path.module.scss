@@ -18,6 +18,7 @@
     font-weight: 600;
     display: flex;
     align-items: flex-end;
+    text-transform: capitalize;
 
     &:hover {
       color: $acc-clr-1;

@@ -7,6 +7,7 @@ const singleProductSlice = createSlice({
     showImageViewer: false,
     zoom: 1,
     zoomOrigin: `0px, 0px`,
+    activeColor: null,
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -39,7 +40,6 @@ const singleProductSlice = createSlice({
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
     },
-
     increaseZoom: (state) => {
       if (state.zoom + 0.5 >= 3) {
         state.zoom = 1;
@@ -60,7 +60,6 @@ const singleProductSlice = createSlice({
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
     },
-
     handleZoomOrigin: (state, action) => {
       if (state.zoomOrigin === `0px, 0px`) {
         state.zoomOrigin = action.payload;
@@ -72,6 +71,13 @@ const singleProductSlice = createSlice({
         return;
       }
       state.zoom = state.zoom + 0.5;
+    },
+    handleActiveColor: (state, action) => {
+      if (!action.payload) {
+        state.activeColor = 'no stock available';
+        return;
+      }
+      state.activeColor = action.payload;
     },
   },
 });
@@ -87,4 +93,5 @@ export const {
   increaseZoom,
   decreaseZoom,
   resetZoom,
+  handleActiveColor,
 } = singleProductSlice.actions;
