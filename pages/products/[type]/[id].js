@@ -20,7 +20,11 @@ const ProductDetails = ({ data }) => {
   return (
     <div className={styles.product_details}>
       <ProductShowcase data={singleProduct} />
-      <ProductDescription description={singleProduct.description} />
+
+      {singleProduct.description.length ? (
+        <ProductDescription description={singleProduct.description} />
+      ) : null}
+
       <ProductSpecifications />
       <ProductReviews />
       <ProductQuestions />

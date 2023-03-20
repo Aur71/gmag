@@ -165,7 +165,7 @@ export const singleProduct = {
 
   //
   //
-  // DESCRIPTION FORMAT
+  // DESCRIPTION
   description: [
     //
     //
