@@ -89,117 +89,6 @@ export const singleProduct = {
       stock: 3,
     },
   ],
-
-  //
-  //
-  // SPECIFICATIONS FORMAT
-  // When a group of products is requested from the backend the user will receve:
-  // - a list of products with basic information that are used in the card
-  // - these products will also have a list of specifications that are used in the sidebar for filtering (if showAsFilter === true return specification)
-  // FORMAT:
-
-  // specifications: [
-  //   {
-  //     showAsFilter: true,
-  //     key: 'Destined for',
-  //     value: 'Gaming',
-  //   },
-  //   {
-  //     showAsFilter: true,
-  //     key: 'Brand',
-  //     value: 'GRT',
-  //   },
-  // ],
-
-  // When a single product is requested the user will recevere the full list of specifications
-  specifications: [
-    {
-      category: 'general characteristics',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'Destined for',
-          value: 'Gaming',
-        },
-        {
-          showAsFilter: true,
-          key: 'Brand',
-          value: 'GRT',
-        },
-        {
-          showAsFilter: true,
-          key: 'Operating system',
-          value: 'Windows',
-        },
-      ],
-    },
-    {
-      category: 'processor',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'Processor model',
-          value: 'Intel® Core™ i5-10400F',
-        },
-        {
-          showAsFilter: true,
-          key: 'Processor manufacturer',
-          value: 'Intel',
-        },
-        {
-          showAsFilter: true,
-          key: 'Processor socket',
-          value: 'LGA 1200',
-        },
-      ],
-    },
-    {
-      category: 'video card',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'Video card type',
-          value: 'Dedicated',
-        },
-        {
-          showAsFilter: true,
-          key: 'Video card model',
-          value: 'GeForce® RTX 2060',
-        },
-      ],
-    },
-    {
-      category: 'memory',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'RAM capacity',
-          value: '16 GB',
-        },
-      ],
-    },
-    {
-      category: 'ssd',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'SSD capacity',
-          value: '128 GB',
-        },
-      ],
-    },
-    {
-      category: 'hard disk',
-      specs: [
-        {
-          showAsFilter: true,
-          key: 'HDD capacity',
-          value: '1 TB',
-        },
-      ],
-    },
-  ],
-
   //
   //
   // DESCRIPTION
@@ -374,7 +263,115 @@ export const singleProduct = {
       ],
     },
   ],
+  //
+  //
+  // SPECIFICATIONS FORMAT
+  // When a group of products is requested from the backend the user will receve:
+  // - a list of products with basic information that are used in the card
+  // - these products will also have a list of specifications that are used in the sidebar for filtering (if showAsFilter === true return specification)
+  // FORMAT:
 
+  // specifications: [
+  //   {
+  //     showAsFilter: true,
+  //     key: 'Destined for',
+  //     value: 'Gaming',
+  //   },
+  //   {
+  //     showAsFilter: true,
+  //     key: 'Brand',
+  //     value: 'GRT',
+  //   },
+  // ],
+
+  // When a single product is requested the user will recevere the full list of specifications
+  specifications: [
+    {
+      category: 'general characteristics',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Destined for',
+          value: 'Gaming',
+        },
+        {
+          showAsFilter: true,
+          key: 'Brand',
+          value: 'GRT',
+        },
+        {
+          showAsFilter: true,
+          key: 'Operating system',
+          value: 'Windows',
+        },
+      ],
+    },
+    {
+      category: 'processor',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Processor model',
+          value: 'Intel® Core™ i5-10400F',
+        },
+        {
+          showAsFilter: true,
+          key: 'Processor manufacturer',
+          value: 'Intel',
+        },
+        {
+          showAsFilter: true,
+          key: 'Processor socket',
+          value: 'LGA 1200',
+        },
+      ],
+    },
+    {
+      category: 'video card',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Video card type',
+          value: 'Dedicated',
+        },
+        {
+          showAsFilter: true,
+          key: 'Video card model',
+          value: 'GeForce® RTX 2060',
+        },
+      ],
+    },
+    {
+      category: 'memory',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'RAM capacity',
+          value: '16 GB',
+        },
+      ],
+    },
+    {
+      category: 'ssd',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'SSD capacity',
+          value: '128 GB',
+        },
+      ],
+    },
+    {
+      category: 'hard disk',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'HDD capacity',
+          value: '1 TB',
+        },
+      ],
+    },
+  ],
   //
   //
   // REVIEWS FORMAT
