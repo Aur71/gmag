@@ -54,6 +54,8 @@ const ProductDescription = ({ description }) => {
     <section className={styles.product_description} ref={productDescriptionRef}>
       <div className={styles.padding_container} ref={paddingContainerRef}>
         <div className={styles.center}>
+          <h2>Description</h2>
+
           {description?.map((item, index) => {
             const { element } = item;
             const key = `${element}_${index}`;

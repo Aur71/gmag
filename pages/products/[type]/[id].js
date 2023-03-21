@@ -25,7 +25,7 @@ const ProductDetails = ({ data }) => {
         <ProductDescription description={singleProduct.description} />
       ) : null}
 
-      <ProductSpecifications />
+      <ProductSpecifications specifications={singleProduct.specifications} />
       <ProductReviews />
       <ProductQuestions />
       <ProductRecommendations />

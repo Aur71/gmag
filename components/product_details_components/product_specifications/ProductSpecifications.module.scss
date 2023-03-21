@@ -2,6 +2,88 @@
 
 .product_specifications {
   width: 100%;
-  height: 400px;
   background-color: $white;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  transition: 300ms height;
+
+  // PADDING CONTAINER
+  .padding_container {
+    width: 100%;
+    padding: 20px var(--padding-side) 40px var(--padding-side);
+    position: relative;
+    overflow: hidden;
+
+    @media only screen and (max-width: 1400px) {
+      padding: 30px 90px 40px 90px;
+    }
+    @media only screen and (max-width: 1150px) {
+      padding: 30px;
+      padding-bottom: 40px;
+    }
+    @media only screen and (max-width: 600px) {
+      padding: 15px;
+      padding-bottom: 40px;
+    }
+    @media only screen and (max-width: 300px) {
+      padding: 15px 0 40px 0;
+    }
+  }
+
+  // SHOW MORE/LESS BTN
+  button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $acc-clr-1;
+    background-color: $white;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: 300ms color;
+    z-index: 1;
+
+    &:hover {
+      color: $acc-clr-3;
+    }
+  }
+
+  // OVERLAY
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    background: -webkit-linear-gradient(to top, white 50%, transparent);
+    background: -moz-linear-gradient(to top, white 50%, transparent);
+    background: linear-gradient(to top, white 50%, transparent);
+    transition: 300ms opacity, height 300ms;
+
+    &.disabled {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h2 {
+      font-size: 1.5rem;
+
+      @media only screen and (max-width: 300px) {
+        padding: 0 5px;
+      }
+    }
+  }
 }

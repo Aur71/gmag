@@ -1,0 +1,19 @@
+@import '../../../../styles/variables.module.scss';
+
+.block {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    @media only screen and (max-width: 300px) {
+      padding: 0 5px;
+    }
+  }
+}

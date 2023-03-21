@@ -93,72 +93,110 @@ export const singleProduct = {
   //
   //
   // SPECIFICATIONS FORMAT
+  // When a group of products is requested from the backend the user will receve:
+  // - a list of products with basic information that are used in the card
+  // - these products will also have a list of specifications that are used in the sidebar for filtering (if showAsFilter === true return specification)
+  // FORMAT:
+
+  // specifications: [
+  //   {
+  //     showAsFilter: true,
+  //     key: 'Destined for',
+  //     value: 'Gaming',
+  //   },
+  //   {
+  //     showAsFilter: true,
+  //     key: 'Brand',
+  //     value: 'GRT',
+  //   },
+  // ],
+
+  // When a single product is requested the user will recevere the full list of specifications
   specifications: [
     {
-      showAsFilter: true,
-      key: 'Destined for',
-      value: 'Gaming',
-      category: 'general information',
+      category: 'general characteristics',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Destined for',
+          value: 'Gaming',
+        },
+        {
+          showAsFilter: true,
+          key: 'Brand',
+          value: 'GRT',
+        },
+        {
+          showAsFilter: true,
+          key: 'Operating system',
+          value: 'Windows',
+        },
+      ],
     },
     {
-      showAsFilter: true,
-      key: 'Brand',
-      value: 'GRT',
-      category: 'general information',
-    },
-    {
-      showAsFilter: true,
-      key: 'Operating system',
-      value: 'Windows',
-      category: 'general information',
-    },
-    {
-      showAsFilter: true,
-      key: 'Processor model',
-      value: 'Intel® Core™ i5-10400F',
       category: 'processor',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Processor model',
+          value: 'Intel® Core™ i5-10400F',
+        },
+        {
+          showAsFilter: true,
+          key: 'Processor manufacturer',
+          value: 'Intel',
+        },
+        {
+          showAsFilter: true,
+          key: 'Processor socket',
+          value: 'LGA 1200',
+        },
+      ],
     },
     {
-      showAsFilter: true,
-      key: 'Processor manufacturer',
-      value: 'Intel',
-      category: 'processor',
-    },
-    {
-      showAsFilter: true,
-      key: 'Video card type',
-      value: 'Dedicated',
       category: 'video card',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'Video card type',
+          value: 'Dedicated',
+        },
+        {
+          showAsFilter: true,
+          key: 'Video card model',
+          value: 'GeForce® RTX 2060',
+        },
+      ],
     },
     {
-      showAsFilter: true,
-      key: 'Video card model',
-      value: 'GeForce® RTX 2060',
-      category: 'video card',
-    },
-    {
-      showAsFilter: true,
-      key: 'RAM capacity',
-      value: '16 GB',
       category: 'memory',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'RAM capacity',
+          value: '16 GB',
+        },
+      ],
     },
     {
-      showAsFilter: true,
-      key: 'SSD capacity',
-      value: '128 GB',
       category: 'ssd',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'SSD capacity',
+          value: '128 GB',
+        },
+      ],
     },
     {
-      showAsFilter: true,
-      key: 'HDD capacity',
-      value: '1 TB',
       category: 'hard disk',
-    },
-    {
-      showAsFilter: true,
-      key: 'Processor socket',
-      value: 'LGA 1200',
-      category: 'processor',
+      specs: [
+        {
+          showAsFilter: true,
+          key: 'HDD capacity',
+          value: '1 TB',
+        },
+      ],
     },
   ],
 
