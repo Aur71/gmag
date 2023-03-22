@@ -1,0 +1,26 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.row {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  gap: 10px;
+
+  button {
+    color: $acc-clr-1;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .bar {
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.4);
+    overflow: hidden;
+
+    div {
+      height: 100%;
+      background-color: $acc-clr-1;
+    }
+  }
+}

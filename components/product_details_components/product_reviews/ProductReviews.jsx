@@ -6,13 +6,11 @@ import Pagination from './pagination/Pagination';
 import styles from './ProductReviews.module.scss';
 
 const ProductReviews = ({ reviewsData }) => {
-  console.log(reviewsData);
-
   return (
     <section className={styles.product_reviews}>
       <div className={styles.center}>
         <Header reviewsCount={reviewsData.reviewsCount} />
-        <Statistics />
+        <Statistics reviewsData={reviewsData} />
         <Filters />
         <Reviews />
         <Pagination />

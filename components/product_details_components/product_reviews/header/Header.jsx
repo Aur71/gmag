@@ -8,7 +8,7 @@ const Header = ({ reviewsCount }) => {
         Reviews{' '}
         <span>
           {' '}
-          ({reviewsCount}) {reviewsCount === 1 ? 'review' : 'reviews'}
+          ({reviewsCount} {reviewsCount === 1 ? 'review' : 'reviews'})
         </span>
       </h2>
 

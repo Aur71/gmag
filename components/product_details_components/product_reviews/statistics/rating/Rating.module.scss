@@ -1,0 +1,41 @@
+@import '../../../../../styles/variables.module.scss';
+
+.rating {
+  padding: 15px;
+  border-right: 1px solid $border-clr-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  @media (max-width: 600px) {
+    padding: 15px 0;
+  }
+
+  h3 {
+    font-size: 2rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .stars_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .icon {
+      font-size: 1.5rem;
+
+      @media (max-width: 600px) {
+        font-size: 1rem;
+      }
+
+      &.active {
+        color: $star-clr;
+      }
+    }
+  }
+}

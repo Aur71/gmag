@@ -1,0 +1,33 @@
+@import '../../../../../styles/variables.module.scss';
+
+.recommendation {
+  padding: 15px;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  @media (max-width: 600px) {
+    padding: 15px 0;
+  }
+
+  h3 {
+    font-size: 2rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $text-clr-4;
+    text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
+}
