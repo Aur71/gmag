@@ -74,6 +74,8 @@
   }
 
   .center {
+    max-width: 1540px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 30px;

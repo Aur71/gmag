@@ -1,5 +1,9 @@
 @import '../../../../styles/variables.module.scss';
 
 .filters {
-  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid $border-clr-2;
+  padding: 15px 0;
 }
