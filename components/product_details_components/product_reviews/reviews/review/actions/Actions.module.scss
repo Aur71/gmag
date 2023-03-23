@@ -3,5 +3,42 @@
 .actions {
   width: 100%;
   grid-column: 2/ -1;
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .btns_container {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $acc-clr-1;
+      padding: 0 10px;
+      border-right: 1px solid $border-clr-2;
+
+      &:hover {
+        color: $acc-clr-3;
+      }
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      .icon {
+        font-size: 1.4rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+    }
+  }
 }
