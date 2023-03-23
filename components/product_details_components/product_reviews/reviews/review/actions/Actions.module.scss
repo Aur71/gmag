@@ -1,0 +1,7 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.actions {
+  width: 100%;
+  grid-column: 2/ -1;
+  border: 1px solid red;
+}

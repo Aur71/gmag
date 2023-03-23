@@ -1,0 +1,27 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .stars_container {
+    display: flex;
+    gap: 3px;
+    font-size: 1.1rem;
+    color: grey;
+
+    .active_star {
+      color: $star-clr;
+    }
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 1rem;
+  }
+}

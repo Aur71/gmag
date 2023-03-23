@@ -1,0 +1,15 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
