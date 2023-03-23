@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Filter.module.scss';
 import { FiChevronDown } from 'react-icons/fi';
+import { handleFilterReviews } from '@/redux/reducers/singleProductSlice';
 
 const options = [
   'All reviews',
@@ -12,12 +14,13 @@ const options = [
 ];
 
 const Filter = () => {
+  const dispatch = useDispatch();
   const dropdownRef = useRef(null);
-  const [filter, setFilter] = useState(options[0]);
+  const { filterReviews } = useSelector((state) => state.singleProduct);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSortBy = (option) => {
-    setFilter(option);
+    dispatch(handleFilterReviews(option));
     setShowDropdown(false);
   };
 
@@ -33,6 +36,10 @@ const Filter = () => {
     };
   }, []);
 
+  useEffect(() => {
+    dispatch(handleFilterReviews(options[0]));
+  }, [dispatch]);
+
   return (
     <div className={styles.filter}>
       <label>Filter:</label>
@@ -45,7 +52,8 @@ const Filter = () => {
           className={styles.active_option}
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          <span>{filter}</span>
+          <span>Filters</span>
+          <span>{filterReviews}</span>
 
           <FiChevronDown className={styles.icon} />
         </div>
@@ -57,7 +65,7 @@ const Filter = () => {
               return (
                 <li
                   key={key}
-                  className={`${filter === option && styles.active}`}
+                  className={`${filterReviews === option && styles.active}`}
                   onClick={() => handleSortBy(option)}
                 >
                   {option}

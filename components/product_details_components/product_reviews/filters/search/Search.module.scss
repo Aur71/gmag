@@ -4,6 +4,11 @@
   margin-left: auto;
   display: flex;
 
+  @media (max-width: 520px) {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
   input {
     padding: 5px 10px;
     border: 1px solid $border-clr-3;
@@ -11,6 +16,17 @@
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     transition: 300ms border;
+    max-width: 150px;
+    width: 100%;
+
+    @media (max-width: 520px) {
+      max-width: none;
+      width: 100%;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 0.9rem;
+    }
 
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,

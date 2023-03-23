@@ -9,6 +9,10 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: $text-clr-5;
+
+    @media (max-width: 970px) {
+      display: none;
+    }
   }
 
   .dropdown {
@@ -19,6 +23,10 @@
     user-select: none;
     transition: 300ms border;
     z-index: 1;
+
+    @media (max-width: 520px) {
+      width: 100%;
+    }
 
     &.active {
       border-color: $acc-clr-1;
@@ -32,6 +40,32 @@
       align-items: flex-end;
       justify-content: space-between;
       padding: 5px 10px;
+
+      @media (max-width: 970px) {
+        min-width: 130px;
+      }
+
+      @media (max-width: 330px) {
+        min-width: 0;
+      }
+
+      span:first-of-type {
+        display: none;
+
+        @media (max-width: 970px) {
+          display: inline-block;
+        }
+
+        @media (max-width: 330px) {
+          font-size: 0.9rem;
+        }
+      }
+
+      span:last-of-type {
+        @media (max-width: 970px) {
+          display: none;
+        }
+      }
     }
 
     .options {
@@ -58,6 +92,10 @@
 
         li {
           padding: 5px 10px;
+
+          @media (max-width: 330px) {
+            font-size: 0.9rem;
+          }
 
           &:hover {
             background-color: $acc-clr-1;

@@ -8,6 +8,9 @@ const singleProductSlice = createSlice({
     zoom: 1,
     zoomOrigin: `0px, 0px`,
     activeColor: null,
+    sortReviews: '',
+    filterReviews: '',
+    searchReviews: '',
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -79,6 +82,16 @@ const singleProductSlice = createSlice({
       }
       state.activeColor = action.payload;
     },
+
+    handleSortReviews: (state, action) => {
+      state.sortReviews = action.payload;
+    },
+    handleFilterReviews: (state, action) => {
+      state.filterReviews = action.payload;
+    },
+    handleSearchReviews: (state, action) => {
+      state.searchReviews = action.payload;
+    },
   },
 });
 
@@ -94,4 +107,7 @@ export const {
   decreaseZoom,
   resetZoom,
   handleActiveColor,
+  handleSortReviews,
+  handleFilterReviews,
+  handleSearchReviews,
 } = singleProductSlice.actions;

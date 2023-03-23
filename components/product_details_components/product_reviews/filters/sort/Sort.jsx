@@ -1,16 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Sort.module.scss';
 import { FiChevronDown } from 'react-icons/fi';
+import { handleSortReviews } from '@/redux/reducers/singleProductSlice';
 
 const options = ['Newest', 'Oldest', 'No. likes', 'No. comments'];
 
 const Sort = () => {
+  const dispatch = useDispatch();
   const dropdownRef = useRef(null);
-  const [sortBy, setSortBy] = useState(options[0]);
+  const { sortReviews } = useSelector((state) => state.singleProduct);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSortBy = (option) => {
-    setSortBy(option);
+    dispatch(handleSortReviews(option));
     setShowDropdown(false);
   };
 
@@ -26,6 +29,10 @@ const Sort = () => {
     };
   }, []);
 
+  useEffect(() => {
+    dispatch(handleSortReviews(options[0]));
+  }, [dispatch]);
+
   return (
     <div className={styles.sort}>
       <label>Sort by:</label>
@@ -38,7 +45,8 @@ const Sort = () => {
           className={styles.active_option}
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          <span>{sortBy}</span>
+          <span>Sort</span>
+          <span>{sortReviews}</span>
 
           <FiChevronDown className={styles.icon} />
         </div>
@@ -50,7 +58,7 @@ const Sort = () => {
               return (
                 <li
                   key={key}
-                  className={`${sortBy === option && styles.active}`}
+                  className={`${sortReviews === option && styles.active}`}
                   onClick={() => handleSortBy(option)}
                 >
                   {option}

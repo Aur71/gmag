@@ -1,21 +1,23 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Search.module.scss';
 import { CiSearch } from 'react-icons/ci';
 import { GrClose } from 'react-icons/gr';
+import { handleSearchReviews } from '@/redux/reducers/singleProductSlice';
 
 const Search = () => {
+  const dispatch = useDispatch();
+  const { searchReviews } = useSelector((state) => state.singleProduct);
   const [searchTerm, setSearchTerm] = useState('');
   const [closeSearch, setCloseSearch] = useState(false);
 
   const handleSearch = () => {
-    const reduxStateSeach = '';
-
     if (!searchTerm) return;
-    if (!reduxStateSeach) {
-      // dispatch an action that updated the state
+    if (!searchReviews) {
+      dispatch(handleSearchReviews(searchTerm));
       setCloseSearch(true);
     } else {
-      // dispatch an action that resets the redux state
+      dispatch(handleSearchReviews(''));
       setSearchTerm('');
       setCloseSearch(false);
     }
