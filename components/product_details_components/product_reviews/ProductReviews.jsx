@@ -12,7 +12,7 @@ const ProductReviews = ({ reviewsData }) => {
         <Header reviewsCount={reviewsData.reviewsCount} />
         <Statistics reviewsData={reviewsData} />
         <Filters />
-        <Reviews />
+        <Reviews reviews={reviewsData.reviews} />
         <Pagination />
       </div>
     </section>

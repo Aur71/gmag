@@ -5,12 +5,23 @@
   flex-direction: column;
   gap: 5px;
 
-  h4 {
-    font-size: 1rem;
+  @media (max-width: 1250px) {
+    flex-direction: row;
   }
 
-  p {
-    font-size: 0.9rem;
-    color: $text-clr-4;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    justify-content: center;
+
+    h4 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $text-clr-4;
+    }
   }
 }

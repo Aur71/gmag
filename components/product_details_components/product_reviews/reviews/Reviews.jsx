@@ -1,10 +1,12 @@
 import Review from './review/Review';
 import styles from './Reviews.module.scss';
 
-const Reviews = () => {
+const Reviews = ({ reviews }) => {
   return (
     <div className={styles.reviews}>
-      <Review />
+      {reviews.map((review, index) => {
+        return <Review key={index} review={review} />;
+      })}
     </div>
   );
 };

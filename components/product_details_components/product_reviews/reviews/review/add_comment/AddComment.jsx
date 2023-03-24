@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './AddComment.module.scss';
 
-const AddComment = () => {
+const AddComment = ({ showAddComment, setShowAddComment }) => {
   const [comment, setComment] = useState('');
 
   const handleComment = (e) => {
@@ -9,7 +9,7 @@ const AddComment = () => {
   };
 
   return (
-    <div className={styles.add_comment}>
+    <div className={`${styles.add_comment} ${showAddComment && styles.active}`}>
       <div className={styles.textarea_container}>
         <textarea
           name='comment'
@@ -23,7 +23,7 @@ const AddComment = () => {
 
       <div className={styles.btns_container}>
         <button>Add comment</button>
-        <button>Cancel</button>
+        <button onClick={() => setShowAddComment(false)}>Cancel</button>
       </div>
     </div>
   );

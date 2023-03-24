@@ -1,4 +1,4 @@
-@import '../../../../../../../../styles/variables.module.scss';
+@import '../../../../../../../styles/variables.module.scss';
 
 .comment {
   display: flex;
@@ -8,7 +8,7 @@
   border-bottom: 1px solid $border-clr-2;
 
   &:last-of-type {
-    border: none;
+    border-color: transparent;
   }
 
   .author {

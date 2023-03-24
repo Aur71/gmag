@@ -1,30 +1,33 @@
-import AddComment from './add_comment/AddComment';
-import Comments from './comments/Comments';
 import styles from './Actions.module.scss';
 import { BiLike, BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
 
-const Actions = () => {
+const Actions = ({
+  likes,
+  numberOfComments,
+  showAddComment,
+  setShowAddComment,
+  showComments,
+  setShowComments,
+}) => {
   return (
     <div className={styles.actions}>
       <div className={styles.btns_container}>
         <button>
           <BiLike className={styles.icon} />
-          <span>(0)</span>
+          <span>({likes})</span>
         </button>
 
-        <button>
+        <button onClick={() => setShowAddComment(!showAddComment)}>
           <BiCommentAdd className={styles.icon} />
           <span>Add comment</span>
         </button>
 
-        <button>
+        <button onClick={() => setShowComments(!showComments)}>
           <BiCommentDetail className={styles.icon} />
-          <span>View comments (0)</span>
+          <span>View comments</span>
+          <span>({numberOfComments})</span>
         </button>
       </div>
-
-      <AddComment />
-      <Comments />
     </div>
   );
 };

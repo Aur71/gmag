@@ -1,12 +1,24 @@
-@import '../../../../../../../styles/variables.module.scss';
+@import '../../../../../../styles/variables.module.scss';
 
 .add_comment {
+  grid-column: 2 / -1;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
-  transition: 300ms height, 300ms opacity;
+  transition: 300ms;
+  height: 0;
+  opacity: 0;
+
+  &.active {
+    height: auto;
+    opacity: 1;
+  }
+
+  @media (max-width: 1250px) {
+    grid-column: 1 / -1;
+  }
 
   .textarea_container {
     position: relative;

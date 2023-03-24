@@ -396,15 +396,194 @@ export const singleProduct = {
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
-          userImg: 'user img',
+          userImg: '/user.png',
         },
         comments: [
           {
-            comment: 'Lorem ipsum dolor sit amet.',
+            content: 'This is a comment to your review.',
             postedOn: '27 Oct 2022',
             postedBy: {
               userId: 'some user id',
-              userImg: 'some url to an img',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is a second review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is a third review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is a forth review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is a sixth review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is the seventh review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
               userName: 'Gigel',
             },
           },
