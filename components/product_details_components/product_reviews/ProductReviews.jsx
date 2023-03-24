@@ -2,7 +2,6 @@ import Header from './header/Header';
 import Statistics from './statistics/Statistics';
 import Filters from './filters/Filters';
 import Reviews from './reviews/Reviews';
-import Pagination from './pagination/Pagination';
 import styles from './ProductReviews.module.scss';
 
 const ProductReviews = ({ reviewsData }) => {
@@ -13,7 +12,6 @@ const ProductReviews = ({ reviewsData }) => {
         <Statistics reviewsData={reviewsData} />
         <Filters />
         <Reviews reviews={reviewsData.reviews} />
-        <Pagination />
       </div>
     </section>
   );

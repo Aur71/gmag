@@ -525,7 +525,41 @@ export const singleProduct = {
       {
         id: 'review id',
         stars: 5,
-        title: 'This is a sixth review',
+        title: 'This is a fifth review',
+        content: 'Perfect for fps games like csgo.',
+        likes: 0,
+        postedOn: '22 Aug 2022',
+        postedBy: {
+          userId: 'some user id',
+          userName: 'Cosmin',
+          userImg: '/user.png',
+        },
+        comments: [
+          {
+            content: 'This is a comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: '27 Oct 2022',
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+        ],
+      },
+
+      {
+        id: 'review id',
+        stars: 5,
+        title: 'This is the sixth review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
         postedOn: '22 Aug 2022',
