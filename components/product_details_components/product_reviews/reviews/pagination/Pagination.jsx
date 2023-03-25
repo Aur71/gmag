@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styles from './Pagination.module.scss';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
@@ -22,13 +23,17 @@ const Pagination = ({
     setCurrentPage(currentPage + 1);
   };
 
+  useEffect(() => {
+    if (currentPage >= totalPages && totalPages) setCurrentPage(totalPages);
+  }, [totalPages, currentPage, setCurrentPage]);
+
   return (
     <div className={styles.pagination}>
       <button className={styles.slide_left} onClick={decreaseCurrentPage}>
         <BsChevronLeft />
       </button>
 
-      {totalPages <= 7 ? (
+      {totalPages <= 6 ? (
         <>
           {pages.map((page) => {
             return (
@@ -44,7 +49,74 @@ const Pagination = ({
         </>
       ) : (
         <>
-          <p>Add new condtions</p>
+          {currentPage === 1 ? (
+            <>
+              <button
+                onClick={() => setCurrentPage(1)}
+                className={`${currentPage === 1 && styles.active}`}
+              >
+                1
+              </button>
+              <button onClick={() => setCurrentPage(2)}>2</button>
+              <button onClick={() => setCurrentPage(3)}>3</button>
+              <button className={styles.disabled}>...</button>
+              <button onClick={() => setCurrentPage(totalPages)}>
+                {totalPages}
+              </button>
+            </>
+          ) : null}
+
+          {currentPage === totalPages ? (
+            <>
+              <button onClick={() => setCurrentPage(1)}>1</button>
+              <button className={styles.disabled}>...</button>
+              <button onClick={() => setCurrentPage(totalPages - 2)}>
+                {totalPages - 2}
+              </button>
+              <button onClick={() => setCurrentPage(totalPages - 1)}>
+                {totalPages - 1}
+              </button>
+              <button
+                onClick={() => setCurrentPage(totalPages)}
+                className={`${currentPage === totalPages && styles.active}`}
+              >
+                {totalPages}
+              </button>
+            </>
+          ) : null}
+
+          {currentPage !== 1 && currentPage !== totalPages ? (
+            <>
+              {currentPage - 2 >= 1 ? (
+                <>
+                  <button onClick={() => setCurrentPage(1)}>1</button>
+                  <button className={styles.disabled}>...</button>
+                </>
+              ) : null}
+
+              <button onClick={() => setCurrentPage(currentPage - 1)}>
+                {currentPage - 1}
+              </button>
+              <button
+                onClick={() => setCurrentPage(currentPage)}
+                className={styles.active}
+              >
+                {currentPage}
+              </button>
+              <button onClick={() => setCurrentPage(currentPage + 1)}>
+                {currentPage + 1}
+              </button>
+
+              {currentPage + 2 <= totalPages ? (
+                <>
+                  <button className={styles.disabled}>...</button>
+                  <button onClick={() => setCurrentPage(totalPages)}>
+                    {totalPages}
+                  </button>
+                </>
+              ) : null}
+            </>
+          ) : null}
         </>
       )}
 

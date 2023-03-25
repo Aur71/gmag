@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Comment.module.scss';
+import formatDate from '@/utils/formatDate';
 
 const Comment = ({ comment }) => {
   const { content, postedOn, postedBy } = comment;
+  const date = formatDate(postedOn);
 
   return (
     <div className={styles.comment}>
@@ -19,7 +21,7 @@ const Comment = ({ comment }) => {
 
         <div>
           <h5>{postedBy.userName}</h5>
-          <p>{postedOn}</p>
+          <p>{date}</p>
         </div>
       </div>
 

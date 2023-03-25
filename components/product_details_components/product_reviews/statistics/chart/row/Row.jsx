@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './Row.module.scss';
+import { handleFilterReviews } from '@/redux/reducers/singleProductSlice';
 
 const Row = ({ stars, starCount, reviewsCount }) => {
+  const dispatch = useDispatch();
   const percentBar = useRef(null);
 
   useEffect(() => {
@@ -9,9 +12,15 @@ const Row = ({ stars, starCount, reviewsCount }) => {
     percentBar.current.style.width = `${width}%`;
   }, [stars, starCount, reviewsCount]);
 
+  const dispatchFilter = () => {
+    dispatch(
+      handleFilterReviews(`${stars} ${stars === 1 ? 'star' : 'stars'} reviews`)
+    );
+  };
+
   return (
     <div className={styles.row}>
-      <button>
+      <button onClick={dispatchFilter}>
         {stars} {stars === 1 ? 'star' : 'stars'}
       </button>
 
@@ -19,7 +28,7 @@ const Row = ({ stars, starCount, reviewsCount }) => {
         <div ref={percentBar}></div>
       </div>
 
-      <button>({starCount})</button>
+      <button onClick={dispatchFilter}>({starCount})</button>
     </div>
   );
 };

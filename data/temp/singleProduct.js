@@ -388,11 +388,11 @@ export const singleProduct = {
     reviews: [
       {
         id: 'review id',
-        stars: 5,
+        stars: 4,
         title: 'Good stuff',
         content: 'Perfect for fps games like csgo.',
-        likes: 0,
-        postedOn: '22 Aug 2022',
+        likes: 5,
+        postedOn: 1677515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -401,7 +401,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -410,7 +410,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -422,11 +422,11 @@ export const singleProduct = {
 
       {
         id: 'review id',
-        stars: 5,
+        stars: 3,
         title: 'This is a second review',
         content: 'Perfect for fps games like csgo.',
-        likes: 0,
-        postedOn: '22 Aug 2022',
+        likes: 1,
+        postedOn: 1677515840836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -435,7 +435,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -444,7 +444,25 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677215850836,
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: 1677215850836,
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a second comment to your review.',
+            postedOn: 1677215850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -456,11 +474,11 @@ export const singleProduct = {
 
       {
         id: 'review id',
-        stars: 5,
+        stars: 2,
         title: 'This is a third review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
-        postedOn: '22 Aug 2022',
+        postedOn: 1673515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -469,7 +487,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515350836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -478,7 +496,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -490,11 +508,11 @@ export const singleProduct = {
 
       {
         id: 'review id',
-        stars: 5,
+        stars: 1,
         title: 'This is a forth review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
-        postedOn: '22 Aug 2022',
+        postedOn: 1677515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -503,7 +521,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -512,7 +530,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -528,7 +546,7 @@ export const singleProduct = {
         title: 'This is a fifth review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
-        postedOn: '22 Aug 2022',
+        postedOn: 1677515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -537,7 +555,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -546,7 +564,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -562,7 +580,7 @@ export const singleProduct = {
         title: 'This is the sixth review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
-        postedOn: '22 Aug 2022',
+        postedOn: 1677515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -571,7 +589,7 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -580,7 +598,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -596,7 +614,7 @@ export const singleProduct = {
         title: 'This is the seventh review',
         content: 'Perfect for fps games like csgo.',
         likes: 0,
-        postedOn: '22 Aug 2022',
+        postedOn: 1677515850836,
         postedBy: {
           userId: 'some user id',
           userName: 'Cosmin',
@@ -605,7 +623,16 @@ export const singleProduct = {
         comments: [
           {
             content: 'This is a comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
+            postedBy: {
+              userId: 'some user id',
+              userImg: '/user.png',
+              userName: 'Gigel',
+            },
+          },
+          {
+            content: 'This is a comment to your review.',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -614,7 +641,7 @@ export const singleProduct = {
           },
           {
             content: 'This is a second comment to your review.',
-            postedOn: '27 Oct 2022',
+            postedOn: 1677515850836,
             postedBy: {
               userId: 'some user id',
               userImg: '/user.png',
@@ -632,7 +659,7 @@ export const singleProduct = {
   questions: [
     {
       id: 'question id',
-      postedOn: '22 Aug 2022',
+      postedOn: 1677515850836,
       postedBy: {
         userId: 'some user id',
         userName: 'Cosmin',
@@ -642,7 +669,7 @@ export const singleProduct = {
       answers: [
         {
           id: 'answer id',
-          postedOn: '22 Aug 2022',
+          postedOn: 1677515850836,
           postedBy: {
             userId: 'some user id',
             userName: 'Cosmin',

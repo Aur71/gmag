@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Author.module.scss';
+import formatDate from '@/utils/formatDate';
 
 const Author = ({ postedOn, postedBy }) => {
   const { userImg, userName, userId } = postedBy;
+  const date = formatDate(postedOn);
 
   return (
     <div className={styles.author}>
@@ -12,7 +14,7 @@ const Author = ({ postedOn, postedBy }) => {
       </Link>
       <div>
         <h4>{userName}</h4>
-        <p>{postedOn}</p>
+        <p>{date}</p>
       </div>
     </div>
   );

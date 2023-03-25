@@ -28,4 +28,9 @@
   .slide_right {
     padding: 5px;
   }
+
+  .disabled {
+    user-select: none;
+    opacity: 0.5;
+  }
 }
