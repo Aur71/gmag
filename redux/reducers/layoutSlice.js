@@ -5,7 +5,6 @@ const layoutSlice = createSlice({
   initialState: {
     showSidebar: false,
     showFilters: false,
-    disableScrollbar: false,
   },
   reducers: {
     handleSidebar: (state) => {

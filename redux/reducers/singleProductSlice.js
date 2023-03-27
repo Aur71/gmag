@@ -11,6 +11,7 @@ const singleProductSlice = createSlice({
     sortReviews: '',
     filterReviews: '',
     searchReviews: '',
+    showAddReview: false,
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -39,6 +40,9 @@ const singleProductSlice = createSlice({
       state.activeImageIndex = num + 1;
     },
     handleShowImageViewer: (state, action) => {
+      const body = document.querySelector('body');
+      if (action.payload === true) body.style.overflow = 'hidden';
+      else body.style.overflow = 'visible';
       state.showImageViewer = action.payload;
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
@@ -92,6 +96,12 @@ const singleProductSlice = createSlice({
     handleSearchReviews: (state, action) => {
       state.searchReviews = action.payload;
     },
+    handleShowAddReview: (state, action) => {
+      const body = document.querySelector('body');
+      if (action.payload === true) body.style.overflow = 'hidden';
+      else body.style.overflow = 'visible';
+      state.showAddReview = action.payload;
+    },
   },
 });
 
@@ -110,4 +120,5 @@ export const {
   handleSortReviews,
   handleFilterReviews,
   handleSearchReviews,
+  handleShowAddReview,
 } = singleProductSlice.actions;
