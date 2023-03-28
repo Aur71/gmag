@@ -1,26 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import styles from './Filter.module.scss';
+import { useState, useRef, useEffect } from 'react';
+import styles from './Sort.module.scss';
 import { FiChevronDown } from 'react-icons/fi';
-import { handleFilterReviews } from '@/redux/reducers/singleProductSlice';
 
-const options = [
-  'All reviews',
-  '5 stars reviews',
-  '4 stars reviews',
-  '3 stars reviews',
-  '2 stars reviews',
-  '1 star reviews',
-];
+const options = ['Newest', 'Oldest', 'No. responses'];
 
-const Filter = () => {
-  const dispatch = useDispatch();
-  const dropdownRef = useRef(null);
-  const { filterReviews } = useSelector((state) => state.singleProduct);
+const Sort = ({ sortBy, setSortBy }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const handleFilterBy = (option) => {
-    dispatch(handleFilterReviews(option));
+  const handleSortBy = (option) => {
+    setSortBy(option);
     setShowDropdown(false);
   };
 
@@ -37,12 +26,12 @@ const Filter = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(handleFilterReviews(options[0]));
-  }, [dispatch]);
+    setSortBy(options[0]);
+  }, [setSortBy]);
 
   return (
-    <div className={styles.filter}>
-      <label>Filter:</label>
+    <div className={styles.sort}>
+      <label>Sort by:</label>
 
       <div
         className={`${styles.dropdown} ${showDropdown && styles.active}`}
@@ -52,8 +41,8 @@ const Filter = () => {
           className={styles.active_option}
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          <span>Filters</span>
-          <span>{filterReviews}</span>
+          <span>Sort</span>
+          <span>{sortBy}</span>
 
           <FiChevronDown className={styles.icon} />
         </div>
@@ -61,12 +50,12 @@ const Filter = () => {
         <div className={`${styles.options} ${showDropdown && styles.active}`}>
           <ul>
             {options.map((option) => {
-              const key = `reviews_filter_${option}`;
+              const key = `questions_sort_${option}`;
               return (
                 <li
                   key={key}
-                  className={`${filterReviews === option && styles.active}`}
-                  onClick={() => handleFilterBy(option)}
+                  className={`${sortBy === option && styles.active}`}
+                  onClick={() => handleSortBy(option)}
                 >
                   {option}
                 </li>
@@ -79,4 +68,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default Sort;

@@ -28,7 +28,7 @@ const ProductDetails = ({ data }) => {
 
       <ProductSpecifications specifications={singleProduct.specifications} />
       <ProductReviews reviewsData={singleProduct.reviewsData} />
-      <ProductQuestions />
+      <ProductQuestions questions={singleProduct.questions} />
       <ProductRecommendations />
       <ProductNavigation />
       <ProductShare />
