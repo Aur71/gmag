@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import ProductsSidebarFilters from '@/components/filters/products_filters/products_sidebar_filters/ProductsSidebarFilters';
-import ProductsGeneralFilters from '@/components/filters/products_filters/products_general_filters/ProductsGeneralFilters';
-import ProductsContainer from '@/components/containers/products_container/ProductsContainer';
-import ProductsPagination from '@/components/filters/products_filters/products_pagination/ProductsPagination.jsx/ProductsPagination';
+import ProductsSidebarFilters from '@/components/products_page_components/products_sidebar_filters/ProductsSidebarFilters';
+import ProductsGeneralFilters from '@/components/products_page_components/products_general_filters/ProductsGeneralFilters';
+import ProductsContainer from '@/components/products_page_components/products_container/ProductsContainer';
+import ProductsPagination from '@/components/products_page_components/products_pagination/ProductsPagination.jsx/ProductsPagination';
 import styles from '../../../styles/pages/Products.module.scss';
 import { handleTotalProducts } from '@/redux/reducers/productsSlice';
 // import axios from 'axios';

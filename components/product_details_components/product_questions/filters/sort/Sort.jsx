@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './Sort.module.scss';
 import { FiChevronDown } from 'react-icons/fi';
 
-const options = ['Newest', 'Oldest', 'No. responses'];
+const options = ['Newest', 'Oldest', 'No. answers'];
 
 const Sort = ({ sortBy, setSortBy }) => {
   const [showDropdown, setShowDropdown] = useState(false);

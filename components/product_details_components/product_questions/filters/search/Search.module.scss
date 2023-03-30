@@ -1,1 +1,52 @@
 @import '../../../../../styles/variables.module.scss';
+
+.search {
+  display: flex;
+
+  input {
+    padding: 5px 10px;
+    border: 1px solid $border-clr-3;
+    border-right: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transition: 300ms border;
+    max-width: 150px;
+    width: 100%;
+
+    @media (max-width: 520px) {
+      max-width: none;
+      width: 100%;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 0.9rem;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      border-color: $acc-clr-1;
+    }
+  }
+
+  &:has(input:focus) button {
+    border-color: $acc-clr-1;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid $border-clr-3;
+    border-left: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: 300ms border;
+  }
+}

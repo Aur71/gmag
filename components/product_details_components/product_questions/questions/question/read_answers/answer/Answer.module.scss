@@ -1,0 +1,17 @@
+@import '../../../../../../../styles/variables.module.scss';
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+
+  h6 {
+    font-size: 0.9rem;
+    color: $text-clr-4;
+    font-weight: 500;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+}

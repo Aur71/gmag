@@ -6,11 +6,6 @@
   padding: 20px 0;
   display: grid;
   grid-template-columns: 180px 1fr;
-  gap: 10px;
-
-  &:last-of-type {
-    border-color: transparent;
-  }
 
   @media (max-width: 1250px) {
     grid-template-columns: 1fr;

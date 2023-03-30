@@ -510,7 +510,8 @@ export const singleProduct = {
         id: 'review id',
         stars: 1,
         title: 'This is a forth review',
-        content: 'Perfect for fps games like csgo.',
+        content:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, dignissimos? Perferendis, illum? Quia assumenda sequi voluptas natus rerum. Aliquid, ipsam. Sed sit modi harum nihil atque. Possimus repellat, dignissimos ea amet aut minus deleniti fuga eum repellendus non consequatur id velit quae sequi odio adipisci similique nam. Aliquam, eaque consectetur!',
         likes: 0,
         postedOn: 1677515850836,
         postedBy: {
@@ -658,23 +659,423 @@ export const singleProduct = {
   // QUESTIONS FORMAT
   questions: [
     {
-      id: 'question id',
+      id: '1',
       postedOn: 1677515850836,
       postedBy: {
         userId: 'some user id',
         userName: 'Cosmin',
       },
-      question: 'Lorem ipsum dolor sit, amet consectetur adipisicing.',
+      question:
+        'First, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
       //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
       answers: [
         {
-          id: 'answer id',
+          id: '1',
           postedOn: 1677515850836,
           postedBy: {
             userId: 'some user id',
             userName: 'Cosmin',
           },
-          answer: 'Lorem ipsum dolor sit amet.',
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+      ],
+    },
+
+    {
+      id: '2',
+      postedOn: 1677515850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Second, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+      ],
+    },
+
+    {
+      id: '3',
+      postedOn: 1677515850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Third, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+      ],
+    },
+
+    {
+      id: '4',
+      postedOn: 1677515850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1672515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1632515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1674215850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+        {
+          id: '6',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the dadwah answer',
+        },
+      ],
+    },
+
+    {
+      id: '5',
+      postedOn: 1177531850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+      ],
+    },
+
+    {
+      id: '6',
+      postedOn: 127515850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1477515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677525850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
+        },
+      ],
+    },
+
+    {
+      id: '7',
+      postedOn: 1647515850836,
+      postedBy: {
+        userId: 'some user id',
+        userName: 'Cosmin',
+      },
+      question:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati quos, eum natus amet dolorem quaerat maiores veniam omnis, cumque ea. Illum, repellat.',
+      //   ANSWERS CAN BE POSTED BY USERS AS WELL AS ADMINS, IF AN ADMIN POSTS AND ANSWER HE WILL HAVE A CHEKMARK BESIDES HIS NAME
+      answers: [
+        {
+          id: '1',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the first answer',
+        },
+        {
+          id: '2',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the third answer',
+        },
+        {
+          id: '3',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the forth answer',
+        },
+        {
+          id: '4',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the fifth answer',
+        },
+        {
+          id: '5',
+          postedOn: 1677515850836,
+          postedBy: {
+            userId: 'some user id',
+            userName: 'Cosmin',
+          },
+          answer: 'This is the sixth answer',
         },
       ],
     },

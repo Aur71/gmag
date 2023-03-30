@@ -1,0 +1,26 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.block_header {
+  width: 100%;
+  height: auto;
+
+  & > button {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .icon {
+      font-size: 1.5rem;
+
+      &.down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

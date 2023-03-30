@@ -13,11 +13,7 @@ const Header = ({ reviewsCount }) => {
   return (
     <div className={styles.header}>
       <h2>
-        Reviews{' '}
-        <span>
-          {' '}
-          ({reviewsCount} {reviewsCount === 1 ? 'review' : 'reviews'})
-        </span>
+        Reviews <span> ({reviewsCount})</span>
       </h2>
 
       <button onClick={dispachAction}>

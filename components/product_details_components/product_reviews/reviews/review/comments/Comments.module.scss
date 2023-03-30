@@ -5,13 +5,14 @@
   flex-direction: column;
   grid-column: 2 / -1;
   overflow: hidden;
-  transition: 300ms height, 300ms opacity;
+  transition: 300ms;
   height: 0;
   opacity: 0;
 
   &.active {
     height: auto;
     opacity: 1;
+    margin-top: 10px;
   }
 
   @media (max-width: 1250px) {

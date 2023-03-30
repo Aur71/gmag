@@ -15,7 +15,7 @@ const Reviews = ({ reviews }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const reviewsPerPage = 5;
   const lastReviewIndex = currentPage * reviewsPerPage;
-  const fistCommentIndex = lastReviewIndex - reviewsPerPage;
+  const fistReviewIndex = lastReviewIndex - reviewsPerPage;
 
   useEffect(() => {
     const scrollToTop = () => {
@@ -38,7 +38,7 @@ const Reviews = ({ reviews }) => {
   const filteredReviews = filterData(sortedReviews, filterReviews);
   const searchedReviews = searchData(filteredReviews, searchReviews);
   const paginatedReviews = searchedReviews.slice(
-    fistCommentIndex,
+    fistReviewIndex,
     lastReviewIndex
   );
 

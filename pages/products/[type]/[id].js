@@ -9,6 +9,7 @@ import ProductShare from '@/components/product_details_components/product_share/
 import ImageViewer from '@/components/product_details_components/image_viewer/ImageViewer';
 import AllBuyingOptions from '@/components/product_details_components/all_buying_options/AllBuyingOptions';
 import AddReview from '@/components/product_details_components/add_review/AddReview';
+import AddQuestion from '@/components/product_details_components/add_question/AddQuestion';
 // import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
@@ -35,6 +36,7 @@ const ProductDetails = ({ data }) => {
       <ImageViewer images={singleProduct.images} />
       <AllBuyingOptions />
       <AddReview />
+      <AddQuestion />
     </div>
   );
 };
