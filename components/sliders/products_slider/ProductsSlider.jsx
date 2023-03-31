@@ -54,7 +54,7 @@ const ProductsSlider = ({ title, icon }) => {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper}`}>
       <div className={styles.center}>
         <div className={styles.slider}>
           <div className={styles.header}>
