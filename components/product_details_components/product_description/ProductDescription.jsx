@@ -16,7 +16,7 @@ import YouTubeVideo from './elements/medium_elements/youtube_video/YouTubeVideo'
 import Container from './elements/large_elements/container/Container';
 import styles from './ProductDescription.module.scss';
 
-const ProductDescription = ({ description }) => {
+const ProductDescription = ({ description, onMount }) => {
   const [showMore, setShowMore] = useState(false);
   const productDescriptionRef = useRef(null);
   const paddingContainerRef = useRef(null);
@@ -49,6 +49,12 @@ const ProductDescription = ({ description }) => {
       btnRef.current.style.display = 'flex';
     }
   }, [description]);
+
+  useEffect(() => {
+    if (onMount && productDescriptionRef.current) {
+      onMount(productDescriptionRef.current);
+    }
+  }, [onMount]);
 
   return (
     <section className={styles.product_description} ref={productDescriptionRef}>

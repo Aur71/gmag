@@ -2,7 +2,7 @@ import Block from './block/Block';
 import { useState, useRef, useEffect } from 'react';
 import styles from './ProductSpecifications.module.scss';
 
-const ProductSpecifications = ({ specifications }) => {
+const ProductSpecifications = ({ specifications, onMount }) => {
   const [showMore, setShowMore] = useState(false);
   const productSpecificationsRef = useRef(null);
   const paddingContainerRef = useRef(null);
@@ -32,6 +32,12 @@ const ProductSpecifications = ({ specifications }) => {
       btnRef.current.style.display = 'flex';
     }
   }, [specifications]);
+
+  useEffect(() => {
+    if (onMount && productSpecificationsRef.current) {
+      onMount(productSpecificationsRef.current);
+    }
+  }, [onMount]);
 
   return (
     <section

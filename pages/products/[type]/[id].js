@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ProductShowcase from '@/components/product_details_components/product_showcase/ProductShowcase';
 import ProductDescription from '@/components/product_details_components/product_description/ProductDescription';
 import ProductSpecifications from '@/components/product_details_components/product_specifications/ProductSpecifications';
@@ -16,25 +17,66 @@ import styles from '../../../styles/pages/ProductDetails.module.scss';
 import { singleProduct } from '@/data/temp/singleProduct';
 
 const ProductDetails = ({ data }) => {
-  console.log(data);
+  const [productShowcaseRef, setProductShowcaseRef] = useState(null);
+  const [productDescriptionRef, setProductDescriptionRef] = useState(null);
+  const [productSpecificationsRef, setProductSpecificationsRef] =
+    useState(null);
+  const [productReviewsRef, setProductReviewsRef] = useState(null);
+  const [productQuestionsRef, setProductQuestionsRef] = useState(null);
+  const [productRecommendationsRef, setProductRecommendationsRef] =
+    useState(null);
 
+  const handleProductShowcaseMount = (node) => setProductShowcaseRef(node);
+  const handleProductDescriptionRef = (node) => setProductDescriptionRef(node);
+  const handleProductSpecificationsRef = (node) =>
+    setProductSpecificationsRef(node);
+  const handleProductReviewsRef = (node) => setProductReviewsRef(node);
+  const handleProductQuestionsRef = (node) => setProductQuestionsRef(node);
+  const handleProductRecommendationsRef = (node) =>
+    setProductRecommendationsRef(node);
+
+  console.log(data);
   return (
     <div className={styles.product_details}>
-      <ProductShowcase data={singleProduct} />
-
-      {singleProduct.description.length ? (
-        <ProductDescription description={singleProduct.description} />
-      ) : null}
-
-      <ProductSpecifications specifications={singleProduct.specifications} />
-      <ProductReviews reviewsData={singleProduct.reviewsData} />
-      <ProductQuestions questions={singleProduct.questions} />
-      <ProductRecommendations />
-      <ProductNavigation />
-      <ProductShare />
+      <ProductShowcase
+        data={singleProduct}
+        onMount={handleProductShowcaseMount}
+      />
       <ImageViewer images={singleProduct.images} />
       <AllBuyingOptions />
+      {singleProduct.description.length ? (
+        <ProductDescription
+          description={singleProduct.description}
+          onMount={handleProductDescriptionRef}
+        />
+      ) : null}
+      <ProductSpecifications
+        specifications={singleProduct.specifications}
+        onMount={handleProductSpecificationsRef}
+      />
+      <ProductReviews
+        reviewsData={singleProduct.reviewsData}
+        onMount={handleProductReviewsRef}
+      />
       <AddReview />
+
+      {/*  */}
+      {/*  */}
+      {/* FINISH PRODUCT QUESTIONS AND RECOMMENDATIONS */}
+      <ProductQuestions
+        questions={singleProduct.questions}
+        onMount={handleProductQuestionsRef}
+      />
+      <ProductRecommendations onMount={handleProductRecommendationsRef} />
+      <ProductNavigation
+        productShowcaseRef={productShowcaseRef}
+        productDescriptionRef={productDescriptionRef}
+        productSpecificationsRef={productSpecificationsRef}
+        productReviewsRef={productReviewsRef}
+        productQuestionsRef={productQuestionsRef}
+        productRecommendationsRef={productRecommendationsRef}
+      />
+      <ProductShare />
     </div>
   );
 };
