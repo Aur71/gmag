@@ -60,9 +60,6 @@ const ProductDetails = ({ data }) => {
       />
       <AddReview />
 
-      {/*  */}
-      {/*  */}
-      {/* FINISH PRODUCT QUESTIONS AND RECOMMENDATIONS */}
       <ProductQuestions
         questions={singleProduct.questions}
         onMount={handleProductQuestionsRef}
