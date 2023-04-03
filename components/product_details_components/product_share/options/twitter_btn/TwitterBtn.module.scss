@@ -1,0 +1,26 @@
+@import '../../../../../styles/variables.module.scss';
+
+.twitter_btn {
+  width: 100%;
+  background-color: #1da1f2;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  transition: 300ms background-color;
+
+  &:hover {
+    background-color: rgb(38, 133, 192);
+  }
+
+  .icon {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  span {
+    padding-right: 20px;
+  }
+}

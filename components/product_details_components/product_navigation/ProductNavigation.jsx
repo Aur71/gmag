@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './ProductNavigation.module.scss';
 import { FaProductHunt } from 'react-icons/fa';
 import { MdDescription, MdInfo, MdReviews, MdRecommend } from 'react-icons/md';
 import { BsFillQuestionSquareFill, BsFillShareFill } from 'react-icons/bs';
+import { handleShowShare } from '@/redux/reducers/singleProductSlice';
 
 const ProductNavigation = ({
   productShowcaseRef,
@@ -12,7 +14,8 @@ const ProductNavigation = ({
   productQuestionsRef,
   productRecommendationsRef,
 }) => {
-  const [activeSection, setActiveSection] = useState('');
+  const dispatch = useDispatch();
+  const [activeSection, setActiveSection] = useState('productShowcase');
 
   const scrollTo = (ref) => {
     const target = ref.offsetTop - 90;
@@ -141,7 +144,7 @@ const ProductNavigation = ({
         <MdRecommend className={styles.icon} />
       </button>
 
-      <button>
+      <button onClick={() => dispatch(handleShowShare(true))}>
         <span>Share</span>
         <BsFillShareFill className={styles.icon} />
       </button>

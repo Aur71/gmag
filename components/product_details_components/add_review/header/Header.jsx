@@ -8,11 +8,6 @@ import { handleShowAddReview } from '@/redux/reducers/singleProductSlice';
 const Header = () => {
   const dispatch = useDispatch();
 
-  const dispachAction = () => {
-    dispatch(handleShowAddReview(false));
-    // Return the scrollbar
-  };
-
   return (
     <div className={styles.header}>
       <Image src='/temp/computer.png' alt='product' width={60} height={60} />
@@ -24,7 +19,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <button onClick={dispachAction}>
+      <button onClick={() => dispatch(handleShowAddReview(false))}>
         <MdClose />
       </button>
     </div>

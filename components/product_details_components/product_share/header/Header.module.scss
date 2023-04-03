@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.module.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  border-bottom: 1px solid $border-clr-2;
+
+  h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  button {
+    font-size: 2rem;
+    color: $text-clr-5;
+    margin-left: auto;
+  }
+}

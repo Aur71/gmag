@@ -14,7 +14,11 @@ const ProductSpecifications = ({ specifications, onMount }) => {
 
     if (!showMore)
       productSpecificationsRef.current.style.height = `${paddingContainerHeight}px`;
-    else productSpecificationsRef.current.style.height = `500px`;
+    else {
+      productSpecificationsRef.current.style.height = `500px`;
+      const target = productSpecificationsRef.current.offsetTop - 90;
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }
     setShowMore(!showMore);
   };
 

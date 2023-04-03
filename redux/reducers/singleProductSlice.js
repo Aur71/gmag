@@ -12,6 +12,7 @@ const singleProductSlice = createSlice({
     filterReviews: '',
     searchReviews: '',
     showAddReview: false,
+    showShare: false,
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -102,6 +103,12 @@ const singleProductSlice = createSlice({
       else body.style.overflow = 'visible';
       state.showAddReview = action.payload;
     },
+    handleShowShare: (state, action) => {
+      const body = document.querySelector('body');
+      if (action.payload === true) body.style.overflow = 'hidden';
+      else body.style.overflow = 'visible';
+      state.showShare = action.payload;
+    },
   },
 });
 
@@ -121,4 +128,5 @@ export const {
   handleFilterReviews,
   handleSearchReviews,
   handleShowAddReview,
+  handleShowShare,
 } = singleProductSlice.actions;

@@ -30,6 +30,8 @@ const ProductDescription = ({ description, onMount }) => {
       productDescriptionRef.current.style.height = `${paddingContainerHeight}px`;
     } else {
       productDescriptionRef.current.style.height = `500px`;
+      const target = productDescriptionRef.current.offsetTop - 90;
+      window.scrollTo({ top: target, behavior: 'smooth' });
     }
 
     setShowMore(!showMore);
