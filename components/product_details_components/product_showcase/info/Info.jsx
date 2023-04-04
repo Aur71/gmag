@@ -10,7 +10,11 @@ const Info = ({ data }) => {
       <h1>{data.name}</h1>
       <Rating rating={data.rating} reviewsCount={data.reviewsCount} />
       <Colors colors={data.colors} />
-      <Price currentPrice={data.currentPrice} oldPrice={data.oldPrice} />
+      <Price
+        currentPrice={data.currentPrice}
+        oldPrice={data.oldPrice}
+        totalStock={data.totalStock}
+      />
       <Actions
         productType={data.productType}
         id={data.id}

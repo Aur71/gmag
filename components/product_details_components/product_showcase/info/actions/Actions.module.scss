@@ -17,8 +17,7 @@
   }
 
   .cart_btn,
-  .favorite_btn,
-  .all_buying_options_btn {
+  .favorite_btn {
     padding: 15px 30px;
     border-radius: 5px;
     font-weight: 600;
@@ -57,23 +56,6 @@
   .favorite_btn {
     border: 1px solid $border-clr-3;
     color: $border-clr-3;
-
-    &:hover {
-      background-color: $black;
-      border-color: transparent;
-      color: $text-clr-1;
-    }
-  }
-
-  .all_buying_options_btn {
-    text-decoration: underline;
-    border: 1px solid $border-clr-3;
-    color: $text-clr-4;
-    display: none;
-
-    @media only screen and (max-width: 300px) {
-      display: flex;
-    }
 
     &:hover {
       background-color: $black;

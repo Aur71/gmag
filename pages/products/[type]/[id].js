@@ -8,7 +8,6 @@ import ProductRecommendations from '@/components/product_details_components/prod
 import ProductNavigation from '@/components/product_details_components/product_navigation/ProductNavigation';
 import ProductShare from '@/components/product_details_components/product_share/ProductShare';
 import ImageViewer from '@/components/product_details_components/image_viewer/ImageViewer';
-import AllBuyingOptions from '@/components/product_details_components/all_buying_options/AllBuyingOptions';
 import AddReview from '@/components/product_details_components/add_review/AddReview';
 // import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
@@ -43,7 +42,6 @@ const ProductDetails = ({ data }) => {
         onMount={handleProductShowcaseMount}
       />
       <ImageViewer images={singleProduct.images} />
-      <AllBuyingOptions />
       {singleProduct.description.length ? (
         <ProductDescription
           description={singleProduct.description}
