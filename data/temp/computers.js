@@ -4,7 +4,7 @@
 export const computers = [
   {
     id: 1,
-    productType: 'computer',
+    productType: 'laptop',
     name: 'PC Gaming GRT RGB with Intel® Core™ i5-10400F processor up to 4.30GHz, 16GB DDR4, 1TB HDD, 480GB SSD, GeForce® RTX 2060 6GB GDDR6',
     img: 'api/img/link',
     currentPrice: 1000,

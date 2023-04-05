@@ -3,6 +3,7 @@ import layoutReducer from './reducers/layoutSlice';
 import productsReducer from './reducers/productsSlice';
 import filtersSidebarReducer from './reducers/filtersSidebarSlice';
 import singleProductReducer from './reducers/singleProductSlice';
+import favoritesReducer from './reducers/favoritesSlice';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     products: productsReducer,
     filtersSidebar: filtersSidebarReducer,
     singleProduct: singleProductReducer,
+    favorites: favoritesReducer,
   },
 });
 

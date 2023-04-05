@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import laptop from '../../../public/temp/laptop.png';
 import { BsSuitHeart } from 'react-icons/bs';
-// import { BsSuitHeartFill } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { MdShoppingCart } from 'react-icons/md';
 

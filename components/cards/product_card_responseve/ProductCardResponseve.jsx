@@ -4,20 +4,26 @@ import Link from 'next/link';
 import { BsSuitHeart } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { MdShoppingCart } from 'react-icons/md';
-// import { BsSuitHeartFill } from 'react-icons/bs';
 
 // TEMP
-import img from '../../../public/temp/computer.png';
+import img1 from '../../../public/temp/computer.png';
+import img2 from '../../../public/temp/laptop.png';
 
 const ProductCardResponseve = ({ item }) => {
   const rating = item.rating;
   const reviewsCount = item.reviewsCount;
+  const { productType } = item;
+  console.log(productType);
 
   return (
     <article className={styles.card}>
       <div className={styles.img_container}>
         <Link href='#'>
-          <Image src={img} alt='img' priority={true} />
+          {productType === 'laptop' ? (
+            <Image src={img1} alt='img' priority={true} />
+          ) : (
+            <Image src={img2} alt='img' priority={true} />
+          )}
         </Link>
 
         <button>

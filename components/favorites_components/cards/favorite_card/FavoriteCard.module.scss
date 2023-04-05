@@ -1,0 +1,71 @@
+@import '../../../../styles/variables.module.scss';
+
+.favorite_card {
+  width: 100%;
+  height: auto;
+  background-color: $white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 250/250;
+    position: relative;
+    padding: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  h2 {
+    height: 65px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: $text-clr-3;
+      font-weight: 600;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+    }
+  }
+
+  .rating {
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    gap: 2.5px;
+    color: $text-clr-4;
+
+    .active_star {
+      color: $star-clr;
+    }
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      &:first-of-type {
+        color: $text-clr-3;
+      }
+      &:last-of-type {
+        color: $text-clr-4;
+      }
+    }
+  }
+}
