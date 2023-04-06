@@ -139,7 +139,7 @@
 
         &::before {
           position: absolute;
-          content: attr(data-old-price) '$';
+          content: attr(data-old-price);
           font-size: 0.9rem;
           color: $text-clr-4;
           text-decoration: line-through;

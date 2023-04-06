@@ -4,7 +4,14 @@ import styles from './Sort.module.scss';
 import { handleSort } from '@/redux/reducers/favoritesSlice';
 import { FiChevronDown } from 'react-icons/fi';
 
-const options = ['Newest', 'Oldest', 'No. likes', 'No. comments'];
+const options = [
+  'Newest',
+  'Oldest',
+  'Increasing price',
+  'Decreasing price',
+  'No. reviews',
+  'Discount %',
+];
 
 const Sort = () => {
   const dispatch = useDispatch();

@@ -1,21 +1,31 @@
+import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './FavoriteCard.module.scss';
 import { BsStarFill } from 'react-icons/bs';
 import { IoRemove } from 'react-icons/io5';
 import { FaOpencart } from 'react-icons/fa';
+import { removeProduct } from '@/redux/reducers/favoritesSlice';
 
-const FavoriteCard = () => {
-  const rating = 3.5;
-  const oldPrice = 39.99;
+const FavoriteCard = ({ product }) => {
+  const dispatch = useDispatch();
+  const { currentPrice, oldPrice, name, img, rating, reviewsCount, id } =
+    product;
+
+  const removeProductDispach = () => {
+    // CREATE AN API CALL TO THE BACKEND THAT DELETES THE PRODUCT
+    // IF THE PRODUCT IS DELETED SUCCESSFULLY ALSO REMOVE THE PRODUCT FROM THE STATE BY DISPATCH AN ACTION
+    // IF THE PRODUCT IS NOT DELETED NOTIFY THE USER BY USING THE NOTIFICATIONS SYSTEM
+    dispatch(removeProduct(id));
+  };
 
   return (
     <article className={styles.favorite_card}>
       <div className={styles.img_container}>
         <Link href='#'>
           <Image
-            src='/temp/computer.png'
-            alt='temp'
+            src={img}
+            alt={name}
             width={272}
             height={272}
             priority={true}
@@ -25,10 +35,7 @@ const FavoriteCard = () => {
 
       <div className={styles.info_container}>
         <h2>
-          <Link href='#'>
-            PC Gaming GRT RGB with Intel® Core™ i5-10400F processor up to
-            4.30GHz, 16GB DDR4, 1TB HDD, 480GB SSD, GeForce® RTX 2060 6GB GDDR6
-          </Link>
+          <Link href='#'>{name}</Link>
         </h2>
 
         <div className={styles.rating}>
@@ -48,17 +55,19 @@ const FavoriteCard = () => {
             className={5 <= Math.round(rating) ? styles.active_star : null}
           />
           <span>{rating}</span>
-          <span>(20)</span>
+          <span>({reviewsCount})</span>
         </div>
 
         <div className={styles.price_actions}>
-          <h3 data-old-price={oldPrice}>2999.99$</h3>
+          <h3 data-old-price={oldPrice ? `${oldPrice}$` : null}>
+            {currentPrice}$
+          </h3>
 
           <button>
             <FaOpencart />
           </button>
 
-          <button>
+          <button onClick={removeProductDispach}>
             <IoRemove />
           </button>
         </div>
