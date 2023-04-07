@@ -2,7 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Card.module.scss';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
-import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+import {
+  AiFillPlusCircle,
+  AiFillMinusCircle,
+  AiOutlineCloseCircle,
+} from 'react-icons/ai';
+import { HiOutlineHeart } from 'react-icons/hi';
 
 const Card = ({ product }) => {
   const {
@@ -40,8 +45,14 @@ const Card = ({ product }) => {
           </div>
 
           <div className={styles.btns_container}>
-            <button>Move to favorites</button>
-            <button>Remove</button>
+            <button>
+              <span>Move to favorites</span>
+              <HiOutlineHeart className={styles.icon} />
+            </button>
+            <button>
+              <span>Remove</span>
+              <AiOutlineCloseCircle className={styles.icon} />
+            </button>
           </div>
         </div>
 
