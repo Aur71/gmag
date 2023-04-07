@@ -1,0 +1,6 @@
+@import '../../../styles/variables.module.scss';
+
+.recommendations {
+  grid-column: 1/-1;
+  border: 1px solid blue;
+}

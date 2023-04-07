@@ -5,7 +5,7 @@ import CustomError from '@/components/favorites_components/custom_error/CustomEr
 import AddProducts from '@/components/favorites_components/add_products/AddProducts';
 import Filters from '@/components/favorites_components/filters/Filters';
 import Cards from '@/components/favorites_components/cards/Cards';
-import axios from 'axios';
+// import axios from 'axios';
 import styles from '../styles/pages/Favorites.module.scss';
 import {
   handleIsLoading,
@@ -26,9 +26,9 @@ const Favorites = () => {
     const fetchData = async () => {
       try {
         dispatch(handleIsLoading(true));
-        const response = await axios.get(
-          'https://jsonplaceholder.typicode.com/todos/1'
-        );
+        // const response = await axios.get(
+        //   'https://jsonplaceholder.typicode.com/todos/1'
+        // );
         dispatch(handleProducts(userData.favorites));
         dispatch(handleIsLoading(false));
       } catch (err) {

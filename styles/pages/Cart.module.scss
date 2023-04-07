@@ -1,0 +1,17 @@
+@import '../variables.module.scss';
+
+.cart {
+  width: 100%;
+  padding: 20px var(--padding-side);
+
+  .center {
+    max-width: 1540px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
