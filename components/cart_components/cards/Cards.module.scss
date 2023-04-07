@@ -1,5 +1,7 @@
 @import '../../../styles/variables.module.scss';
 
 .cards {
-  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

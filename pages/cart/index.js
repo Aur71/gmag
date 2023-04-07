@@ -27,7 +27,7 @@ const Cart = () => {
         // const response = await axios.get(
         //   'https://jsonplaceholder.typicode.com/todos/1'
         // );
-        dispatch(handleCart(userData.favorites));
+        dispatch(handleCart(userData.cart));
         dispatch(handleIsLoading(false));
       } catch (err) {
         dispatch(handleError(err.message));
