@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Loading from '@/components/favorites_components/loading/Loading';
-import Error from 'next/error';
+import Loading from '@/components/layout/loading/Loading';
+import CustomError from '@/components/favorites_components/custom_error/CustomError';
+import AddProducts from '@/components/favorites_components/add_products/AddProducts';
 import Filters from '@/components/favorites_components/filters/Filters';
 import Cards from '@/components/favorites_components/cards/Cards';
-import Recommendations from '@/components/favorites_components/recommendations/Recommendations';
-import NavigationHistory from '@/components/favorites_components/navigation_history/NavigationHistory';
-// import axios from 'axios';
+import axios from 'axios';
 import styles from '../styles/pages/Favorites.module.scss';
 import {
   handleIsLoading,
@@ -19,15 +18,17 @@ import { userData } from '@/data/user-data';
 
 const Favorites = () => {
   const dispatch = useDispatch();
-  const { isLoading, error } = useSelector((state) => state.favorites);
+  const { isLoading, error, products } = useSelector(
+    (state) => state.favorites
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         dispatch(handleIsLoading(true));
-        // const response = await axios.get(
-        //   'https://jsonplaceholder.typicode.com/todos/1'
-        // );
+        const response = await axios.get(
+          'https://jsonplaceholder.typicode.com/todos/1'
+        );
         dispatch(handleProducts(userData.favorites));
         dispatch(handleIsLoading(false));
       } catch (err) {
@@ -39,15 +40,14 @@ const Favorites = () => {
   }, [dispatch]);
 
   if (isLoading) return <Loading />;
-  if (error) return <Error />;
+  if (error) return <CustomError />;
+  if (!products.length) return <AddProducts />;
 
   return (
     <div className={styles.favorites}>
       <div className={styles.center}>
         <Filters />
         <Cards />
-        <Recommendations />
-        <NavigationHistory />
       </div>
     </div>
   );
