@@ -1,8 +1,12 @@
 @import '../../../styles/variables.module.scss';
 
-.wrapper {
+.news_letter {
   width: 100%;
-  padding: 0 var(--padding-side);
+  padding: 0 70px;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 15px;
+  }
 }
 
 .center {
@@ -10,9 +14,7 @@
   margin: 0 auto;
   height: 200px;
   position: relative;
-
   background: linear-gradient(to right, #434343 0%, black 100%);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,23 +29,17 @@
     height: auto;
   }
 
-  & > img {
-    display: block;
+  img {
     width: 400px;
-    height: auto;
+    height: 220px;
     object-fit: contain;
+    aspect-ratio: 2/1;
     transform: translateY(-10px);
 
     @media only screen and (max-width: 1450px) {
       width: 350px;
       height: 100%;
       transform: translateY(0);
-    }
-
-    @media only screen and (max-width: 1150px) {
-      width: 300px;
-      height: auto;
-      align-self: flex-end;
     }
 
     @media only screen and (max-width: 1000px) {

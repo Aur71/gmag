@@ -1,9 +1,8 @@
-import styles from './NewsLetterForm.module.scss';
 import { useState } from 'react';
 import Image from 'next/image';
-import img from '../../../public/news-letter.jpg';
+import styles from './NewsLetter.module.scss';
 
-const NewsLetterForm = () => {
+const NewsLetter = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -12,9 +11,15 @@ const NewsLetterForm = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.news_letter}>
       <div className={styles.center}>
-        <Image src={img} alt='2 grils using the laptop' priority={true} />
+        <Image
+          src='/news-letter.jpg'
+          alt='2 grils using the laptop'
+          priority={true}
+          width={400}
+          height={220}
+        />
 
         <form onSubmit={handleSubmit}>
           <h2>
@@ -52,4 +57,4 @@ const NewsLetterForm = () => {
   );
 };
 
-export default NewsLetterForm;
+export default NewsLetter;

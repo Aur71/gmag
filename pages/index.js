@@ -1,8 +1,7 @@
 import styles from '../styles/pages/Home.module.scss';
 import PromotionSlider from '@/components/home_components/promotion_slider/PromotionSlider';
 import ProductSlider from '@/components/home_components/product_slider/ProductSlider';
-import ProductsSlider from '@/components/sliders/products_slider/ProductsSlider';
-import NewsLetterForm from '@/components/forms/news_letter_form/NewsLetterForm';
+import NewsLetter from '@/components/home_components/news_letter/NewsLetter';
 import { ImFire } from 'react-icons/im';
 import { AiFillStar } from 'react-icons/ai';
 
@@ -25,8 +24,7 @@ export default function Home() {
         icon={<AiFillStar className='star-clr' />}
         products={mostPopular}
       />
-
-      <NewsLetterForm />
+      <NewsLetter />
     </div>
   );
 }
