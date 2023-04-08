@@ -2,7 +2,7 @@ import styles from './Sidebar.module.scss';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { links } from '@/data/products-links';
+import { links } from '@/data/links/products-links';
 import { BiSearchAlt, BiCategory } from 'react-icons/bi';
 import { BsQuestionCircle } from 'react-icons/bs';
 import { RxExit } from 'react-icons/rx';

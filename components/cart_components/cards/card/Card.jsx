@@ -16,7 +16,7 @@ const Card = ({ product }) => {
     oldPrice,
     img,
     name,
-    totalStock,
+    // totalStock,
     count,
   } = product;
   const link = `/products/${productType}/${id}`;

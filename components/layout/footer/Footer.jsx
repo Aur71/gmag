@@ -2,8 +2,8 @@ import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../public/logo.png';
-import { socialLinks } from '@/data/social-links';
-import { footerLinks } from '@/data/footer-links';
+import { footerLinks } from '@/data/links/footer-links';
+import { socialLinks } from '@/data/links/social-links';
 
 const Footer = () => {
   return (

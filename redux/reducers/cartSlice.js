@@ -20,10 +20,10 @@ const cartSlice = createSlice({
     handleCart: (state, action) => {
       state.cart = action.payload;
     },
-    addProduct: (state, action) => {
+    addToCart: (state, action) => {
       console.log(state, action);
     },
-    removeProduct: (state, action) => {
+    removeFromCart: (state, action) => {
       console.log(state, action);
     },
     increaseCount: (state, action) => {
@@ -55,8 +55,8 @@ export const {
   handleCart,
   handleError,
   handleIsLoading,
-  addProduct,
-  removeProduct,
+  addToCart,
+  removeFromCart,
   increaseCount,
   decreaseCount,
   updateTicket,

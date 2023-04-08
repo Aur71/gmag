@@ -1,9 +1,12 @@
+import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Card.module.scss';
 import { BsSuitHeart } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { FaOpencart } from 'react-icons/fa';
+import { addToFavorites } from '@/redux/reducers/favoritesSlice';
+import { addToCart } from '@/redux/reducers/cartSlice';
 
 const Card = ({ product }) => {
   const {
@@ -16,11 +19,25 @@ const Card = ({ product }) => {
     productType,
     id,
   } = product;
+  const dispatch = useDispatch();
   const link = `/products/${productType}/${id}`;
+
+  const dispatchAddToFavorites = () => {
+    // CREATE A REQUEST TO THE BACKEND, AFTER THAT NOTIFY THE USER
+    dispatch(addToFavorites(product));
+  };
+
+  const dispatchAddToCart = () => {
+    // CREATE A REQUEST TO THE BACKEND, AFTER THAT NOTIFY THE USER
+    dispatch(addToCart(product));
+  };
 
   return (
     <article className={styles.card}>
-      <button className={`${styles.favorite_btn}`}>
+      <button
+        className={`${styles.favorite_btn}`}
+        onClick={dispatchAddToFavorites}
+      >
         <BsSuitHeart />
       </button>
 
@@ -59,7 +76,7 @@ const Card = ({ product }) => {
             {oldPrice ? <p>${oldPrice}</p> : null}
           </div>
 
-          <button className={styles.cart_btn}>
+          <button className={styles.cart_btn} onClick={dispatchAddToCart}>
             <FaOpencart />
           </button>
         </div>

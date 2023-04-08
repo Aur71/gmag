@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import SlideLeftBtn from './slide_left_btn/SlideLeftBtn';
 import SlideRightBtn from './slide_right_btn/SlideRightBtn';
 import RadioBtns from './radio_btns/RadioBtns';
@@ -8,18 +8,21 @@ import styles from './PromotionSlider.module.scss';
 const PromotionSlider = ({ promotionSlider }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const checkNum = (num) => {
-    if (num > promotionSlider.length - 1) return 0;
-    if (num < 0) return promotionSlider.length - 1;
-    return num;
-  };
+  const checkNum = useCallback(
+    (num) => {
+      if (num > promotionSlider.length - 1) return 0;
+      if (num < 0) return promotionSlider.length - 1;
+      return num;
+    },
+    [promotionSlider]
+  );
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setActiveIndex(checkNum(activeIndex + 1));
     }, 10000);
     return () => clearTimeout(timeout);
-  }, [activeIndex]);
+  }, [activeIndex, checkNum]);
 
   const slideLeft = () => setActiveIndex(checkNum(activeIndex - 1));
   const slideRight = () => setActiveIndex(checkNum(activeIndex + 1));
