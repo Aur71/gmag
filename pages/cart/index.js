@@ -18,7 +18,7 @@ import { userData } from '../../data/user-data';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.cart);
+  const { isLoading, cart } = useSelector((state) => state.cart);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +45,7 @@ const Cart = () => {
         <Title />
         <Cards />
         <Ticket />
-        <Recommendations />
+        {cart.length ? <Recommendations /> : null}
       </div>
     </div>
   );

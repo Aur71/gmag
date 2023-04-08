@@ -1,5 +1,5 @@
 import styles from './Navbar.module.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleSidebar } from '@/redux/reducers/layoutSlice';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ import userImg from '../../../public/user.png';
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <nav className={styles.navbar}>
@@ -42,7 +43,7 @@ const Navbar = () => {
         <li className={styles.cart_link}>
           <Link href='/cart'>
             <BsCart3 />
-            <span>5</span>
+            <span>{cart.length}</span>
           </Link>
         </li>
 

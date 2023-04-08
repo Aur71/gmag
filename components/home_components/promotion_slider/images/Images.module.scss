@@ -1,0 +1,36 @@
+@import '../../../../styles/variables.module.scss';
+
+.images {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 300ms;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active {
+      transform: translate(0%);
+      opacity: 1;
+    }
+
+    &.next {
+      transform: translate(100%);
+      opacity: 0;
+    }
+
+    &.prev {
+      transform: translate(-100%);
+      opacity: 0;
+    }
+  }
+}

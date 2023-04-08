@@ -1,0 +1,19 @@
+@import '../../../../styles/variables.module.scss';
+
+.slide_left_btn {
+  position: absolute;
+  z-index: 2;
+  padding: 10px;
+  font-size: 2.5rem;
+  color: $acc-clr-1;
+  left: 0;
+
+  &:hover {
+    color: $acc-clr-3;
+  }
+
+  @media only screen and (max-width: 800px) {
+    padding: 5px;
+    font-size: 2rem;
+  }
+}

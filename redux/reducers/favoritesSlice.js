@@ -29,6 +29,9 @@ const favoritesSlice = createSlice({
     handleSearch: (state, action) => {
       state.search = action.payload;
     },
+    addProduct: (state, action) => {
+      console.log(state, action);
+    },
     removeProduct: (state, action) => {
       console.log(state, action.payload);
     },
@@ -43,5 +46,6 @@ export const {
   handleSort,
   handleFilter,
   handleSearch,
+  addProduct,
   removeProduct,
 } = favoritesSlice.actions;

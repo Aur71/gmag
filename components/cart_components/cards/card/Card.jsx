@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Card.module.scss';
-import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import {
   AiFillPlusCircle,
   AiFillMinusCircle,
@@ -17,9 +16,8 @@ const Card = ({ product }) => {
     oldPrice,
     img,
     name,
-    rating,
-    reviewCount,
     totalStock,
+    count,
   } = product;
   const link = `/products/${productType}/${id}`;
 
@@ -60,7 +58,7 @@ const Card = ({ product }) => {
           <button>
             <AiFillPlusCircle />
           </button>
-          <span>1</span>
+          <span>{count}</span>
           <button>
             <AiFillMinusCircle />
           </button>
