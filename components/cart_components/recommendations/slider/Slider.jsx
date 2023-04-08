@@ -22,7 +22,6 @@ const Slider = () => {
   };
 
   const scrollLeft = () => {
-    console.log('ceva');
     const width = cardsContainerRef.current.clientWidth;
     const numberOfCardsScrolled = Math.floor(width / 270);
     const totalScroll =

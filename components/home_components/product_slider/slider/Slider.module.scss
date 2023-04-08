@@ -1,0 +1,14 @@
+@import '../../../../styles/variables.module.scss';
+
+.slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  overflow: hidden;
+
+  .inactive {
+    color: $icon-clr-1;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../../../styles/variables.module.scss';
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 1200px) {
+    padding-right: 15px;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 5px;
+    font-weight: 800;
+
+    span {
+      display: flex;
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      background-color: $white;
+      padding: 5px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      color: $icon-clr-2;
+      transition: 300ms;
+
+      &:first-of-type {
+        opacity: 0.5;
+      }
+
+      .icon {
+        pointer-events: none;
+      }
+    }
+  }
+}

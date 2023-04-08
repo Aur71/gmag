@@ -1,0 +1,20 @@
+@import '../../../styles/variables.module.scss';
+
+.product_slider {
+  width: 100%;
+  padding: 0 70px;
+
+  @media only screen and (max-width: 1200px) {
+    padding-left: 15px;
+    padding-right: 0;
+  }
+
+  .center {
+    max-width: 1540px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
