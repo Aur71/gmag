@@ -6,7 +6,8 @@ const Header = ({ title, icon }) => {
     const slider =
       e.target.parentElement.parentElement.parentElement.children[1];
     const sliderWidth = slider.clientWidth;
-    const numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    let numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    if (numberOfCardsScrolled === 0) numberOfCardsScrolled = 1;
     const totalScroll =
       numberOfCardsScrolled * 240 + numberOfCardsScrolled * 30;
     slider.style.scrollBehavior = 'smooth';
@@ -18,7 +19,8 @@ const Header = ({ title, icon }) => {
     const slider =
       e.target.parentElement.parentElement.parentElement.children[1];
     const sliderWidth = slider.clientWidth;
-    const numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    let numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    if (numberOfCardsScrolled === 0) numberOfCardsScrolled = 1;
     const totalScroll =
       numberOfCardsScrolled * 240 + numberOfCardsScrolled * 30;
     slider.style.scrollBehavior = 'smooth';
