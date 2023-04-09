@@ -1,0 +1,17 @@
+@import '../../../../../../../styles/variables.module.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $acc-clr-1;
+  background-color: #2d3c4c;
+  padding: 7.5px 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+
+  button {
+    color: $acc-clr-1;
+    font-size: 1.2rem;
+  }
+}

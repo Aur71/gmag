@@ -1,0 +1,19 @@
+@import '../../../../styles/variables.module.scss';
+
+.user_btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0 15px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $text-clr-1;
+    font-size: 1.1rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+}

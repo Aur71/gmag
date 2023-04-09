@@ -1,0 +1,27 @@
+@import '../../../../../../styles/variables.module.scss';
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $secondary-clr;
+  transition: 300ms opacity, 300ms transform;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-100%);
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transform: translate(0%);
+  }
+
+  .links {
+    padding: 0 15px;
+  }
+}

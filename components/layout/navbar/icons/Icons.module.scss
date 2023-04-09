@@ -1,0 +1,65 @@
+@import '../../../../styles/variables.module.scss';
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 30px);
+
+  li a {
+    color: $text-clr-1;
+    font-size: 1.6rem;
+    padding: 12px;
+    position: relative;
+
+    @media only screen and (max-width: 800px) {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+  }
+
+  .cart_link a {
+    background-color: $acc-clr-1;
+    border-radius: 10px;
+
+    span {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $white;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      // display: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  .account_link a img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border: 1px solid $acc-clr-1;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+
+    @media only screen and (max-width: 800px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .account_link {
+    @media only screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+}

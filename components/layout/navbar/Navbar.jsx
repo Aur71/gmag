@@ -1,58 +1,14 @@
+import Logo from './logo/Logo';
+import Searchbar from './searchbar/Searchbar';
+import Icons from './icons/Icons';
 import styles from './Navbar.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { handleSidebar } from '@/redux/reducers/layoutSlice';
-import Link from 'next/link';
-import Image from 'next/image';
-import logo from '../../../public/logo.png';
-import { AiOutlineMenuFold } from 'react-icons/ai';
-import { CiSearch } from 'react-icons/ci';
-import { BsSuitHeart, BsCart3 } from 'react-icons/bs';
-import userImg from '../../../public/user.png';
 
 const Navbar = () => {
-  const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.cart);
-
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logoContainer}>
-        <button onClick={() => dispatch(handleSidebar())}>
-          <AiOutlineMenuFold />
-        </button>
-
-        <Link href='/'>
-          <Image src={logo} alt='logo' priority={true} />
-        </Link>
-      </div>
-
-      <div className={styles.search_container}>
-        <input type='search' placeholder='Search...' />
-
-        <button>
-          <CiSearch />
-        </button>
-      </div>
-
-      <ul className={styles.icons_container}>
-        <li className={styles.favorites_link}>
-          <Link href='/favorites'>
-            <BsSuitHeart />
-          </Link>
-        </li>
-
-        <li className={styles.cart_link}>
-          <Link href='/cart'>
-            <BsCart3 />
-            <span>{cart.length}</span>
-          </Link>
-        </li>
-
-        <li className={styles.account_link}>
-          <Link href='/account/id'>
-            <Image src={userImg} alt='default user img' />
-          </Link>
-        </li>
-      </ul>
+      <Logo />
+      <Searchbar />
+      <Icons />
     </nav>
   );
 };
