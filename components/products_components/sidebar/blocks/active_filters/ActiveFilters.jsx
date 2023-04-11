@@ -7,6 +7,7 @@ import {
   clearFilters,
   removePriceFilter,
   removeRatingFilter,
+  removeInitialFilterByName,
 } from '@/redux/reducers/filtersSidebarSlice';
 
 const ActiveFilters = () => {
@@ -30,7 +31,12 @@ const ActiveFilters = () => {
               return (
                 <li key={filterName}>
                   <h5>{filterName}:</h5>
-                  <button onClick={() => dispatch(removePriceFilter())}>
+                  <button
+                    onClick={() => {
+                      dispatch(removePriceFilter());
+                      dispatch(removeInitialFilterByName(filterName));
+                    }}
+                  >
                     {min}$ - {max}$ <IoClose className={styles.icon} />
                   </button>
                 </li>
@@ -47,7 +53,10 @@ const ActiveFilters = () => {
                     return (
                       <button
                         key={option}
-                        onClick={() => dispatch(removeRatingFilter(option))}
+                        onClick={() => {
+                          dispatch(removeRatingFilter(option));
+                          dispatch(removeInitialFilterByName(filterName));
+                        }}
                       >
                         <span>
                           {option} {option > 1 ? 'stars' : 'star'}
@@ -76,7 +85,10 @@ const ActiveFilters = () => {
                   return (
                     <button
                       key={index}
-                      onClick={() => dispatch(removeFilter(obj))}
+                      onClick={() => {
+                        dispatch(removeFilter(obj));
+                        dispatch(removeInitialFilterByName(filterName));
+                      }}
                     >
                       <span>{option}</span>
                       <IoClose className={styles.icon} />

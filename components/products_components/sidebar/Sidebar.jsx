@@ -9,8 +9,10 @@ import getSidebarFilters from './getSidebarFilters';
 
 const Sidebar = ({ products }) => {
   const showFilters = useSelector((state) => state.layout.showFilters);
-  const { activeFilters } = useSelector((state) => state.filtersSidebar);
-  const filters = getSidebarFilters(activeFilters, products);
+  const { activeFilters, initialFilters } = useSelector(
+    (state) => state.filtersSidebar
+  );
+  const filters = getSidebarFilters(activeFilters, products, initialFilters);
 
   return (
     <aside className={`${styles.sidebar} ${showFilters && styles.active}`}>

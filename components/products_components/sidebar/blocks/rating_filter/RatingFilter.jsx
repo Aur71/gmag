@@ -5,15 +5,23 @@ import { BsStarFill } from 'react-icons/bs';
 import {
   addRatingFilter,
   removeRatingFilter,
+  addInitialFilter,
+  removeInitialFilter,
 } from '@/redux/reducers/filtersSidebarSlice';
 
 const RatingFilter = ({ name, options }) => {
   const dispatch = useDispatch();
+  const filter = { name, options };
 
   const handleCheckBox = (e) => {
     const value = Number(e.target.value);
-    if (e.target.checked) return dispatch(addRatingFilter(value));
+    if (e.target.checked) {
+      dispatch(addRatingFilter(value));
+      dispatch(addInitialFilter(filter));
+      return;
+    }
     dispatch(removeRatingFilter(value));
+    dispatch(removeInitialFilter(filter));
   };
   return (
     <div className={styles.rating_filter}>

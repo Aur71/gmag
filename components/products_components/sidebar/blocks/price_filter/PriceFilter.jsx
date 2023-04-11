@@ -5,6 +5,8 @@ import styles from './PriceFilter.module.scss';
 import {
   addPriceFilter,
   removePriceFilter,
+  addInitialFilter,
+  removeInitialFilter,
 } from '@/redux/reducers/filtersSidebarSlice';
 
 const PriceFilter = ({ name, options }) => {
@@ -16,6 +18,7 @@ const PriceFilter = ({ name, options }) => {
   const secondSliderRef = useRef(null);
   const trackRef = useRef(null);
   const minGap = 1;
+  const filter = { name, options };
 
   const checkMin = (num) => {
     if (num <= options.min) return options.min;
@@ -42,9 +45,11 @@ const PriceFilter = ({ name, options }) => {
   const applyPrice = () => {
     if (min !== options.min || max !== options.max) {
       dispatch(addPriceFilter({ min, max }));
+      dispatch(addInitialFilter(filter));
       return;
     }
     dispatch(removePriceFilter());
+    dispatch(removeInitialFilter(filter));
   };
 
   useEffect(() => {

@@ -4,6 +4,7 @@ const filtersSidebarSlice = createSlice({
   name: 'filtersSidebar',
   initialState: {
     activeFilters: [],
+    initialFilters: [],
   },
   reducers: {
     // HANDLEING PRICE FILTER
@@ -178,6 +179,40 @@ const filtersSidebarSlice = createSlice({
       });
 
       state.activeFilters = [];
+      state.initialFilters = [];
+    },
+
+    addInitialFilter: (state, action) => {
+      const { name } = action.payload;
+      const hasName = state.initialFilters.some(
+        (filter) => filter.name === name
+      );
+      if (!hasName) state.initialFilters.push(action.payload);
+    },
+    removeInitialFilter: (state, action) => {
+      const { name } = action.payload;
+      const isFilterActive = state.activeFilters.some(
+        (filter) => filter.filterName === name
+      );
+      if (isFilterActive) return;
+
+      const newInitialFilters = state.initialFilters.filter(
+        (filter) => filter.name !== name
+      );
+
+      state.initialFilters = newInitialFilters;
+    },
+    removeInitialFilterByName: (state, action) => {
+      const isFilterActive = state.activeFilters.some(
+        (filter) => filter.filterName === action.payload
+      );
+      if (isFilterActive) return;
+
+      const newInitialFilters = state.initialFilters.filter(
+        (filter) => filter.name !== action.payload
+      );
+
+      state.initialFilters = newInitialFilters;
     },
   },
 });
@@ -191,4 +226,7 @@ export const {
   addFilter,
   removeFilter,
   clearFilters,
+  addInitialFilter,
+  removeInitialFilter,
+  removeInitialFilterByName,
 } = filtersSidebarSlice.actions;

@@ -3,12 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/header/Header';
 import Searchbar from '../components/searchbar/Searchbar';
 import styles from './SpecificationFilter.module.scss';
-import { addFilter, removeFilter } from '@/redux/reducers/filtersSidebarSlice';
+import {
+  addFilter,
+  removeFilter,
+  addInitialFilter,
+  removeInitialFilter,
+} from '@/redux/reducers/filtersSidebarSlice';
 
 const SpecificationFilter = ({ name, options }) => {
   const dispatch = useDispatch();
   const { activeFilters } = useSelector((state) => state.filtersSidebar);
   const [searchTerm, setSearchTerm] = useState('');
+  const filter = { name, options };
 
   const filteredOptions = options.filter((option) => {
     const optionName = option.optionName.toString().toLowerCase();
@@ -19,8 +25,13 @@ const SpecificationFilter = ({ name, options }) => {
   });
 
   const handleCheckbox = (e, option) => {
-    if (e.target.checked) return dispatch(addFilter({ name, option }));
+    if (e.target.checked) {
+      dispatch(addFilter({ name, option }));
+      dispatch(addInitialFilter(filter));
+      return;
+    }
     dispatch(removeFilter({ name, option }));
+    dispatch(removeInitialFilter(filter));
   };
 
   return (
