@@ -17,13 +17,13 @@ export const sidebarLinks = [
         path: '/products/gpus',
       },
       {
-        id: 2.1,
+        id: 2.2,
         linkType: 'normal',
         textContent: 'Processors',
         path: '/products/processors',
       },
       {
-        id: 2.1,
+        id: 2.3,
         linkType: 'nested',
         textContent: 'More',
         links: [],

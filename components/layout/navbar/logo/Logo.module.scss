@@ -4,11 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 
   button {
     color: $text-clr-1;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     display: none;
   }
 
@@ -19,6 +19,7 @@
     img {
       width: 100px;
       height: auto;
+      object-fit: contain;
     }
   }
 

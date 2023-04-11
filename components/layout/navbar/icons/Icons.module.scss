@@ -5,61 +5,40 @@
   align-items: center;
   gap: clamp(10px, 1.6vw, 30px);
 
-  li a {
-    color: $text-clr-1;
-    font-size: 1.6rem;
-    padding: 12px;
+  .account_link,
+  .favorites_link,
+  .cart_link {
+    font-size: 2rem;
+    color: white;
+    padding: 5px;
+    transition: 300ms color;
     position: relative;
 
-    @media only screen and (max-width: 800px) {
-      font-size: 1.2rem;
-      padding: 10px;
+    @media (max-width: 800px) {
+      font-size: 1.6rem;
     }
-  }
 
-  .cart_link a {
-    background-color: $acc-clr-1;
-    border-radius: 10px;
+    &:hover {
+      color: $acc-clr-1;
 
-    span {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background-color: $white;
-      color: $black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1rem;
-      // display: none;
-
-      &.active {
-        display: flex;
+      span {
+        color: white;
       }
     }
   }
 
-  .account_link a img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    border: 1px solid $acc-clr-1;
+  .cart_link span {
+    position: absolute;
+    background-color: $acc-clr-1;
+    padding: 5px 10px;
+    font-size: 0.9rem;
     border-radius: 50%;
-    overflow: hidden;
-    padding: 3px;
+    transition: 300ms color;
+    top: -5px;
+    right: -5px;
 
-    @media only screen and (max-width: 800px) {
-      width: 48px;
-      height: 48px;
-    }
-  }
-
-  .account_link {
-    @media only screen and (max-width: 450px) {
-      display: none;
+    @media (max-width: 800px) {
+      padding: 2.5px 7.5px;
     }
   }
 }

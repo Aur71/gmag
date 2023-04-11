@@ -1,36 +1,23 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import ProductsSidebarFilters from '@/components/products_page_components/products_sidebar_filters/ProductsSidebarFilters';
-import ProductsGeneralFilters from '@/components/products_page_components/products_general_filters/ProductsGeneralFilters';
-import ProductsContainer from '@/components/products_page_components/products_container/ProductsContainer';
-import ProductsPagination from '@/components/products_page_components/products_pagination/ProductsPagination.jsx/ProductsPagination';
+import { useState } from 'react';
+import Sidebar from '@/components/products_components/sidebar/Sidebar';
+import Filters from '@/components/products_components/filters/Filters';
+import Products from '@/components/products_components/products/Products';
 import styles from '../../../styles/pages/Products.module.scss';
-import { handleTotalProducts } from '@/redux/reducers/productsSlice';
 // import axios from 'axios';
 
 // TEMP DATA
-import { computers } from '@/data/temp/computers';
+import { computers } from '@/data/temporary/computers';
 
 const ProductType = ({ data }) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(handleTotalProducts(data.length));
-  }, [data, dispatch]);
-
-  if (!data.length) {
-    return <h1>error</h1>;
-  }
+  const [sortBy, setSortBy] = useState('Most popular');
 
   return (
     <div className={styles.products}>
       <div className={styles.center}>
-        <ProductsSidebarFilters data={data} />
-
-        <div className={styles.column}>
-          <ProductsGeneralFilters />
-          <ProductsContainer data={data} />
-          <ProductsPagination />
+        <Sidebar products={data} />
+        <div className={styles.wrapper}>
+          <Filters sortBy={sortBy} setSortBy={setSortBy} />
+          <Products products={data} sortBy={sortBy} />
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import Navigation from './navigation/Navigation';
-import CardsContainer from './cards_container/CardsContainer';
 import styles from './ProductRecommendations.module.scss';
 
 const ProductRecommendations = ({ onMount }) => {
@@ -22,7 +21,6 @@ const ProductRecommendations = ({ onMount }) => {
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
-      <CardsContainer activeSection={activeSection} />
     </section>
   );
 };

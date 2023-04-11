@@ -5,11 +5,11 @@ import styles from './Links.module.scss';
 
 const Links = () => {
   return (
-    <div className={styles.links}>
+    <nav className={styles.links}>
       <Header />
       <LinkList />
       <HelpLink />
-    </div>
+    </nav>
   );
 };
 
