@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import Navigation from './navigation/Navigation';
+import RecommendationsSlider from '@/features/recommendations_slider/RecommendationsSlider';
 import styles from './ProductRecommendations.module.scss';
+
+// temp data
+import { computers } from '@/data/temporary/computers';
 
 const ProductRecommendations = ({ onMount }) => {
   const productRecommendationsRef = useRef(null);
@@ -21,6 +25,7 @@ const ProductRecommendations = ({ onMount }) => {
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
+      <RecommendationsSlider products={computers} />
     </section>
   );
 };

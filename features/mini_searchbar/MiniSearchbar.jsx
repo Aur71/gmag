@@ -1,30 +1,26 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import styles from './Search.module.scss';
+import styles from './MiniSearchbar.module.scss';
 import { CiSearch } from 'react-icons/ci';
 import { GrClose } from 'react-icons/gr';
-import { handleSearch } from '@/redux/reducers/favoritesSlice';
 
-const Search = () => {
-  const dispatch = useDispatch();
-  const { search } = useSelector((state) => state.favorites);
+const MiniSearchbar = ({ search, setSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [closeSearch, setCloseSearch] = useState(false);
 
   const dispatchSearch = () => {
     if (!searchTerm) return;
     if (!search) {
-      dispatch(handleSearch(searchTerm));
+      setSearch(search);
       setCloseSearch(true);
     } else {
-      dispatch(handleSearch(''));
+      setSearch('');
       setSearchTerm('');
       setCloseSearch(false);
     }
   };
 
   return (
-    <div className={styles.search}>
+    <div className={styles.mini_searchbar}>
       <input
         type='search'
         placeholder='Search product...'
@@ -38,4 +34,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default MiniSearchbar;

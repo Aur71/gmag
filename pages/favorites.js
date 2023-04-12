@@ -1,56 +1,34 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Loading from '@/components/layout/loading/Loading';
-import CustomError from '@/components/favorites_components/custom_error/CustomError';
-import AddProducts from '@/components/favorites_components/add_products/AddProducts';
-import Filters from '@/components/favorites_components/filters/Filters';
-import Cards from '@/components/favorites_components/cards/Cards';
-// import axios from 'axios';
+import Header from '@/components/favorites_components/header/Header';
+import FiltersContainer from '@/components/favorites_components/filters_container/FiltersContainer';
+import ProductList from '@/components/favorites_components/product_list/ProductList';
+import AddListForm from '@/components/favorites_components/add_list_form/AddListForm';
 import styles from '../styles/pages/Favorites.module.scss';
-import {
-  handleIsLoading,
-  handleError,
-  handleProducts,
-} from '@/redux/reducers/favoritesSlice';
 
-// TEMP DATA
-import { userData } from '@/data/user-data';
-
-const Favorites = () => {
-  const dispatch = useDispatch();
-  const { isLoading, error, products } = useSelector(
-    (state) => state.favorites
-  );
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch(handleIsLoading(true));
-        // const response = await axios.get(
-        //   'https://jsonplaceholder.typicode.com/todos/1'
-        // );
-        dispatch(handleProducts(userData.favorites));
-        dispatch(handleIsLoading(false));
-      } catch (err) {
-        dispatch(handleError(err.message));
-        dispatch(handleIsLoading(false));
-      }
-    };
-    fetchData();
-  }, [dispatch]);
-
-  if (isLoading) return <Loading />;
-  if (error) return <CustomError />;
-  if (!products.length) return <AddProducts />;
+const Favorites = ({ data }) => {
+  console.log(data);
 
   return (
     <div className={styles.favorites}>
       <div className={styles.center}>
-        <Filters />
-        <Cards />
+        <Header />
+        <FiltersContainer />
+        <ProductList />
+        <AddListForm />
       </div>
     </div>
   );
 };
 
 export default Favorites;
+
+export const getServerSideProps = async () => {
+  try {
+    // FETCHING THE DATA BASED ON THE URL
+    // const res = await axios.get(`api/products/${params.type}/${params.id}`);
+    const data = ['fetch user favotites data'];
+
+    return { props: { data } };
+  } catch (error) {
+    return { props: { data: [] } };
+  }
+};

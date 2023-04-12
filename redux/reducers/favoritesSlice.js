@@ -3,49 +3,63 @@ import { createSlice } from '@reduxjs/toolkit';
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: {
-    isLoading: false,
-    error: null,
-    products: [],
-    sort: 'Newest',
-    filter: 'All products',
-    search: '',
+    lists: [
+      {
+        listName: 'All products',
+        products: [],
+      },
+      {
+        listName: 'Favorite',
+        products: [],
+      },
+    ],
+    activeListName: 'All products',
+    mainList: 'All products',
+    showAddListForm: false,
+
+    sortProducts: 'Newest',
+    filterProducts: 'All products',
+    searchProducts: '',
   },
   reducers: {
-    handleIsLoading: (state, action) => {
-      state.isLoading = action.payload;
+    getLists: (state, action) => {
+      state.lists = action.payload;
     },
-    handleError: (state, action) => {
-      state.error = action.payload;
-    },
-    handleProducts: (state, action) => {
-      state.products = action.payload;
-    },
-    handleSort: (state, action) => {
-      state.sort = action.payload;
-    },
-    handleFilter: (state, action) => {
-      state.filter = action.payload;
-    },
-    handleSearch: (state, action) => {
-      state.search = action.payload;
-    },
-    addToFavorites: (state, action) => {
+    addList: (state, action) => {
       console.log(state, action);
     },
-    removeFromFavorites: (state, action) => {
+    removeList: (state, action) => {
       console.log(state, action);
+    },
+    handleActiveListName: (state, action) => {
+      state.activeListName = action.payload;
+    },
+    handleAddListForm: (state, action) => {
+      const body = document.querySelector('body');
+      if (action.payload) body.style.overflow = 'hidden';
+      else body.style.overflow = 'visible';
+      state.showAddListForm = action.payload;
+    },
+    handleSortProducts: (state, action) => {
+      state.sortProducts = action.payload;
+    },
+    handleFilterProducts: (state, action) => {
+      state.filterProducts = action.payload;
+    },
+    handleSearchProducts: (state, action) => {
+      state.searchProducts = action.payload;
     },
   },
 });
 
 export default favoritesSlice.reducer;
 export const {
-  handleIsLoading,
-  handleError,
-  handleProducts,
+  getLists,
+  addList,
+  removeList,
+  handleActiveListName,
+  handleAddListForm,
   handleSort,
   handleFilter,
   handleSearch,
-  addToFavorites,
-  removeFromFavorites,
 } = favoritesSlice.actions;
