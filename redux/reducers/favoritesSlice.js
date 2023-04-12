@@ -16,6 +16,7 @@ const favoritesSlice = createSlice({
     activeListName: 'All products',
     mainList: 'All products',
     showAddListForm: false,
+    showEditListForm: false,
 
     sortProducts: 'Newest',
     filterProducts: 'All products',
@@ -26,7 +27,11 @@ const favoritesSlice = createSlice({
       state.lists = action.payload;
     },
     addList: (state, action) => {
-      console.log(state, action);
+      const list = {
+        listName: action.payload,
+        products: [],
+      };
+      state.lists.push(list);
     },
     removeList: (state, action) => {
       console.log(state, action);
@@ -34,12 +39,22 @@ const favoritesSlice = createSlice({
     handleActiveListName: (state, action) => {
       state.activeListName = action.payload;
     },
+    handleMainList: (state, action) => {
+      state.mainList = action.payload;
+    },
     handleAddListForm: (state, action) => {
       const body = document.querySelector('body');
       if (action.payload) body.style.overflow = 'hidden';
       else body.style.overflow = 'visible';
       state.showAddListForm = action.payload;
     },
+    handleEditListForm: (state, action) => {
+      const body = document.querySelector('body');
+      if (action.payload) body.style.overflow = 'hidden';
+      else body.style.overflow = 'visible';
+      state.showEditListForm = action.payload;
+    },
+
     handleSortProducts: (state, action) => {
       state.sortProducts = action.payload;
     },
@@ -58,7 +73,9 @@ export const {
   addList,
   removeList,
   handleActiveListName,
+  handleMainList,
   handleAddListForm,
+  handleEditListForm,
   handleSort,
   handleFilter,
   handleSearch,

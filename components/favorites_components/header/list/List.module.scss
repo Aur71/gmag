@@ -18,6 +18,10 @@
 
   h2 {
     font-size: 1rem;
+
+    &.active {
+      color: $acc-clr-1;
+    }
   }
 
   h3 {

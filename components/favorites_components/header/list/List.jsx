@@ -5,7 +5,7 @@ import { handleActiveListName } from '@/redux/reducers/favoritesSlice';
 const List = ({ list }) => {
   const dispatch = useDispatch();
   const { listName, products } = list;
-  const { activeListName } = useSelector((state) => state.favorites);
+  const { activeListName, mainList } = useSelector((state) => state.favorites);
 
   return (
     <div
@@ -18,7 +18,9 @@ const List = ({ list }) => {
         }`}
       ></div>
 
-      <h2>{listName}</h2>
+      <h2 className={`${mainList === listName && styles.active}`}>
+        {listName}
+      </h2>
       <h3>
         {products.length} {products.length === 1 ? 'product' : 'products'}
       </h3>
