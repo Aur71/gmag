@@ -1,9 +1,11 @@
+import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Card.module.scss';
 import { BsSuitHeart } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { FaOpencart } from 'react-icons/fa';
+import { addProduct } from '@/redux/reducers/favoritesSlice';
 
 const Card = ({ product }) => {
   const {
@@ -17,10 +19,14 @@ const Card = ({ product }) => {
     reviewsCount,
   } = product;
   const link = `/products/${productType}/${id}`;
+  const dispatch = useDispatch();
 
   return (
     <article className={styles.card}>
-      <button className={styles.favorite_btn}>
+      <button
+        className={styles.favorite_btn}
+        onClick={() => dispatch(addProduct(product))}
+      >
         <BsSuitHeart />
       </button>
 

@@ -1,0 +1,14 @@
+@import '../../../../styles/variables.module.scss';
+
+.filters_container {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

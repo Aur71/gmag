@@ -5,8 +5,8 @@ import styles from './Card.module.scss';
 import { BsSuitHeart } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { FaOpencart } from 'react-icons/fa';
-import { addToFavorites } from '@/redux/reducers/favoritesSlice';
 import { addToCart } from '@/redux/reducers/cartSlice';
+import { addProduct } from '@/redux/reducers/favoritesSlice';
 
 const Card = ({ product }) => {
   const {
@@ -22,11 +22,6 @@ const Card = ({ product }) => {
   const dispatch = useDispatch();
   const link = `/products/${productType}/${id}`;
 
-  const dispatchAddToFavorites = () => {
-    // CREATE A REQUEST TO THE BACKEND, AFTER THAT NOTIFY THE USER
-    dispatch(addToFavorites(product));
-  };
-
   const dispatchAddToCart = () => {
     // CREATE A REQUEST TO THE BACKEND, AFTER THAT NOTIFY THE USER
     dispatch(addToCart(product));
@@ -36,7 +31,7 @@ const Card = ({ product }) => {
     <article className={styles.card}>
       <button
         className={`${styles.favorite_btn}`}
-        onClick={dispatchAddToFavorites}
+        onClick={() => dispatch(addProduct(product))}
       >
         <BsSuitHeart />
       </button>

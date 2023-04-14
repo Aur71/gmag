@@ -1,0 +1,20 @@
+@import '../../../../styles/variables.module.scss';
+
+.title_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-weight: 600;
+    padding: 5px 10px;
+    background-color: $acc-clr-1;
+    border-radius: 3px;
+    color: white;
+  }
+}

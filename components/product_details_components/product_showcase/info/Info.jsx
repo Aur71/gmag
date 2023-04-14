@@ -15,11 +15,7 @@ const Info = ({ data }) => {
         oldPrice={data.oldPrice}
         totalStock={data.totalStock}
       />
-      <Actions
-        productType={data.productType}
-        id={data.id}
-        totalStock={data.totalStock}
-      />
+      <Actions productType={data.productType} id={data.id} data={data} />
     </div>
   );
 };

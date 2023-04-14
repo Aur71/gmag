@@ -10,7 +10,7 @@ const MiniSearchbar = ({ search, setSearch }) => {
   const dispatchSearch = () => {
     if (!searchTerm) return;
     if (!search) {
-      setSearch(search);
+      setSearch(searchTerm);
       setCloseSearch(true);
     } else {
       setSearch('');

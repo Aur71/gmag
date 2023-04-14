@@ -1,6 +1,8 @@
 import styles from './FavoriteCard.module.scss';
 
-const FavoriteCard = () => {
+const FavoriteCard = ({ product }) => {
+  console.log(product);
+
   return <div className={styles.favorite_card}>FavoriteCard</div>;
 };
 
