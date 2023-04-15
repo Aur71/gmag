@@ -5,7 +5,8 @@
   padding: 40px var(--padding-side);
 
   @media (max-width: 500px) {
-    padding: 20px 0;
+    padding: 0;
+    padding-bottom: 20px;
   }
 
   .center {

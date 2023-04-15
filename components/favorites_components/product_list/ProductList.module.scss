@@ -1,1 +1,7 @@
 @import '../../../styles/variables.module.scss';
+
+.product_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -34,9 +34,6 @@ const favoritesSlice = createSlice({
       };
       state.lists.push(list);
     },
-    removeList: (state, action) => {
-      console.log(state, action);
-    },
     handleActiveListName: (state, action) => {
       state.activeListName = action.payload;
     },
@@ -79,6 +76,13 @@ const favoritesSlice = createSlice({
         (list) => list.listName !== state.activeListName
       );
       state.activeListName = state.lists[0].listName;
+      state.lists[0].products = [];
+      state.lists.forEach((list) => {
+        if (list.listName === 'All products') return;
+        list.products.forEach((product) =>
+          state.lists[0].products.push(product)
+        );
+      });
       state.showDeleteListForm = false;
     },
     handleSortProducts: (state, action) => {
@@ -91,6 +95,10 @@ const favoritesSlice = createSlice({
       state.searchProducts = action.payload;
     },
     addProduct: (state, action) => {
+      const timestamp = new Date().getTime();
+      const product = action.payload;
+      product.date = timestamp;
+
       const currentMainList = state.lists.find(
         (list) => list.listName === state.mainList
       );
@@ -99,17 +107,47 @@ const favoritesSlice = createSlice({
       );
       if (!isProductInMainList) {
         state.lists.map((list) => {
-          if (list.listName === 'All products') {
-            list.products.push(action.payload);
-          }
-          if (list.listName === state.mainList) {
-            list.products.push(action.payload);
+          if (
+            list.listName === 'All products' ||
+            list.listName === state.mainList
+          ) {
+            list.products.push(product);
           }
         });
       }
     },
     removeProduct: (state, action) => {
-      console.log(state, action);
+      state.lists = state.lists.map((list) => {
+        if (
+          list.listName === 'All products' ||
+          list.listName === action.payload.listName
+        ) {
+          list.products = list.products.filter(
+            (product) => product.id !== action.payload.id
+          );
+        }
+
+        return list;
+      });
+    },
+    moveProduct: (state, action) => {
+      if (action.payload.listName === action.payload.moveTo) return;
+
+      state.lists = state.lists.map((list) => {
+        if (list.listName === action.payload.listName) {
+          list.products = list.products.filter(
+            (product) => product.id !== action.payload.id
+          );
+        }
+        if (list.listName === action.payload.moveTo) {
+          const isProductAlreadyIn = list.products.some(
+            (product) => product.id === action.payload.product.id
+          );
+          if (!isProductAlreadyIn) list.products.push(action.payload.product);
+        }
+
+        return list;
+      });
     },
   },
 });
@@ -118,7 +156,6 @@ export default favoritesSlice.reducer;
 export const {
   getLists,
   addList,
-  removeList,
   handleActiveListName,
   handleMainList,
   handleAddListForm,
@@ -131,4 +168,5 @@ export const {
   handleSearchProducts,
   addProduct,
   removeProduct,
+  moveProduct,
 } = favoritesSlice.actions;

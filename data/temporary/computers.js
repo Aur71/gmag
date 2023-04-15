@@ -9,7 +9,7 @@ export const computers = [
     discount: 9,
     rating: 4,
     reviewsCount: 20,
-    totalStock: 10,
+    totalStock: 1,
     numOfOrders: 52,
     specifications: [
       {
@@ -68,7 +68,7 @@ export const computers = [
     discount: 0,
     rating: 4.6,
     reviewsCount: 13,
-    totalStock: 1,
+    totalStock: 2,
     numOfOrders: 13,
     specifications: [
       {

@@ -65,7 +65,7 @@ const EditListForm = () => {
   useEffect(() => {
     if (activeListName === mainList) checkboxRef.current.checked = true;
     else checkboxRef.current.checked = false;
-  }, [activeListName, showEditListForm]);
+  }, [activeListName, showEditListForm, mainList]);
 
   return (
     <div
