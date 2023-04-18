@@ -1,43 +1,13 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Loading from '@/components/layout/loading/Loading';
+import { useSelector } from 'react-redux';
 import Title from '@/components/cart_components/title/Title';
 import Cards from '@/components/cart_components/cards/Cards';
 import Ticket from '@/components/cart_components/ticket/Ticket';
 import Recommendations from '@/components/cart_components/recommendations/Recommendations';
 // import axios from 'axios';
 import styles from '../../styles/pages/Cart.module.scss';
-import {
-  handleIsLoading,
-  handleError,
-  handleCart,
-} from '@/redux/reducers/cartSlice';
-
-// TEMP DATA
-import { userData } from '../../data/user-data';
 
 const Cart = () => {
-  const dispatch = useDispatch();
-  const { isLoading, cart } = useSelector((state) => state.cart);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch(handleIsLoading(true));
-        // const response = await axios.get(
-        //   'https://jsonplaceholder.typicode.com/todos/1'
-        // );
-        dispatch(handleCart(userData.cart));
-        dispatch(handleIsLoading(false));
-      } catch (err) {
-        dispatch(handleError(err.message));
-        dispatch(handleIsLoading(false));
-      }
-    };
-    fetchData();
-  }, [dispatch]);
-
-  if (isLoading) return <Loading />;
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <div className={styles.cart}>
@@ -52,3 +22,17 @@ const Cart = () => {
 };
 
 export default Cart;
+
+export const getServerSideProps = async () => {
+  try {
+    // FETCHING THE DATA BASED ON THE URL
+    // const res = await axios.get(`api/products/${params.type}/${params.id}`);
+    const data = ['fetch user cart data'];
+
+    // DISPATCH THE ACTION TO UPDATE THE REDUX STATE WITH THE FETCHED DATA
+
+    return { props: { data } };
+  } catch (error) {
+    return { props: { data: [] } };
+  }
+};

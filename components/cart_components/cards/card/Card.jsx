@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Card.module.scss';
@@ -7,6 +8,7 @@ import {
   AiOutlineCloseCircle,
 } from 'react-icons/ai';
 import { HiOutlineHeart } from 'react-icons/hi';
+import { addProduct } from '@/redux/reducers/favoritesSlice';
 
 const Card = ({ product }) => {
   const {
@@ -19,6 +21,8 @@ const Card = ({ product }) => {
     // totalStock,
     count,
   } = product;
+  const dispatch = useDispatch();
+
   const link = `/products/${productType}/${id}`;
 
   return (
@@ -43,8 +47,8 @@ const Card = ({ product }) => {
           </div>
 
           <div className={styles.btns_container}>
-            <button>
-              <span>Move to favorites</span>
+            <button onClick={() => dispatch(addProduct(product))}>
+              <span>Add to favorites</span>
               <HiOutlineHeart className={styles.icon} />
             </button>
             <button>

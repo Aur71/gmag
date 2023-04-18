@@ -6,7 +6,7 @@ const Title = () => {
 
   return (
     <h1 className={styles.title}>
-      your basket <span>({cart.length})</span>
+      your cart <span>({cart.length})</span>
     </h1>
   );
 };

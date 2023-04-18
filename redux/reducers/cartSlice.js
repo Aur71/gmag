@@ -3,33 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    isLoading: false,
-    error: null,
     cart: [],
     productsCost: 0,
     deliveryCost: 0,
     totalCost: 0,
   },
   reducers: {
-    handleIsLoading: (state, action) => {
-      state.isLoading = action.payload;
-    },
-    handleError: (state, action) => {
-      state.error = action.payload;
-    },
     handleCart: (state, action) => {
       state.cart = action.payload;
     },
     addToCart: (state, action) => {
-      console.log(state, action);
-    },
-    removeFromCart: (state, action) => {
-      console.log(state, action);
-    },
-    increaseCount: (state, action) => {
-      console.log(state, action);
-    },
-    decreaseCount: (state, action) => {
       console.log(state, action);
     },
 
@@ -57,7 +40,5 @@ export const {
   handleIsLoading,
   addToCart,
   removeFromCart,
-  increaseCount,
-  decreaseCount,
   updateTicket,
 } = cartSlice.actions;

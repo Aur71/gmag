@@ -96,7 +96,7 @@ const favoritesSlice = createSlice({
     },
     addProduct: (state, action) => {
       const timestamp = new Date().getTime();
-      const product = action.payload;
+      let product = action.payload;
       product.date = timestamp;
 
       const currentMainList = state.lists.find(
