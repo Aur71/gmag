@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './UserBtn.module.scss';
 import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
 
@@ -7,10 +8,10 @@ const UserBtn = () => {
   return (
     <div className={styles.user_btn}>
       {!user ? (
-        <button>
+        <Link href='/login'>
           <AiOutlineLogin className={styles.icon} />
           Log in
-        </button>
+        </Link>
       ) : (
         <button>
           <AiOutlineLogout className={styles.icon} />

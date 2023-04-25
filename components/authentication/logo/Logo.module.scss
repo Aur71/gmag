@@ -1,0 +1,15 @@
+@import '../../../styles/variables.module.scss';
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+}

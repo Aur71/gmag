@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import userReducer from './reducers/userSlice';
 import layoutReducer from './reducers/layoutSlice';
 import filtersSidebarReducer from './reducers/filtersSidebarSlice';
 import singleProductReducer from './reducers/singleProductSlice';
@@ -7,6 +8,7 @@ import cartReducer from './reducers/cartSlice';
 
 const store = configureStore({
   reducer: {
+    user: userReducer,
     layout: layoutReducer,
     filtersSidebar: filtersSidebarReducer,
     singleProduct: singleProductReducer,

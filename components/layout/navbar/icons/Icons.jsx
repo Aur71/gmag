@@ -18,7 +18,7 @@ const Icons = () => {
         <span>{cart.length}</span>
       </Link>
 
-      <Link href='/account/id' className={styles.account_link}>
+      <Link href='/login' className={styles.account_link}>
         <FiUser />
       </Link>
     </div>
