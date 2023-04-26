@@ -3,18 +3,16 @@ import styles from './AuthForm.module.scss';
 const AuthForm = ({
   submitForm,
   buttonText,
+  isLoading,
   email,
   setEmail,
   password,
   setPassword,
-  emailError,
-  passwordError,
+  error,
 }) => {
   return (
     <form className={styles.auth_form} onSubmit={submitForm}>
-      <label htmlFor='email'>
-        Email: <span>{emailError}</span>
-      </label>
+      <label htmlFor='email'>Email:</label>
       <input
         type='email'
         name='email'
@@ -22,17 +20,18 @@ const AuthForm = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label htmlFor='password'>
-        Password: <span>{passwordError}</span>
-      </label>
+      <label htmlFor='password'>Password:</label>
       <input
         type='password'
         name='password'
-        placeholder='QweAsd12!'
+        placeholder='QweAsd12!@#$%'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type='submit'>{buttonText}</button>
+      <button type='submit' disabled={isLoading}>
+        {buttonText}
+      </button>
+      {error ? <div className={styles.error}>{error}</div> : null}
     </form>
   );
 };

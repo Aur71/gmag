@@ -7,7 +7,11 @@ import Footer from '@/components/layout/footer/Footer';
 
 export default function App({ Component, pageProps }) {
   if (Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />);
+    return Component.getLayout(
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    );
   }
 
   return (

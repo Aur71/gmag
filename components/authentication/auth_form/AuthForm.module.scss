@@ -15,10 +15,6 @@
     @media only screen and (max-width: 280px) {
       margin-left: 10px;
     }
-
-    span {
-      color: rgb(190, 40, 40);
-    }
   }
 
   input {
@@ -57,5 +53,12 @@
     &:hover {
       background-color: $acc-clr-3;
     }
+  }
+
+  .error {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(230, 74, 74);
   }
 }
