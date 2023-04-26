@@ -1,9 +1,12 @@
+import { useSelector } from 'react-redux';
+import { useLogout } from '@/hooks/useLogout';
 import Link from 'next/link';
 import styles from './UserBtn.module.scss';
 import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
 
 const UserBtn = () => {
-  const user = false;
+  const { user } = useSelector((state) => state.user);
+  const { logout } = useLogout();
 
   return (
     <div className={styles.user_btn}>
@@ -13,7 +16,7 @@ const UserBtn = () => {
           Log in
         </Link>
       ) : (
-        <button>
+        <button onClick={logout}>
           <AiOutlineLogout className={styles.icon} />
           Log out
         </button>

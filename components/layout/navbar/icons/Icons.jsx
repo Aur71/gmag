@@ -5,6 +5,7 @@ import { FiHeart, FiUser } from 'react-icons/fi';
 import { BsCart3 } from 'react-icons/bs';
 
 const Icons = () => {
+  const { user } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.cart);
 
   return (
@@ -18,7 +19,10 @@ const Icons = () => {
         <span>{cart.length}</span>
       </Link>
 
-      <Link href='/login' className={styles.account_link}>
+      <Link
+        href={`${user ? '/account' : '/login'}`}
+        className={styles.account_link}
+      >
         <FiUser />
       </Link>
     </div>

@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
+import { useLogin } from '@/hooks/useLogin';
 import Logo from '@/components/authentication/logo/Logo';
 import Title from '@/components/authentication/title/Title';
 import AuthForm from '@/components/authentication/auth_form/AuthForm';
@@ -13,16 +16,20 @@ const links = [
 ];
 
 const Login = () => {
+  const router = useRouter();
+  const { user } = useSelector((state) => state.user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const { login, error, isLoading } = useLogin();
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    setEmailError('');
-    setPasswordError('');
+    await login(email, password);
   };
+
+  useEffect(() => {
+    if (user) router.push('/account');
+  }, [user, router]);
 
   return (
     <div className={styles.container}>
@@ -31,13 +38,13 @@ const Login = () => {
         <Title title='Log in' />
         <AuthForm
           submitForm={submitForm}
+          isLoading={isLoading}
           buttonText='Login'
           email={email}
           setEmail={setEmail}
           password={password}
           setPassword={setPassword}
-          emailError={emailError}
-          passwordError={passwordError}
+          error={error}
         />
         <Line />
         <GoogleBtn />

@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { useSignup } from '@/hooks/useSignup';
 import Logo from '@/components/authentication/logo/Logo';
 import Title from '@/components/authentication/title/Title';
@@ -14,6 +16,8 @@ const links = [
 ];
 
 const Signup = () => {
+  const router = useRouter();
+  const { user } = useSelector((state) => state.user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { signup, error, isLoading } = useSignup();
@@ -22,6 +26,10 @@ const Signup = () => {
     e.preventDefault();
     await signup(email, password);
   };
+
+  useEffect(() => {
+    if (user) router.push('/account');
+  }, [user, router]);
 
   return (
     <div className={styles.container}>
