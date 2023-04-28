@@ -29,7 +29,7 @@ const Slider = ({ products }) => {
       onScroll={handleScroll}
     >
       {products.map((product) => {
-        return <Card key={product.id} product={product} />;
+        return <Card key={product._id} product={product} />;
       })}
     </div>
   );

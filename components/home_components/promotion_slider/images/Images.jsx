@@ -2,18 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Images.module.scss';
 
-const Images = ({ promotionSlider, activeIndex }) => {
+const Images = ({ promotionSlides, activeIndex }) => {
   return (
     <div className={styles.images}>
-      {promotionSlider.map((slide, index) => {
-        const key = `slide_${slide.id}`;
-
+      {promotionSlides.map((slide, index) => {
         if (index === activeIndex) {
           return (
-            <Link href={slide.path} key={key} className={styles.active}>
+            <Link href={slide.path} key={slide._id} className={styles.active}>
               <Image
-                src={slide.img}
-                alt={slide.name}
+                src={slide.thumbnail}
+                alt={slide.alt}
                 priority={true}
                 width={1540}
                 height={600}
@@ -24,13 +22,13 @@ const Images = ({ promotionSlider, activeIndex }) => {
 
         if (
           index === activeIndex - 1 ||
-          (activeIndex === 0 && index === promotionSlider.length - 1)
+          (activeIndex === 0 && index === promotionSlides.length - 1)
         ) {
           return (
-            <Link href={slide.path} key={key} className={styles.prev}>
+            <Link href={slide.path} key={slide._id} className={styles.prev}>
               <Image
-                src={slide.img}
-                alt={slide.name}
+                src={slide.thumbnail}
+                alt={slide.alt}
                 priority={true}
                 width={1540}
                 height={600}
@@ -40,10 +38,10 @@ const Images = ({ promotionSlider, activeIndex }) => {
         }
 
         return (
-          <Link href={slide.path} key={key} className={styles.next}>
+          <Link href={slide.path} key={slide._id} className={styles.next}>
             <Image
-              src={slide.img}
-              alt={slide.name}
+              src={slide.thumbnail}
+              alt={slide.alt}
               priority={true}
               width={1540}
               height={600}

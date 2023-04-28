@@ -13,14 +13,14 @@ const Card = ({ product }) => {
     oldPrice,
     currentPrice,
     name,
-    img,
     rating,
     reviewsCount,
-    productType,
-    id,
+    thumbnail,
+    type,
+    _id,
   } = product;
   const dispatch = useDispatch();
-  const link = `/products/${productType}/${id}`;
+  const link = `/products/${type}/${_id}`;
 
   const dispatchAddToCart = () => {
     // CREATE A REQUEST TO THE BACKEND, AFTER THAT NOTIFY THE USER
@@ -37,7 +37,13 @@ const Card = ({ product }) => {
       </button>
 
       <Link href={link} className={styles.img_container}>
-        <Image src={img} alt={name} priority={true} width={240} height={240} />
+        <Image
+          src={thumbnail}
+          alt={name}
+          priority={true}
+          width={240}
+          height={240}
+        />
       </Link>
 
       <div className={styles.info_container}>

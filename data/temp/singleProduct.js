@@ -231,7 +231,7 @@ export const singleProduct = {
     // YOUTUBE VIDEO MODEL
     {
       element: 'youtube video',
-      videoId: 'gJMXmsG9ZSI',
+      videoId: 'dQw4w9WgXcQ',
       videoTitle: 'YouTube video player',
     },
     //

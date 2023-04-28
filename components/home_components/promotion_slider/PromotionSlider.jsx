@@ -5,16 +5,16 @@ import RadioBtns from './radio_btns/RadioBtns';
 import Images from './images/Images';
 import styles from './PromotionSlider.module.scss';
 
-const PromotionSlider = ({ promotionSlider }) => {
+const PromotionSlider = ({ promotionSlides }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const checkNum = useCallback(
     (num) => {
-      if (num > promotionSlider.length - 1) return 0;
-      if (num < 0) return promotionSlider.length - 1;
+      if (num > promotionSlides.length - 1) return 0;
+      if (num < 0) return promotionSlides.length - 1;
       return num;
     },
-    [promotionSlider]
+    [promotionSlides]
   );
 
   useEffect(() => {
@@ -33,11 +33,11 @@ const PromotionSlider = ({ promotionSlider }) => {
         <SlideLeftBtn slideLeft={slideLeft} />
         <SlideRightBtn slideRight={slideRight} />
         <RadioBtns
-          numberOfSlides={promotionSlider.length}
+          numberOfSlides={promotionSlides.length}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
         />
-        <Images promotionSlider={promotionSlider} activeIndex={activeIndex} />
+        <Images promotionSlides={promotionSlides} activeIndex={activeIndex} />
       </div>
     </section>
   );

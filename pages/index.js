@@ -1,50 +1,53 @@
+/* eslint-env es6 */
 import PromotionSlider from '@/components/home_components/promotion_slider/PromotionSlider';
 import ProductSlider from '@/components/home_components/product_slider/ProductSlider';
 import NewsLetter from '@/components/home_components/news_letter/NewsLetter';
-// import axios from 'axios';
+import axios from 'axios';
 import styles from '../styles/pages/Home.module.scss';
 import { ImFire } from 'react-icons/im';
 import { AiFillStar } from 'react-icons/ai';
 
-// TEMP DATA
-import { promotionSlider } from '@/data/temporary/promotion_slider';
-import { hotDeals } from '@/data/temporary/hotDeals';
-import { mostPopular } from '@/data/temporary/mostPopular';
-
-export default function Home() {
+export default function Home({ promotionSlides, hotDeals, mostPopular }) {
   return (
     <div className={styles.home}>
-      <PromotionSlider promotionSlider={promotionSlider} />
-      <ProductSlider
-        title='Hot Deals'
-        icon={<ImFire className='red' />}
-        products={hotDeals}
-      />
-      <ProductSlider
-        title='Most Popular'
-        icon={<AiFillStar className='star-clr' />}
-        products={mostPopular}
-      />
+      <PromotionSlider promotionSlides={promotionSlides} />
+      {hotDeals.length ? (
+        <ProductSlider
+          title='Hot Deals'
+          icon={<ImFire className='red' />}
+          products={hotDeals}
+        />
+      ) : null}
+
+      {mostPopular.length ? (
+        <ProductSlider
+          title='Most Popular'
+          icon={<AiFillStar className='star-clr' />}
+          products={mostPopular}
+        />
+      ) : null}
       <NewsLetter />
     </div>
   );
 }
 
 export async function getStaticProps() {
-  // const [promotionRes, hotDealsRes, mostPopularRes] = await Promise.all([
-  //   axios.get('https://api.example.com/promotionSlider'),
-  //   axios.get('https://api.example.com/hotDeals'),
-  //   axios.get('https://api.example.com/mostPopular'),
-  // ]);
+  const [promotionSlidesResponse, hotDealsResponse, mostPopularResponse] =
+    await Promise.all([
+      axios.get('http://localhost:3000/api/v1/promotion-slides'),
+      axios.get('http://localhost:3000/api/v1/products/hot-deals'),
+      axios.get('http://localhost:3000/api/v1/products/most-popular'),
+    ]);
 
-  // const promotionSlider = promotionRes.data;
-  // const hotDeals = hotDealsRes.data;
-  // const mostPopular = mostPopularRes.data;
+  const promotionSlides = promotionSlidesResponse.data;
+  const hotDeals = hotDealsResponse.data;
+  const mostPopular = mostPopularResponse.data;
+
   return {
     props: {
-      // promotionSlider,
-      // hotDeals,
-      // mostPopular,
+      promotionSlides,
+      hotDeals,
+      mostPopular,
     },
     revalidate: 60,
   };
