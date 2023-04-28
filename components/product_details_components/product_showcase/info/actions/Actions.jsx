@@ -1,32 +1,21 @@
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import styles from './Actions.module.scss';
-import { addProduct } from '@/redux/reducers/favoritesSlice';
+// import { addProduct } from '@/redux/reducers/favoritesSlice';
 
 const Actions = ({ data }) => {
-  const {
-    totalStock,
-    currentPrice,
-    oldPrice,
-    img,
-    name,
-    reviewsCount,
-    rating,
-    productType,
-    id,
-    discount,
-  } = data;
-  const dispatch = useDispatch();
-  const product = {
-    currentPrice,
-    oldPrice,
-    img,
-    name,
-    reviewsCount,
-    rating,
-    productType,
-    discount,
-    id,
-  };
+  const { totalStock } = data;
+  // const dispatch = useDispatch();
+  // const product = {
+  //   currentPrice,
+  //   oldPrice,
+  //   img,
+  //   name,
+  //   reviewsCount,
+  //   rating,
+  //   productType,
+  //   discount,
+  //   id,
+  // };
 
   return (
     <div className={styles.actions}>
@@ -38,7 +27,7 @@ const Actions = ({ data }) => {
       </button>
       <button
         className={styles.favorite_btn}
-        onClick={() => dispatch(addProduct(product))}
+        // onClick={() => dispatch(addProduct(product))}
       >
         Add to favorite
       </button>

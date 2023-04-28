@@ -13,12 +13,12 @@ const Sidebar = ({ images }) => {
         {images?.map((image, index) => {
           return (
             <button
-              key={`image_viewer_${image.name}_${index}`}
+              key={image._id}
               className={`${activeImageIndex === index && styles.active}`}
               onClick={() => dispatch(handleActiveImageIndex(index))}
             >
               <Image
-                src={image.img}
+                src={image.url}
                 alt={image.name}
                 width={100}
                 height={100}

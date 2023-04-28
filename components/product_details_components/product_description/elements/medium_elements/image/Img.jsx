@@ -2,6 +2,8 @@ import Image from 'next/image';
 import styles from './Img.module.scss';
 
 const Img = ({ data }) => {
+  console.log(data);
+
   return (
     <Image
       src={data?.src}

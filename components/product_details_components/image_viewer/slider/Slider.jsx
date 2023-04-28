@@ -65,7 +65,7 @@ const Slider = ({ images }) => {
 
   const handleZoom = (e) => {
     e.preventDefault();
-    if (typeof window === 'undefined') return; // Check if window is defined
+    if (typeof window === 'undefined') return;
     const containerOffset = e.target.getBoundingClientRect();
     const centerX = containerOffset.width / 2;
     const centerY = containerOffset.height / 2;
@@ -120,17 +120,15 @@ const Slider = ({ images }) => {
         onMouseMove={handleMouseMove}
       >
         {images?.map((image, index) => {
-          const key = `image_viewer_slider_${image.name}_${index}`;
-
           if (activeImageIndex === index)
             return (
               <div
-                key={key}
+                key={image._id}
                 className={`${styles.img_container} ${styles.current}`}
                 onClick={handleZoom}
               >
                 <Image
-                  src={image.img}
+                  src={image.url}
                   alt={image.name}
                   width={1000}
                   height={1000}
@@ -147,11 +145,11 @@ const Slider = ({ images }) => {
           )
             return (
               <div
-                key={key}
+                key={image._id}
                 className={`${styles.img_container} ${styles.prev}`}
               >
                 <Image
-                  src={image.img}
+                  src={image.url}
                   alt={image.name}
                   width={1000}
                   height={1000}
@@ -160,9 +158,12 @@ const Slider = ({ images }) => {
             );
 
           return (
-            <div key={key} className={`${styles.img_container} ${styles.next}`}>
+            <div
+              key={image._id}
+              className={`${styles.img_container} ${styles.next}`}
+            >
               <Image
-                src={image.img}
+                src={image.url}
                 alt={image.name}
                 width={1000}
                 height={1000}

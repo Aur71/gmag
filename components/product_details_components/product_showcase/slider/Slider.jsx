@@ -125,10 +125,9 @@ const Slider = ({ images }) => {
           onScroll={handleScroll}
         >
           {images?.map((image, index) => {
-            const key = `showcase_${image.name}_${index}`;
             return (
               <button
-                key={key}
+                key={image._id}
                 className={`${styles.img_btn} ${
                   activeImageIndex === index && styles.active
                 }`}
@@ -137,7 +136,7 @@ const Slider = ({ images }) => {
               >
                 <Image
                   priority={true}
-                  src={image.img}
+                  src={image.url}
                   alt={image.name}
                   width={100}
                   height={100}
@@ -160,8 +159,8 @@ const Slider = ({ images }) => {
       <div className={styles.img_container}>
         <Image
           priority={true}
-          src={images[activeImageIndex].img}
-          alt='temporary img'
+          src={images[activeImageIndex].url}
+          alt={images[activeImageIndex].name}
           width={500}
           height={500}
           onClick={() => dispatch(handleShowImageViewer(true))}

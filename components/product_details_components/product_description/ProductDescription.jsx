@@ -13,7 +13,6 @@ import Ol from './elements/medium_elements/lists/ordered/Ol';
 import Ul from './elements/medium_elements/lists/unordered/Ul';
 import Img from './elements/medium_elements/image/Img';
 import YouTubeVideo from './elements/medium_elements/youtube_video/YouTubeVideo';
-import Container from './elements/large_elements/container/Container';
 import styles from './ProductDescription.module.scss';
 
 const ProductDescription = ({ description, onMount }) => {
@@ -58,33 +57,31 @@ const ProductDescription = ({ description, onMount }) => {
     }
   }, [onMount]);
 
+  console.log(description);
+
   return (
     <section className={styles.product_description} ref={productDescriptionRef}>
       <div className={styles.padding_container} ref={paddingContainerRef}>
         <div className={styles.center}>
           <h2>Description</h2>
 
-          {description?.map((item, index) => {
+          {description?.map((item) => {
             const { element } = item;
-            const key = `${element}_${index}`;
-
-            if (element === 'h2') return <H2 key={key} data={item} />;
-            if (element === 'h3') return <H3 key={key} data={item} />;
-            if (element === 'h4') return <H4 key={key} data={item} />;
-            if (element === 'h5') return <H5 key={key} data={item} />;
-            if (element === 'h6') return <H6 key={key} data={item} />;
-            if (element === 'p') return <P key={key} data={item} />;
-            if (element === 'a') return <A key={key} data={item} />;
-            if (element === 'b') return <B key={key} data={item} />;
-            if (element === 'i') return <I key={key} data={item} />;
-            if (element === 'span') return <Span key={key} data={item} />;
-            if (element === 'ol') return <Ol key={key} data={item} />;
-            if (element === 'ul') return <Ul key={key} data={item} />;
-            if (element === 'img') return <Img key={key} data={item} />;
+            if (element === 'h2') return <H2 key={item._id} data={item} />;
+            if (element === 'h3') return <H3 key={item._id} data={item} />;
+            if (element === 'h4') return <H4 key={item._id} data={item} />;
+            if (element === 'h5') return <H5 key={item._id} data={item} />;
+            if (element === 'h6') return <H6 key={item._id} data={item} />;
+            if (element === 'p') return <P key={item._id} data={item} />;
+            if (element === 'a') return <A key={item._id} data={item} />;
+            if (element === 'b') return <B key={item._id} data={item} />;
+            if (element === 'i') return <I key={item._id} data={item} />;
+            if (element === 'span') return <Span key={item._id} data={item} />;
+            if (element === 'ol') return <Ol key={item._id} data={item} />;
+            if (element === 'ul') return <Ul key={item._id} data={item} />;
+            if (element === 'img') return <Img key={item._id} data={item} />;
             if (element === 'youtube video')
-              return <YouTubeVideo key={key} data={item} />;
-            if (element === 'container')
-              return <Container key={key} data={item} />;
+              return <YouTubeVideo key={item._id} data={item} />;
           })}
         </div>
       </div>

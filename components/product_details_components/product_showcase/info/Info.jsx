@@ -5,6 +5,8 @@ import Actions from './actions/Actions';
 import styles from './Info.module.scss';
 
 const Info = ({ data }) => {
+  console.log(data);
+
   return (
     <div className={styles.info}>
       <h1>{data.name}</h1>
