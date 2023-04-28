@@ -34,6 +34,10 @@ const ProductDetails = ({ product }) => {
   const handleProductRecommendationsRef = (node) =>
     setProductRecommendationsRef(node);
 
+  if (!product.name) {
+    return <div>product not found</div>;
+  }
+
   return (
     <div className={styles.product_details}>
       <ProductShowcase data={product} onMount={handleProductShowcaseMount} />
@@ -45,7 +49,7 @@ const ProductDetails = ({ product }) => {
         />
       ) : null}
       <ProductSpecifications
-        specifications={singleProduct.specifications}
+        specifications={product.specifications}
         onMount={handleProductSpecificationsRef}
       />
       <ProductReviews

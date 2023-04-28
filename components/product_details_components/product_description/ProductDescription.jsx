@@ -65,23 +65,23 @@ const ProductDescription = ({ description, onMount }) => {
         <div className={styles.center}>
           <h2>Description</h2>
 
-          {description?.map((item) => {
+          {description?.map((item, index) => {
             const { element } = item;
-            if (element === 'h2') return <H2 key={item._id} data={item} />;
-            if (element === 'h3') return <H3 key={item._id} data={item} />;
-            if (element === 'h4') return <H4 key={item._id} data={item} />;
-            if (element === 'h5') return <H5 key={item._id} data={item} />;
-            if (element === 'h6') return <H6 key={item._id} data={item} />;
-            if (element === 'p') return <P key={item._id} data={item} />;
-            if (element === 'a') return <A key={item._id} data={item} />;
-            if (element === 'b') return <B key={item._id} data={item} />;
-            if (element === 'i') return <I key={item._id} data={item} />;
-            if (element === 'span') return <Span key={item._id} data={item} />;
-            if (element === 'ol') return <Ol key={item._id} data={item} />;
-            if (element === 'ul') return <Ul key={item._id} data={item} />;
-            if (element === 'img') return <Img key={item._id} data={item} />;
+            if (element === 'h2') return <H2 key={index} data={item} />;
+            if (element === 'h3') return <H3 key={index} data={item} />;
+            if (element === 'h4') return <H4 key={index} data={item} />;
+            if (element === 'h5') return <H5 key={index} data={item} />;
+            if (element === 'h6') return <H6 key={index} data={item} />;
+            if (element === 'p') return <P key={index} data={item} />;
+            if (element === 'a') return <A key={index} data={item} />;
+            if (element === 'b') return <B key={index} data={item} />;
+            if (element === 'i') return <I key={index} data={item} />;
+            if (element === 'span') return <Span key={index} data={item} />;
+            if (element === 'ol') return <Ol key={index} data={item} />;
+            if (element === 'ul') return <Ul key={index} data={item} />;
+            if (element === 'img') return <Img key={index} data={item} />;
             if (element === 'youtube video')
-              return <YouTubeVideo key={item._id} data={item} />;
+              return <YouTubeVideo key={index} data={item} />;
           })}
         </div>
       </div>

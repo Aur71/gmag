@@ -8,11 +8,11 @@ const H6 = ({ data }) => {
   return (
     <h6 className={styles.default} style={data?.styles}>
       {data?.content?.map((item, index) => {
-        if (typeof item === 'string') return <span key={item._id}>{item}</span>;
-        if (item.element === 'b') return <B key={item._id} data={item} />;
-        if (item.element === 'i') return <I key={item._id} data={item} />;
-        if (item.element === 'a') return <A key={item._id} data={item} />;
-        if (item.element === 'span') return <Span key={item._id} data={item} />;
+        if (typeof item === 'string') return <span key={index}>{item}</span>;
+        if (item.element === 'b') return <B key={index} data={item} />;
+        if (item.element === 'i') return <I key={index} data={item} />;
+        if (item.element === 'a') return <A key={index} data={item} />;
+        if (item.element === 'span') return <Span key={index} data={item} />;
       })}
     </h6>
   );
