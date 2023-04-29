@@ -20,7 +20,7 @@ const Rating = ({ rating, reviewsCount }) => {
         className={`${styles.icon} ${5 <= rating && styles.active}`}
       />
       <p>{rating ? rating : 0}</p>
-      <p>{reviewsCount ? reviewsCount : 0}</p>
+      <p>({reviewsCount ? reviewsCount : 0})</p>
     </div>
   );
 };

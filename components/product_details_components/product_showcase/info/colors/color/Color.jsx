@@ -1,20 +1,17 @@
 import { useRef, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import styles from './Color.module.scss';
-import { handleActiveColor } from '@/redux/reducers/singleProductSlice';
 
-const Color = ({ color }) => {
-  const dispatch = useDispatch();
+const Color = ({ color, activeColor, setActiveColor }) => {
   const colorContainerRef = useRef(null);
-  const { activeColor } = useSelector((state) => state.singleProduct);
 
   useEffect(() => {
-    colorContainerRef.current.style.backgroundColor = color.color;
+    // Sets the background-color of the circle.
+    colorContainerRef.current.style.backgroundColor = color.value;
   }, [color]);
 
   return (
     <div className={`${styles.color} ${!color.stock && styles.disabled}`}>
-      <button onClick={() => dispatch(handleActiveColor(color))}>
+      <button onClick={() => setActiveColor(color)}>
         <span ref={colorContainerRef}></span>
         {color.name}
       </button>

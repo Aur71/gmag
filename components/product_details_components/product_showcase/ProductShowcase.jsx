@@ -4,7 +4,7 @@ import Slider from './slider/Slider';
 import Info from './info/Info';
 import styles from './ProductShowcase.module.scss';
 
-const ProductShowcase = ({ data, onMount }) => {
+const ProductShowcase = ({ product, onMount }) => {
   const productShowcaseRef = useRef(null);
 
   useEffect(() => {
@@ -19,8 +19,8 @@ const ProductShowcase = ({ data, onMount }) => {
         <Path />
 
         <div className={styles.columns_container}>
-          <Slider images={data.images} />
-          <Info data={data} />
+          <Slider images={product.images} />
+          <Info product={product} />
         </div>
       </div>
     </section>

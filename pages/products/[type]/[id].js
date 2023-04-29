@@ -40,7 +40,8 @@ const ProductDetails = ({ product }) => {
 
   return (
     <div className={styles.product_details}>
-      <ProductShowcase data={product} onMount={handleProductShowcaseMount} />
+      <ProductShowcase product={product} onMount={handleProductShowcaseMount} />
+
       <ImageViewer images={product.images} />
       {singleProduct.description.length ? (
         <ProductDescription

@@ -1,36 +1,31 @@
-import { useState } from 'react';
 import styles from './Price.module.scss';
 
-const Price = ({ currentPrice, oldPrice, totalStock }) => {
-  const [showStock, setShowStock] = useState(false);
+const Price = ({ currentPrice, oldPrice, activeColor }) => {
+  const avaliable = activeColor.stock >= 7;
+  const limited = activeColor.stock <= 6 && activeColor.stock >= 1;
+  const outOfStock = activeColor.stock <= 0;
 
   return (
     <div className={styles.price}>
-      <h2>Price</h2>
+      <h2>Price:</h2>
 
-      <div className={styles.grid_container}>
-        <div>
-          <h3>${currentPrice}</h3>
-          {oldPrice ? <h4>${oldPrice}</h4> : null}
-        </div>
-
-        <button
-          onMouseOver={() => setShowStock(true)}
-          onMouseLeave={() => setShowStock(false)}
-        >
-          Stock:
-          {totalStock > 1 ? (
-            <span className={styles.green}>avaliable</span>
-          ) : (
-            <span className={styles.grey}>out of stock</span>
-          )}
-          <span
-            className={`${styles.current_stock} ${showStock && styles.active}`}
-          >
-            {totalStock}
-          </span>
-        </button>
+      <div className={styles.price_container}>
+        <h3>${currentPrice}</h3>
+        {oldPrice ? <h4>${oldPrice}</h4> : null}
       </div>
+
+      <h5>
+        Stock:{' '}
+        <span
+          className={`${avaliable && styles.avaliable} ${
+            limited && styles.limited
+          } ${outOfStock && styles.outOfStock}`}
+        >
+          {avaliable ? 'avaliable' : null}
+          {limited ? 'limited' : null}
+          {outOfStock ? 'out of stock' : null}
+        </span>
+      </h5>
     </div>
   );
 };
