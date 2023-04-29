@@ -10,7 +10,7 @@ const Colors = ({ colors, activeColor, setActiveColor }) => {
   useEffect(() => {
     const initialColor = colors.find((color) => color.stock >= 1);
     setActiveColor(initialColor);
-  }, [colors]);
+  }, [colors, setActiveColor]);
 
   return (
     <div className={styles.colors}>

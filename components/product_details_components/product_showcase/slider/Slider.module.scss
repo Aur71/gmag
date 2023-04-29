@@ -5,9 +5,11 @@
   max-height: 600px;
   display: grid;
   grid-template-columns: 100px 1fr;
+  gap: 20px;
 
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 1150px) {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   //
@@ -20,8 +22,10 @@
     height: 100%;
     position: relative;
 
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-width: 1150px) {
       order: 2;
+      max-width: none;
+      height: 100px;
     }
 
     .slide_btn {
@@ -35,7 +39,7 @@
       position: absolute;
       background-color: $white;
 
-      @media only screen and (max-width: 1400px) {
+      @media only screen and (max-width: 1150px) {
         height: 100%;
         width: 25px;
       }
@@ -55,7 +59,7 @@
       &:first-of-type {
         top: 0;
 
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (max-width: 1150px) {
           left: 0;
         }
       }
@@ -63,7 +67,7 @@
       &:last-of-type {
         bottom: 0;
 
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (max-width: 1150px) {
           right: 0;
         }
       }
@@ -81,7 +85,7 @@
       flex-direction: column;
       gap: 16px;
 
-      @media only screen and (max-width: 1400px) {
+      @media only screen and (max-width: 1150px) {
         flex-direction: row;
         align-items: center;
         padding: 0 25px;
@@ -99,6 +103,7 @@
         border: 1px solid transparent;
         border-radius: 3px;
         overflow: hidden;
+
         &:hover {
           border: 1px solid $acc-clr-1;
         }

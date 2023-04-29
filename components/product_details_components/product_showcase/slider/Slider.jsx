@@ -60,32 +60,32 @@ const Slider = ({ images }) => {
     const scrollHeight = target.scrollHeight;
     const scrollWidth = target.scrollWidth;
 
-    if (clientHeight === scrollHeight && windowWidth > 1400) {
+    if (clientHeight === scrollHeight && windowWidth > 1150) {
       setDisableTopLeftBtn(true);
       setDisableBottomRightBtn(true);
       return;
     }
-    if (!scrollTop && windowWidth > 1400) {
+    if (!scrollTop && windowWidth > 1150) {
       setDisableTopLeftBtn(true);
       return;
     }
-    if (scrollHeight - clientHeight === scrollTop && windowWidth > 1400) {
+    if (scrollHeight - clientHeight === scrollTop && windowWidth > 1150) {
       setDisableBottomRightBtn(true);
       return;
     }
-    if (clientWidth === scrollWidth && windowWidth && windowWidth <= 1400) {
+    if (clientWidth === scrollWidth && windowWidth && windowWidth <= 1150) {
       setDisableTopLeftBtn(true);
       setDisableBottomRightBtn(true);
       return;
     }
-    if (!scrollLeft && windowWidth && windowWidth <= 1400) {
+    if (!scrollLeft && windowWidth && windowWidth <= 1150) {
       setDisableTopLeftBtn(true);
       return;
     }
     if (
       scrollWidth - clientWidth === scrollLeft &&
       windowWidth &&
-      windowWidth <= 1400
+      windowWidth <= 1150
     ) {
       setDisableBottomRightBtn(true);
       return;
@@ -113,9 +113,9 @@ const Slider = ({ images }) => {
           className={`${styles.slide_btn} ${
             disableTopLeftBtn && styles.disabled
           }`}
-          onClick={windowWidth <= 1400 ? slideLeft : slideUp}
+          onClick={windowWidth <= 1150 ? slideLeft : slideUp}
         >
-          {windowWidth <= 1400 ? <BsChevronLeft /> : <BsChevronUp />}
+          {windowWidth <= 1150 ? <BsChevronLeft /> : <BsChevronUp />}
         </button>
 
         <div
@@ -150,9 +150,9 @@ const Slider = ({ images }) => {
           className={`${styles.slide_btn} ${
             disableBottomRightBtn && styles.disabled
           }`}
-          onClick={windowWidth <= 1400 ? slideRight : slideDown}
+          onClick={windowWidth <= 1150 ? slideRight : slideDown}
         >
-          {windowWidth <= 1400 ? <BsChevronRight /> : <BsChevronDown />}
+          {windowWidth <= 1150 ? <BsChevronRight /> : <BsChevronDown />}
         </button>
       </div>
 
