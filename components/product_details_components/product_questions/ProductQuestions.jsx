@@ -6,8 +6,8 @@ import Questions from './questions/Questions';
 import styles from './ProductQuestions.module.scss';
 
 const ProductQuestions = ({ questions }) => {
-  const [sortBy, setSortBy] = useState(null);
-  const [searchQuestions, setSearchQuestions] = useState('');
+  const [sortBy, setSortBy] = useState('Newest');
+  const [searchTerm, setSearchTerm] = useState('');
   const [showAddQuestion, setShowAddQuestion] = useState(false);
 
   return (
@@ -25,13 +25,13 @@ const ProductQuestions = ({ questions }) => {
         <Filters
           sortBy={sortBy}
           setSortBy={setSortBy}
-          searchQuestions={searchQuestions}
-          setSearchQuestions={setSearchQuestions}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
         />
         <Questions
           questions={questions}
           sortBy={sortBy}
-          searchQuestions={searchQuestions}
+          searchTerm={searchTerm}
         />
       </div>
     </section>

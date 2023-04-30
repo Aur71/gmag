@@ -1,53 +1,34 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Question from './question/Question';
-import Pagination from './pagination/Pagination';
+import Pagination from '@/features/pagination/Pagination';
 import styles from './Questions.module.scss';
 import search from './functions/search';
 import sortQuestions from './functions/sortQuestions';
 
-const Questions = ({ questions, sortBy, searchQuestions }) => {
-  const questionsRef = useRef(null);
+const Questions = ({ questions, sortBy, searchTerm }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const questionsPerPage = 5;
-  const lastQuestionIndex = currentPage * questionsPerPage;
-  const fistQuestionIndex = lastQuestionIndex - questionsPerPage;
-
-  useEffect(() => {
-    const scrollToTop = () => {
-      const target = questionsRef.current.offsetTop - 100;
-
-      window.scrollTo({
-        top: target,
-        behavior: 'smooth',
-      });
-    };
-    scrollToTop();
-  }, [currentPage]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const searchedQuestions = search(questions, searchQuestions);
+  const itemsPerPage = 10;
+  const lastItemIndex = currentPage * itemsPerPage;
+  const fistItemIndex = lastItemIndex - itemsPerPage;
+  const searchedQuestions = search(questions, searchTerm);
   const sortedQuestions = sortQuestions(searchedQuestions, sortBy);
   const paginatedQuestions = sortedQuestions.slice(
-    fistQuestionIndex,
-    lastQuestionIndex
+    fistItemIndex,
+    lastItemIndex
   );
 
   return (
-    <div className={styles.questions} ref={questionsRef}>
+    <div className={styles.questions}>
       {paginatedQuestions.map((question) => {
-        const key = `question_${question.id}`;
-        return <Question key={key} question={question} />;
+        return <Question key={question._id} question={question} />;
       })}
-
-      {questions.length > 5 ? (
+      {questions.length > itemsPerPage ? (
         <Pagination
-          totalQuestions={sortedQuestions.length}
+          totalItems={sortedQuestions.length}
+          itemsPerPage={itemsPerPage}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          questionsPerPage={questionsPerPage}
+          paginationStyles={{ marginTop: '20px' }}
         />
       ) : null}
     </div>

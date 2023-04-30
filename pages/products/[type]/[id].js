@@ -8,9 +8,6 @@ import AddReview from '@/components/product_details_components/add_review/AddRev
 import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
-// TEMP DATA
-import { singleProduct } from '@/data/temp/singleProduct';
-
 const ProductDetails = ({ product }) => {
   if (!product.name) {
     return <div>product not found</div>;
@@ -25,13 +22,10 @@ const ProductDetails = ({ product }) => {
         <ProductDescription description={product.description} />
       ) : null}
       <ProductSpecifications specifications={product.specifications} />
-      <ProductReviews
-        reviewsData={singleProduct.reviewsData}
-        product={product}
-      />
+      <ProductReviews product={product} />
       <AddReview />
 
-      <ProductQuestions questions={singleProduct.questions} />
+      <ProductQuestions questions={product.questions} />
     </div>
   );
 };

@@ -1,16 +1,16 @@
 import styles from './Header.module.scss';
 import formatDate from '@/utils/formatDate';
 
-const Header = ({ postedOn, postedBy, question }) => {
-  const { userName } = postedBy;
-  const date = formatDate(postedOn);
+const Header = ({ question }) => {
+  const { postedBy, createdAt } = question;
+  const date = formatDate(createdAt);
 
   return (
     <div className={styles.header}>
       <h4>
-        By {userName} on {date}
+        By {postedBy.name} on {date}
       </h4>
-      <h3>{question}</h3>
+      <h3>{question.question}</h3>
     </div>
   );
 };

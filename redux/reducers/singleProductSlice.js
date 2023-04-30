@@ -7,12 +7,7 @@ const singleProductSlice = createSlice({
     showImageViewer: false,
     zoom: 1,
     zoomOrigin: `0px, 0px`,
-    activeColor: null,
-    sortReviews: '',
-    filterReviews: '',
-    searchReviews: '',
     showAddReview: false,
-    showShare: false,
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -80,34 +75,11 @@ const singleProductSlice = createSlice({
       }
       state.zoom = state.zoom + 0.5;
     },
-    handleActiveColor: (state, action) => {
-      if (!action.payload) {
-        state.activeColor = 'no stock available';
-        return;
-      }
-      state.activeColor = action.payload;
-    },
-
-    handleSortReviews: (state, action) => {
-      state.sortReviews = action.payload;
-    },
-    handleFilterReviews: (state, action) => {
-      state.filterReviews = action.payload;
-    },
-    handleSearchReviews: (state, action) => {
-      state.searchReviews = action.payload;
-    },
     handleShowAddReview: (state, action) => {
       const body = document.querySelector('body');
       if (action.payload === true) body.style.overflow = 'hidden';
       else body.style.overflow = 'visible';
       state.showAddReview = action.payload;
-    },
-    handleShowShare: (state, action) => {
-      const body = document.querySelector('body');
-      if (action.payload === true) body.style.overflow = 'hidden';
-      else body.style.overflow = 'visible';
-      state.showShare = action.payload;
     },
   },
 });
@@ -123,10 +95,4 @@ export const {
   increaseZoom,
   decreaseZoom,
   resetZoom,
-  handleActiveColor,
-  handleSortReviews,
-  handleFilterReviews,
-  handleSearchReviews,
-  handleShowAddReview,
-  handleShowShare,
 } = singleProductSlice.actions;

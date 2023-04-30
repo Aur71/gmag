@@ -14,10 +14,12 @@ const Actions = ({
         <FaCommentMedical className={styles.icon} /> <span>Add answer</span>
       </button>
 
-      <button onClick={() => setShowAnswers(!showAnswers)}>
-        <FaComments className={styles.icon} /> <span>View answers</span>
-        <span>({numOfAnswers})</span>
-      </button>
+      {numOfAnswers ? (
+        <button onClick={() => setShowAnswers(!showAnswers)}>
+          <FaComments className={styles.icon} /> <span>View answers</span>
+          <span>({numOfAnswers})</span>
+        </button>
+      ) : null}
     </div>
   );
 };

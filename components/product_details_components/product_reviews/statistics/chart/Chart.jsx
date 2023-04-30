@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import Row from './row/Row';
 import styles from './Chart.module.scss';
 
-const Chart = ({ reviewsData, reviewsCount }) => {
+const Chart = ({ reviewsData, reviewsCount, setFilterBy }) => {
   const chartRef = useRef(null);
 
   // This useEffect sets the width of all the starCount on the right of the chart. This way if one count is 1000 and one is 0 they will have the same width
@@ -27,26 +27,31 @@ const Chart = ({ reviewsData, reviewsCount }) => {
         stars={5}
         starCount={reviewsData[4].count}
         reviewsCount={reviewsCount}
+        setFilterBy={setFilterBy}
       />
       <Row
         stars={4}
         starCount={reviewsData[3].count}
         reviewsCount={reviewsCount}
+        setFilterBy={setFilterBy}
       />
       <Row
         stars={3}
         starCount={reviewsData[2].count}
         reviewsCount={reviewsCount}
+        setFilterBy={setFilterBy}
       />
       <Row
         stars={2}
         starCount={reviewsData[1].count}
         reviewsCount={reviewsCount}
+        setFilterBy={setFilterBy}
       />
       <Row
         stars={1}
         starCount={reviewsData[0].count}
         reviewsCount={reviewsCount}
+        setFilterBy={setFilterBy}
       />
     </div>
   );

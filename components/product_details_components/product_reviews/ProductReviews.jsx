@@ -14,7 +14,11 @@ const ProductReviews = ({ product, reviewsData }) => {
     <section className={styles.product_reviews}>
       <div className={styles.center}>
         <Header reviewsCount={product.reviewsCount} />
-        <Statistics reviewsData={reviewsData} product={product} />
+        <Statistics
+          reviewsData={reviewsData}
+          product={product}
+          setFilterBy={setFilterBy}
+        />
         <Filters
           sortBy={sortBy}
           setSortBy={setSortBy}

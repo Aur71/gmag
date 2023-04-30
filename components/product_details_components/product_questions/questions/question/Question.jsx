@@ -9,13 +9,11 @@ const Question = ({ question }) => {
   const [showAddAnswer, setShowAddAnswer] = useState(false);
   const [showAnswers, setShowAnswers] = useState(false);
 
+  // add a way to delete your question
+
   return (
     <div className={styles.question}>
-      <Header
-        postedOn={question.postedOn}
-        postedBy={question.postedBy}
-        question={question.question}
-      />
+      <Header question={question} />
       <Actions
         numOfAnswers={question.answers.length}
         showAddAnswer={showAddAnswer}

@@ -1,4 +1,4 @@
-export default function (reviews) {
+export default function getReviewsData(reviews) {
   const data = [
     {
       stars: 1,

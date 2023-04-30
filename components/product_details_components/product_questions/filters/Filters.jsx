@@ -1,20 +1,19 @@
-import Sort from './sort/Sort';
-import Search from './search/Search';
+import Sort from '@/features/sort/Sort';
+import MiniSearchbar from '@/features/mini_searchbar/MiniSearchbar';
 import styles from './Filters.module.scss';
 
-const Filters = ({
-  sortBy,
-  setSortBy,
-  searchQuestions,
-  setSearchQuestions,
-}) => {
+const sortOptions = ['Newest', 'Oldest', 'No. answers'];
+
+const Filters = ({ sortBy, setSortBy, searchTerm, setSearchTerm }) => {
   return (
     <div className={styles.filters}>
-      <Sort sortBy={sortBy} setSortBy={setSortBy} />
-      <Search
-        searchQuestions={searchQuestions}
-        setSearchQuestions={setSearchQuestions}
+      <Sort
+        options={sortOptions}
+        activeSortBy={sortBy}
+        setSortBy={setSortBy}
+        optionsStyle={{ backgroundColor: 'white' }}
       />
+      <MiniSearchbar search={searchTerm} setSearch={setSearchTerm} />
     </div>
   );
 };
