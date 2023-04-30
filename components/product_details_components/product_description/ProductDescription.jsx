@@ -15,7 +15,7 @@ import Img from './elements/medium_elements/image/Img';
 import YouTubeVideo from './elements/medium_elements/youtube_video/YouTubeVideo';
 import styles from './ProductDescription.module.scss';
 
-const ProductDescription = ({ description, onMount }) => {
+const ProductDescription = ({ description }) => {
   const [showMore, setShowMore] = useState(false);
   const productDescriptionRef = useRef(null);
   const paddingContainerRef = useRef(null);
@@ -32,7 +32,6 @@ const ProductDescription = ({ description, onMount }) => {
       const target = productDescriptionRef.current.offsetTop - 90;
       window.scrollTo({ top: target, behavior: 'smooth' });
     }
-
     setShowMore(!showMore);
   };
 
@@ -50,14 +49,6 @@ const ProductDescription = ({ description, onMount }) => {
       btnRef.current.style.display = 'flex';
     }
   }, [description]);
-
-  useEffect(() => {
-    if (onMount && productDescriptionRef.current) {
-      onMount(productDescriptionRef.current);
-    }
-  }, [onMount]);
-
-  console.log(description);
 
   return (
     <section className={styles.product_description} ref={productDescriptionRef}>

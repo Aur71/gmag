@@ -44,8 +44,10 @@ const Reviews = ({ reviews }) => {
 
   return (
     <div className={styles.reviews} ref={reviewsRef}>
-      {paginatedReviews.map((review, index) => {
-        return <Review key={index} review={review} currentPage={currentPage} />;
+      {paginatedReviews.map((review) => {
+        return (
+          <Review key={review._id} review={review} currentPage={currentPage} />
+        );
       })}
       {reviews.length > reviewsPerPage ? (
         <Pagination

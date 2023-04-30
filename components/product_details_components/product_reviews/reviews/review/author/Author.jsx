@@ -3,17 +3,19 @@ import Link from 'next/link';
 import styles from './Author.module.scss';
 import formatDate from '@/utils/formatDate';
 
-const Author = ({ postedOn, postedBy }) => {
-  const { userImg, userName, userId } = postedBy;
-  const date = formatDate(postedOn);
+const Author = ({ createdAt, postedBy }) => {
+  const date = formatDate(createdAt);
 
   return (
     <div className={styles.author}>
-      <Link href={`/account/reviews/${userId}`}>
-        <Image src={userImg} alt='user image' width={60} height={60} />
-      </Link>
+      <Image
+        src={postedBy.profileImage}
+        alt={postedBy.name}
+        width={60}
+        height={60}
+      />
       <div>
-        <h4>{userName}</h4>
+        <h4>{postedBy.name}</h4>
         <p>{date}</p>
       </div>
     </div>

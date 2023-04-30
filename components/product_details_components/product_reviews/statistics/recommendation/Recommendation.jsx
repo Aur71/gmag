@@ -1,7 +1,8 @@
 import styles from './Recommendation.module.scss';
 
-const Recommendation = ({ reviewsCount, starsCount }) => {
-  const percent = ((starsCount[4] + starsCount[5]) / reviewsCount) * 100;
+const Recommendation = ({ reviewsData, reviewsCount }) => {
+  const percent =
+    ((reviewsData[3].count + reviewsData[4].count) / reviewsCount) * 100;
 
   return (
     <div className={styles.recommendation}>

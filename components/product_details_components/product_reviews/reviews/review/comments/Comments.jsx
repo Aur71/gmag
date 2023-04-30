@@ -12,8 +12,8 @@ const Comments = ({ comments, showComments }) => {
 
   return (
     <div className={`${styles.comments} ${showComments && styles.active}`}>
-      {paginatedComments.map((comment, index) => {
-        return <Comment key={index} comment={comment} />;
+      {paginatedComments.map((comment) => {
+        return <Comment key={comment._id} comment={comment} />;
       })}
       {comments.length > commentsPerPage ? (
         <Pagination

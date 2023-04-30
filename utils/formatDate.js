@@ -1,6 +1,7 @@
-export default function formatDate(milliseconds) {
-  let date = new Date(milliseconds);
-  let options = { month: 'short', day: 'numeric', year: 'numeric' };
-  let formattedDate = date.toLocaleString('en-US', options);
-  return formattedDate;
+export default function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day}, ${month} ${year}`;
 }
