@@ -95,4 +95,5 @@ export const {
   increaseZoom,
   decreaseZoom,
   resetZoom,
+  handleShowAddReview,
 } = singleProductSlice.actions;
