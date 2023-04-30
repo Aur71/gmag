@@ -22,11 +22,13 @@ const Actions = ({
           <span>Add comment</span>
         </button>
 
-        <button onClick={() => setShowComments(!showComments)}>
-          <BiCommentDetail className={styles.icon} />
-          <span>View comments</span>
-          <span>({numberOfComments})</span>
-        </button>
+        {numberOfComments ? (
+          <button onClick={() => setShowComments(!showComments)}>
+            <BiCommentDetail className={styles.icon} />
+            <span>View comments</span>
+            <span>({numberOfComments})</span>
+          </button>
+        ) : null}
       </div>
     </div>
   );

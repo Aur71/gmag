@@ -7,6 +7,7 @@ const Pagination = ({
   itemsPerPage,
   currentPage,
   setCurrentPage,
+  paginationStyles,
 }) => {
   const paginationRef = useRef(null);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -45,7 +46,11 @@ const Pagination = ({
   }, []);
 
   return (
-    <div className={styles.pagination} ref={paginationRef}>
+    <div
+      className={styles.pagination}
+      ref={paginationRef}
+      style={paginationStyles}
+    >
       <button className={styles.slide_left} onClick={decreaseCurrentPage}>
         <BsChevronLeft />
       </button>

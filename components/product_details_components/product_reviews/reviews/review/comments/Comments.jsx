@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import Comment from './comment/Comment';
-import Pagination from './pagination/Pagination';
+import Pagination from '@/features/pagination/Pagination';
 import styles from './Comments.module.scss';
 
 const Comments = ({ comments, showComments }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const commentsPerPage = 15;
-  const lastCommentIndex = currentPage * commentsPerPage;
-  const fistCommentIndex = lastCommentIndex - commentsPerPage;
-  const paginatedComments = comments.slice(fistCommentIndex, lastCommentIndex);
+  const itemsPerPage = 10;
+  const lastItemIndex = currentPage * itemsPerPage;
+  const fistItemIndex = lastItemIndex - itemsPerPage;
+  const paginatedComments = comments.slice(fistItemIndex, lastItemIndex);
 
   return (
     <div className={`${styles.comments} ${showComments && styles.active}`}>
       {paginatedComments.map((comment) => {
         return <Comment key={comment._id} comment={comment} />;
       })}
-      {comments.length > commentsPerPage ? (
+      {comments.length > itemsPerPage ? (
         <Pagination
-          totalComments={comments.length}
-          commentsPerPage={commentsPerPage}
+          totalItems={comments.length}
+          itemsPerPage={itemsPerPage}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />

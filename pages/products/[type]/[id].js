@@ -31,7 +31,7 @@ const ProductDetails = ({ product }) => {
       />
       <AddReview />
 
-      {/* <ProductQuestions questions={singleProduct.questions} /> */}
+      <ProductQuestions questions={singleProduct.questions} />
     </div>
   );
 };
