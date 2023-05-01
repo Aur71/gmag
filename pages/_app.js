@@ -5,12 +5,14 @@ import '@/styles/globals.scss';
 import Navbar from '@/components/layout/navbar/Navbar';
 import Sidebar from '@/components/layout/sidebar/Sidebar';
 import Footer from '@/components/layout/footer/Footer';
+import Notifications from '@/components/layout/notifications/Notifications';
 import { LOGIN } from '@/redux/reducers/userSlice';
 
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <AppWithLayout Component={Component} pageProps={pageProps} />
+      <Notifications />
     </Provider>
   );
 }

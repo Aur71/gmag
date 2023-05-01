@@ -1,12 +1,22 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import { MdEdit } from 'react-icons/md';
 import { handleShowAddReview } from '@/redux/reducers/singleProductSlice';
+import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const Header = ({ reviewsCount }) => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
 
   const dispachAction = () => {
+    if (!user) {
+      const notification = {
+        type: 'error',
+        message: 'You must be logged in.',
+      };
+      dispatch(addNotification(notification));
+      return;
+    }
     dispatch(handleShowAddReview(true));
   };
 
