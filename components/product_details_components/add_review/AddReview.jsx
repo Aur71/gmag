@@ -15,6 +15,9 @@ const AddReview = () => {
     }
   };
 
+  // check if the user is logged in
+  // add notification system
+
   return (
     <section
       className={`${styles.add_review} ${showAddReview && styles.active}`}

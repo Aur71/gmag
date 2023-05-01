@@ -7,28 +7,28 @@ const Rating = ({ rating }) => {
       <h3>{rating}</h3>
       <div className={styles.stars_container}>
         <BsStarFill
-          className={`${styles.icon} ${1 <= Math.round(rating)} && ${
-            styles.active
+          className={`${styles.icon} ${
+            1 <= Math.round(rating) ? styles.active : null
           }`}
         />
         <BsStarFill
-          className={`${styles.icon} ${2 <= Math.round(rating)} && ${
-            styles.active
+          className={`${styles.icon} ${
+            2 <= Math.round(rating) ? styles.active : null
           }`}
         />
         <BsStarFill
-          className={`${styles.icon} ${3 <= Math.round(rating)} && ${
-            styles.active
+          className={`${styles.icon} ${
+            3 <= Math.round(rating) ? styles.active : null
           }`}
         />
         <BsStarFill
-          className={`${styles.icon} ${4 <= Math.round(rating)} && ${
-            styles.active
+          className={`${styles.icon} ${
+            4 <= Math.round(rating) ? styles.active : null
           }`}
         />
         <BsStarFill
-          className={`${styles.icon} ${5 <= Math.round(rating)} && ${
-            styles.active
+          className={`${styles.icon} ${
+            5 <= Math.round(rating) ? styles.active : null
           }`}
         />
       </div>
