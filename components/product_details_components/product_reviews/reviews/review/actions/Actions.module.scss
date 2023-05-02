@@ -16,20 +16,19 @@
     display: flex;
     align-items: center;
 
-    button {
+    & > button {
       display: flex;
       align-items: center;
       gap: 5px;
       color: $acc-clr-1;
       padding: 0 10px;
       border-right: 1px solid $border-clr-2;
+      cursor: pointer;
+      position: relative;
 
       @media (max-width: 450px) {
-        &:nth-of-type(2) span {
-          display: none;
-        }
-
-        &:last-of-type span:first-of-type {
+        &:nth-of-type(2) span,
+        &:nth-of-type(3) span {
           display: none;
         }
       }
@@ -46,7 +45,7 @@
         border-right: none;
       }
 
-      .icon {
+      & > .icon {
         font-size: 1.4rem;
 
         @media (max-width: 450px) {
@@ -57,6 +56,50 @@
       span {
         font-size: 0.9rem;
         font-weight: 600;
+      }
+    }
+
+    .more_btn {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      color: $acc-clr-1;
+      padding: 0 10px;
+      border-left: 1px solid $border-clr-2;
+      cursor: pointer;
+      position: relative;
+
+      .dropdown {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 15px;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: none;
+        z-index: 2;
+
+        &.active {
+          display: block;
+        }
+
+        & > button {
+          width: 100%;
+          padding: 5px;
+          font-size: 1rem;
+          font-weight: 600;
+          color: $acc-clr-1;
+          align-items: center;
+          gap: 5px;
+          user-select: none;
+
+          &:hover {
+            color: $acc-clr-3;
+          }
+        }
       }
     }
   }

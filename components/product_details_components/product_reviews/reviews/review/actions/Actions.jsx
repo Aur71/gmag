@@ -1,5 +1,13 @@
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Actions.module.scss';
 import { BiLike, BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
+import { CgMoreVertical } from 'react-icons/cg';
+import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
+import {
+  openEditReviewModal,
+  openDeleteReviewModal,
+} from '@/redux/reducers/reviewsSlice';
 
 const Actions = ({
   likes,
@@ -8,7 +16,12 @@ const Actions = ({
   setShowAddComment,
   showComments,
   setShowComments,
+  review,
 }) => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <div className={styles.actions}>
       <div className={styles.btns_container}>
@@ -29,6 +42,25 @@ const Actions = ({
             <span>({numberOfComments})</span>
           </button>
         ) : null}
+
+        <div
+          className={styles.more_btn}
+          onClick={() => setShowDropdown(!showDropdown)}
+        >
+          <CgMoreVertical />
+          <div
+            className={`${styles.dropdown} ${showDropdown && styles.active}`}
+          >
+            <button onClick={() => dispatch(openEditReviewModal(review))}>
+              <AiFillEdit className={styles.icon} />
+              Edit
+            </button>
+            <button onClick={() => dispatch(openDeleteReviewModal(review))}>
+              <AiFillDelete className={styles.icon} />
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

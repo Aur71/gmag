@@ -32,6 +32,7 @@ const Review = ({ review, currentPage }) => {
         setShowAddComment={setShowAddComment}
         showComments={showComments}
         setShowComments={setShowComments}
+        review={review}
       />
       <AddComment
         showAddComment={showAddComment}

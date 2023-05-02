@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../modal_components/header/Header';
@@ -7,14 +7,21 @@ import Title from '../modal_components/title/Title';
 import Content from '../modal_components/content/Content';
 import Links from '../modal_components/links/Links';
 import SubmitBtn from '../modal_components/submit_btn/SubmitBtn';
+import axios from 'axios';
 import styles from './AddReview.module.scss';
 import { closeAddReviewModal } from '@/redux/reducers/reviewsSlice';
+import { addNotification } from '@/redux/reducers/notificationsSlice';
+import validateStars from '../modal_components/functions/validateStars';
+import validateTitle from '../modal_components/functions/validateTitle';
+import validateContent from '../modal_components/functions/validateContent';
 
 const AddReview = ({ product }) => {
   const dispatch = useDispatch();
   const containerRef = useRef(null);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const { showAddReviewModal } = useSelector((state) => state.reviews);
+  const { user } = useSelector((state) => state.user);
   const [stars, setStars] = useState(0);
   const [starsError, setStarsError] = useState('');
   const [title, setTitle] = useState('');
@@ -31,88 +38,66 @@ const AddReview = ({ product }) => {
     dispatch(closeAddReviewModal());
   };
 
-  const submitModal = () => {};
+  const submitModal = async () => {
+    if (!user) {
+      const notification = {
+        type: 'error',
+        message: 'You must be logged in.',
+      };
+      dispatch(addNotification(notification));
+      return;
+    }
 
-  // const handleTitle = (e) => {
-  //   const value = e.target.value;
-  //   if (value.length > 100) return;
-  //   setTitle(e.target.value);
-  // };
-  // // updateing the review
-  // const handleReview = (e) => {
-  //   const value = e.target.value;
-  //   if (value.length > 500) return;
-  //   setReview(e.target.value);
-  // };
-  // // checking the fields
-  // const checkRating = () => {
-  //   if (!rating) {
-  //     setRatingError('add rating');
-  //     return false;
-  //   }
-  //   setRatingError('');
-  //   return true;
-  // };
-  // const checkTitle = () => {
-  //   if (!title.length) {
-  //     setTitleError(`can't be empty`);
-  //     return false;
-  //   }
-  //   setTitleError('');
-  //   return true;
-  // };
-  // const checkReview = () => {
-  //   if (!review.length) {
-  //     setReviewError(`can't be empty`);
-  //     return false;
-  //   }
-  //   setReviewError('');
-  //   return true;
-  // };
-  // // submiting the form
-  // const handleSubmit = () => {
-  //   if (!user) {
-  //     const notification = {
-  //       type: 'error',
-  //       message: 'You must be logged in.',
-  //     };
-  //     dispatch(addNotification(notification));
-  //     return;
-  //   }
-  //   const isRatingValid = checkRating();
-  //   const isTitleValid = checkTitle();
-  //   const isReviewValid = checkReview();
+    const areStarsValid = validateStars(stars);
+    const isTitleValid = validateTitle(title);
+    const isContentValid = validateContent(content);
 
-  //   if (isRatingValid && isTitleValid && isReviewValid && user) {
-  //     const url = `http://localhost:3000/api/v1/reviews/${router.query.id}`;
-  //     const data = {
-  //       stars: rating,
-  //       title: title,
-  //       content: review,
-  //     };
-  //     const headers = {
-  //       'Content-Type': 'application/json',
-  //       Authorization: `Bearer ${user.token}`,
-  //     };
+    if (areStarsValid.error) setStarsError(areStarsValid.error);
+    else setStarsError('');
+    if (isTitleValid.error) setTitleError(isTitleValid.error);
+    else setTitleError('');
+    if (isContentValid.error) setContentError(isContentValid.error);
+    else setContentError('');
 
-  //     axios
-  //       .post(url, data, { headers })
-  //       .then((response) => {
-  //         console.log(response.data);
-  //         router.push(router.asPath);
-  //         setRating(0);
-  //         setTitle('');
-  //         setReview('');
-  //         setRatingError('');
-  //         setTitleError('');
-  //         setReviewError('');
-  //         dispatch(handleShowAddReview(false));
-  //       })
-  //       .catch((error) => {
-  //         console.error(error.response.data);
-  //       });
-  //   }
-  // };
+    if (
+      !areStarsValid.error &&
+      !isTitleValid.error &&
+      !isContentValid.error &&
+      user
+    ) {
+      const url = `http://localhost:3000/api/v1/reviews/${router.query.id}`;
+      const data = { stars, title, content };
+      const headers = {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${user.token}`,
+      };
+      setLoading(true);
+
+      await axios
+        .post(url, data, { headers })
+        .then((response) => {
+          router.push(router.asPath);
+          setStars(0);
+          setTitle('');
+          setContent('');
+          const notification = {
+            type: 'success',
+            message: response.data,
+          };
+          dispatch(addNotification(notification));
+          closeModal();
+          setLoading(false);
+        })
+        .catch((error) => {
+          const notification = {
+            type: 'error',
+            message: error.message,
+          };
+          dispatch(addNotification(notification));
+          setLoading(false);
+        });
+    }
+  };
 
   return (
     <div
@@ -137,7 +122,7 @@ const AddReview = ({ product }) => {
             contentError={contentError}
           />
           <Links />
-          <SubmitBtn submitModal={submitModal} />
+          <SubmitBtn submitModal={submitModal} loading={loading} />
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ const reviewsSlice = createSlice({
     showAddReviewModal: false,
     showEditReviewModal: false,
     showDeleteReviewModal: false,
+    activeReview: null,
   },
   reducers: {
     openAddReviewModal: (state) => {
@@ -16,21 +17,25 @@ const reviewsSlice = createSlice({
       document.querySelector('body').style.overflow = 'visible';
       state.showAddReviewModal = false;
     },
-    openEditReviewModal: (state) => {
+    openEditReviewModal: (state, action) => {
       document.querySelector('body').style.overflow = 'hidden';
+      state.activeReview = action.payload;
       state.showEditReviewModal = true;
     },
     closeEditReviewModal: (state) => {
       document.querySelector('body').style.overflow = 'visible';
       state.showEditReviewModal = false;
+      state.activeReview = null;
     },
-    openDeleteReviewModal: (state) => {
+    openDeleteReviewModal: (state, action) => {
       document.querySelector('body').style.overflow = 'hidden';
+      state.activeReview = action.payload;
       state.showDeleteReviewModal = true;
     },
     closeDeleteReviewModal: (state) => {
       document.querySelector('body').style.overflow = 'visible';
       state.showDeleteReviewModal = false;
+      state.activeReview = null;
     },
   },
 });

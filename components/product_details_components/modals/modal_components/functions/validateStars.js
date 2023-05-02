@@ -1,1 +1,4 @@
-export default function validateStars(stars) {}
+export default function validateStars(stars) {
+  if (!stars) return { error: 'Add rating' };
+  return true;
+}
