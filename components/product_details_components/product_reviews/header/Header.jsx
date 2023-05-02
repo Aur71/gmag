@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Header.module.scss';
 import { MdEdit } from 'react-icons/md';
-import { handleShowAddReview } from '@/redux/reducers/singleProductSlice';
+import { openAddReviewModal } from '@/redux/reducers/reviewsSlice';
 import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const Header = ({ reviewsCount }) => {
@@ -17,7 +17,7 @@ const Header = ({ reviewsCount }) => {
       dispatch(addNotification(notification));
       return;
     }
-    dispatch(handleShowAddReview(true));
+    dispatch(openAddReviewModal());
   };
 
   return (

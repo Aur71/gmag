@@ -7,7 +7,6 @@ const singleProductSlice = createSlice({
     showImageViewer: false,
     zoom: 1,
     zoomOrigin: `0px, 0px`,
-    showAddReview: false,
   },
   reducers: {
     handleActiveImageIndex: (state, action) => {
@@ -75,12 +74,6 @@ const singleProductSlice = createSlice({
       }
       state.zoom = state.zoom + 0.5;
     },
-    handleShowAddReview: (state, action) => {
-      const body = document.querySelector('body');
-      if (action.payload === true) body.style.overflow = 'hidden';
-      else body.style.overflow = 'visible';
-      state.showAddReview = action.payload;
-    },
   },
 });
 
@@ -95,5 +88,4 @@ export const {
   increaseZoom,
   decreaseZoom,
   resetZoom,
-  handleShowAddReview,
 } = singleProductSlice.actions;

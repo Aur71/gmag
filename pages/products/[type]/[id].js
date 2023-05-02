@@ -4,12 +4,14 @@ import ProductSpecifications from '@/components/product_details_components/produ
 import ProductReviews from '@/components/product_details_components/product_reviews/ProductReviews';
 import ProductQuestions from '@/components/product_details_components/product_questions/ProductQuestions';
 import ImageViewer from '@/components/product_details_components/image_viewer/ImageViewer';
-import AddReview from '@/components/product_details_components/add_review/AddReview';
+import AddReview from '@/components/product_details_components/modals/add_review/AddReview';
+import EditReview from '@/components/product_details_components/modals/edit_review/EditReview';
+import DeleteReview from '@/components/product_details_components/modals/delete_review/DeleteReview';
 import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
 const ProductDetails = ({ product }) => {
-  if (!product.name) {
+  if (!product) {
     return <div>product not found</div>;
   }
 
@@ -23,7 +25,9 @@ const ProductDetails = ({ product }) => {
       ) : null}
       <ProductSpecifications specifications={product.specifications} />
       <ProductReviews product={product} />
-      <AddReview />
+      <AddReview product={product} />
+      <EditReview />
+      <DeleteReview />
 
       <ProductQuestions questions={product.questions} />
     </div>

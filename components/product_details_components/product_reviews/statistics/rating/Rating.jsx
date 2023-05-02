@@ -4,7 +4,7 @@ import { BsStarFill } from 'react-icons/bs';
 const Rating = ({ rating }) => {
   return (
     <div className={styles.rating}>
-      <h3>{rating}</h3>
+      <h3>{rating.toFixed(0)}</h3>
       <div className={styles.stars_container}>
         <BsStarFill
           className={`${styles.icon} ${

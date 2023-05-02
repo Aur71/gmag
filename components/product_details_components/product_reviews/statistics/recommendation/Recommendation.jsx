@@ -6,7 +6,7 @@ const Recommendation = ({ reviewsData, reviewsCount }) => {
 
   return (
     <div className={styles.recommendation}>
-      <h3>{percent ? percent : 0}%</h3>
+      <h3>{percent ? percent.toFixed(0) : 0}%</h3>
       <p>recommend this product</p>
     </div>
   );
