@@ -67,7 +67,7 @@ const Card = ({ product }) => {
           <AiFillStar
             className={5 <= Math.round(rating) ? styles.star_clr : null}
           />
-          <span>{rating}</span>
+          <span>{rating.toFixed(0)}</span>
           <span>({reviewsCount} reviews)</span>
         </div>
 
