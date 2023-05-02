@@ -1,7 +1,11 @@
 import styles from './SubmitBtn.module.scss';
 
-const SubmitBtn = () => {
-  return <div className={styles.submit_btn}>SubmitBtn</div>;
+const SubmitBtn = ({ submitModal }) => {
+  return (
+    <button className={styles.submit_btn} onClick={submitModal}>
+      Add review
+    </button>
+  );
 };
 
 export default SubmitBtn;

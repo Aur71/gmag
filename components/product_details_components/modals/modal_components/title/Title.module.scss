@@ -1,1 +1,86 @@
 @import '/styles/variables.module.scss';
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    outline: transparent;
+    padding: 8px;
+    border: 1px solid $border-clr-3;
+    border-radius: 3px;
+    transition: 300ms border-color;
+    background-color: transparent;
+
+    &:focus {
+      border-color: $acc-clr-1;
+    }
+
+    &::placeholder {
+      opacity: 0.6;
+    }
+
+    &.error {
+      border-color: rgb(201, 55, 55);
+
+      &:focus {
+        border-color: rgb(201, 55, 55);
+      }
+    }
+  }
+
+  textarea {
+    outline: transparent;
+    padding: 8px;
+    border: 1px solid $border-clr-3;
+    border-radius: 3px;
+    transition: 300ms border-color;
+    background-color: transparent;
+    resize: vertical;
+    min-height: 100px;
+    font-size: 1rem;
+
+    &::placeholder {
+      opacity: 0.6;
+    }
+
+    &:focus {
+      border-color: $acc-clr-1;
+    }
+
+    &.error {
+      border-color: rgb(201, 55, 55);
+
+      &:focus {
+        border-color: rgb(201, 55, 55);
+      }
+    }
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span:first-of-type {
+      font-size: 0.9rem;
+      color: rgb(201, 55, 55);
+      opacity: 0;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    span:last-of-type {
+      color: $text-clr-4;
+      font-size: 0.9rem;
+    }
+  }
+}
