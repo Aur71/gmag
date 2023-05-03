@@ -26,8 +26,8 @@ const ProductDetails = ({ product }) => {
       <ProductSpecifications specifications={product.specifications} />
       <ProductReviews product={product} />
       <AddReview product={product} />
-      <EditReview />
-      <DeleteReview />
+      <EditReview product={product} />
+      <DeleteReview product={product} />
 
       <ProductQuestions questions={product.questions} />
     </div>

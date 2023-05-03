@@ -1,13 +1,13 @@
 import styles from './SubmitBtn.module.scss';
 
-const SubmitBtn = ({ submitModal, loading }) => {
+const SubmitBtn = ({ submitModal, loading, textContent }) => {
   return (
     <button
       className={styles.submit_btn}
       onClick={submitModal}
       disabled={loading}
     >
-      Add review
+      {textContent}
     </button>
   );
 };

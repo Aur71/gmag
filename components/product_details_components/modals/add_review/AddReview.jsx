@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../modal_components/header/Header';
@@ -122,7 +122,11 @@ const AddReview = ({ product }) => {
             contentError={contentError}
           />
           <Links />
-          <SubmitBtn submitModal={submitModal} loading={loading} />
+          <SubmitBtn
+            submitModal={submitModal}
+            loading={loading}
+            textContent='Add review'
+          />
         </div>
       </div>
     </div>

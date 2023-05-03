@@ -43,24 +43,26 @@ const Actions = ({
           </button>
         ) : null}
 
-        <div
-          className={styles.more_btn}
-          onClick={() => setShowDropdown(!showDropdown)}
-        >
-          <CgMoreVertical />
+        {user?._id === review?.postedBy?._id ? (
           <div
-            className={`${styles.dropdown} ${showDropdown && styles.active}`}
+            className={styles.more_btn}
+            onClick={() => setShowDropdown(!showDropdown)}
           >
-            <button onClick={() => dispatch(openEditReviewModal(review))}>
-              <AiFillEdit className={styles.icon} />
-              Edit
-            </button>
-            <button onClick={() => dispatch(openDeleteReviewModal(review))}>
-              <AiFillDelete className={styles.icon} />
-              Delete
-            </button>
+            <CgMoreVertical />
+            <div
+              className={`${styles.dropdown} ${showDropdown && styles.active}`}
+            >
+              <button onClick={() => dispatch(openEditReviewModal(review))}>
+                <AiFillEdit className={styles.icon} />
+                Edit
+              </button>
+              <button onClick={() => dispatch(openDeleteReviewModal(review))}>
+                <AiFillDelete className={styles.icon} />
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );
