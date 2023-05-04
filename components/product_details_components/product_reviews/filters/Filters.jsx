@@ -6,6 +6,7 @@ import styles from './Filters.module.scss';
 const sortOptions = ['Newest', 'Oldest', 'No. likes', 'No. comments'];
 const filterOptions = [
   'All reviews',
+  'My reviews',
   '5 stars reviews',
   '4 stars reviews',
   '3 stars reviews',
