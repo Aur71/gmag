@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import EditComment from './edit_comment/EditComment';
-import DeleteComment from './delete_comment/DeleteComment';
 import Image from 'next/image';
 import styles from './Comment.module.scss';
 import formatDate from '@/utils/formatDate';
 import { FiMoreVertical } from 'react-icons/fi';
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, review }) => {
+  const { user } = useSelector((state) => state.user);
   const { content, createdAt, postedBy } = comment;
   const date = formatDate(createdAt);
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showEditComment, setShowEditComment] = useState(false);
-  const [showDeleteComment, setShowDeleteComment] = useState(false);
 
   const handleOutsideClick = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -25,16 +25,6 @@ const Comment = ({ comment }) => {
       document.removeEventListener('click', handleOutsideClick, true);
     };
   }, []);
-
-  const handleShowEditComment = () => {
-    setShowEditComment(!showEditComment);
-    setShowDeleteComment(false);
-  };
-
-  const handleShowDeleteComment = () => {
-    setShowDeleteComment(!showDeleteComment);
-    setShowEditComment(false);
-  };
 
   return (
     <div className={styles.comment}>
@@ -52,39 +42,37 @@ const Comment = ({ comment }) => {
             <p>{date}</p>
           </div>
 
-          <div
-            className={styles.dropdown_btn}
-            onClick={() => setShowDropdown(!showDropdown)}
-          >
-            <FiMoreVertical />
+          {user?._id === comment?.postedBy?._id ? (
             <div
-              className={`${styles.dropdown} ${showDropdown && styles.active}`}
-              ref={dropdownRef}
+              className={styles.dropdown_btn}
+              onClick={() => setShowDropdown(!showDropdown)}
             >
-              <button onClick={handleShowEditComment}>Edit</button>
-              <button onClick={handleShowDeleteComment}>Delete</button>
+              <FiMoreVertical />
+              <div
+                className={`${styles.dropdown} ${
+                  showDropdown && styles.active
+                }`}
+                ref={dropdownRef}
+              >
+                <button onClick={() => setShowEditComment(!showEditComment)}>
+                  Edit
+                </button>
+                <button>Delete</button>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
 
       {showEditComment ? (
         <EditComment
-          showEditComment={showEditComment}
           setShowEditComment={setShowEditComment}
           comment={comment}
+          review={review}
         />
       ) : null}
 
-      {showDeleteComment ? (
-        <DeleteComment
-          showDeleteComment={showDeleteComment}
-          setShowDeleteComment={setShowDeleteComment}
-          comment={comment}
-        />
-      ) : null}
-
-      {!showEditComment && !showDeleteComment ? <p>{content}</p> : null}
+      {!showEditComment ? <p>{content}</p> : null}
     </div>
   );
 };

@@ -53,6 +53,7 @@
           overflow: hidden;
           display: none;
           user-select: none;
+          z-index: 2;
 
           &.active {
             display: block;

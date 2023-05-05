@@ -39,7 +39,11 @@ const Review = ({ review, currentPage }) => {
         setShowAddComment={setShowAddComment}
         reviewId={review._id}
       />
-      <Comments comments={comments} showComments={showComments} />
+      <Comments
+        comments={comments}
+        showComments={showComments}
+        review={review}
+      />
     </div>
   );
 };
