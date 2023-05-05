@@ -8,8 +8,7 @@ import Comments from './comments/Comments';
 import styles from './Review.module.scss';
 
 const Review = ({ review, currentPage }) => {
-  const { createdAt, postedBy, title, stars, content, likes, comments } =
-    review;
+  const { createdAt, postedBy, title, stars, content, comments } = review;
   const { sortReviews, filterReviews, searchReviews } = useSelector(
     (state) => state.singleProduct
   );

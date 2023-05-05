@@ -49,15 +49,13 @@ const Like = ({ review }) => {
           dispatch(addNotification(notification));
           return;
         }
-        //  router.push(router.asPath);
-        //  const notification = {
-        //    type: 'success',
-        //    message: response.data,
-        //  };
-        //  dispatch(addNotification(notification));
-
+        router.push(router.asPath);
+        const notification = {
+          type: 'success',
+          message: response.data,
+        };
+        dispatch(addNotification(notification));
         setLoading(false);
-        console.log(response.data);
       })
       .catch((error) => {
         const notification = {
@@ -69,7 +67,51 @@ const Like = ({ review }) => {
       });
   };
 
-  const removeLike = async () => {};
+  const removeLike = async () => {
+    if (!user) {
+      const notification = {
+        type: 'error',
+        message: 'You must be logged in.',
+      };
+      dispatch(addNotification(notification));
+      return;
+    }
+
+    const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${review._id}/likes`;
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${user.token}`,
+    };
+    setLoading(true);
+
+    await axios
+      .delete(url, { headers })
+      .then((response) => {
+        if (response.data.error) {
+          const notification = {
+            type: 'error',
+            message: response.data.error,
+          };
+          dispatch(addNotification(notification));
+          return;
+        }
+        router.push(router.asPath);
+        const notification = {
+          type: 'success',
+          message: response.data,
+        };
+        dispatch(addNotification(notification));
+        setLoading(false);
+      })
+      .catch((error) => {
+        const notification = {
+          type: 'error',
+          message: error.message,
+        };
+        dispatch(addNotification(notification));
+        setLoading(false);
+      });
+  };
 
   if (isLiked)
     return (

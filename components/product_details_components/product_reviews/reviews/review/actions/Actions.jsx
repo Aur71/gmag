@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Like from './like/Like';
 import styles from './Actions.module.scss';
-import { BiLike, BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
+import { BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
 import { CgMoreVertical } from 'react-icons/cg';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import {
@@ -36,17 +36,6 @@ const Actions = ({
       document.removeEventListener('click', handleOutsideClick, true);
     };
   }, []);
-
-  const handleLike = () => {
-    if (!user) {
-      const notification = {
-        type: 'error',
-        message: 'You must be logged in',
-      };
-      dispatch(addNotification(notification));
-      return;
-    }
-  };
 
   const handleAddComment = () => {
     if (!user) {
