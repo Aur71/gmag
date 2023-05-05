@@ -1,0 +1,44 @@
+@import '/styles/variables.module.scss';
+
+.like {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: $acc-clr-1;
+  padding: 0 10px;
+  border-right: 1px solid $border-clr-2;
+  cursor: pointer;
+  position: relative;
+
+  @media (max-width: 450px) {
+    &:nth-of-type(2) span,
+    &:nth-of-type(3) span {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $acc-clr-3;
+  }
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    border-right: none;
+  }
+
+  & > .icon {
+    font-size: 1.4rem;
+
+    @media (max-width: 450px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}

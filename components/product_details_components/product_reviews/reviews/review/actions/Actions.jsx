@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Like from './like/Like';
 import styles from './Actions.module.scss';
 import { BiLike, BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
 import { CgMoreVertical } from 'react-icons/cg';
@@ -11,7 +12,6 @@ import {
 import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const Actions = ({
-  likes,
   numberOfComments,
   showAddComment,
   setShowAddComment,
@@ -63,10 +63,7 @@ const Actions = ({
   return (
     <div className={styles.actions}>
       <div className={styles.btns_container}>
-        <button onClick={handleLike}>
-          <BiLike className={styles.icon} />
-          <span>({likes})</span>
-        </button>
+        <Like review={review} />
 
         <button onClick={handleAddComment}>
           <BiCommentAdd className={styles.icon} />

@@ -26,7 +26,6 @@ const Review = ({ review, currentPage }) => {
       <Author createdAt={createdAt} postedBy={postedBy} />
       <Content title={title} stars={stars} content={content} />
       <Actions
-        likes={likes.length}
         numberOfComments={comments.length}
         showAddComment={showAddComment}
         setShowAddComment={setShowAddComment}
