@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import ProductShowcase from '@/components/product_details_components/product_showcase/ProductShowcase';
 import ProductDescription from '@/components/product_details_components/product_description/ProductDescription';
 import ProductSpecifications from '@/components/product_details_components/product_specifications/ProductSpecifications';
@@ -11,6 +13,36 @@ import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
 const ProductDetails = ({ product }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Save the current scroll position when navigating away from the page
+    const handleRouteChangeStart = () => {
+      window.sessionStorage.setItem('scrollPos', window.scrollY.toString());
+    };
+
+    // Restore the saved scroll position when returning to the page
+    const handleRouteChangeComplete = () => {
+      const scrollPos = window.sessionStorage.getItem('scrollPos');
+      if (scrollPos !== null) {
+        window.scrollTo({
+          top: parseInt(scrollPos),
+          left: 0,
+          behavior: 'instant',
+        });
+        window.sessionStorage.removeItem('scrollPos');
+      }
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router.events]);
+
   if (!product) {
     return <div>product not found</div>;
   }

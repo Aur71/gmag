@@ -29,21 +29,21 @@ const Pagination = ({
     if (currentPage >= totalPages && totalPages) setCurrentPage(totalPages);
   }, [totalPages, currentPage, setCurrentPage]);
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
+  // useEffect(() => {
+  //   if (paginationRef.current.parentNode.offsetTop) {
+  //     window.scrollTo({
+  //       top: paginationRef.current.parentNode.offsetTop - 100,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // }, [currentPage]);
 
-  useEffect(() => {
-    if (paginationRef.current.parentNode.offsetTop) {
-      window.scrollTo({
-        top: paginationRef.current.parentNode.offsetTop - 100,
-        behavior: 'smooth',
-      });
-    }
-  }, [currentPage]);
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth',
+  //   });
+  // }, []);
 
   return (
     <div
