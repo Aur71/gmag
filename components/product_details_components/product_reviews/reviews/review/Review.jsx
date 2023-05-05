@@ -37,6 +37,7 @@ const Review = ({ review, currentPage }) => {
       <AddComment
         showAddComment={showAddComment}
         setShowAddComment={setShowAddComment}
+        reviewId={review._id}
       />
       <Comments comments={comments} showComments={showComments} />
     </div>

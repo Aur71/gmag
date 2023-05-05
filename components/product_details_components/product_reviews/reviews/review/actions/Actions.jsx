@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Actions.module.scss';
 import { BiLike, BiCommentAdd, BiCommentDetail } from 'react-icons/bi';
@@ -8,6 +8,7 @@ import {
   openEditReviewModal,
   openDeleteReviewModal,
 } from '@/redux/reducers/reviewsSlice';
+import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const Actions = ({
   likes,
@@ -20,17 +21,54 @@ const Actions = ({
 }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
+  const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleOutsideClick = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setShowDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick, true);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick, true);
+    };
+  }, []);
+
+  const handleLike = () => {
+    if (!user) {
+      const notification = {
+        type: 'error',
+        message: 'You must be logged in',
+      };
+      dispatch(addNotification(notification));
+      return;
+    }
+  };
+
+  const handleAddComment = () => {
+    if (!user) {
+      const notification = {
+        type: 'error',
+        message: 'You must be logged in',
+      };
+      dispatch(addNotification(notification));
+      return;
+    }
+    setShowAddComment(!showAddComment);
+  };
 
   return (
     <div className={styles.actions}>
       <div className={styles.btns_container}>
-        <button>
+        <button onClick={handleLike}>
           <BiLike className={styles.icon} />
           <span>({likes})</span>
         </button>
 
-        <button onClick={() => setShowAddComment(!showAddComment)}>
+        <button onClick={handleAddComment}>
           <BiCommentAdd className={styles.icon} />
           <span>Add comment</span>
         </button>
@@ -51,6 +89,7 @@ const Actions = ({
             <CgMoreVertical />
             <div
               className={`${styles.dropdown} ${showDropdown && styles.active}`}
+              ref={dropdownRef}
             >
               <button onClick={() => dispatch(openEditReviewModal(review))}>
                 <AiFillEdit className={styles.icon} />
