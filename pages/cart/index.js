@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import Title from '@/components/cart_components/title/Title';
 import Cards from '@/components/cart_components/cards/Cards';
 import Ticket from '@/components/cart_components/ticket/Ticket';
-import Recommendations from '@/components/cart_components/recommendations/Recommendations';
+// import Recommendations from '@/components/cart_components/recommendations/Recommendations';
 // import axios from 'axios';
 import styles from '../../styles/pages/Cart.module.scss';
 
@@ -15,7 +15,6 @@ const Cart = () => {
         <Title />
         <Cards />
         <Ticket />
-        {cart.length ? <Recommendations /> : null}
       </div>
     </div>
   );

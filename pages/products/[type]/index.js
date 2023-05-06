@@ -3,13 +3,12 @@ import Sidebar from '@/components/products_components/sidebar/Sidebar';
 import Filters from '@/components/products_components/filters/Filters';
 import Products from '@/components/products_components/products/Products';
 import styles from '../../../styles/pages/Products.module.scss';
-// import axios from 'axios';
-
-// TEMP DATA
-import { computers } from '@/data/temporary/computers';
+import axios from 'axios';
 
 const ProductType = ({ data }) => {
   const [sortBy, setSortBy] = useState('Most popular');
+
+  console.log(data);
 
   return (
     <div className={styles.products}>
@@ -24,12 +23,12 @@ const ProductType = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ params }) => {
   try {
-    // FETCHING THE DATA BASED ON THE URL
-    // const res = await axios.get(`api/products/${params.type}`);
-    // const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-    const data = computers;
+    const res = await axios.get(
+      `http://localhost:3000/api/v1/products/type/${params.type}`
+    );
+    const data = res.data;
 
     return { props: { data } };
   } catch (error) {
