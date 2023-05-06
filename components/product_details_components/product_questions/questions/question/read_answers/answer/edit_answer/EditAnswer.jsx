@@ -1,35 +1,28 @@
-import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './EditQuestion.module.scss';
+import styles from './EditAnswer.module.scss';
 import { addNotification } from '@/redux/reducers/notificationsSlice';
 
-const EditQuestion = ({ question, setShowEdit }) => {
-  const dispatch = useDispatch();
+const EditAnswer = ({ questionId, answer, setShowEdit }) => {
   const router = useRouter();
-  const [newQuestion, setNewQuestion] = useState('');
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
-
-  const handleNewQuestion = (e) => {
-    if (e.target.value.length <= 500) setNewQuestion(e.target.value);
-  };
+  const [loading, setLoading] = useState(false);
+  const [newAnswer, setNewAnswer] = useState('');
 
   useEffect(() => {
-    setNewQuestion(question.question);
-  }, [question]);
+    setNewAnswer(answer.answer);
+  }, [answer]);
 
-  const updateQuestion = async () => {
-    if (!user || user._id !== question.postedBy._id) {
-      const notification = {
-        type: 'error',
-        message: 'You are not authorized',
-      };
-      dispatch(addNotification(notification));
-      return;
-    }
-    if (!newQuestion) {
+  const handleNewAnswer = (e) => {
+    if (e.target.value.length <= 500) setNewAnswer(e.target.value);
+  };
+
+  const updateAnswer = async () => {
+    if (!user || user?._id !== answer.postedBy._id) return;
+    if (!newAnswer) {
       const notification = {
         type: 'error',
         message: 'You forgot to add an answer.',
@@ -38,8 +31,8 @@ const EditQuestion = ({ question, setShowEdit }) => {
       return;
     }
 
-    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${question._id}`;
-    const data = { newQuestion };
+    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${questionId}/answers/${answer._id}`;
+    const data = { newAnswer };
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
@@ -77,15 +70,15 @@ const EditQuestion = ({ question, setShowEdit }) => {
   };
 
   return (
-    <div className={styles.edit_question}>
+    <div className={styles.edit_answer}>
       <textarea
-        value={newQuestion}
-        onChange={handleNewQuestion}
-        placeholder='Your question...'
+        value={newAnswer}
+        onChange={handleNewAnswer}
+        placeholder='Your answer...'
       />
 
       <div className={styles.btns_container}>
-        <button onClick={updateQuestion} disabled={loading}>
+        <button disabled={loading} onClick={updateAnswer}>
           Save
         </button>
         <button onClick={() => setShowEdit(false)}>Cancel</button>
@@ -94,4 +87,4 @@ const EditQuestion = ({ question, setShowEdit }) => {
   );
 };
 
-export default EditQuestion;
+export default EditAnswer;

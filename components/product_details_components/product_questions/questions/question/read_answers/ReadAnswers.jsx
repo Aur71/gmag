@@ -3,7 +3,7 @@ import Answer from './answer/Answer';
 import Pagination from '@/features/pagination/Pagination';
 import styles from './ReadAnswers.module.scss';
 
-const ReadAnswers = ({ answers, showAnswers }) => {
+const ReadAnswers = ({ answers, showAnswers, questionId }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
   const lastItemIndex = currentPage * itemsPerPage;
@@ -15,7 +15,9 @@ const ReadAnswers = ({ answers, showAnswers }) => {
   return (
     <div className={`${styles.read_answers} ${showAnswers && styles.active}`}>
       {paginatedAnswers.map((answer) => {
-        return <Answer key={answer._id} answer={answer} />;
+        return (
+          <Answer key={answer._id} answer={answer} questionId={questionId} />
+        );
       })}
 
       {answers.length > itemsPerPage ? (

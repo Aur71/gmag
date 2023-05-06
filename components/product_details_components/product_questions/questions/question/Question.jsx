@@ -26,7 +26,11 @@ const Question = ({ question }) => {
         setShowAddAnswer={setShowAddAnswer}
         questionId={question._id}
       />
-      <ReadAnswers answers={question.answers} showAnswers={showAnswers} />
+      <ReadAnswers
+        answers={question.answers}
+        showAnswers={showAnswers}
+        questionId={question._id}
+      />
     </div>
   );
 };
