@@ -28,6 +28,7 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       display: none;
+      user-select: none;
 
       &.active {
         display: block;

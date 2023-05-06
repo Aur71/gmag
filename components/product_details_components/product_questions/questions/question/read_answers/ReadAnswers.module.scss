@@ -5,10 +5,8 @@
   flex-direction: column;
   border-left: 1px solid $border-clr-2;
   padding-left: 50px;
-  transition: 300ms height, 300ms opacity, 300ms margin;
   height: 0;
   opacity: 0;
-  overflow: hidden;
 
   &.active {
     height: auto;

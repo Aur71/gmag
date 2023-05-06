@@ -5,10 +5,47 @@
   flex-direction: column;
   padding: 10px 0;
 
-  h6 {
-    font-size: 0.9rem;
-    color: $text-clr-4;
-    font-weight: 500;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    h6 {
+      font-size: 0.9rem;
+      color: $text-clr-4;
+      font-weight: 500;
+    }
+
+    .dropdown_btn {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      .dropdown {
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        right: 5px;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+        & > button {
+          width: 100%;
+          padding: 5px 10px;
+
+          &:hover {
+            background-color: $acc-clr-1;
+            color: white;
+          }
+        }
+      }
+    }
   }
 
   h5 {
