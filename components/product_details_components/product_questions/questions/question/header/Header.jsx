@@ -7,9 +7,14 @@ const Header = ({ question }) => {
 
   return (
     <div className={styles.header}>
-      <h4>
-        By {postedBy.name} on {date}
-      </h4>
+      <div>
+        <h4>
+          By {postedBy.name} on {date}
+        </h4>
+
+        <div className={styles.dropdown_btn}>d</div>
+      </div>
+
       <h3>{question.question}</h3>
     </div>
   );
