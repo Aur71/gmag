@@ -21,7 +21,7 @@
     width: 100%;
     display: block;
     font-size: 1rem;
-    border: 1px solid $border-clr-2;
+    border: 1px solid $authentification-input-border-clr;
     padding: 10px 15px;
     border-radius: 20px;
     transition: 300ms;
@@ -35,7 +35,7 @@
       border-color: $acc-clr-1;
     }
     &::placeholder {
-      color: $text-clr-4;
+      color: $authentification-input-placeholder-clr;
     }
   }
 
@@ -47,11 +47,11 @@
     background-color: $acc-clr-1;
     border-radius: 20px;
     padding: 10px;
-    color: $text-clr-1;
+    color: $authentification-submit-btn-clr;
     font-weight: 500;
 
     &:hover {
-      background-color: $acc-clr-3;
+      background-color: $acc-clr-1-hover;
     }
   }
 
@@ -59,6 +59,6 @@
     margin-left: 10px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: rgb(230, 74, 74);
+    color: $authentification-form-error-clr;
   }
 }

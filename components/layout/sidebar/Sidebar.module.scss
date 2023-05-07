@@ -9,9 +9,8 @@
   left: 0;
   z-index: 111;
   transition: 300ms;
-  background-color: $secondary-clr;
-  border-right: 2px solid $border-clr-1;
-  color: $text-clr-2;
+  background-color: $sidebar-bk-clr;
+  border-right: 2px solid $sidebar-border-right-clr;
 
   @media only screen and (max-width: 800px) {
     max-width: 400px;

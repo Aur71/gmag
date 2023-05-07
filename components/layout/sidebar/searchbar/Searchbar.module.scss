@@ -12,8 +12,8 @@
 
   input {
     width: 100%;
-    border: 2px solid $border-clr-1;
-    color: $text-clr-2;
+    border: 2px solid $searchbar-border-clr;
+    color: $searchbar-clr;
     background-color: $searchbar-bk-clr;
     padding: 10px;
     border-top-left-radius: 10px;
@@ -27,7 +27,7 @@
   button {
     padding: 0 10px;
     background-color: $acc-clr-1;
-    color: $text-clr-1;
+    color: $searchbar-btn-clr;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;

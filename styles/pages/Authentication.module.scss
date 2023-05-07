@@ -12,9 +12,9 @@
 
   & > div:first-of-type {
     width: 100%;
-    background-color: white;
+    background-color: $authentification-container-bk;
     border-radius: 5px;
-    box-shadow: $box-shadow-1;
+    box-shadow: $authentification-container-box-shadow;
     padding: 30px;
     display: flex;
     flex-direction: column;

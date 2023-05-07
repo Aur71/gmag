@@ -3,7 +3,7 @@
 .google_btn {
   width: 100%;
   background-color: $google-btn-bk;
-  color: $text-clr-1;
+  color: $google-btn-clr;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@
       position: absolute;
       left: 0;
       font-size: 1.2rem;
-      border-right: 1px solid $border-clr-2;
+      border-right: 1px solid $google-btn-inside-border-clr;
       padding: 5px 10px;
     }
 

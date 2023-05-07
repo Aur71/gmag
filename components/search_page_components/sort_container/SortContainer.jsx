@@ -35,4 +35,3 @@ const SortContainer = ({ sortBy, setSortBy }) => {
 };
 
 export default SortContainer;
-// change the colors to variables

@@ -1,8 +1,8 @@
 @import '/styles/themes/themes.module.scss';
 
 .succes_notification {
-  background-color: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: $success-notification-bk-clr;
+  box-shadow: $success-notification-box-shadow;
   pointer-events: all;
   width: 100%;
   height: auto;
@@ -42,7 +42,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgb(146, 223, 146);
+    background-color: $success-notification-timer-bk-clr;
     animation: timer-animation 5s linear forwards;
 
     @keyframes timer-animation {
@@ -56,13 +56,13 @@
   }
 
   .icon {
-    color: rgb(146, 223, 146);
+    color: $success-notification-icon-clr;
     font-size: 1.3rem;
   }
 
   h6 {
     font-size: 1.05rem;
-    color: black;
+    color: $success-notification-title-clr;
     font-weight: 600;
   }
 
@@ -73,12 +73,12 @@
   p {
     grid-column: 2/-1;
     font-size: 1rem;
-    color: $text-clr-3;
+    color: $success-notification-text-clr;
   }
 
   span {
     grid-column: 2/-1;
     font-size: 0.9rem;
-    color: $text-clr-4;
+    color: $success-notification-time-clr;
   }
 }

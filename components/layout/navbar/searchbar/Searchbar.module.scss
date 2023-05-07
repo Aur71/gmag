@@ -11,22 +11,22 @@
   }
 
   input {
-    border: 2px solid $border-clr-1;
-    color: $text-clr-2;
+    border: 2px solid $searchbar-border-clr;
+    color: $searchbar-clr;
     background-color: $searchbar-bk-clr;
     padding: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
     &::placeholder {
-      color: #ccc;
+      color: $searchbar-placeholder-clr;
     }
   }
 
   button {
     padding: 0 10px;
     background-color: $acc-clr-1;
-    color: $text-clr-1;
+    color: $searchbar-btn-clr;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;

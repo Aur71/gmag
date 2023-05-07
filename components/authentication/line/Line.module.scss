@@ -12,11 +12,11 @@
   span:nth-of-type(3) {
     width: 100%;
     height: 1px;
-    background-color: $border-clr-2;
+    background-color: $authentification-line-bk-clr;
   }
 
   span:nth-of-type(2) {
-    color: $text-clr-3;
+    color: $authentification-line-clr;
     padding-bottom: 5px;
   }
 }

@@ -1,11 +1,13 @@
+$main-clr: #f2f2f5;
+$secondary-clr: #161d25;
+$acc-clr-1: #ff9900;
+$acc-clr-1-hover: #af6900;
+
 // COLORS
 $white: white;
 $black: black;
-$main-clr: #f2f2f5;
-$secondary-clr: #161d25;
 
-// ACCENT COLORS
-$acc-clr-1: #ff9900;
+//
 $acc-clr-2: #1a7f91;
 $acc-clr-3: #a5700f;
 
@@ -36,12 +38,9 @@ $sidebar-width: 240px;
 $sidebar-index: 888;
 
 // OTHER COLORS
-$searchbar-bk-clr: #222f3e;
 $product-card-clr: #ffffff;
 $star-clr: #ffca0d;
 $authentification-form-bk: white;
-$google-btn-bk: #cf553d;
-$google-btn-bk-hover: #ff2a00;
 $error-clr: rgb(187, 78, 78);
 $no-error-clr: rgb(28, 138, 28);
 $box-shadow-1: 1px 2px 5px #ccc;
@@ -62,3 +61,78 @@ $thumb-clr-1: $acc-clr-1;
 // SINGLE PRODUCT PAGE
 $module-bk-1: rgb(240, 240, 240);
 $module-bk-2: rgb(250, 250, 250);
+//
+//
+//
+
+// authentification components
+$authentification-container-bk: white;
+$authentification-title-clr: #999;
+$authentification-container-box-shadow: 1px 2px 5px #ccc;
+$authentification-form-error-clr: rgb(230, 74, 74);
+$authentification-input-border-clr: #d5dee6;
+$authentification-input-placeholder-clr: #999;
+$authentification-submit-btn-clr: white;
+$authentification-line-bk-clr: #d5dee6;
+$authentification-line-clr: rgba(0, 0, 0, 0.5);
+
+// google btn
+$google-btn-bk: #cf553d;
+$google-btn-bk-hover: #ff2a00;
+$google-btn-clr: white;
+$google-btn-inside-border-clr: rgba(255, 255, 255, 0.5);
+
+// footer
+$footer-bk-clr: #161d25;
+$footer-border-top-clr: #424b54;
+$footer-links-color: rgb(226, 226, 226);
+$footer-links-color-hover: rgba(226, 226, 226, 0.5);
+$footer-line-bk-clr: #d5dee6;
+$footer-social-icons-hover: white;
+$footer-copyright-clr: #e2e3e4;
+
+// navbar
+$navbar-bk-clr: #161d25;
+$navbar-border-bottom-clr: #424b54;
+$navbar-icons-clr: white;
+$navbar-products-count-clr: white;
+$sidebar-btn-clr: white;
+
+// searchbar
+$searchbar-border-clr: #424b54;
+$searchbar-clr: #e2e3e4;
+$searchbar-bk-clr: #222f3e;
+$searchbar-placeholder-clr: #ccc;
+$searchbar-btn-clr: white;
+
+// sidebar
+$sidebar-bk-clr: #161d25;
+$sidebar-border-right-clr: #424b54;
+$sidebar-links-header-bk-clr: #2d3c4c;
+$sidebar-help-link-clr: white;
+$sidebar-link-clr: #e2e3e4;
+$sidebar-link-clr-hover: #e2e3e47a;
+$sidebar-layer-bk-clr: #161d25;
+$sidebar-layer-header-bk-clr: #2d3c4c;
+$sidebar-user-btn-clr: white;
+
+// error notification
+$error-notification-bk-clr: white;
+$error-notification-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+$error-notification-title-clr: black;
+$error-notification-timer-bk-clr: rgb(223, 133, 133);
+$error-notification-icon-clr: rgb(223, 133, 133);
+$error-notification-text-clr: #3b404a;
+$error-notification-time-clr: #999;
+
+// success notification
+$success-notification-bk-clr: white;
+$success-notification-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+$success-notification-title-clr: black;
+$success-notification-timer-bk-clr: rgb(146, 223, 146);
+$success-notification-icon-clr: rgb(146, 223, 146);
+$success-notification-text-clr: #3b404a;
+$success-notification-time-clr: #999;
+
+// home components
+// layout and auth done
