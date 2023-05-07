@@ -1,0 +1,33 @@
+@import '/styles/themes/themes.module.scss';
+
+.search_page {
+  width: 100%;
+  padding: 40px;
+
+  @media (max-width: 1000px) {
+    padding: 20px;
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .center {
+    max-width: 1540px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      'product-filtering-sidebar sort-container'
+      'product-filtering-sidebar card-container';
+    grid-template-columns: 290px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+
+    @media only screen and (max-width: 1200px) {
+      grid-template-areas:
+        'sort-container'
+        'card-container';
+      grid-template-columns: 1fr;
+    }
+  }
+}

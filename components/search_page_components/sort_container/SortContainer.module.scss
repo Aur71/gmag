@@ -1,0 +1,34 @@
+@import '/styles/themes/themes.module.scss';
+
+.sort_container {
+  grid-area: sort-container;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  & > button {
+    padding: 5px 10px;
+    border: 1px solid $acc-clr-1;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    display: none;
+
+    @media (max-width: 1200px) {
+      display: flex;
+    }
+    @media (max-width: 330px) {
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@import '/styles/themes/themes.module.scss';
+
+.card_container {
+  grid-area: card-container;
+  border: 1px solid blue;
+}

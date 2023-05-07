@@ -8,8 +8,6 @@ import axios from 'axios';
 const ProductType = ({ data }) => {
   const [sortBy, setSortBy] = useState('Most popular');
 
-  console.log(data);
-
   return (
     <div className={styles.products}>
       <div className={styles.center}>

@@ -7,6 +7,7 @@ import singleProductReducer from './reducers/singleProductSlice';
 import favoritesReducer from './reducers/favoritesSlice';
 import cartReducer from './reducers/cartSlice';
 import reviewsReducer from './reducers/reviewsSlice';
+import productFilteringSidebarReducer from './reducers/productFilteringSidebarSlice';
 
 const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
     favorites: favoritesReducer,
     cart: cartReducer,
     reviews: reviewsReducer,
+    productFilteringSidebar: productFilteringSidebarReducer,
   },
 });
 
