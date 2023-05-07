@@ -22,7 +22,7 @@ const Products = ({ products, sortBy }) => {
   return (
     <section className={styles.products}>
       {paginatedProducts.map((product) => {
-        return <Card product={product} key={product.id} />;
+        return <Card product={product} key={product._id} />;
       })}
 
       <Pagination

@@ -9,6 +9,8 @@ import styles from '../../styles/pages/Cart.module.scss';
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
 
+  console.log(cart);
+
   return (
     <div className={styles.cart}>
       <div className={styles.center}>

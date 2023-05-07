@@ -13,7 +13,16 @@ const Filters = ({ sortBy, setSortBy, searchTerm, setSearchTerm }) => {
         setSortBy={setSortBy}
         optionsStyle={{ backgroundColor: 'white' }}
       />
-      <MiniSearchbar search={searchTerm} setSearch={setSearchTerm} />
+      <MiniSearchbar
+        search={searchTerm}
+        setSearch={setSearchTerm}
+        miniSearchbarStyle={{
+          gridColumn: 'auto',
+          '@media (maxWidth: 520px)': {
+            gridColumn: '2 / -1',
+          },
+        }}
+      />
     </div>
   );
 };

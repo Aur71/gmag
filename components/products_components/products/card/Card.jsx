@@ -9,16 +9,16 @@ import { addProduct } from '@/redux/reducers/favoritesSlice';
 
 const Card = ({ product }) => {
   const {
-    id,
+    _id,
     productType,
     name,
-    img,
+    thumbnail,
     currentPrice,
     oldPrice,
     rating,
     reviewsCount,
   } = product;
-  const link = `/products/${productType}/${id}`;
+  const link = `/products/${productType}/${_id}`;
   const dispatch = useDispatch();
 
   return (
@@ -31,7 +31,13 @@ const Card = ({ product }) => {
       </button>
 
       <Link href={link} className={styles.img_container}>
-        <Image src={img} alt={name} width={350} height={350} priority={true} />
+        <Image
+          src={thumbnail}
+          alt={name}
+          width={350}
+          height={350}
+          priority={true}
+        />
       </Link>
 
       <div className={styles.info_container}>
@@ -55,7 +61,7 @@ const Card = ({ product }) => {
           <AiFillStar
             className={5 <= Math.round(rating) ? styles.star_clr : null}
           />
-          <span>{rating}</span>
+          <span>{rating.toFixed(0)}</span>
           <span>({reviewsCount})</span>
         </div>
 
