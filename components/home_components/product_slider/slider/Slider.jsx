@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
-import Card from './card/Card';
+import ProductCard1 from '@/components/cards/product_card_1/ProductCard1';
 import styles from './Slider.module.scss';
 
 const Slider = ({ products }) => {
@@ -29,7 +29,7 @@ const Slider = ({ products }) => {
       onScroll={handleScroll}
     >
       {products.map((product) => {
-        return <Card key={product._id} product={product} />;
+        return <ProductCard1 key={product._id} product={product} />;
       })}
     </div>
   );

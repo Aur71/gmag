@@ -6,6 +6,7 @@ import axios from 'axios';
 import styles from '../styles/pages/Home.module.scss';
 import { ImFire } from 'react-icons/im';
 import { AiFillStar } from 'react-icons/ai';
+import { starClr } from '@/styles/themes/themes.module.scss';
 
 export default function Home({ promotionSlides, hotDeals, mostPopular }) {
   return (
@@ -22,7 +23,7 @@ export default function Home({ promotionSlides, hotDeals, mostPopular }) {
       {mostPopular.length ? (
         <ProductSlider
           title='Most Popular'
-          icon={<AiFillStar className='star-clr' />}
+          icon={<AiFillStar style={{ color: starClr }} />}
           products={mostPopular}
         />
       ) : null}

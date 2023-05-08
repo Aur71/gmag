@@ -14,7 +14,7 @@
   margin: 0 auto;
   height: 200px;
   position: relative;
-  background: linear-gradient(to right, #434343 0%, black 100%);
+  background: $news-letter-bk-gradient;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,6 @@
     width: 100%;
     height: 100%;
     padding: 20px;
-    color: $text-clr-2;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -68,6 +67,7 @@
     h2 {
       font-size: 2rem;
       font-weight: 400;
+      color: $news-letter-title-clr;
 
       @media only screen and (max-width: 1450px) {
         font-size: 1.5rem;
@@ -81,7 +81,7 @@
     h3 {
       font-size: 1rem;
       font-weight: 400;
-      color: $text-clr-4;
+      color: $news-letter-subtitle-clr;
 
       @media only screen and (max-width: 1150px) {
         font-size: 0.9rem;
@@ -107,11 +107,11 @@
 
       input {
         width: 100%;
-        border: 1px solid $border-clr-2;
+        border: 1px solid $news-letter-input-border-clr;
         font-size: 1rem;
         padding: 8px 20px;
         border-radius: 20px;
-        color: $text-clr-2;
+        color: $news-letter-input-clr;
         transition: border 300ms;
 
         @media only screen and (max-width: 650px) {
@@ -123,7 +123,7 @@
         }
 
         &::placeholder {
-          color: $text-clr-6;
+          color: $news-letter-input-placeholder-clr;
         }
       }
 
@@ -136,11 +136,11 @@
 
         border-radius: 20px;
         background-color: $acc-clr-1;
-        color: $text-clr-1;
+        color: $news-letter-submit-btn-clr;
         transition: background-color 300ms;
 
         &:hover {
-          background-color: $acc-clr-3;
+          background-color: $acc-clr-1-hover;
         }
 
         @media only screen and (max-width: 650px) {

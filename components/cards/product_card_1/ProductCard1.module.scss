@@ -1,1 +1,16 @@
 @import '/styles/themes/themes.module.scss';
+
+.product_card_1 {
+  position: relative;
+  width: 240px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media (max-width: 500px) {
+    width: 200px;
+  }
+}

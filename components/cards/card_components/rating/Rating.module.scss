@@ -1,1 +1,25 @@
 @import '/styles/themes/themes.module.scss';
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.3rem;
+  color: $rating-clr;
+
+  .star_clr {
+    color: $star-clr;
+  }
+
+  span {
+    font-size: 0.9rem;
+
+    &:first-of-type {
+      color: $star-clr;
+      font-weight: 600;
+    }
+    &:last-of-type {
+      font-weight: 600;
+    }
+  }
+}

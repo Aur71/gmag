@@ -3,13 +3,9 @@
 :root {
   --navbar-height: 90px;
   --sidebar-width: 240px;
-  --padding-side: 70px;
 
   @media only screen and (max-width: 800px) {
     --navbar-height: 70px;
-  }
-  @media only screen and (max-width: 1200px) {
-    --padding-side: 15px;
   }
 }
 
@@ -75,13 +71,4 @@ ol {
   justify-content: center;
   align-items: center;
   padding: 0;
-}
-
-// COLOR STYLES
-.red {
-  color: rgb(255, 72, 0);
-}
-
-.star-clr {
-  color: $star-clr;
 }

@@ -2,6 +2,7 @@ $main-clr: #f2f2f5;
 $secondary-clr: #161d25;
 $acc-clr-1: #ff9900;
 $acc-clr-1-hover: #af6900;
+$rating-clr: #ffca0d;
 
 // COLORS
 $white: white;
@@ -32,10 +33,11 @@ $icon-clr-2: #6f7581;
 $disabled-clr-1: rgba(128, 128, 128, 0.6);
 
 // LAYOUT
-$navbar-height: 90px;
-$navbar-index: 888;
-$sidebar-width: 240px;
-$sidebar-index: 888;
+// $navbar-height: 90px;
+// $navbar-index: 888;
+// $sidebar-width: 240px;
+// $sidebar-index: 888;
+// --navbar-height: 200px;
 
 // OTHER COLORS
 $product-card-clr: #ffffff;
@@ -135,4 +137,35 @@ $success-notification-text-clr: #3b404a;
 $success-notification-time-clr: #999;
 
 // home components
-// layout and auth done
+// news letter
+$news-letter-bk-gradient: linear-gradient(to right, #434343 0%, black 100%);
+$news-letter-input-border-clr: #d5dee6;
+$news-letter-input-clr: #e2e3e4;
+$news-letter-input-placeholder-clr: #c5c5c5;
+$news-letter-title-clr: #e2e3e4;
+$news-letter-subtitle-clr: #999;
+$news-letter-submit-btn-clr: white;
+// promotion slider
+$promotion-slider-radio-btn-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+$promotion-slider-radio-btn-bk-clr: white;
+$promotion-slider-radio-btn-border-clr: #1a7f91;
+// product slider
+$product-slider-button-bk-clr: white;
+$product-slider-button-clr: #6f7581;
+$product-slider-disabled-button-clr: #969aa3;
+
+// card components
+$favorites-btn-bk-clr: white;
+$favorites-btn-clr: #6f7581;
+$favorites-btn-clr-hover: $acc-clr-1;
+$rating-clr: grey;
+$star-clr: #ffca0d;
+$cart-btn-clr: white;
+
+// product card 1 components
+$product-card-1-img-container-bk-clr: white;
+$product-card-1-title-clr: #3b404a;
+$price-container-current-price-clr: #3b404a;
+$price-container-old-price-clr: #c5c5c5;
+
+// home components, product card 1, and card components done

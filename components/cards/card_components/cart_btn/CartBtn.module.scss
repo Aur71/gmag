@@ -1,0 +1,16 @@
+@import '/styles/themes/themes.module.scss';
+
+.cart_btn {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background-color: $acc-clr-1;
+  color: $cart-btn-clr;
+  border: 1px solid $acc-clr-1;
+  transition: 300ms background-color, 300ms color, 300ms border;
+
+  &:hover {
+    background-color: transparent;
+    color: $acc-clr-1;
+  }
+}

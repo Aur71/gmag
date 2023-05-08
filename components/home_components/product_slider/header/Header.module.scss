@@ -28,11 +28,11 @@
     gap: 10px;
 
     button {
-      background-color: $white;
+      background-color: $product-slider-button-bk-clr;
       padding: 5px;
       font-size: 1.2rem;
       border-radius: 10px;
-      color: $icon-clr-2;
+      color: $product-slider-button-clr;
       transition: 300ms;
 
       &:first-of-type {
