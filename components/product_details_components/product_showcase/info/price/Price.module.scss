@@ -2,7 +2,7 @@
 
 .price {
   width: 100%;
-  border-bottom: 1px solid $border-clr-2;
+  border-bottom: 1px solid $product-showcase-border-clr;
   display: grid;
   grid-template-columns: auto 1fr 1fr;
   align-items: center;
@@ -12,7 +12,7 @@
   }
 
   h2 {
-    color: $text-clr-4;
+    color: $product-showcase-title-clr;
     padding: 30px 0;
     padding-right: 15px;
 
@@ -30,7 +30,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: clamp(0px, 0.6vw, 10px);
-    border-right: 1px solid $border-clr-2;
+    border-right: 1px solid $product-showcase-border-clr;
 
     @media only screen and (max-width: 500px) {
       border: none;
@@ -39,11 +39,12 @@
 
     h3 {
       font-size: 1.4rem;
+      color: $product-showcase-current-price-clr;
     }
 
     h4 {
       font-size: 1.2rem;
-      color: $disabled-clr-1;
+      color: $product-showcase-old-price-clr;
       text-decoration: line-through;
     }
   }
@@ -56,14 +57,14 @@
     align-items: center;
     gap: 10px;
     font-weight: 600;
-    color: $text-clr-4;
+    color: $product-showcase-stock-clr;
     padding: 10px;
     position: relative;
     font-size: 1.1rem;
 
     @media only screen and (max-width: 500px) {
       grid-column: 1/-1;
-      border-bottom: 1px solid $border-clr-2;
+      border-bottom: 1px solid $product-showcase-border-clr;
       display: grid;
       grid-template-columns: auto 1fr;
       padding: 30px 0;
@@ -77,13 +78,13 @@
     }
 
     span.avaliable {
-      color: green;
+      color: $product-showcase-stock-clr-avaliable;
     }
     span.limited {
-      color: orange;
+      color: $product-showcase-stock-clr-limited;
     }
     span.outOfStock {
-      color: rgb(204, 88, 88);
+      color: $product-showcase-stock-clr-out-of-stock;
     }
   }
 }

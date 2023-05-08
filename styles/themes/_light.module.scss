@@ -193,9 +193,56 @@ $pagination-btn-active-bk-clr: $acc-clr-1;
 $pagination-btn-active-clr: white;
 
 // product details components
+// product showcase
+$product-showcase-h1-clr: #3b404a;
 $product-showcase-bk-clr: white;
+$product-showcase-border-clr: #d5dee6;
+$product-showcase-title-clr: #999;
 $product-showcase-cart-btn-clr: white;
 $product-showcase-cart-btn-bk-clr: $acc-clr-1;
 $product-showcase-favorite-btn-clr: #a7a7a7;
 $product-showcase-favorite-btn-bk-clr-hover: black;
 $product-showcase-favorite-btn-clr-hover: white;
+$product-showcase-colors-border-bottom: #d5dee6;
+$product-showcase-color-btn-clr: #63676e;
+$product-showcase-color-border-clr: rgb(51, 51, 51);
+$product-showcase-current-price-clr: #3b404a;
+$product-showcase-old-price-clr: rgba(128, 128, 128, 0.6);
+$product-showcase-stock-clr: #999;
+$product-showcase-stock-clr-avaliable: green;
+$product-showcase-stock-clr-limited: orange;
+$product-showcase-stock-clr-out-of-stock: rgb(204, 88, 88);
+$product-showcase-rating-star-clr: rgba(128, 128, 128, 0.6);
+$product-showcase-rating-star-clr-active: #ffca0d;
+$product-showcase-rating-clr: #3b404a;
+$product-showcase-reviews-count-clr: rgba(128, 128, 128, 0.6);
+$product-showcase-path-clr: rgba(128, 128, 128, 0.6);
+$product-showcase-path-clr-hover: $acc-clr-1;
+$product-showcase-slide-btn-bk-clr: white;
+$product-showcase-slide-btn-clr: black;
+$product-showcase-slide-btn-clr-hover: $acc-clr-1;
+$product-showcase-slide-btn-clr-disabled: rgba(128, 128, 128, 0.5);
+$product-showcase-image-btn-border-clr: $acc-clr-1;
+// image viewer
+$image-viewer-wrapper-bk-clr: rgba(0, 0, 0, 0.5);
+$image-viewer-container-bk-clr: rgb(240, 240, 240);
+$image-viewer-border-clr: #d5dee6;
+$image-viewer-actions-clr: #a7a7a7;
+$image-viewer-actions-clr-hover: $acc-clr-1;
+$image-viewer-close-btn-clr: #63676e;
+$image-viewer-slide-btn-bk-clr-hover: white;
+$image-viewer-slide-btn-box-shadow-hover: 0 0 5px rgba(0, 0, 0, 0.1);
+// product description
+$product-description-bk-clr: white;
+$product-description-title-clr: #3b404a;
+$product-description-default-clr: #3b404a;
+$product-description-overlay-clr: rgba(255, 255, 255, 0.5);
+// product specifications
+$product-specifications-bk-clr: white;
+$product-specifications-title-clr: #3b404a;
+$product-specifications-overlay-clr: rgba(255, 255, 255, 0.5);
+$product-specifications-h3-clr: #3b404a;
+$product-specifications-odd-row-bk-clr: #eff9fe;
+$product-specifications-row-text-content-clr: #888888;
+// product reviews
+// product questions

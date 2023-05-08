@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
-  border-top: 1px solid $border-clr-2;
+  border-top: 1px solid $image-viewer-border-clr;
 
   @media only screen and (max-width: 1000px) {
     grid-column: auto;
@@ -19,13 +19,13 @@
   button {
     padding: 10px;
     border-radius: 50%;
-    border: 1px solid $border-clr-3;
-    color: $text-clr-3;
+    border: 1px solid $image-viewer-actions-clr;
+    color: $image-viewer-actions-clr;
     transition: color 300ms, border 300ms;
 
     &:hover {
-      color: $acc-clr-1;
-      border-color: $acc-clr-1;
+      color: $image-viewer-actions-clr-hover;
+      border-color: $image-viewer-actions-clr-hover;
     }
   }
 }

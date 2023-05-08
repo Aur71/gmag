@@ -5,24 +5,25 @@
   display: flex;
   gap: 10px;
   padding: 30px 0;
-  border-bottom: 1px solid $border-clr-2;
+  border-bottom: 1px solid $product-showcase-border-clr;
 
   .icon {
     font-size: 1.3rem;
-    color: $disabled-clr-1;
     align-items: center;
+    color: $product-showcase-rating-star-clr;
 
     &.active {
-      color: $star-clr;
+      color: $product-showcase-rating-star-clr-active;
     }
   }
 
-  p {
+  p:first-of-type {
     font-weight: 600;
-    color: $text-clr-5;
+    color: $product-showcase-rating-clr;
+  }
 
-    &:first-of-type {
-      color: $text-clr-3;
-    }
+  p:last-of-type {
+    font-weight: 600;
+    color: $product-showcase-reviews-count-clr;
   }
 }

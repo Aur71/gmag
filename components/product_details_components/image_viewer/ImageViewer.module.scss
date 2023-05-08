@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $image-viewer-wrapper-bk-clr;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@
     max-width: 1500px;
     height: 100%;
     max-height: 850px;
-    background-color: $module-bk-1;
+    background-color: $image-viewer-container-bk-clr;
     border-radius: 5px;
     display: grid;
     grid-template-rows: auto 1fr;

@@ -2,7 +2,8 @@
 
 .product_description {
   width: 100%;
-  background-color: $white;
+  background-color: $product-description-bk-clr;
+  color: $product-description-default-clr;
   height: 500px;
   overflow: hidden;
   position: relative;
@@ -10,7 +11,7 @@
 
   .padding_container {
     width: 100%;
-    padding: 20px var(--padding-side) 40px var(--padding-side);
+    padding: 20px 70px 40px 70px;
     position: relative;
     overflow: hidden;
 
@@ -40,6 +41,7 @@
 
     h2:first-of-type {
       margin-bottom: 20px;
+      color: $product-description-title-clr;
     }
   }
 
@@ -49,7 +51,7 @@
     justify-content: center;
     align-items: center;
     color: $acc-clr-1;
-    background-color: $white;
+    background-color: $product-description-bk-clr;
     padding: 10px 15px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -61,7 +63,7 @@
     z-index: 1;
 
     &:hover {
-      color: $acc-clr-3;
+      color: $acc-clr-1-hover;
     }
   }
 
@@ -71,10 +73,22 @@
     height: 100px;
     left: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
-    background: -webkit-linear-gradient(to top, white 50%, transparent);
-    background: -moz-linear-gradient(to top, white 50%, transparent);
-    background: linear-gradient(to top, white 50%, transparent);
+    background-color: $product-description-overlay-clr;
+    background: -webkit-linear-gradient(
+      to top,
+      $product-description-bk-clr 50%,
+      transparent
+    );
+    background: -moz-linear-gradient(
+      to top,
+      $product-description-bk-clr 50%,
+      transparent
+    );
+    background: linear-gradient(
+      to top,
+      $product-description-bk-clr 50%,
+      transparent
+    );
     transition: 300ms opacity, height 300ms;
 
     &.disabled {

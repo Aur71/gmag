@@ -64,11 +64,11 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    background-color: $module-bk-1;
+    background-color: $image-viewer-container-bk-clr;
     padding: 15px 0px;
     font-size: 2rem;
     border-radius: 3px;
-    border: 1px solid $border-clr-2;
+    border: 1px solid $image-viewer-border-clr;
     transition: 300ms background-color, 300ms box-shadow;
     color: $acc-clr-1;
 
@@ -77,8 +77,8 @@
     }
 
     &:hover {
-      background-color: $white;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      background-color: $image-viewer-slide-btn-bk-clr-hover;
+      box-shadow: $image-viewer-slide-btn-box-shadow-hover;
     }
 
     &:first-of-type {

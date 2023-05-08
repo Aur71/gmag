@@ -15,7 +15,7 @@ export default function Home({ promotionSlides, hotDeals, mostPopular }) {
       {hotDeals.length ? (
         <ProductSlider
           title='Hot Deals'
-          icon={<ImFire className='red' />}
+          icon={<ImFire style={{ color: 'red' }} />}
           products={hotDeals}
         />
       ) : null}
