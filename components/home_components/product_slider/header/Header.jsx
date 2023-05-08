@@ -5,11 +5,15 @@ const Header = ({ title, icon }) => {
   const slideLeft = (e) => {
     const slider =
       e.target.parentElement.parentElement.parentElement.children[1];
+    const computedStyle = getComputedStyle(slider);
+    const gap = computedStyle.getPropertyValue('gap').split('p');
+    const numericGap = parseFloat(gap);
+    const cardWidth = slider.children[0].getBoundingClientRect().width;
     const sliderWidth = slider.clientWidth;
-    let numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    let numberOfCardsScrolled = Math.floor(sliderWidth / cardWidth) - 1;
     if (numberOfCardsScrolled === 0) numberOfCardsScrolled = 1;
     const totalScroll =
-      numberOfCardsScrolled * 240 + numberOfCardsScrolled * 30;
+      numberOfCardsScrolled * cardWidth + numberOfCardsScrolled * numericGap;
     slider.style.scrollBehavior = 'smooth';
     slider.scrollLeft -= totalScroll;
     slider.style.scrollBehavior = 'auto';
@@ -18,11 +22,15 @@ const Header = ({ title, icon }) => {
   const slideRight = (e) => {
     const slider =
       e.target.parentElement.parentElement.parentElement.children[1];
+    const computedStyle = getComputedStyle(slider);
+    const gap = computedStyle.getPropertyValue('gap').split('p');
+    const numericGap = parseFloat(gap);
+    const cardWidth = slider.children[0].getBoundingClientRect().width;
     const sliderWidth = slider.clientWidth;
-    let numberOfCardsScrolled = Math.floor(sliderWidth / 270);
+    let numberOfCardsScrolled = Math.floor(sliderWidth / cardWidth) - 1;
     if (numberOfCardsScrolled === 0) numberOfCardsScrolled = 1;
     const totalScroll =
-      numberOfCardsScrolled * 240 + numberOfCardsScrolled * 30;
+      numberOfCardsScrolled * cardWidth + numberOfCardsScrolled * numericGap;
     slider.style.scrollBehavior = 'smooth';
     slider.scrollLeft += totalScroll;
     slider.style.scrollBehavior = 'auto';

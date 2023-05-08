@@ -41,7 +41,6 @@ $disabled-clr-1: rgba(128, 128, 128, 0.6);
 
 // OTHER COLORS
 $product-card-clr: #ffffff;
-$star-clr: #ffca0d;
 $authentification-form-bk: white;
 $error-clr: rgb(187, 78, 78);
 $no-error-clr: rgb(28, 138, 28);
@@ -168,4 +167,29 @@ $product-card-1-title-clr: #3b404a;
 $price-container-current-price-clr: #3b404a;
 $price-container-old-price-clr: #c5c5c5;
 
-// home components, product card 1, and card components done
+// features
+// filter
+$filter-label-clr: #63676e;
+$filter-dropdown-border-clr: #a7a7a7;
+$filter-dropdown-active-border-clr: $acc-clr-1;
+$filter-dropdown-option-clr: #63676e;
+$filter-dropdown-active-option-bk-clr: rgba(128, 128, 128, 0.3);
+$filter-dropdown-option-hover-bk-clr: $acc-clr-1;
+$filter-dropdown-option-hover-clr: white;
+// sort
+$sort-label-clr: #63676e;
+$sort-dropdown-border-clr: #a7a7a7;
+$sort-dropdown-active-border-clr: $acc-clr-1;
+$sort-dropdown-option-clr: #63676e;
+$sort-dropdown-active-option-bk-clr: rgba(128, 128, 128, 0.3);
+$sort-dropdown-option-hover-bk-clr: $acc-clr-1;
+$sort-dropdown-option-hover-clr: white;
+// mini searchbar
+$mini-searchbar-input-border-clr: #a7a7a7;
+// pagination
+$pagination-btn-border-clr: $acc-clr-1;
+$pagination-btn-clr: $acc-clr-1;
+$pagination-btn-active-bk-clr: $acc-clr-1;
+$pagination-btn-active-clr: white;
+
+// features done for now, export for recommended slider
