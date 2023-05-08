@@ -3,13 +3,12 @@
 .product_showcase {
   width: 100%;
   height: auto;
-  background-color: $white;
-  padding: 20px var(--padding-side) 40px var(--padding-side);
+  background-color: $product-showcase-bk-clr;
+  padding: 20px 70px 40px 70px;
 
   @media only screen and (max-width: 1400px) {
     padding: 30px 90px;
   }
-
   @media only screen and (max-width: 1150px) {
     padding: 0;
   }

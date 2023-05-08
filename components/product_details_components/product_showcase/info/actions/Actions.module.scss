@@ -7,11 +7,11 @@
   align-items: center;
   gap: 15px;
 
-  // @media only screen and (max-width: 360px) {
-  //   padding: 15px 0;
-  // }
+  @media only screen and (max-width: 360px) {
+    padding: 15px 0;
+  }
 
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 320px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -23,12 +23,12 @@
     font-weight: 600;
     transition: 300ms background-color, 300ms, color, 300ms border;
 
-    @media only screen and (max-width: 360px) {
+    @media only screen and (max-width: 380px) {
       padding: 10px 20px;
       font-size: 0.9rem;
     }
 
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 320px) {
       width: 100%;
       justify-content: center;
       align-items: center;
@@ -36,9 +36,9 @@
   }
 
   .cart_btn {
-    background-color: $acc-clr-1;
-    color: $text-clr-1;
-    border: 1px solid transparent;
+    background-color: $product-showcase-cart-btn-bk-clr;
+    color: $product-showcase-cart-btn-clr;
+    border: 1px solid $product-showcase-cart-btn-bk-clr;
 
     &.disabled {
       opacity: 0.5;
@@ -48,19 +48,18 @@
 
     &:hover {
       background-color: transparent;
-      border: 1px solid $acc-clr-1;
-      color: $acc-clr-1;
+      color: $product-showcase-cart-btn-bk-clr;
     }
   }
 
   .favorite_btn {
-    border: 1px solid $border-clr-3;
-    color: $border-clr-3;
+    border: 1px solid $product-showcase-favorite-btn-clr;
+    color: $product-showcase-favorite-btn-clr;
 
     &:hover {
-      background-color: $black;
-      border-color: transparent;
-      color: $text-clr-1;
+      background-color: $product-showcase-favorite-btn-bk-clr-hover;
+      color: $product-showcase-favorite-btn-clr-hover;
+      border-color: $product-showcase-favorite-btn-clr-hover;
     }
   }
 }
