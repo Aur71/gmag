@@ -4,7 +4,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  border-bottom: 1px solid $border-clr-2;
+  border-bottom: 1px solid $product-reviews-border-clr;
 
   @media (max-width: 1300px) {
     grid-template-columns: 1fr 1fr;

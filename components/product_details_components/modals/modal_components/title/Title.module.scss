@@ -8,18 +8,19 @@
 
   label {
     font-weight: 600;
+    color: $product-reviews-modal-label-clr;
   }
 
   input {
     outline: transparent;
     padding: 8px;
-    border: 1px solid $border-clr-3;
+    border: 1px solid $product-reviews-modal-input-border-clr;
     border-radius: 3px;
     transition: 300ms border-color;
     background-color: transparent;
 
     &:focus {
-      border-color: $acc-clr-1;
+      border-color: $product-reviews-modal-input-border-clr-focus;
     }
 
     &::placeholder {
@@ -27,38 +28,10 @@
     }
 
     &.error {
-      border-color: rgb(201, 55, 55);
+      border-color: $product-reviews-modal-input-error-clr;
 
       &:focus {
-        border-color: rgb(201, 55, 55);
-      }
-    }
-  }
-
-  textarea {
-    outline: transparent;
-    padding: 8px;
-    border: 1px solid $border-clr-3;
-    border-radius: 3px;
-    transition: 300ms border-color;
-    background-color: transparent;
-    resize: vertical;
-    min-height: 100px;
-    font-size: 1rem;
-
-    &::placeholder {
-      opacity: 0.6;
-    }
-
-    &:focus {
-      border-color: $acc-clr-1;
-    }
-
-    &.error {
-      border-color: rgb(201, 55, 55);
-
-      &:focus {
-        border-color: rgb(201, 55, 55);
+        border-color: $product-reviews-modal-input-error-clr;
       }
     }
   }
@@ -70,7 +43,7 @@
 
     span:first-of-type {
       font-size: 0.9rem;
-      color: rgb(201, 55, 55);
+      color: $product-reviews-modal-input-error-clr;
       opacity: 0;
 
       &.active {
@@ -79,7 +52,7 @@
     }
 
     span:last-of-type {
-      color: $text-clr-4;
+      color: $product-reviews-modal-input-word-count-clr;
       font-size: 0.9rem;
     }
   }

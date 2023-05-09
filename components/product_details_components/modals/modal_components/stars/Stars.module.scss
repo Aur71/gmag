@@ -11,14 +11,14 @@
 
   button {
     font-size: 2rem;
-    color: $text-clr-4;
+    color: $product-reviews-modal-stars-clr;
 
     @media only screen and (max-width: 500px) {
       font-size: 1.5rem;
     }
 
     &.active {
-      color: $star-clr;
+      color: $product-reviews-modal-stars-clr-active;
     }
   }
 
@@ -26,13 +26,14 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-left: 5px;
+    color: $product-reviews-modal-stars-span-clr;
 
     @media only screen and (max-width: 500px) {
       font-size: 1rem;
     }
 
     &.error {
-      color: rgb(170, 56, 56);
+      color: $product-reviews-modal-stars-error-clr;
     }
   }
 }

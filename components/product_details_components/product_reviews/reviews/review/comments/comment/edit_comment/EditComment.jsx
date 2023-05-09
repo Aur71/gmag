@@ -12,6 +12,10 @@ const EditComment = ({ comment, setShowEditComment, review }) => {
   const [loading, setLoading] = useState(false);
   const { user } = useSelector((state) => state.user);
 
+  const handleNewComment = (e) => {
+    if (e.target.value.length <= 500) setNewComment(e.target.value);
+  };
+
   useEffect(() => {
     setNewComment(comment.content);
   }, [comment]);
@@ -63,7 +67,7 @@ const EditComment = ({ comment, setShowEditComment, review }) => {
     <div className={styles.edit_comment}>
       <textarea
         value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
+        onChange={handleNewComment}
         placeholder='Add comment...'
       />
 

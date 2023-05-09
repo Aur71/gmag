@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: $acc-clr-1;
+  color: $product-review-like-btn-clr;
   padding: 0 10px;
-  border-right: 1px solid $border-clr-2;
+  border-right: 1px solid $product-reviews-border-clr;
   cursor: pointer;
   position: relative;
 
@@ -18,7 +18,7 @@
   }
 
   &:hover {
-    color: $acc-clr-3;
+    color: $product-review-like-btn-clr-hover;
   }
 
   &:first-of-type {

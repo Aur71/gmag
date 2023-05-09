@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $product-reviews-modal-wrapper-bk;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@
   .container {
     max-width: 500px;
     width: 100%;
-    background-color: $module-bk-2;
+    background-color: $product-reviews-modal-bk;
     border-radius: 5px;
     overflow-x: hidden;
 
@@ -42,6 +42,7 @@
       h3 {
         font-size: 1.1rem;
         text-align: center;
+        color: $product-reviews-modal-delete-review-h3-clr;
       }
 
       button {
@@ -50,8 +51,8 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        background-color: red;
-        color: white;
+        background-color: $product-reviews-modal-delete-review-btn-bk-clr;
+        color: $product-reviews-modal-delete-review-btn-clr;
         border-radius: 5px;
       }
 

@@ -3,7 +3,7 @@
 .header {
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid $border-clr-2;
+  border-bottom: 1px solid $product-reviews-border-clr;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -24,11 +24,12 @@
     h4 {
       font-size: 1rem;
       font-weight: 600;
+      color: $product-reviews-modal-header-title-clr;
     }
 
     a {
       font-size: 0.9rem;
-      color: $acc-clr-1;
+      color: $product-reviews-modal-header-link-clr;
 
       &:hover {
         text-decoration: underline;
@@ -38,7 +39,7 @@
 
   button {
     font-size: 2rem;
-    color: $text-clr-5;
+    color: $product-reviews-modal-header-close-btn-clr;
     margin-left: auto;
 
     @media (max-width: 1500px) {

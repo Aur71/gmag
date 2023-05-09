@@ -8,8 +8,8 @@
   button {
     align-items: center;
     gap: 5px;
-    color: $acc-clr-1;
-    border-right: 1px solid $border-clr-2;
+    color: $product-question-comment-actions-clr;
+    border-right: 1px solid $product-questions-border-clr;
     padding: 0 10px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -23,10 +23,6 @@
       span:first-of-type {
         display: none;
       }
-    }
-
-    &:hover {
-      color: $acc-clr-3;
     }
 
     &:first-of-type {

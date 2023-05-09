@@ -11,16 +11,18 @@
     height: 150px;
     outline: transparent;
     padding: 10px;
-    border: 1px solid #d5dee6;
+    border: 1px solid $product-reviews-edit-comment-textarea-border-clr;
     border-radius: 3px;
     resize: vertical;
     position: relative;
     min-height: 150px;
     font-size: 1rem;
     transition: border 300ms;
+    color: $product-reviews-edit-comment-textarea-clr;
+    background-color: $product-reviews-edit-comment-textarea-bk-clr;
 
     &:focus {
-      border-color: $acc-clr-1;
+      border-color: $product-reviews-edit-comment-textarea-border-clr-focus;
     }
   }
 
@@ -37,24 +39,25 @@
       font-size: 0.9rem;
 
       &:first-of-type {
-        color: white;
-        background-color: #ff9900;
-        border: 1px solid #ff9900;
+        color: $product-reviews-edit-comment-save-btn-clr;
+        background-color: $product-reviews-edit-comment-save-btn-bk-clr;
+        border: 1px solid $product-reviews-edit-comment-save-btn-border-clr;
 
         &:hover {
-          background-color: white;
-          color: $acc-clr-1;
+          background-color: $product-reviews-edit-comment-save-btn-bk-clr-hover;
+          color: $product-reviews-edit-comment-save-btn-clr-hover;
         }
       }
 
       &:last-of-type {
-        border: 1px solid #ff9900;
-        color: #ff9900;
+        border: 1px solid $product-reviews-edit-comment-cancel-btn-border-clr;
+        color: $product-reviews-edit-comment-cancel-btn-clr;
+        background-color: $product-reviews-edit-comment-cancel-btn-bk-clr;
 
         &:hover {
-          background-color: black;
-          border-color: black;
-          color: white;
+          border-color: $product-reviews-edit-comment-cancel-btn-border-clr-hover;
+          color: $product-reviews-edit-comment-cancel-btn-clr-hover;
+          background-color: $product-reviews-edit-comment-cancel-btn-bk-clr-hover;
         }
       }
     }

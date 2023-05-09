@@ -6,7 +6,7 @@
   gap: 10px;
 
   button {
-    color: $acc-clr-1;
+    color: $product-reviews-chart-btn-clr;
 
     &:hover {
       text-decoration: underline;
@@ -15,12 +15,12 @@
 
   .bar {
     border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: $product-reviews-chart-bar-bk-clr;
     overflow: hidden;
 
     div {
       height: 100%;
-      background-color: $acc-clr-1;
+      background-color: $product-reviews-chart-bar-bk-clr-active;
     }
   }
 }
