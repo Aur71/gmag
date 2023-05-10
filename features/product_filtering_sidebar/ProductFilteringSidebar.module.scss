@@ -2,12 +2,34 @@
 
 .product_filtering_sidebar {
   grid-area: product-filtering-sidebar;
-  border: 1px solid $acc-clr-1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: translate 300ms, opacity 300ms;
+
+  &.active {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  & > * {
+    flex: 0 0 auto;
+  }
 
   @media only screen and (max-width: 1200px) {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
+    max-width: 450px;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $product-filtering-sidebar-bk-clr;
+    padding: 15px;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 }
