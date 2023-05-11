@@ -11,7 +11,6 @@ const ProductFilteringSidebar = ({ products }) => {
     (state) => state.productFilteringSidebar
   );
   const filters = getAllFilters(products, activeFilters);
-  console.log(filters);
 
   return (
     <div
@@ -22,9 +21,16 @@ const ProductFilteringSidebar = ({ products }) => {
       {activeFilters.length ? <ActiveFiltersBlock /> : null}
 
       <ActiveFiltersBlock />
-      <PriceBlock />
-      <RatingBlock />
-      <SpecificationBlock />
+
+      {filters.map((filter) => {
+        const { filterName } = filter;
+
+        if (filterName === 'Price')
+          return <PriceBlock key={filterName} filter={filter} />;
+        if (filterName === 'Rating')
+          return <RatingBlock key={filterName} filter={filter} />;
+        return <SpecificationBlock key={filterName} filter={filter} />;
+      })}
     </div>
   );
 };
