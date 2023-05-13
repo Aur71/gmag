@@ -51,6 +51,9 @@ html {
 body {
   background-color: $main-clr;
   color: $text-clr-3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
 }
 
 main {
