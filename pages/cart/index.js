@@ -6,7 +6,13 @@ import Ticket from '@/components/cart_components/ticket/Ticket';
 // import axios from 'axios';
 import styles from '../../styles/pages/Cart.module.scss';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const Cart = () => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   const { cart } = useSelector((state) => state.cart);
 
   console.log(cart);

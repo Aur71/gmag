@@ -5,7 +5,13 @@ import EditListForm from '@/components/favorites_components/edit_list_form/EditL
 import DeleteListForm from '@/components/favorites_components/delete_list_form/DeleteListForm';
 import styles from '../styles/pages/Favorites.module.scss';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const Favorites = ({ data }) => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   console.log(data);
 
   return (

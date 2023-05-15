@@ -2,7 +2,13 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const Account = () => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
 

@@ -5,7 +5,13 @@ import Products from '@/components/products_components/products/Products';
 import styles from '../../../styles/pages/Products.module.scss';
 import axios from 'axios';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const ProductType = ({ data }) => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   const [sortBy, setSortBy] = useState('Most popular');
 
   return (

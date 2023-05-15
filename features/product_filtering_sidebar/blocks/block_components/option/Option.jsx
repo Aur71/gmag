@@ -17,8 +17,8 @@ const Option = ({ option, filter }) => {
     if (!e.target.checked)
       dispatch(removeSpecificationFilter({ option, filterName }));
   };
-
   const checkboxId = `${filterName} - ${optionName}`;
+  // finish the product filtering sidebar slice
 
   return (
     <label className={styles.option}>

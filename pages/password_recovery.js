@@ -5,12 +5,18 @@ import RecoveryForm from '@/components/authentication/recovery_form/RecoveryForm
 import Links from '@/components/authentication/links/Links';
 import styles from '@/styles/pages/Authentication.module.scss';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const links = [
   { href: '/login', textContent: 'Log in' },
   { href: '/signup', textContent: 'Sign up' },
 ];
 
 const PasswordRecovery = () => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 

@@ -5,7 +5,13 @@ import CardContainer from '@/components/search_page_components/card_container/Ca
 import axios from 'axios';
 import styles from '@/styles/pages/Search.module.scss';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const Search = ({ products }) => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   const [sortBy, setSortBy] = useState('Most popular');
 
   return (
