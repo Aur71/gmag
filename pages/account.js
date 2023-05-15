@@ -6,9 +6,6 @@ import { useSelector } from 'react-redux';
 import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 
 const Account = () => {
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
-
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
 
@@ -16,7 +13,9 @@ const Account = () => {
     if (!user) router.push('/login');
   }, [user, router]);
 
-  //   add loading
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   return <div>account</div>;
 };
 

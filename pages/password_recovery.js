@@ -14,9 +14,6 @@ const links = [
 ];
 
 const PasswordRecovery = () => {
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
-
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -24,6 +21,9 @@ const PasswordRecovery = () => {
     e.preventDefault();
     setEmailError('');
   };
+
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
 
   return (
     <div className={styles.container}>

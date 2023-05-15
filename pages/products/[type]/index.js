@@ -9,10 +9,10 @@ import axios from 'axios';
 import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 
 const ProductType = ({ data }) => {
+  const [sortBy, setSortBy] = useState('Most popular');
+
   const underDevelopment = true;
   if (underDevelopment) return <UnderDevelopment />;
-
-  const [sortBy, setSortBy] = useState('Most popular');
 
   return (
     <div className={styles.products}>

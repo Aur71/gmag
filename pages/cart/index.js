@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import Title from '@/components/cart_components/title/Title';
 import Cards from '@/components/cart_components/cards/Cards';
 import Ticket from '@/components/cart_components/ticket/Ticket';
@@ -12,10 +11,6 @@ import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 const Cart = () => {
   const underDevelopment = true;
   if (underDevelopment) return <UnderDevelopment />;
-
-  const { cart } = useSelector((state) => state.cart);
-
-  console.log(cart);
 
   return (
     <div className={styles.cart}>

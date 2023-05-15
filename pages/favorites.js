@@ -9,10 +9,10 @@ import styles from '../styles/pages/Favorites.module.scss';
 import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 
 const Favorites = ({ data }) => {
+  console.log(data);
+
   const underDevelopment = true;
   if (underDevelopment) return <UnderDevelopment />;
-
-  console.log(data);
 
   return (
     <div className={styles.favorites}>

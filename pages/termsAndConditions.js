@@ -1,5 +1,3 @@
-import React from 'react';
-
 // temo
 import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 

@@ -9,10 +9,10 @@ import styles from '@/styles/pages/Search.module.scss';
 import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 
 const Search = ({ products }) => {
+  const [sortBy, setSortBy] = useState('Most popular');
+
   const underDevelopment = true;
   if (underDevelopment) return <UnderDevelopment />;
-
-  const [sortBy, setSortBy] = useState('Most popular');
 
   return (
     <div className={styles.search_page}>
