@@ -35,9 +35,11 @@ export default function Home({ promotionSlides, hotDeals, mostPopular }) {
 export async function getStaticProps() {
   const [promotionSlidesResponse, hotDealsResponse, mostPopularResponse] =
     await Promise.all([
-      axios.get('http://localhost:3000/api/v1/promotion-slides'),
-      axios.get('http://localhost:3000/api/v1/products/hot-deals'),
-      axios.get('http://localhost:3000/api/v1/products/most-popular'),
+      axios.get('https://gmag-backend.onrender.com/api/v1/promotion-slides'),
+      axios.get('https://gmag-backend.onrender.com/api/v1/products/hot-deals'),
+      axios.get(
+        'https://gmag-backend.onrender.com/api/v1/products/most-popular'
+      ),
     ]);
 
   const promotionSlides = promotionSlidesResponse.data;

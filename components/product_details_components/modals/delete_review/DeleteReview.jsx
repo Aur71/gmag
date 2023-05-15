@@ -38,7 +38,7 @@ const DeleteReview = ({ product }) => {
     }
 
     if (user._id === activeReview.postedBy._id) {
-      const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${activeReview._id}`;
+      const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${activeReview._id}`;
       const headers = {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${user.token}`,

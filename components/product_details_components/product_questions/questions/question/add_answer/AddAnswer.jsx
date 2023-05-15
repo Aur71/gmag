@@ -36,7 +36,7 @@ const AddAnswer = ({ showAddAnswer, setShowAddAnswer, questionId }) => {
       dispatch(addNotification(notification));
       return;
     }
-    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${questionId}/answers`;
+    const url = `https://gmag-backend.onrender.com/api/v1/questions/${router.query.id}/${questionId}/answers`;
     const data = { answer };
     const headers = {
       'Content-Type': 'application/json',

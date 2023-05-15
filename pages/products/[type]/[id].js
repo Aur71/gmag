@@ -71,7 +71,7 @@ export default ProductDetails;
 export const getServerSideProps = async ({ params }) => {
   try {
     const productResponse = await axios.get(
-      `http://localhost:3000/api/v1/products/id/${params.id}`
+      `https://gmag-backend.onrender.com/api/v1/products/id/${params.id}`
     );
     const product = productResponse.data;
 

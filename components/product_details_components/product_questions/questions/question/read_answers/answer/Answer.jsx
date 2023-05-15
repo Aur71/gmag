@@ -33,7 +33,7 @@ const Answer = ({ answer, questionId }) => {
   const deleteComment = async () => {
     if (!user || answer.postedBy._id !== user?._id) return;
 
-    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${questionId}/answers/${answer._id}`;
+    const url = `https://gmag-backend.onrender.com/api/v1/questions/${router.query.id}/${questionId}/answers/${answer._id}`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
