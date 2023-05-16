@@ -1,0 +1,10 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "content-security-policy-report-only": "font-src * 'unsafe-inline';"
+      }
+    }
+  ]
+}
