@@ -7,7 +7,8 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 
 
 ## Features
-
+### Searchbar
+### Sidebar
 
 ## Pages
 ### [Home](https://gmag.vercel.app/)
