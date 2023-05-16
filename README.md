@@ -7,7 +7,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 
 
 ## Pages
-### Home
+### [Home](https://gmag.vercel.app/)
 - First item
 - Second item
 - Third item
