@@ -7,5 +7,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 
 
 ## Pages
-
-## Features
+### Home
+- First item
+- Second item
+- Third item
