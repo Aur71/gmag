@@ -32,6 +32,7 @@ body {
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
 }
 
 button,
@@ -46,6 +47,7 @@ a {
   cursor: pointer;
   background-color: transparent;
   font-size: 1rem;
+  line-height: 1;
 }
 
 h1,
@@ -55,6 +57,11 @@ h4,
 h5,
 h6 {
   font-weight: inherit;
+  line-height: 1;
+}
+
+p {
+  line-height: 1;
 }
 
 input,
@@ -63,6 +70,7 @@ textarea {
   outline: none;
   font-size: 1rem;
   border: 1px solid black;
+  line-height: 1.1;
 }
 
 main {
