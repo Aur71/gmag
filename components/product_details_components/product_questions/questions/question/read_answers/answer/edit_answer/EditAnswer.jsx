@@ -31,7 +31,7 @@ const EditAnswer = ({ questionId, answer, setShowEdit }) => {
       return;
     }
 
-    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${questionId}/answers/${answer._id}`;
+    const url = `https://gmag-backend.onrender.com/api/v1/questions/${router.query.id}/${questionId}/answers/${answer._id}`;
     const data = { newAnswer };
     const headers = {
       'Content-Type': 'application/json',

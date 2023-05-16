@@ -34,7 +34,7 @@ const Header = ({ question }) => {
     if (!user) return;
     if (user._id !== question.postedBy._id) return;
 
-    const url = `http://localhost:3000/api/v1/questions/${router.query.id}/${question._id}`;
+    const url = `https://gmag-backend.onrender.com/api/v1/questions/${router.query.id}/${question._id}`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,

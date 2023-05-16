@@ -34,7 +34,7 @@ const AddComment = ({ showAddComment, setShowAddComment, reviewId }) => {
       return;
     }
 
-    const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${reviewId}/comments`;
+    const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${reviewId}/comments`;
     const data = { content: comment };
     const headers = {
       'Content-Type': 'application/json',

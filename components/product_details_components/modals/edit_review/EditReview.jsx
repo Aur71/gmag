@@ -75,7 +75,7 @@ const EditReview = ({ product }) => {
       !isContentValid.error &&
       user
     ) {
-      const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${activeReview._id}`;
+      const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${activeReview._id}`;
       const data = { stars, title, content };
       const headers = {
         'Content-Type': 'application/json',

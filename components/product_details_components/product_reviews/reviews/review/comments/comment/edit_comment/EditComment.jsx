@@ -24,7 +24,7 @@ const EditComment = ({ comment, setShowEditComment, review }) => {
     if (!user) return;
     if (user._id !== comment.postedBy._id) return;
 
-    const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${review._id}/comments/${comment._id}`;
+    const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${review._id}/comments/${comment._id}`;
     const data = { newComment };
     const headers = {
       'Content-Type': 'application/json',

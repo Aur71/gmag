@@ -31,7 +31,7 @@ const Like = ({ review }) => {
       return;
     }
 
-    const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${review._id}/likes`;
+    const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${review._id}/likes`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
@@ -77,7 +77,7 @@ const Like = ({ review }) => {
       return;
     }
 
-    const url = `http://localhost:3000/api/v1/reviews/${router.query.id}/${review._id}/likes`;
+    const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${review._id}/likes`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
