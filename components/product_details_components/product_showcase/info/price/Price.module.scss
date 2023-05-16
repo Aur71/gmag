@@ -15,6 +15,7 @@
     color: $product-showcase-title-clr;
     padding: 30px 0;
     padding-right: 15px;
+    font-weight: 500;
 
     @media only screen and (max-width: 500px) {
       font-size: 1.3rem;
@@ -40,12 +41,14 @@
     h3 {
       font-size: 1.4rem;
       color: $product-showcase-current-price-clr;
+      font-weight: 600;
     }
 
     h4 {
       font-size: 1.2rem;
       color: $product-showcase-old-price-clr;
       text-decoration: line-through;
+      font-weight: 600;
     }
   }
 
@@ -56,7 +59,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-weight: 600;
+    font-weight: 500;
     color: $product-showcase-stock-clr;
     padding: 10px;
     position: relative;
