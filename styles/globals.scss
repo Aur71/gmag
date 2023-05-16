@@ -29,6 +29,9 @@ html {
 body {
   background-color: $main-clr;
   color: $text-clr-3;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button,
