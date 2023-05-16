@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Layer from '../layer/Layer';
 import styles from './NestedLink.module.scss';
-import { FaAngleRight } from 'react-icons/fa';
 
 const NestedLink = ({ link }) => {
   const { textContent, links } = link;
@@ -9,9 +8,7 @@ const NestedLink = ({ link }) => {
 
   return (
     <div className={styles.nested_link}>
-      <button onClick={() => setIsLayerActive(true)}>
-        {textContent} <FaAngleRight className={styles.icon} />
-      </button>
+      <button onClick={() => setIsLayerActive(true)}>{textContent}...</button>
       <Layer
         title={textContent}
         links={links}

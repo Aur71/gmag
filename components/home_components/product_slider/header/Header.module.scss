@@ -10,12 +10,12 @@
     padding-right: 15px;
   }
 
-  h2 {
+  & > h2 {
     display: flex;
     align-items: center;
     width: max-content;
     gap: 5px;
-    font-weight: 800;
+    font-weight: 600;
 
     span {
       display: flex;

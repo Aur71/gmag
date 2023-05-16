@@ -41,7 +41,7 @@
     background-color: $product-specifications-bk-clr;
     padding: 10px 15px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -95,6 +95,7 @@
     h2 {
       font-size: 1.5rem;
       color: $product-specifications-title-clr;
+      font-weight: 500;
 
       @media only screen and (max-width: 300px) {
         padding: 0 5px;

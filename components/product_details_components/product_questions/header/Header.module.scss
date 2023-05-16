@@ -10,6 +10,7 @@
   h2 {
     font-size: 1.5rem;
     color: $product-questions-header-h2-clr;
+    font-weight: 500;
 
     @media (max-width: 450px) {
       font-size: 1.2rem;
@@ -30,7 +31,7 @@
     color: $product-questions-open-add-question-btn-clr;
     transition: 300ms color, 300ms background-color;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     background-color: $product-questions-open-add-question-btn-bk-clr;
 
     @media (max-width: 400px) {

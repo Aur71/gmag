@@ -19,7 +19,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   font-family: $font-1;
+  background-color: $main-clr;
+  color: $text-clr-3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  line-height: 1.4;
 }
 
 button,
@@ -35,25 +48,30 @@ a {
   cursor: pointer;
   background-color: transparent;
   font-size: 1rem;
+  line-height: 1.4;
 }
 
-input {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  line-height: 1.5;
+}
+
+p {
+  line-height: 1.4;
+}
+
+input,
+textarea {
+  font-family: $font-1;
   background-color: transparent;
   outline: none;
   font-size: 1rem;
   border: 1px solid black;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: $main-clr;
-  color: $text-clr-3;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smooth: always;
 }
 
 main {
