@@ -3,6 +3,7 @@
 .sidebar {
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
+  height: -webkit-fill-available;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
