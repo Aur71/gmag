@@ -23,9 +23,13 @@
     }
   }
 
+  &.mobile {
+    height: calc(100vh - var(--navbar-height) - 56px);
+  }
+
   .center {
     width: 100%;
-    height: calc(100vh - var(--navbar-height));
+    height: 100%;
     padding: 15px;
     display: flex;
     flex-direction: column;
