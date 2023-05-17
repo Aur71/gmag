@@ -9,22 +9,6 @@ import { AiFillStar } from 'react-icons/ai';
 import { starClr } from '@/styles/themes/themes.module.scss';
 
 export default function Home({ promotionSlides, hotDeals, mostPopular }) {
-  // fix product slider and all sliders by using this:
-  // function isTouchDevice() {
-  //   return (
-  //     'ontouchstart' in window ||
-  //     navigator.maxTouchPoints > 0 ||
-  //     navigator.msMaxTouchPoints > 0
-  //   );
-  // }
-
-  // if (isTouchDevice()) {
-  //   console.log('Touch screen device detected');
-  // } else {
-  //   console.log('Non-touch screen device detected');
-  // }
-  // complete the news letter
-
   return (
     <div className={styles.home}>
       <PromotionSlider promotionSlides={promotionSlides} />

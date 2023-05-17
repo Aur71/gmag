@@ -16,17 +16,6 @@ const Sidebar = () => {
     dispatch(closeSidebar());
   }, [router.asPath, dispatch]);
 
-  // useEffect(() => {
-  //   function hasTouchscreen() {
-  //     return (
-  //       'ontouchstart' in window ||
-  //       navigator.maxTouchPoints > 0 ||
-  //       navigator.msMaxTouchPoints > 0
-  //     );
-  //   }
-  //   if (hasTouchscreen()) setMobile(true);
-  // }, []);
-
   return (
     <aside className={`${styles.sidebar} ${showSidebar && styles.active} `}>
       <div className={styles.center}>

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
 import ProductCard1 from '@/components/cards/product_card_1/ProductCard1';
 import styles from './Slider.module.scss';
@@ -20,6 +20,18 @@ const Slider = ({ products }) => {
     if (scrollWidth - width === scrollLeft) scrollRightBtn.style.opacity = 0.5;
     if (scrollWidth - width > scrollLeft) scrollRightBtn.style.opacity = 1;
   };
+
+  // cheks the user device for touchscreen. If it uses ts the overflowX is the to auto.
+  useEffect(() => {
+    function hasTouchscreen() {
+      return (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
+    }
+    if (hasTouchscreen()) sliderRef.current.style.overflowX = 'auto';
+  }, [sliderRef]);
 
   return (
     <div
