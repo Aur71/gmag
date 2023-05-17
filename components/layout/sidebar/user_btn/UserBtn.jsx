@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useLogout } from '@/hooks/useLogout';
+import { useLogout } from '@/hooks/auth/useLogout';
 import Link from 'next/link';
 import styles from './UserBtn.module.scss';
 import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';

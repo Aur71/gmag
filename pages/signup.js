@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import { useSignup } from '@/hooks/useSignup';
+import { useSignup } from '@/hooks/auth/useSignup';
 import Logo from '@/components/authentication/logo/Logo';
 import Title from '@/components/authentication/title/Title';
 import AuthForm from '@/components/authentication/auth_form/AuthForm';
-import Line from '@/components/authentication/line/Line';
-import GoogleBtn from '@/components/authentication/google_btn/GoogleBtn';
 import Links from '@/components/authentication/links/Links';
 import styles from '@/styles/pages/Authentication.module.scss';
 
@@ -46,8 +44,6 @@ const Signup = () => {
           setPassword={setPassword}
           error={error}
         />
-        <Line />
-        <GoogleBtn />
       </div>
       <Links links={links} />
     </div>

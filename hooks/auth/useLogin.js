@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(null);
 
     const response = await fetch(
-      'https://gmag-backend.onrender.com/api/v1/auth/login',
+      `${process.env.NEXT_PUBLIC_API}/api/v1/auth/login`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

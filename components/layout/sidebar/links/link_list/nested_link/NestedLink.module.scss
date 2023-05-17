@@ -2,8 +2,7 @@
 
 .nested_link {
   & > button {
-    padding: 7.5px 0 7.5px 30px;
+    padding: 10px 0 10px 30px;
     color: $sidebar-link-clr;
-    font-weight: 400;
   }
 }

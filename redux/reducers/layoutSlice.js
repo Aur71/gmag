@@ -16,6 +16,7 @@ const layoutSlice = createSlice({
     },
     closeSidebar: (state) => {
       state.showSidebar = false;
+      document.querySelector('body').style.overflow = 'auto';
     },
     handleFilters: (state) => {
       state.showFilters = !state.showFilters;

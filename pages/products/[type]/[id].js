@@ -83,7 +83,7 @@ export default ProductDetails;
 export const getServerSideProps = async ({ params }) => {
   try {
     const productResponse = await axios.get(
-      `${process.env.API}/api/v1/products/id/${params.id}`
+      `${process.env.NEXT_PUBLIC_API}/api/v1/products/id/${params.id}`
     );
     const product = productResponse.data;
 

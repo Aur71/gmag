@@ -1,12 +1,11 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import Logo from '@/components/authentication/logo/Logo';
 import Title from '@/components/authentication/title/Title';
 import RecoveryForm from '@/components/authentication/recovery_form/RecoveryForm';
 import Links from '@/components/authentication/links/Links';
 import styles from '@/styles/pages/Authentication.module.scss';
-
-// temp
-import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const links = [
   { href: '/login', textContent: 'Log in' },
@@ -14,16 +13,21 @@ const links = [
 ];
 
 const PasswordRecovery = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const submitForm = (e) => {
     e.preventDefault();
     setEmailError('');
-  };
 
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
+    dispatch(
+      addNotification({
+        type: 'error',
+        message: 'This feature is under development.',
+      })
+    );
+  };
 
   return (
     <div className={styles.container}>

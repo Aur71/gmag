@@ -14,10 +14,9 @@
     border: 2px solid $searchbar-border-clr;
     color: $searchbar-clr;
     background-color: $searchbar-bk-clr;
-    padding: 7.5px;
+    padding: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    font-weight: 400;
 
     &::placeholder {
       color: $searchbar-placeholder-clr;

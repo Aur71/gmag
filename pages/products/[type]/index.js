@@ -30,7 +30,7 @@ const ProductType = ({ data }) => {
 export const getServerSideProps = async ({ params }) => {
   try {
     const res = await axios.get(
-      `http://localhost:3000/api/v1/products/type/${params.type}`
+      `${process.env.NEXT_PUBLIC_API}/api/v1/products/type/${params.type}`
     );
     const data = res.data;
 

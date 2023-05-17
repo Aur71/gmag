@@ -30,7 +30,7 @@ export default Search;
 export const getServerSideProps = async ({ query }) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/v1/products/search?query=${query.q}`
+      `${process.env.NEXT_PUBLIC_API}/api/v1/products/search?query=${query.q}`
     );
     const products = response.data;
 
