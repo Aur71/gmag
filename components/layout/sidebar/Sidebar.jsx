@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Searchbar from './searchbar/Searchbar';
 import Links from './links/Links';
@@ -11,7 +11,6 @@ const Sidebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const showSidebar = useSelector((state) => state.layout.showSidebar);
-  // const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     dispatch(closeSidebar());
@@ -29,11 +28,7 @@ const Sidebar = () => {
   // }, []);
 
   return (
-    <aside
-      className={`${styles.sidebar} ${showSidebar && styles.active} ${
-        mobile && styles.mobile
-      }`}
-    >
+    <aside className={`${styles.sidebar} ${showSidebar && styles.active} `}>
       <div className={styles.center}>
         <Searchbar />
         <Links />
