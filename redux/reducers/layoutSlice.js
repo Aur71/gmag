@@ -8,6 +8,10 @@ const layoutSlice = createSlice({
   },
   reducers: {
     handleSidebar: (state) => {
+      if (!state.showSidebar)
+        document.querySelector('body').style.overflow = 'hidden';
+      if (state.showSidebar)
+        document.querySelector('body').style.overflow = 'auto';
       state.showSidebar = !state.showSidebar;
     },
     closeSidebar: (state) => {
