@@ -12,8 +12,10 @@ import DeleteReview from '@/components/product_details_components/modals/delete_
 import axios from 'axios';
 import styles from '../../../styles/pages/ProductDetails.module.scss';
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = ({ product, status }) => {
   const router = useRouter();
+
+  console.log(product);
 
   useEffect(() => {
     // Save the current scroll position when navigating away from the page
@@ -33,7 +35,6 @@ const ProductDetails = ({ product }) => {
         window.sessionStorage.removeItem('scrollPos');
       }
     };
-
     router.events.on('routeChangeStart', handleRouteChangeStart);
     router.events.on('routeChangeComplete', handleRouteChangeComplete);
 
@@ -43,6 +44,17 @@ const ProductDetails = ({ product }) => {
     };
   }, [router.events]);
 
+  if (status === 503) {
+    return (
+      <div>
+        The server is currently down for maintenance. Please try again in about
+        2 minutes.
+      </div>
+    );
+  }
+  if (status && status !== 200) {
+    return <div>Something went wrong. Status code: {status}</div>;
+  }
   if (!product) {
     return <div>product not found</div>;
   }
@@ -71,12 +83,13 @@ export default ProductDetails;
 export const getServerSideProps = async ({ params }) => {
   try {
     const productResponse = await axios.get(
-      `https://gmag-backend.onrender.com/api/v1/products/id/${params.id}`
+      `${process.env.API}/api/v1/products/id/${params.id}`
     );
     const product = productResponse.data;
 
     return { props: { product } };
   } catch (error) {
-    return { props: { data: null } };
+    const status = error.response ? error.response.status : null;
+    return { props: { data: null, status } };
   }
 };

@@ -2,8 +2,9 @@
 
 .sidebar {
   width: var(--sidebar-width);
-  min-height: calc(100vh - var(--navbar-height));
-  height: 100%;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   top: var(--navbar-height);
   left: 0;
@@ -25,8 +26,6 @@
   .center {
     width: 100%;
     height: calc(100vh - var(--navbar-height));
-    overflow-x: hidden;
-    overflow-y: auto;
     padding: 15px;
     display: flex;
     flex-direction: column;
