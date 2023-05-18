@@ -15,14 +15,11 @@ import styles from '../../../styles/pages/ProductDetails.module.scss';
 const ProductDetails = ({ product, status }) => {
   const router = useRouter();
 
-  console.log(product);
-
   useEffect(() => {
     // Save the current scroll position when navigating away from the page
     const handleRouteChangeStart = () => {
       window.sessionStorage.setItem('scrollPos', window.scrollY.toString());
     };
-
     // Restore the saved scroll position when returning to the page
     const handleRouteChangeComplete = () => {
       const scrollPos = window.sessionStorage.getItem('scrollPos');
