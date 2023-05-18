@@ -44,7 +44,7 @@ const ProductDetails = ({ product, status }) => {
     };
   }, [router.events]);
 
-  if (status === 503) {
+  if (status === 504) {
     return (
       <div>
         The server is currently down for maintenance. Please try again in about
