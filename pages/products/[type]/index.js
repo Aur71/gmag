@@ -27,14 +27,29 @@ const ProductType = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticPaths = async () => {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API}/api/v1/products/types`
+  );
+  const types = res.data;
+
+  const paths = types.map((type) => {
+    return {
+      params: { type: type.toString() },
+    };
+  });
+
+  return { paths, fallback: 'blocking' };
+};
+
+export const getStaticProps = async ({ params }) => {
   try {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_API}/api/v1/products/type/${params.type}`
     );
     const data = res.data;
 
-    return { props: { data } };
+    return { props: { data }, revalidate: 120 };
   } catch (error) {
     return { props: { data: [] } };
   }

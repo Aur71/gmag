@@ -14,10 +14,36 @@ const productFilteringSidebarSlice = createSlice({
       state.showProductFilteringSidebar = false;
     },
     addSpecificationFilter: (state, action) => {
-      console.log(action.payload);
+      const { optionName, filterName } = action.payload;
+
+      const isFilterActive = state.activeFilters.some(
+        (activeFilter) => activeFilter.filterName === filterName
+      );
+
+      if (!isFilterActive) {
+        const newFilter = { filterName, options: [optionName] };
+        state.activeFilters = [...state.activeFilters, newFilter];
+      } else {
+        state.activeFilters = state.activeFilters.map((filter) => {
+          if (filter.filterName === filterName) filter.options.push(optionName);
+          return filter;
+        });
+      }
     },
     removeSpecificationFilter: (state, action) => {
-      console.log(action.payload);
+      const { optionName, filterName } = action.payload;
+      document.getElementById(`${filterName} - ${optionName}`).checked = false;
+
+      state.activeFilters = state.activeFilters.filter((activeFilter) => {
+        if (activeFilter.filterName === filterName) {
+          const newOptions = activeFilter.options.filter(
+            (option) => option !== optionName
+          );
+          activeFilter.options = newOptions;
+          if (!newOptions.length) return false;
+        }
+        return true;
+      });
     },
     addPriceFilter: (state, action) => {
       console.log(action.payload);

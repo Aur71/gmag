@@ -1,10 +1,11 @@
 @import '/styles/themes/themes.module.scss';
 
-.active_filters_block {
+.close_sidebar_block {
   width: 100%;
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 0 5px #d6d6d6;
   overflow: hidden;
   transition: height 300ms;
+  padding: 10px;
 }

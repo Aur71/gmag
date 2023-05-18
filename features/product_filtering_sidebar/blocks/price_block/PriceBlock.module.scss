@@ -1,5 +1,10 @@
 @import '/styles/themes/themes.module.scss';
 
 .price_block {
-  background-color: $product-filtering-sidebar-block-bk-clr;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #d6d6d6;
+  overflow: hidden;
+  transition: height 300ms;
 }

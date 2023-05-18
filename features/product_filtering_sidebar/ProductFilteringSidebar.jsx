@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import CloseSidebarBlock from './blocks/close_sidebar_block/CloseSidebarBlock';
 import ActiveFiltersBlock from './blocks/active_filters_block/ActiveFiltersBlock';
 import PriceBlock from './blocks/price_block/PriceBlock';
 import RatingBlock from './blocks/rating_block/RatingBlock';
@@ -18,9 +19,8 @@ const ProductFilteringSidebar = ({ products }) => {
         showProductFilteringSidebar ? styles.active : null
       }`}
     >
+      <CloseSidebarBlock />
       {activeFilters.length ? <ActiveFiltersBlock /> : null}
-
-      <ActiveFiltersBlock />
 
       {filters.map((filter) => {
         const { filterName } = filter;

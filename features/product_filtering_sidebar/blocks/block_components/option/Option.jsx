@@ -13,12 +13,11 @@ const Option = ({ option, filter }) => {
 
   const handleCheckbox = (e) => {
     if (e.target.checked)
-      dispatch(addSpecificationFilter({ option, filterName }));
+      dispatch(addSpecificationFilter({ optionName, filterName }));
     if (!e.target.checked)
-      dispatch(removeSpecificationFilter({ option, filterName }));
+      dispatch(removeSpecificationFilter({ optionName, filterName }));
   };
   const checkboxId = `${filterName} - ${optionName}`;
-  // finish the product filtering sidebar slice
 
   return (
     <label className={styles.option}>

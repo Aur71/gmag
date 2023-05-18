@@ -11,8 +11,8 @@ import UnderDevelopment from '@/components/under_development/UnderDevelopment';
 const Search = ({ products }) => {
   const [sortBy, setSortBy] = useState('Most popular');
 
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
+  // const underDevelopment = true;
+  // if (underDevelopment) return <UnderDevelopment />;
 
   return (
     <div className={styles.search_page}>
