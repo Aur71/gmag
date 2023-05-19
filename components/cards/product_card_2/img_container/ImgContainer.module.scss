@@ -1,0 +1,25 @@
+@import '/styles/themes/themes.module.scss';
+
+.img_container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  a {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
+  }
+}
