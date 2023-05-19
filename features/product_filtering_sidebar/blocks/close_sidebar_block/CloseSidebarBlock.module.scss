@@ -8,4 +8,17 @@
   overflow: hidden;
   transition: height 300ms;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: flex;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }

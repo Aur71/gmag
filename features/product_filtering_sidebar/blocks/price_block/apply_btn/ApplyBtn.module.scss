@@ -1,0 +1,18 @@
+@import '/styles/themes/themes.module.scss';
+
+.apply_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  color: $text-clr-1;
+  text-transform: capitalize;
+  padding: 7.5px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  transition: 300ms background-color;
+
+  &.active {
+    background-color: $acc-clr-1;
+  }
+}

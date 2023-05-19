@@ -2,4 +2,34 @@
 
 .active_specification_filter {
   padding: 7.5px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+
+      .icon {
+        display: flex;
+        font-size: 1rem;
+        color: red;
+      }
+    }
+  }
 }

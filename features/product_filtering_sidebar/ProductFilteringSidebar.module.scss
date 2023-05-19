@@ -6,12 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: translate 300ms, opacity 300ms;
-
-  &.active {
-    transform: translateX(0%);
-    opacity: 1;
-  }
+  transition: transform 300ms, opacity 300ms;
 
   & > * {
     flex: 0 0 auto;
@@ -31,5 +26,14 @@
     padding: 15px;
     transform: translateX(-100%);
     opacity: 0;
+
+    &.active {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 0;
   }
 }

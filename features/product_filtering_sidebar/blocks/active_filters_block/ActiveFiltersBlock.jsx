@@ -11,17 +11,28 @@ const ActiveFiltersBlock = () => {
     (state) => state.productFilteringSidebar
   );
 
+  console.log(activeFilters);
   return (
     <div className={styles.active_filters_block}>
       <BlockHeader name='Active filters' dependencies={activeFilters} />
 
       <div className={styles.options}>
         <ClearFiltersBtn />
-        <ActivePriceFilter />
-        <ActiveRatingFilter />
+
         {activeFilters.map((activeFilter) => {
           const { filterName } = activeFilter;
 
+          if (filterName === 'Price')
+            return (
+              <ActivePriceFilter key={filterName} activeFilter={activeFilter} />
+            );
+          if (filterName === 'Rating')
+            return (
+              <ActiveRatingFilter
+                key={filterName}
+                activeFilter={activeFilter}
+              />
+            );
           return (
             <ActiveSpecificationFilter
               key={filterName}

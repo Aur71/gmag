@@ -7,4 +7,33 @@
   box-shadow: 0 0 5px #d6d6d6;
   overflow: hidden;
   transition: height 300ms;
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 7.5px 10px;
+    color: #999;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      input {
+        margin-right: 10px;
+      }
+
+      .icon {
+        margin-right: 2.5px;
+
+        &.active {
+          color: $star-clr;
+        }
+      }
+
+      span {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }

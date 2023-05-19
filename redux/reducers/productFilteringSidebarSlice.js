@@ -5,13 +5,16 @@ const productFilteringSidebarSlice = createSlice({
   initialState: {
     showProductFilteringSidebar: false,
     activeFilters: [],
+    isPriceFilterActive: false,
   },
   reducers: {
     openProductFilteringSidebar: (state) => {
       state.showProductFilteringSidebar = true;
+      document.querySelector('body').style.overflowY = 'hidden';
     },
     closeProductFilteringSidebar: (state) => {
       state.showProductFilteringSidebar = false;
+      document.querySelector('body').style.overflowY = 'auto';
     },
     addSpecificationFilter: (state, action) => {
       const { optionName, filterName } = action.payload;
@@ -46,19 +49,88 @@ const productFilteringSidebarSlice = createSlice({
       });
     },
     addPriceFilter: (state, action) => {
-      console.log(action.payload);
+      const { filterName } = action.payload;
+      state.isPriceFilterActive = true;
+
+      const isPriceFilterActive = state.activeFilters.some(
+        (activeFilter) => activeFilter.filterName === filterName
+      );
+
+      if (!isPriceFilterActive) {
+        state.activeFilters = [...state.activeFilters, action.payload];
+      } else {
+        state.activeFilters = state.activeFilters.map((filter) => {
+          if (filter.filterName === filterName) {
+            filter.min = action.payload.min;
+            filter.max = action.payload.max;
+          }
+          return filter;
+        });
+      }
     },
     removePriceFilter: (state, action) => {
-      console.log(action.payload);
+      const { filterName } = action.payload;
+      state.isPriceFilterActive = false;
+
+      state.activeFilters = state.activeFilters.filter(
+        (activeFilter) => activeFilter.filterName !== filterName
+      );
     },
     addRatingFilter: (state, action) => {
-      console.log(action.payload);
+      const { filterName, option } = action.payload;
+
+      const isRatingFilterActive = state.activeFilters.some(
+        (activeFilter) => activeFilter.filterName === filterName
+      );
+
+      if (!isRatingFilterActive) {
+        const newFilter = { filterName, options: [option] };
+        state.activeFilters = [...state.activeFilters, newFilter];
+      } else {
+        state.activeFilters = state.activeFilters.map((filter) => {
+          if (filter.filterName === filterName) filter.options.push(option);
+          return filter;
+        });
+      }
     },
     removeRatingFilter: (state, action) => {
-      console.log(action.payload);
+      const { filterName, option } = action.payload;
+      const { id } = option;
+      document.getElementById(`${id} - checkbox`).checked = false;
+
+      state.activeFilters = state.activeFilters.filter((activeFilter) => {
+        if (activeFilter.filterName === filterName) {
+          const newOptions = activeFilter.options.filter(
+            (option) => option.id !== id
+          );
+          activeFilter.options = newOptions;
+          if (!newOptions.length) return false;
+        }
+        return true;
+      });
     },
     clearFilters: (state) => {
-      console.log(state);
+      state.activeFilters.forEach((activeFilter) => {
+        const { filterName } = activeFilter;
+
+        if (filterName === 'Price') {
+          state.isPriceFilterActive = false;
+          return;
+        }
+        if (filterName === 'Rating') {
+          activeFilter.options.forEach((option) => {
+            const { id } = option;
+            document.getElementById(`${id} - checkbox`).checked = false;
+          });
+          return;
+        }
+
+        activeFilter.options.forEach((option) => {
+          document.getElementById(`${filterName} - ${option}`).checked = false;
+        });
+      });
+
+      state.activeFilters = [];
     },
   },
 });

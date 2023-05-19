@@ -25,7 +25,7 @@ export default function getRatingFilter(products) {
     },
 
     {
-      id: '1 stars',
+      id: '1 star',
       value: 1,
       count: 0,
     },
@@ -42,7 +42,7 @@ export default function getRatingFilter(products) {
 
   const ratingFilter = {
     filterName: 'Rating',
-    options: [rating],
+    options: rating,
   };
 
   return ratingFilter;
