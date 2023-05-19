@@ -22,7 +22,7 @@
     cursor: pointer;
     user-select: none;
     transition: 300ms border;
-    z-index: 1;
+    z-index: 3;
 
     @media (max-width: 520px) {
       width: 100%;

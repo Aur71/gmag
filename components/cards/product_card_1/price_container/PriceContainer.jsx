@@ -8,7 +8,7 @@ const PriceContainer = ({ product }) => {
     <div className={styles.price_container}>
       <p className={styles.current_price}>${currentPrice}</p>
       {oldPrice ? <p className={styles.old_price}>${oldPrice}</p> : null}
-      <CartBtn />
+      <CartBtn product={product} />
     </div>
   );
 };

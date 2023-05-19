@@ -11,7 +11,6 @@ const ActiveFiltersBlock = () => {
     (state) => state.productFilteringSidebar
   );
 
-  console.log(activeFilters);
   return (
     <div className={styles.active_filters_block}>
       <BlockHeader name='Active filters' dependencies={activeFilters} />

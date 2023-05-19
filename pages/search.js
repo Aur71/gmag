@@ -13,7 +13,7 @@ const Search = ({ products }) => {
       <div className={styles.center}>
         <ProductFilteringSidebar products={products} />
         <SortContainer sortBy={sortBy} setSortBy={setSortBy} />
-        <CardContainer products={products} />
+        <CardContainer products={products} sortBy={sortBy} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import DoubleSlider from './double_slider/DoubleSlider';
@@ -7,6 +8,7 @@ import ApplyBtn from './apply_btn/ApplyBtn';
 import styles from './PriceBlock.module.scss';
 
 const PriceBlock = ({ filter }) => {
+  const router = useRouter();
   const [min, setMin] = useState(filter.options.min);
   const [max, setMax] = useState(filter.options.max);
   const { isPriceFilterActive } = useSelector(
@@ -18,7 +20,7 @@ const PriceBlock = ({ filter }) => {
       setMin(filter.options.min);
       setMax(filter.options.max);
     }
-  }, [isPriceFilterActive]);
+  }, [isPriceFilterActive, router.asPath]);
 
   return (
     <div className={styles.price_block}>
