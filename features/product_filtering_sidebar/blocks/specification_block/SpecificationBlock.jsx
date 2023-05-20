@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import BlockSearchbar from '../block_components/block_searchbar/BlockSearchbar';
-import Option from '../block_components/option/Option';
+import SpecificationOption from './specification_option/SpecificationOption';
 import styles from './SpecificationBlock.module.scss';
 
 const SpecificationBlock = ({ filter }) => {
@@ -34,7 +34,11 @@ const SpecificationBlock = ({ filter }) => {
         <div className={styles.options}>
           {filteredOptions.map((option) => {
             return (
-              <Option key={option.option} option={option} filter={filter} />
+              <SpecificationOption
+                key={option.option}
+                option={option}
+                filter={filter}
+              />
             );
           })}
         </div>

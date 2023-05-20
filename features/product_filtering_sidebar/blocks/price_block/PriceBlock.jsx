@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import BlockHeader from '../block_components/block_header/BlockHeader';
 import DoubleSlider from './double_slider/DoubleSlider';
 import ActiveRange from './active_range/ActiveRange';
 import ApplyBtn from './apply_btn/ApplyBtn';
 import styles from './PriceBlock.module.scss';
+import { removePriceFilter } from '@/redux/reducers/productFilteringSidebarSlice';
 
 const PriceBlock = ({ filter }) => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [min, setMin] = useState(filter.options.min);
   const [max, setMax] = useState(filter.options.max);
@@ -21,6 +23,12 @@ const PriceBlock = ({ filter }) => {
       setMax(filter.options.max);
     }
   }, [isPriceFilterActive, router.asPath]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(removePriceFilter({ filterName: filter.filterName }));
+    };
+  }, [dispatch]);
 
   return (
     <div className={styles.price_block}>

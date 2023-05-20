@@ -2,7 +2,6 @@ import filterProducts from './filterProducts';
 import getFilters from './get_filters/getFilters';
 import sortFilters from './sortFilters';
 
-// when you remove a filter that was used before other filters that filter is still active in activeFitlers slice and that creates bugs.
 export default function updateFilters(products, activeFilters) {
   const filters = [...activeFilters];
   const updatedFilters = [];

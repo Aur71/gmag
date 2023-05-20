@@ -1,11 +1,12 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import styles from './Option.module.scss';
+import styles from './SpecificationOption.module.scss';
 import {
   addSpecificationFilter,
   removeSpecificationFilter,
 } from '@/redux/reducers/productFilteringSidebarSlice';
 
-const Option = ({ option, filter }) => {
+const SpecificationOption = ({ option, filter }) => {
   const dispatch = useDispatch();
   const optionName = option.option;
   const { count } = option;
@@ -19,12 +20,18 @@ const Option = ({ option, filter }) => {
   };
   const checkboxId = `${filterName} - ${optionName}`;
 
+  useEffect(() => {
+    return () => {
+      dispatch(removeSpecificationFilter({ optionName, filterName }));
+    };
+  }, [dispatch]);
+
   return (
-    <label className={styles.option}>
+    <div className={styles.specification_option}>
       <input type='checkbox' onChange={handleCheckbox} id={checkboxId} />
       {optionName} <span>({count})</span>
-    </label>
+    </div>
   );
 };
 
-export default Option;
+export default SpecificationOption;

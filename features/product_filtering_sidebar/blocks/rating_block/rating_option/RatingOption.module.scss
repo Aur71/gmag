@@ -1,0 +1,22 @@
+@import '/styles/themes/themes.module.scss';
+
+.rating_option {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 10px;
+  }
+
+  .icon {
+    margin-right: 2.5px;
+
+    &.active {
+      color: $star-clr;
+    }
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+}
