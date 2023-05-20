@@ -11,7 +11,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Redux Toolkit
 - Node.js & Express.js
 - MangoDB
-- Other packages: Axios
+- Other packages: Axios, React Icons, uuid, mongoose
 
 ## Features
 ### Searchbar
