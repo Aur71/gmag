@@ -14,6 +14,17 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Other packages: Axios, React Icons, uuid, mongoose
 
 ## Features
+
+### GMAG
+- User Registration and Authentication
+- Product Catalog (a well-structured product catalog with categories, filters, and search functionality to help users easily find products)
+- Shopping Cart (enable users to add items to their cart, modify quantities, and proceed to checkout)
+- Order Management (users can acces order history, order tracking, and get email notifications for order updates)
+- Stripe payment
+
+### Admin dashboard
+- Inventory Management (a system used to manage product inventory, including stock levels, out-of-stock notifications, and automated reordering)
+
 ### Searchbar
 ### Sidebar
 
