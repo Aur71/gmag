@@ -12,7 +12,7 @@ const AuthForm = ({
 }) => {
   return (
     <form className={styles.auth_form} onSubmit={submitForm}>
-      <label htmlFor='email'>Email:</label>
+      <label htmlFor='email'>Email: demo@gmail.com</label>
       <input
         type='email'
         name='email'
@@ -20,7 +20,7 @@ const AuthForm = ({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label htmlFor='password'>Password:</label>
+      <label htmlFor='password'>Password: qweASD1!</label>
       <input
         type='password'
         name='password'
