@@ -9,6 +9,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - React (used for a complex and interactive interface)
 - Next.js (used for server side rendering and static page generation hence great seo)
 - Redux Toolkit (used for state managment)
+- Axios (used for api requests)
 
 ## Features
 ### Searchbar
@@ -19,3 +20,4 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - First item
 - Second item
 - Third item
+
