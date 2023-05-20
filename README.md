@@ -23,9 +23,11 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Stripe payment
 - Favorites: (allows users to save items for later. Users can create, delete, and update different lists to organize their favorite products)
 - Reviews and Ratings: (users can leave reviews and ratings for products, contributing to social proof and helping others make informed purchase decisions)
+- User Recommendations: (personalized product recommendations based on user behavior, purchase history)
 
 ### Admin dashboard
 - Inventory Management (a system used to manage product inventory, including stock levels, out-of-stock notifications, and automated reordering)
+- Analytics and Reporting: Integrate analytics tools to track user behavior, sales metrics, conversion rates, and generate reports to gain insights into the performance of the website.
 
 
 
