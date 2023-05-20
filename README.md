@@ -21,9 +21,10 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Shopping Cart (enable users to add items to their cart, modify quantities, and proceed to checkout)
 - Order Management (users can acces order history, order tracking, and get email notifications for order updates)
 - Favorites: (allows users to save items for later. Users can create, delete, and update different lists to organize their favorite products)
-- Reviews and Ratings: (users can leave reviews and ratings for products, contributing to social proof and helping others make informed purchase decisions)
-- User Recommendations: (personalized product recommendations based on user behavior, purchase history)
-- Customer Support: (support ticket system to assist users with inquiries, order issues, or general assistance)
+- Reviews and Ratings (users can leave reviews and ratings for products, contributing to social proof and helping others make informed purchase decisions)
+- User Recommendations (personalized product recommendations based on user behavior, purchase history)
+- Customer Support (support ticket system to assist users with inquiries, order issues, or general assistance)
+- Newsletter subscription (users can subscribe to our newsletter and be informed about the best offers and discounts)
 - Stripe payment
 
 ### Admin dashboard
