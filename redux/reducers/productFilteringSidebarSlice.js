@@ -35,7 +35,8 @@ const productFilteringSidebarSlice = createSlice({
     },
     removeSpecificationFilter: (state, action) => {
       const { optionName, filterName } = action.payload;
-      document.getElementById(`${filterName} - ${optionName}`).checked = false;
+      const filter = document.getElementById(`${filterName} - ${optionName}`);
+      if (filter) filter.checked = false;
 
       state.activeFilters = state.activeFilters.filter((activeFilter) => {
         if (activeFilter.filterName === filterName) {
@@ -96,7 +97,8 @@ const productFilteringSidebarSlice = createSlice({
     removeRatingFilter: (state, action) => {
       const { filterName, option } = action.payload;
       const { id } = option;
-      document.getElementById(`${id} - checkbox`).checked = false;
+      const filter = document.getElementById(`${id} - checkbox`);
+      if (filter) filter.checked = false;
 
       state.activeFilters = state.activeFilters.filter((activeFilter) => {
         if (activeFilter.filterName === filterName) {
@@ -120,13 +122,15 @@ const productFilteringSidebarSlice = createSlice({
         if (filterName === 'Rating') {
           activeFilter.options.forEach((option) => {
             const { id } = option;
-            document.getElementById(`${id} - checkbox`).checked = false;
+            const filter = document.getElementById(`${id} - checkbox`);
+            if (filter) filter.checked = false;
           });
           return;
         }
 
         activeFilter.options.forEach((option) => {
-          document.getElementById(`${filterName} - ${option}`).checked = false;
+          const filter = document.getElementById(`${filterName} - ${option}`);
+          if (filter) filter.checked = false;
         });
       });
 

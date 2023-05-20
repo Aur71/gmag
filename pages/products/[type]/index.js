@@ -1,21 +1,19 @@
 import { useState } from 'react';
-import Sidebar from '@/components/products_components/sidebar/Sidebar';
-import Filters from '@/components/products_components/filters/Filters';
-import Products from '@/components/products_components/products/Products';
-import styles from '../../../styles/pages/Products.module.scss';
+import ProductFilteringSidebar from '@/features/product_filtering_sidebar/ProductFilteringSidebar';
+import SortContainer from '@/components/search_page_components/sort_container/SortContainer';
+import CardContainer from '@/components/search_page_components/card_container/CardContainer';
 import axios from 'axios';
+import styles from '@/styles/pages/ProductType.module.scss';
 
-const ProductType = ({ data }) => {
+const ProductType = ({ products }) => {
   const [sortBy, setSortBy] = useState('Most popular');
 
   return (
-    <div className={styles.products}>
+    <div className={styles.product_type_page}>
       <div className={styles.center}>
-        <Sidebar products={data} />
-        <div className={styles.wrapper}>
-          <Filters sortBy={sortBy} setSortBy={setSortBy} />
-          <Products products={data} sortBy={sortBy} />
-        </div>
+        <ProductFilteringSidebar products={products} />
+        <SortContainer sortBy={sortBy} setSortBy={setSortBy} />
+        <CardContainer products={products} sortBy={sortBy} />
       </div>
     </div>
   );
@@ -26,7 +24,6 @@ export const getStaticPaths = async () => {
     `${process.env.NEXT_PUBLIC_API}/api/v1/products/types`
   );
   const types = res.data;
-
   const paths = types.map((type) => {
     return {
       params: { type: type.toString() },
@@ -41,11 +38,10 @@ export const getStaticProps = async ({ params }) => {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_API}/api/v1/products/type/${params.type}`
     );
-    const data = res.data;
-
-    return { props: { data }, revalidate: 120 };
+    const products = res.data;
+    return { props: { products }, revalidate: 120 };
   } catch (error) {
-    return { props: { data: [] } };
+    return { props: { products: [] } };
   }
 };
 

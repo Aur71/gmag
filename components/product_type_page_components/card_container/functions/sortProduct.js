@@ -1,6 +1,6 @@
 export default function sortProducts(products, sortBy) {
   const sortedProducts = [...products].sort((a, b) => {
-    if (sortBy === 'Most popular') return b.numOfOrders - a.numOfOrders;
+    if (sortBy === 'Most popular') return b.orders.sold - a.orders.sold;
     if (sortBy === 'Increasing price') return a.currentPrice - b.currentPrice;
     if (sortBy === 'Decreasing price') return b.currentPrice - a.currentPrice;
     if (sortBy === 'Increasing rating') return a.rating - b.rating;

@@ -1,6 +1,7 @@
 @import '/styles/themes/themes.module.scss';
 
-.filters {
+.sort_container {
+  grid-area: sort-container;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -9,7 +10,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    padding: 0 10px;
+    padding: 10px;
+    background-color: white;
   }
 
   & > button {
@@ -19,10 +21,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     display: none;
 
     @media (max-width: 1200px) {
       display: flex;
+    }
+    @media (max-width: 330px) {
+      font-size: 0.9rem;
     }
   }
 }

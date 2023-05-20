@@ -1,0 +1,32 @@
+@import '/styles/themes/themes.module.scss';
+
+.card_container {
+  grid-area: card-container;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+
+    @media (max-width: 1650px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 1450px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 450px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

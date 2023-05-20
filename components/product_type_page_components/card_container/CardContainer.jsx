@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Card from './card/Card';
-import styles from './Products.module.scss';
-import filterProducts from './filterProducts';
-import sortProducts from './sortProducts';
+import ProductCard2 from '@/components/cards/product_card_2/ProductCard2';
 import Pagination from '@/features/pagination/Pagination';
+import styles from './CardContainer.module.scss';
+import filterProducts from '@/features/product_filtering_sidebar/functions/filterProducts';
+import sortProducts from './functions/sortProduct';
 
-const Products = ({ products, sortBy }) => {
+const CardContainer = ({ products, sortBy }) => {
+  const { activeFilters } = useSelector(
+    (state) => state.productFilteringSidebar
+  );
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 50;
   const lastProductIndex = currentPage * productsPerPage;
   const fistProductIndex = lastProductIndex - productsPerPage;
-  const { activeFilters } = useSelector((state) => state.filtersSidebar);
   const filteredProducts = filterProducts(products, activeFilters);
   const sortedProducts = sortProducts(filteredProducts, sortBy);
   const paginatedProducts = sortedProducts.slice(
@@ -20,19 +22,21 @@ const Products = ({ products, sortBy }) => {
   );
 
   return (
-    <section className={styles.products}>
-      {paginatedProducts.map((product) => {
-        return <Card product={product} key={product._id} />;
-      })}
+    <div className={styles.card_container}>
+      <div className={styles.grid_container}>
+        {paginatedProducts.map((product) => {
+          return <ProductCard2 key={product._id} product={product} />;
+        })}
+      </div>
 
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        totalItems={sortedProducts.length}
+        totalItems={products.length}
         itemsPerPage={productsPerPage}
       />
-    </section>
+    </div>
   );
 };
 
-export default Products;
+export default CardContainer;
