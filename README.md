@@ -36,3 +36,4 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Discount and Promotion Management (enables the creation and management of discounts, coupons, and promotional campaigns, including setting up conditions, expiration dates, and usage limits)
 - Content Management (provides the ability to manage website content, such as blog posts, FAQs, and banners. This allows the admin to update and publish new content easily)
 - Shipping and Logistics (integrate with shipping service providers or logistics systems to create shipping labels, track shipments, and manage shipping preferences and rates)
+- Notifications and Alerts (provides real-time notifications and alerts for important events, such as new orders, low stock, or system errors)
