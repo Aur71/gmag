@@ -1,0 +1,14 @@
+@import '/styles/themes/themes.module.scss';
+
+.img_container {
+  width: auto;
+  height: 500px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}

@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from './Path.module.scss';
+import styles from './PathContainer.module.scss';
 import { BiChevronRight } from 'react-icons/bi';
 
-const Path = () => {
+const PathContainer = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.path}>
+    <div className={styles.path_container}>
       <Link href='/'>
         Home
         <BiChevronRight className={styles.icon} />
@@ -25,4 +25,4 @@ const Path = () => {
   );
 };
 
-export default Path;
+export default PathContainer;

@@ -1,8 +1,23 @@
 @import '/styles/themes/themes.module.scss';
 
 .product_details {
+  // variables
+  --padding-side: 70px;
+  --section-gap: 50px;
+  --section-max-width: 1540px;
+  // styles
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: var(--section-gap);
+
+  @media only screen and (max-width: 1400px) {
+    --padding-side: 90px;
+  }
+  @media only screen and (max-width: 1150px) {
+    --padding-side: 30px;
+  }
+  @media only screen and (max-width: 600px) {
+    --padding-side: 15px;
+  }
 }

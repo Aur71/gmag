@@ -1,0 +1,17 @@
+@import '/styles/themes/themes.module.scss';
+
+.info_container {
+  // variables
+  --row-padding-tb: 30px;
+  --row-heading-width: 200px;
+  // styles
+  width: 100%;
+  height: max-content;
+
+  @media (max-width: 1650px) {
+    --row-heading-width: 130px;
+  }
+  @media (max-width: 1500px) {
+    --row-heading-width: 110px;
+  }
+}

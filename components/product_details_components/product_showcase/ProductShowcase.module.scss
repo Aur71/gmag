@@ -4,31 +4,27 @@
   width: 100%;
   height: auto;
   background-color: $product-showcase-bk-clr;
-  padding: 20px 70px 40px 70px;
+  padding: 30px var(--padding-side);
 
   @media only screen and (max-width: 1400px) {
-    padding: 30px 90px;
+    padding-bottom: 0;
   }
-  @media only screen and (max-width: 1150px) {
+  @media only screen and (max-width: 600px) {
     padding: 0;
   }
 
   .center {
-    max-width: 1540px;
+    max-width: var(--section-max-width);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
 
-    .columns_container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-
-      @media only screen and (max-width: 1600px) {
-        gap: 20px;
-      }
-
-      @media only screen and (max-width: 1400px) {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 1650px) {
+      gap: 20px 10px;
+    }
+    @media (max-width: 1400px) {
+      grid-template-columns: 1fr;
     }
   }
 }

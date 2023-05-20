@@ -1,50 +1,41 @@
 @import '/styles/themes/themes.module.scss';
 
 .actions {
+  // variables
+  --btn-padding: 15px 30px;
+  --btn-border-radius: 5px;
+  --btn-transition: 300ms background-color, 300ms, color, 300ms border;
+  --btn-fz: 1rem;
+  // styles
   width: 100%;
-  padding: 30px 0;
+  padding: var(--row-padding-tb) 0;
   display: flex;
   align-items: center;
   gap: 15px;
 
-  @media only screen and (max-width: 400px) {
-    padding: 15px 0;
+  @media (max-width: 600px) {
+    padding: var(--row-padding-tb) var(--padding-side);
   }
-
-  @media only screen and (max-width: 350px) {
-    flex-direction: column;
-    gap: 10px;
+  @media (max-width: 400px) {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .cart_btn,
   .favorite_btn {
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: var(--btn-padding);
+    border-radius: var(--btn-border-radius);
     font-weight: 500;
-    transition: 300ms background-color, 300ms, color, 300ms border;
-
-    @media only screen and (max-width: 400px) {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-    }
-
-    @media only screen and (max-width: 350px) {
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
+    font-size: var(--btn-fz);
+    transition: var(--btn-transition);
+    justify-content: center;
+    align-items: center;
   }
 
   .cart_btn {
-    background-color: $product-showcase-cart-btn-bk-clr;
+    background-color: $acc-clr-1;
     color: $product-showcase-cart-btn-clr;
     border: 1px solid $product-showcase-cart-btn-bk-clr;
-
-    &.disabled {
-      opacity: 0.5;
-      user-select: none;
-      pointer-events: none;
-    }
 
     &:hover {
       background-color: transparent;

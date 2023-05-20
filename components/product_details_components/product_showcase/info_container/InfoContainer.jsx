@@ -1,30 +1,27 @@
 import { useState } from 'react';
+import Title from './title/Title';
 import Rating from './rating/Rating';
 import Colors from './colors/Colors';
 import Price from './price/Price';
 import Actions from './actions/Actions';
-import styles from './Info.module.scss';
+import styles from './InfoContainer.module.scss';
 
-const Info = ({ product }) => {
+const InfoContainer = ({ product }) => {
   const [activeColor, setActiveColor] = useState(product.colors[0]);
 
   return (
-    <div className={styles.info}>
-      <h1>{product.name}</h1>
-      <Rating rating={product.rating} reviewsCount={product.reviewsCount} />
+    <div className={styles.info_container}>
+      <Title product={product} />
+      <Rating product={product} />
       <Colors
-        colors={product.colors}
+        product={product}
         activeColor={activeColor}
         setActiveColor={setActiveColor}
       />
-      <Price
-        currentPrice={product.currentPrice}
-        oldPrice={product.oldPrice}
-        activeColor={activeColor}
-      />
+      <Price product={product} activeColor={activeColor} />
       <Actions product={product} />
     </div>
   );
 };
 
-export default Info;
+export default InfoContainer;

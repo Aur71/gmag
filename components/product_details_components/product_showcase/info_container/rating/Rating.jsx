@@ -1,7 +1,8 @@
 import styles from './Rating.module.scss';
 import { BsStarFill } from 'react-icons/bs';
 
-const Rating = ({ rating, reviewsCount }) => {
+const Rating = ({ product }) => {
+  const { rating, reviewsCount } = product;
   return (
     <div className={styles.rating}>
       <BsStarFill

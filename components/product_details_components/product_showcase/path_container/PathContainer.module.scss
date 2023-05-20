@@ -1,18 +1,17 @@
 @import '/styles/themes/themes.module.scss';
 
-.path {
+.path_container {
+  grid-column: 1/-1;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 20px;
 
   @media only screen and (max-width: 1150px) {
     display: none;
   }
 
   a {
-    color: $product-showcase-path-clr;
+    color: rgba(128, 128, 128, 0.5);
     font-size: 0.9rem;
     font-weight: 500;
     display: flex;
@@ -20,7 +19,7 @@
     text-transform: capitalize;
 
     &:hover {
-      color: $product-showcase-path-clr-hover;
+      color: $acc-clr-1;
     }
   }
 }

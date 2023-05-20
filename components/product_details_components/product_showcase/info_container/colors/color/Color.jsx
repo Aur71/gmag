@@ -5,7 +5,6 @@ const Color = ({ color, activeColor, setActiveColor }) => {
   const colorContainerRef = useRef(null);
 
   useEffect(() => {
-    // Sets the background-color of the circle.
     colorContainerRef.current.style.backgroundColor = color.value;
   }, [color]);
 

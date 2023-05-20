@@ -3,9 +3,14 @@
 .rating {
   width: 100%;
   display: flex;
+  align-items: flex-end;
   gap: 10px;
-  padding: 30px 0;
+  padding: var(--row-padding-tb) 0;
   border-bottom: 1px solid $product-showcase-border-clr;
+
+  @media (max-width: 600px) {
+    padding: var(--row-padding-tb) var(--padding-side);
+  }
 
   .icon {
     font-size: 1.3rem;
