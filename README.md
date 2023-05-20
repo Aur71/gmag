@@ -17,7 +17,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 
 ### GMAG
 - User Registration and Authentication
-- Product Catalog (a well-structured product catalog with categories, filters, and search functionality to help users easily find products)
+- Product Catalog (a well-structured product catalog with categories, advanced filters, and search functionality to help users easily find products)
 - Shopping Cart (enable users to add items to their cart, modify quantities, and proceed to checkout)
 - Order Management (users can acces order history, order tracking, and get email notifications for order updates)
 - Favorites: (allows users to save items for later. Users can create, delete, and update different lists to organize their favorite products)
