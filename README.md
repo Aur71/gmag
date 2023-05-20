@@ -32,7 +32,7 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Product Management (provides the ability to add, edit, and remove products from the catalog. This includes managing product details, images, pricing, inventory levels, and product variants)
 - Order Management (enables the admin to view and manage orders, including order status updates, order fulfillment, and order cancellation/refunds)
 - Inventory Management (offers functionality to monitor and update product inventory levels, receive notifications for low stock, and manage stock replenishment)
-- Sales Analytics (provide detailed reports and analytics on sales performance including sales, orders, conversion rates and popular products. All this data can be visualized using charts and graphs for better insights)
+- Sales Analytics (a feature that provides detailed reports and analytics on sales performance including sales, orders, conversion rates and popular products. All this data can be visualized using charts and graphs for better insights)
 
 
 
