@@ -33,3 +33,5 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 - Order Management (enables the admin to view and manage orders, including order status updates, order fulfillment, and order cancellation/refunds)
 - Inventory Management (offers functionality to monitor and update product inventory levels, receive notifications for low stock, and manage stock replenishment)
 - Sales Analytics (a feature that provides detailed reports and analytics on sales performance including sales, orders, conversion rates and popular products. All this data can be visualized using charts and graphs for better insights)
+- Discount and Promotion Management (enables the creation and management of discounts, coupons, and promotional campaigns, including setting up conditions, expiration dates, and usage limits)
+- Content Management (provides the ability to manage website content, such as blog posts, FAQs, and banners. This allows the admin to update and publish new content easily)
