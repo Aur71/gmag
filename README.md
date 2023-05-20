@@ -25,12 +25,11 @@ Introducing an advanced IT e-commerce store with a great user experience experie
 ### Admin dashboard
 - Inventory Management (a system used to manage product inventory, including stock levels, out-of-stock notifications, and automated reordering)
 
-### Searchbar
-### Sidebar
 
-## Pages
+
+<!-- ## Pages
 ### [Home](https://gmag.vercel.app/)
 - First item
 - Second item
-- Third item
+- Third item -->
 
