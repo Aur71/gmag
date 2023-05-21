@@ -5,15 +5,15 @@ import Sidebar from './sidebar/Sidebar';
 import Slider from './slider/Slider';
 import Actions from './actions/Actions';
 import styles from './ImageViewer.module.scss';
-import { handleShowImageViewer } from '@/redux/reducers/singleProductSlice';
+import { closeImageViewer } from '@/redux/reducers/imageViewer';
 
 const ImageViewer = ({ images }) => {
   const dispatch = useDispatch();
-  const { showImageViewer } = useSelector((state) => state.singleProduct);
+  const { showImageViewer } = useSelector((state) => state.imageViewer);
 
-  const closeImageViewer = (e) => {
+  const dispatchAction = (e) => {
     if (e.target.classList[0] === 'ImageViewer_image_viewer___k_ZJ') {
-      dispatch(handleShowImageViewer(false));
+      dispatch(closeImageViewer());
       return;
     }
   };
@@ -21,7 +21,7 @@ const ImageViewer = ({ images }) => {
   return (
     <section
       className={`${styles.image_viewer} ${showImageViewer && styles.active}`}
-      onClick={closeImageViewer}
+      onClick={dispatchAction}
     >
       <div className={styles.container}>
         <Header />

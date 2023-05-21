@@ -2,21 +2,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 import styles from './ImgBtn.module.scss';
 import {
-  handleActiveImageIndex,
-  handleShowImageViewer,
-} from '@/redux/reducers/singleProductSlice';
+  handleActiveIndex,
+  openImageViewer,
+} from '@/redux/reducers/imageViewer';
 
 const ImgBtn = ({ image, index }) => {
   const dispatch = useDispatch();
-  const { activeImageIndex } = useSelector((state) => state.singleProduct);
+  const { activeIndex } = useSelector((state) => state.imageViewer);
 
   return (
     <button
-      className={`${styles.img_btn} ${
-        activeImageIndex === index && styles.active
-      }`}
-      onMouseOver={() => dispatch(handleActiveImageIndex(index))}
-      onClick={() => dispatch(handleShowImageViewer(true))}
+      className={`${styles.img_btn} ${activeIndex === index && styles.active}`}
+      onMouseOver={() => dispatch(handleActiveIndex(index))}
+      onClick={() => dispatch(openImageViewer())}
     >
       <Image
         src={image.url}

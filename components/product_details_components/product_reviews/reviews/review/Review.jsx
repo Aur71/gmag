@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import Author from './author/Author';
 import Content from './content/Content';
 import Actions from './actions/Actions';
@@ -7,18 +6,15 @@ import AddComment from './add_comment/AddComment';
 import Comments from './comments/Comments';
 import styles from './Review.module.scss';
 
-const Review = ({ review, currentPage }) => {
+const Review = ({ review, currentPage, sortBy, filterBy, searchTerm }) => {
   const { createdAt, postedBy, title, stars, content, comments } = review;
-  const { sortReviews, filterReviews, searchReviews } = useSelector(
-    (state) => state.singleProduct
-  );
   const [showAddComment, setShowAddComment] = useState(false);
   const [showComments, setShowComments] = useState(false);
 
   useEffect(() => {
     setShowAddComment(false);
     setShowComments(false);
-  }, [currentPage, sortReviews, filterReviews, searchReviews]);
+  }, [currentPage, sortBy, filterBy, searchTerm]);
 
   return (
     <div className={styles.review}>

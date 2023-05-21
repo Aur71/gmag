@@ -1,46 +1,51 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const singleProductSlice = createSlice({
-  name: 'singleProduct',
+const imageViewerSlice = createSlice({
+  name: 'imageViewer',
   initialState: {
-    activeImageIndex: 0,
     showImageViewer: false,
+    activeIndex: 0,
     zoom: 1,
     zoomOrigin: `0px, 0px`,
   },
   reducers: {
-    handleActiveImageIndex: (state, action) => {
-      state.activeImageIndex = action.payload;
+    openImageViewer: (state) => {
+      document.querySelector('body').overflow = 'hidden';
+      state.showImageViewer = true;
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
     },
-    decreaseActiveImageIndex: (state, action) => {
+    closeImageViewer: (state) => {
+      document.querySelector('body').overflow = 'visible';
+      state.showImageViewer = false;
+      state.zoom = 1;
+      state.zoomOrigin = `0px, 0px`;
+    },
+
+    handleActiveIndex: (state, action) => {
+      state.activeIndex = action.payload;
+      state.zoom = 1;
+      state.zoomOrigin = `0px, 0px`;
+    },
+    decreaseIndex: (state, action) => {
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
       const { num, max } = action.payload;
       if (num - 1 < 0) {
-        state.activeImageIndex = max;
+        state.activeIndex = max;
         return;
       }
-      state.activeImageIndex = num - 1;
+      state.activeIndex = num - 1;
     },
-    increaseActiveImageIndex: (state, action) => {
+    increaseIndex: (state, action) => {
       state.zoom = 1;
       state.zoomOrigin = `0px, 0px`;
       const { num, max } = action.payload;
       if (num + 1 > max) {
-        state.activeImageIndex = 0;
+        state.activeIndex = 0;
         return;
       }
-      state.activeImageIndex = num + 1;
-    },
-    handleShowImageViewer: (state, action) => {
-      const body = document.querySelector('body');
-      if (action.payload === true) body.style.overflow = 'hidden';
-      else body.style.overflow = 'visible';
-      state.showImageViewer = action.payload;
-      state.zoom = 1;
-      state.zoomOrigin = `0px, 0px`;
+      state.activeIndex = num + 1;
     },
     increaseZoom: (state) => {
       if (state.zoom + 0.5 >= 3) {
@@ -77,15 +82,15 @@ const singleProductSlice = createSlice({
   },
 });
 
-export default singleProductSlice.reducer;
+export default imageViewerSlice.reducer;
 export const {
-  handleActiveImageIndex,
-  increaseActiveImageIndex,
-  decreaseActiveImageIndex,
-  handleShowImageViewer,
-  handleZoom,
-  handleZoomOrigin,
+  openImageViewer,
+  closeImageViewer,
+  handleActiveIndex,
+  decreaseIndex,
+  increaseIndex,
   increaseZoom,
   decreaseZoom,
   resetZoom,
-} = singleProductSlice.actions;
+  handleZoomOrigin,
+} = imageViewerSlice.actions;

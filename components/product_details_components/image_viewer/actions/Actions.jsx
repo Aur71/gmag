@@ -6,7 +6,7 @@ import {
   increaseZoom,
   decreaseZoom,
   resetZoom,
-} from '@/redux/reducers/singleProductSlice';
+} from '@/redux/reducers/imageViewer';
 
 const Actions = () => {
   const dispatch = useDispatch();

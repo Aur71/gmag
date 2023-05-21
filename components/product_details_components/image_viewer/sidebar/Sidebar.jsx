@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Image from 'next/image';
 import styles from './Sidebar.module.scss';
-import { handleActiveImageIndex } from '@/redux/reducers/singleProductSlice';
+import { handleActiveIndex } from '@/redux/reducers/imageViewer';
 
 const Sidebar = ({ images }) => {
   const dispatch = useDispatch();
-  const { activeImageIndex } = useSelector((state) => state.singleProduct);
+  const { activeIndex } = useSelector((state) => state.imageViewer);
 
   return (
     <aside className={styles.sidebar}>
@@ -14,8 +14,8 @@ const Sidebar = ({ images }) => {
           return (
             <button
               key={image._id}
-              className={`${activeImageIndex === index && styles.active}`}
-              onClick={() => dispatch(handleActiveImageIndex(index))}
+              className={`${activeIndex === index && styles.active}`}
+              onClick={() => dispatch(handleActiveIndex(index))}
             >
               <Image
                 src={image.url}

@@ -4,16 +4,16 @@ import Image from 'next/image';
 import styles from './Slider.module.scss';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import {
-  increaseActiveImageIndex,
-  decreaseActiveImageIndex,
+  increaseIndex,
+  decreaseIndex,
   handleZoomOrigin,
-} from '@/redux/reducers/singleProductSlice';
+} from '@/redux/reducers/imageViewer';
 
 const Slider = ({ images }) => {
   const dispatch = useDispatch();
   const imagesContainerRef = useRef(null);
-  const { activeImageIndex, zoom, zoomOrigin } = useSelector(
-    (state) => state.singleProduct
+  const { activeIndex, zoom, zoomOrigin } = useSelector(
+    (state) => state.imageViewer
   );
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [initialMousePosition, setInitialMousePosition] = useState(null);
@@ -24,7 +24,7 @@ const Slider = ({ images }) => {
     e.preventDefault();
     setIsMouseDown(true);
     setInitialMousePosition(e.pageX);
-    setCurrentImageIndex(activeImageIndex);
+    setCurrentImageIndex(activeIndex);
     imagesContainerRef.current.style.cursor = 'all-scroll';
   };
 
@@ -36,7 +36,7 @@ const Slider = ({ images }) => {
 
     if (currentMousePosition < initialMousePosition - 50) {
       dispatch(
-        increaseActiveImageIndex({
+        increaseIndex({
           num: currentImageIndex,
           max: images.length - 1,
         })
@@ -47,7 +47,7 @@ const Slider = ({ images }) => {
 
     if (currentMousePosition > initialMousePosition + 50) {
       dispatch(
-        decreaseActiveImageIndex({
+        decreaseIndex({
           num: currentImageIndex,
           max: images.length - 1,
         })
@@ -88,8 +88,8 @@ const Slider = ({ images }) => {
         className={styles.slide_btn}
         onClick={() =>
           dispatch(
-            decreaseActiveImageIndex({
-              num: activeImageIndex,
+            decreaseIndex({
+              num: activeIndex,
               max: images.length - 1,
             })
           )
@@ -102,8 +102,8 @@ const Slider = ({ images }) => {
         className={styles.slide_btn}
         onClick={() =>
           dispatch(
-            increaseActiveImageIndex({
-              num: activeImageIndex,
+            increaseIndex({
+              num: activeIndex,
               max: images.length - 1,
             })
           )
@@ -120,7 +120,7 @@ const Slider = ({ images }) => {
         onMouseMove={handleMouseMove}
       >
         {images?.map((image, index) => {
-          if (activeImageIndex === index)
+          if (activeIndex === index)
             return (
               <div
                 key={image._id}
@@ -140,8 +140,8 @@ const Slider = ({ images }) => {
             );
 
           if (
-            index === activeImageIndex - 1 ||
-            (activeImageIndex === 0 && index === images.length - 1)
+            index === activeIndex - 1 ||
+            (activeIndex === 0 && index === images.length - 1)
           )
             return (
               <div

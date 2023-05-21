@@ -3,20 +3,7 @@
 .product_reviews {
   width: 100%;
   background-color: $white;
-  padding: 20px 70px;
-
-  @media only screen and (max-width: 1400px) {
-    padding: 30px 90px;
-  }
-  @media only screen and (max-width: 1150px) {
-    padding: 30px;
-  }
-  @media only screen and (max-width: 600px) {
-    padding: 15px;
-  }
-  @media only screen and (max-width: 300px) {
-    padding: 15px 5px;
-  }
+  padding: 30px var(--padding-side);
 
   .center {
     max-width: 1540px;

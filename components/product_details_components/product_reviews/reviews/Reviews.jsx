@@ -22,7 +22,14 @@ const Reviews = ({ reviews, sortBy, filterBy, searchTerm }) => {
     <div className={styles.reviews}>
       {paginatedReviews.map((review) => {
         return (
-          <Review key={review._id} review={review} currentPage={currentPage} />
+          <Review
+            key={review._id}
+            review={review}
+            currentPage={currentPage}
+            sortBy={sortBy}
+            filterBy={filterBy}
+            searchTerm={searchTerm}
+          />
         );
       })}
       {reviews.length > itemsPerPage ? (

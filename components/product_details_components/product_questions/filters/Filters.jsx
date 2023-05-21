@@ -22,6 +22,7 @@ const Filters = ({ sortBy, setSortBy, searchTerm, setSearchTerm }) => {
             gridColumn: '2 / -1',
           },
         }}
+        placeholder='Search question...'
       />
     </div>
   );

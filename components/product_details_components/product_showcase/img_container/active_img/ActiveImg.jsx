@@ -1,21 +1,21 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Image from 'next/image';
 import styles from './ActiveImg.module.scss';
-import { handleShowImageViewer } from '@/redux/reducers/singleProductSlice';
+import { openImageViewer } from '@/redux/reducers/imageViewer';
 
 const ActiveImg = ({ images }) => {
   const dispatch = useDispatch();
-  const { activeImageIndex } = useSelector((state) => state.singleProduct);
+  const { activeIndex } = useSelector((state) => state.imageViewer);
 
   return (
     <div className={styles.active_img}>
       <Image
         priority={true}
-        src={images[activeImageIndex].url}
-        alt={images[activeImageIndex].name}
+        src={images[activeIndex].url}
+        alt={images[activeIndex].name}
         width={600}
         height={600}
-        onClick={() => dispatch(handleShowImageViewer(true))}
+        onClick={() => dispatch(openImageViewer())}
       />
     </div>
   );

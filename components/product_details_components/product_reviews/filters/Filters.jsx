@@ -36,7 +36,11 @@ const Filters = ({
         options={filterOptions}
         optionsStyle={{ backgroundColor: 'white' }}
       />
-      <MiniSearchbar search={searchTerm} setSearch={setSearchTerm} />
+      <MiniSearchbar
+        search={searchTerm}
+        setSearch={setSearchTerm}
+        placeholder='Search review...'
+      />
     </div>
   );
 };

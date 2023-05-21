@@ -18,14 +18,11 @@
     transition: 300ms border;
     max-width: 150px;
     width: 100%;
+    font-size: 0.9rem;
 
     @media (max-width: 520px) {
       max-width: none;
       width: 100%;
-    }
-
-    @media (max-width: 330px) {
-      font-size: 0.9rem;
     }
 
     &::-webkit-search-decoration,

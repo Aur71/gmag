@@ -11,26 +11,11 @@
   // PADDING CONTAINER
   .padding_container {
     width: 100%;
-    padding: 20px 70px 40px 70px;
+    padding: 30px var(--padding-side);
+    padding-bottom: 65px;
     position: relative;
     overflow: hidden;
-
-    @media only screen and (max-width: 1400px) {
-      padding: 30px 90px 40px 90px;
-    }
-    @media only screen and (max-width: 1150px) {
-      padding: 30px;
-      padding-bottom: 40px;
-    }
-    @media only screen and (max-width: 600px) {
-      padding: 15px;
-      padding-bottom: 40px;
-    }
-    @media only screen and (max-width: 300px) {
-      padding: 15px 0 40px 0;
-    }
   }
-
   // SHOW MORE/LESS BTN
   button {
     width: 100%;
