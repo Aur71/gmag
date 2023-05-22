@@ -10,7 +10,7 @@
   h2 {
     font-size: 1.5rem;
     color: $product-questions-header-h2-clr;
-    font-weight: 500;
+    font-weight: 400;
 
     @media (max-width: 450px) {
       font-size: 1.2rem;
@@ -18,7 +18,7 @@
 
     span {
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 500;
       color: $product-questions-count-clr;
     }
   }
@@ -34,7 +34,7 @@
     font-weight: 500;
     background-color: $product-questions-open-add-question-btn-bk-clr;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       padding: 5px;
     }
 
@@ -43,7 +43,7 @@
       color: $product-questions-open-add-question-btn-clr-hover;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       span {
         display: none;
       }
@@ -53,7 +53,7 @@
       display: none;
       font-size: 1.1rem;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         display: flex;
       }
     }

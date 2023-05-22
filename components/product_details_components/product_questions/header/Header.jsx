@@ -9,11 +9,9 @@ const Header = ({ numOfQuestions, showAddQuestion, setShowAddQuestion }) => {
 
   const handleAddQuestion = () => {
     if (!user) {
-      const notification = {
-        type: 'error',
-        message: 'You must be logged in.',
-      };
-      dispatch(addNotification(notification));
+      dispatch(
+        addNotification({ type: 'error', message: 'You must be logged in.' })
+      );
       return;
     }
     setShowAddQuestion(!showAddQuestion);

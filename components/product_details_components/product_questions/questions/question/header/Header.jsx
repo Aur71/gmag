@@ -1,74 +1,31 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
+import { useDeleteQuestion } from '@/hooks/product_question/useDeleteQuestion';
 import EditQuestion from './edit_question/EditQuestion';
-import axios from 'axios';
 import styles from './Header.module.scss';
 import formatDate from '@/utils/formatDate';
 import { FiMoreVertical } from 'react-icons/fi';
-import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const Header = ({ question }) => {
-  const dispatch = useDispatch();
   const dropdownRef = useRef(null);
-  const router = useRouter();
   const { user } = useSelector((state) => state.user);
   const { postedBy, createdAt } = question;
   const date = formatDate(createdAt);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { deleteQuestion, loading } = useDeleteQuestion();
 
   const handleOutsideClick = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target))
       setShowDropdown(false);
   };
+
   useEffect(() => {
     document.addEventListener('click', handleOutsideClick, true);
     return () => {
       document.removeEventListener('click', handleOutsideClick, true);
     };
   }, []);
-
-  const deleteQuestion = async () => {
-    if (!user) return;
-    if (user._id !== question.postedBy._id) return;
-
-    const url = `https://gmag-backend.onrender.com/api/v1/questions/${router.query.id}/${question._id}`;
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${user.token}`,
-    };
-    setLoading(true);
-
-    await axios
-      .delete(url, { headers })
-      .then((response) => {
-        if (response.data.error) {
-          const notification = {
-            type: 'error',
-            message: response.data.error,
-          };
-          dispatch(addNotification(notification));
-          return;
-        }
-        router.push(router.asPath);
-        const notification = {
-          type: 'success',
-          message: response.data,
-        };
-        dispatch(addNotification(notification));
-        setLoading(false);
-      })
-      .catch((error) => {
-        const notification = {
-          type: 'error',
-          message: error.message,
-        };
-        dispatch(addNotification(notification));
-        setLoading(false);
-      });
-  };
 
   return (
     <div className={styles.header}>
@@ -89,7 +46,10 @@ const Header = ({ question }) => {
               ref={dropdownRef}
             >
               <button onClick={() => setShowEdit(!showEdit)}>Edit</button>
-              <button onClick={deleteQuestion} disabled={loading}>
+              <button
+                onClick={() => deleteQuestion(question)}
+                disabled={loading}
+              >
                 Delete
               </button>
             </div>

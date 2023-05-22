@@ -15,11 +15,9 @@ const Actions = ({
 
   const addAnswer = async () => {
     if (!user) {
-      const notification = {
-        type: 'error',
-        message: 'You must be logged in.',
-      };
-      dispatch(addNotification(notification));
+      dispatch(
+        addNotification({ type: 'error', message: 'You must be logged in' })
+      );
       return;
     }
     setShowAddAnswer(!showAddAnswer);

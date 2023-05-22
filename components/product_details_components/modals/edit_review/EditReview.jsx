@@ -1,16 +1,14 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
+import { useEditReview } from '@/hooks/product_review/useEditReview';
 import Header from '../modal_components/header/Header';
 import Stars from '../modal_components/stars/Stars';
 import Title from '../modal_components/title/Title';
 import Content from '../modal_components/content/Content';
 import Links from '../modal_components/links/Links';
 import SubmitBtn from '../modal_components/submit_btn/SubmitBtn';
-import axios from 'axios';
 import styles from './EditReview.module.scss';
 import { closeEditReviewModal } from '@/redux/reducers/reviewsSlice';
-import { addNotification } from '@/redux/reducers/notificationsSlice';
 import validateStars from '../modal_components/functions/validateStars';
 import validateTitle from '../modal_components/functions/validateTitle';
 import validateContent from '../modal_components/functions/validateContent';
@@ -18,8 +16,6 @@ import validateContent from '../modal_components/functions/validateContent';
 const EditReview = ({ product }) => {
   const dispatch = useDispatch();
   const containerRef = useRef(null);
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
   const { showEditReviewModal, activeReview } = useSelector(
     (state) => state.reviews
   );
@@ -30,6 +26,7 @@ const EditReview = ({ product }) => {
   const [titleError, setTitleError] = useState('');
   const [content, setContent] = useState('');
   const [contentError, setContentError] = useState('');
+  const { editReview, loading } = useEditReview();
 
   // A Function that close the model when clicked outside
   const clickOutSide = (e) => {
@@ -45,19 +42,9 @@ const EditReview = ({ product }) => {
     setTitleError('');
     setContentError('');
     dispatch(closeEditReviewModal());
-    setLoading(false);
   }, [dispatch]);
 
   const submitModal = async () => {
-    if (!user) {
-      const notification = {
-        type: 'error',
-        message: 'You must be logged in.',
-      };
-      dispatch(addNotification(notification));
-      return;
-    }
-
     const areStarsValid = validateStars(stars);
     const isTitleValid = validateTitle(title);
     const isContentValid = validateContent(content);
@@ -69,67 +56,17 @@ const EditReview = ({ product }) => {
     if (isContentValid.error) setContentError(isContentValid.error);
     else setContentError('');
 
-    if (
-      !areStarsValid.error &&
-      !isTitleValid.error &&
-      !isContentValid.error &&
-      user
-    ) {
-      const url = `https://gmag-backend.onrender.com/api/v1/reviews/${router.query.id}/${activeReview._id}`;
-      const data = { stars, title, content };
-      const headers = {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${user.token}`,
-      };
-      setLoading(true);
-
-      await axios
-        .put(url, data, { headers })
-        .then((response) => {
-          if (response.data.error) {
-            const notification = {
-              type: 'error',
-              message: response.data.error,
-            };
-            dispatch(addNotification(notification));
-            closeModal();
-            return;
-          }
-          router.push(router.asPath);
-          const notification = {
-            type: 'success',
-            message: response.data,
-          };
-          dispatch(addNotification(notification));
-          closeModal();
-        })
-        .catch((error) => {
-          const notification = {
-            type: 'error',
-            message: error.message,
-          };
-          dispatch(addNotification(notification));
-          setLoading(false);
-        });
-    }
+    if (!areStarsValid.error && !isTitleValid.error && !isContentValid.error)
+      editReview(stars, title, content, closeModal);
   };
 
   // This useEffect prevents the user to send a request for updateing a review if the review is not posted by the current user.
   useEffect(() => {
-    if (activeReview && activeReview.postedBy._id !== user._id) {
-      const notification = {
-        type: 'error',
-        message: 'You are not authorized',
-      };
-      dispatch(addNotification(notification));
-      closeModal();
-      return;
-    }
     if (activeReview && activeReview.postedBy._id === user._id) {
       setStars(activeReview.stars);
       setTitle(activeReview.title);
       setContent(activeReview.content);
-    }
+    } else closeModal();
   }, [activeReview, user, dispatch, closeModal]);
 
   return (

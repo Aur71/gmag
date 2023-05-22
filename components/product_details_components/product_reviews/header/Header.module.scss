@@ -27,7 +27,7 @@
     font-size: 0.9rem;
     font-weight: 500;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       padding: 5px;
     }
 
@@ -36,7 +36,7 @@
       color: $product-reviews-add-review-btn-clr-hover;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       span {
         display: none;
       }
@@ -46,7 +46,7 @@
       display: none;
       font-size: 1.1rem;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         display: flex;
       }
     }

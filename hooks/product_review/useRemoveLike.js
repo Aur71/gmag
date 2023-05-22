@@ -1,30 +1,33 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { addNotification } from '@/redux/reducers/notificationsSlice';
 
-export const useDeleteQuestion = () => {
+export const useRemoveLike = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
   const { user } = useSelector((state) => state.user);
+  const [removeLikeLoading, setRemoveLikeLoading] = useState(false);
 
-  const deleteQuestion = async (question) => {
-    if (!user) return;
-    if (user._id !== question.postedBy._id) return;
+  const removeLike = async (review) => {
+    if (!user) {
+      dispatch(
+        addNotification({ type: 'error', message: 'You must be logged in.' })
+      );
+      return;
+    }
 
-    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/questions/${router.query.id}/${question._id}`;
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/reviews/${router.query.id}/${review._id}/likes`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
     };
-    setLoading(true);
+    setRemoveLikeLoading(true);
 
     try {
       const response = await axios.delete(url, { headers });
       const data = await response.data;
-
       if (data.error) {
         dispatch(
           addNotification({ type: 'error', message: response.data.error })
@@ -32,13 +35,13 @@ export const useDeleteQuestion = () => {
         return;
       }
       router.push(router.asPath);
-      dispatch(addNotification({ type: 'success', message: data }));
-      setLoading(false);
+      dispatch(addNotification({ type: 'success', message: response.data }));
+      setRemoveLikeLoading(false);
     } catch (error) {
       dispatch(addNotification({ type: 'error', message: error.message }));
-      setLoading(false);
+      setRemoveLikeLoading(false);
     }
   };
 
-  return { deleteQuestion, loading };
+  return { removeLike, removeLikeLoading };
 };

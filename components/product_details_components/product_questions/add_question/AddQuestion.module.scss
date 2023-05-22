@@ -6,15 +6,11 @@
   flex-direction: column;
   gap: 10px;
   padding: 20px 0;
-  transition: 300ms height, 300ms opacity, 300ms padding;
   overflow: hidden;
-  height: 0;
-  padding: 0;
+  display: none;
 
   &.active {
-    height: auto;
-    opacity: 1;
-    padding: 10px 0;
+    display: flex;
   }
 
   .textarea_container {
