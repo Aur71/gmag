@@ -5,7 +5,7 @@
   align-items: center;
   gap: 5px;
   padding-bottom: 10px;
-  border-bottom: 1px solid $product-reviews-border-clr;
+  border-bottom: 1px solid $border-clr-2;
 
   h2 {
     font-weight: 500;
@@ -21,8 +21,8 @@
     margin-left: auto;
     padding: 5px 15px;
     border-radius: 3px;
-    border: 1px solid $product-reviews-add-review-btn-border-clr;
-    color: $product-reviews-add-review-btn-border-clr;
+    border: 1px solid $acc-clr-1;
+    color: $acc-clr-1;
     transition: 300ms color, 300ms background-color;
     font-size: 0.9rem;
     font-weight: 500;
@@ -32,8 +32,8 @@
     }
 
     &:hover {
-      background-color: $product-reviews-add-review-btn-bk-clr-hover;
-      color: $product-reviews-add-review-btn-clr-hover;
+      background-color: $acc-clr-1;
+      color: $text-clr-3;
     }
 
     @media (max-width: 500px) {

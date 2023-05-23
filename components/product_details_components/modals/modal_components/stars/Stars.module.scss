@@ -11,29 +11,28 @@
 
   button {
     font-size: 2rem;
-    color: $product-reviews-modal-stars-clr;
+    color: $text-clr-4;
 
     @media only screen and (max-width: 500px) {
       font-size: 1.5rem;
     }
 
     &.active {
-      color: $product-reviews-modal-stars-clr-active;
+      color: $star-clr;
     }
   }
 
   span {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-left: 5px;
-    color: $product-reviews-modal-stars-span-clr;
 
     @media only screen and (max-width: 500px) {
       font-size: 1rem;
     }
 
     &.error {
-      color: $product-reviews-modal-stars-error-clr;
+      color: $error-clr-1;
     }
   }
 }

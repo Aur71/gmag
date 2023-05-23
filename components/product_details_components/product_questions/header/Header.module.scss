@@ -5,11 +5,10 @@
   align-items: center;
   gap: 5px;
   padding-bottom: 10px;
-  border-bottom: 1px solid $product-questions-border-clr;
+  border-bottom: 1px solid $border-clr-2;
 
   h2 {
     font-size: 1.5rem;
-    color: $product-questions-header-h2-clr;
     font-weight: 400;
 
     @media (max-width: 450px) {
@@ -19,7 +18,7 @@
     span {
       font-size: 1rem;
       font-weight: 500;
-      color: $product-questions-count-clr;
+      color: $text-clr-4;
     }
   }
 
@@ -27,20 +26,19 @@
     margin-left: auto;
     padding: 5px 15px;
     border-radius: 3px;
-    border: 1px solid $product-questions-open-add-question-btn-border-clr;
-    color: $product-questions-open-add-question-btn-clr;
+    border: 1px solid $acc-clr-1;
+    color: $acc-clr-1;
     transition: 300ms color, 300ms background-color;
     font-size: 0.9rem;
     font-weight: 500;
-    background-color: $product-questions-open-add-question-btn-bk-clr;
 
     @media (max-width: 500px) {
       padding: 5px;
     }
 
     &:hover {
-      background-color: $product-questions-open-add-question-btn-bk-clr-hover;
-      color: $product-questions-open-add-question-btn-clr-hover;
+      background-color: $acc-clr-1;
+      color: $text-clr-3;
     }
 
     @media (max-width: 500px) {

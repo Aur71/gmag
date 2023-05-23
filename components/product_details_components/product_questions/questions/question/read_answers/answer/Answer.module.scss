@@ -11,7 +11,7 @@
 
     h6 {
       font-size: 0.9rem;
-      color: $product-question-answer-author-clr;
+      color: $text-clr-4;
       font-weight: 500;
     }
 
@@ -25,9 +25,9 @@
         z-index: 2;
         top: 100%;
         right: 5px;
-        background-color: $product-question-dropdown-bk-clr;
+        background-color: $bk-clr-3;
         border-radius: 3px;
-        box-shadow: $product-questions-dropdown-box-shadow;
+        box-shadow: $box-shadow-4;
         overflow: hidden;
         display: none;
 
@@ -38,11 +38,10 @@
         & > button {
           width: 100%;
           padding: 5px 10px;
-          color: $product-questions-dropdown-btn-clr;
 
           &:hover {
-            background-color: $product-questions-dropdown-btn-bk-clr-hover;
-            color: $product-questions-dropdown-btn-clr-hover;
+            background-color: $acc-clr-1;
+            color: $text-clr-3;
           }
         }
       }
@@ -51,6 +50,5 @@
 
   h5 {
     font-size: 1rem;
-    color: $product-question-answer-clr;
   }
 }

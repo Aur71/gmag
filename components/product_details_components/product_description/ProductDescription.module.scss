@@ -2,8 +2,7 @@
 
 .product_description {
   width: 100%;
-  background-color: $product-description-bk-clr;
-  color: $product-description-default-clr;
+  background-color: $bk-clr-3;
   height: 500px;
   overflow: hidden;
   position: relative;
@@ -25,7 +24,7 @@
 
     h2:first-of-type {
       margin-bottom: 20px;
-      color: $product-description-title-clr;
+      color: $text-clr-1;
       font-weight: 500;
     }
   }
@@ -36,7 +35,7 @@
     justify-content: center;
     align-items: center;
     color: $acc-clr-1;
-    background-color: $product-description-bk-clr;
+    background-color: $bk-clr-3;
     padding: 10px 15px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -58,22 +57,10 @@
     height: 100px;
     left: 0;
     bottom: 0;
-    background-color: $product-description-overlay-clr;
-    background: -webkit-linear-gradient(
-      to top,
-      $product-description-bk-clr 50%,
-      transparent
-    );
-    background: -moz-linear-gradient(
-      to top,
-      $product-description-bk-clr 50%,
-      transparent
-    );
-    background: linear-gradient(
-      to top,
-      $product-description-bk-clr 50%,
-      transparent
-    );
+    background-color: $bk-clr-3;
+    background: -webkit-linear-gradient(to top, $bk-clr-3 50%, transparent);
+    background: -moz-linear-gradient(to top, $bk-clr-3 50%, transparent);
+    background: linear-gradient(to top, $bk-clr-3 50%, transparent);
     transition: 300ms opacity, height 300ms;
 
     &.disabled {

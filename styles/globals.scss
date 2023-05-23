@@ -28,8 +28,8 @@ html {
 }
 
 body {
-  background-color: $main-clr;
-  color: $text-clr-3;
+  background-color: $bk-clr-1;
+  color: $text-clr-1;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,7 +71,7 @@ textarea {
   background-color: transparent;
   outline: none;
   font-size: 1rem;
-  border: 1px solid black;
+  border: 1px solid $border-clr-1;
   line-height: 1.1;
 }
 

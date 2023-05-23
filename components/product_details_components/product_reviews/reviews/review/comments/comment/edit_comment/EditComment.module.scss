@@ -11,18 +11,19 @@
     height: 150px;
     outline: transparent;
     padding: 10px;
-    border: 1px solid $product-reviews-edit-comment-textarea-border-clr;
+    border: 1px solid $border-clr-2;
     border-radius: 3px;
     resize: vertical;
     position: relative;
     min-height: 150px;
     font-size: 1rem;
     transition: border 300ms;
-    color: $product-reviews-edit-comment-textarea-clr;
-    background-color: $product-reviews-edit-comment-textarea-bk-clr;
 
     &:focus {
-      border-color: $product-reviews-edit-comment-textarea-border-clr-focus;
+      border-color: $acc-clr-1;
+    }
+    &::placeholder {
+      color: $text-clr-4;
     }
   }
 
@@ -35,29 +36,26 @@
       padding: 10px;
       border-radius: 3px;
       transition: 300ms color, 300ms background-color, border 300ms;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 0.9rem;
 
       &:first-of-type {
-        color: $product-reviews-edit-comment-save-btn-clr;
-        background-color: $product-reviews-edit-comment-save-btn-bk-clr;
-        border: 1px solid $product-reviews-edit-comment-save-btn-border-clr;
-
+        background-color: $acc-clr-1;
+        color: $text-clr-3;
+        border: 1px solid $acc-clr-1;
         &:hover {
-          background-color: $product-reviews-edit-comment-save-btn-bk-clr-hover;
-          color: $product-reviews-edit-comment-save-btn-clr-hover;
+          background-color: transparent;
+          color: $acc-clr-1;
         }
       }
 
       &:last-of-type {
-        border: 1px solid $product-reviews-edit-comment-cancel-btn-border-clr;
-        color: $product-reviews-edit-comment-cancel-btn-clr;
-        background-color: $product-reviews-edit-comment-cancel-btn-bk-clr;
-
+        border: 1px solid $border-clr-3;
+        color: $text-clr-4;
+        background-color: transparent;
         &:hover {
-          border-color: $product-reviews-edit-comment-cancel-btn-border-clr-hover;
-          color: $product-reviews-edit-comment-cancel-btn-clr-hover;
-          background-color: $product-reviews-edit-comment-cancel-btn-bk-clr-hover;
+          background-color: $border-clr-3;
+          color: $text-clr-3;
         }
       }
     }

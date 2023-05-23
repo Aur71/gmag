@@ -6,7 +6,7 @@
   gap: 10px;
 
   button {
-    color: $product-reviews-chart-btn-clr;
+    color: $acc-clr-1;
     font-weight: 400;
     font-size: 0.9rem;
 
@@ -17,12 +17,12 @@
 
   .bar {
     border-radius: 10px;
-    background-color: $product-reviews-chart-bar-bk-clr;
+    background-color: $bk-clr-8;
     overflow: hidden;
 
     div {
       height: 100%;
-      background-color: $product-reviews-chart-bar-bk-clr-active;
+      background-color: $acc-clr-1;
     }
   }
 }

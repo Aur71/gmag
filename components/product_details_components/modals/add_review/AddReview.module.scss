@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: $product-reviews-modal-wrapper-bk;
+  background-color: $bk-clr-overlay;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@
   .container {
     max-width: 900px;
     width: 100%;
-    background-color: $product-reviews-modal-bk;
+    background-color: $bk-clr-3;
     border-radius: 5px;
     overflow-x: hidden;
 

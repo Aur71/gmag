@@ -19,7 +19,7 @@
   }
 
   .current_price {
-    color: $price-container-current-price-clr;
+    color: $text-clr-1;
     font-weight: 500;
     font-size: 1.5rem;
 
@@ -33,8 +33,8 @@
 
   .old_price {
     font-weight: 500;
-    color: $price-container-old-price-clr;
-    text-decoration: line-through 2px solid $price-container-old-price-clr;
+    color: $text-clr-6;
+    text-decoration: line-through 2px solid $text-clr-6;
     font-size: 1.2rem;
 
     @media (max-width: 600px) {

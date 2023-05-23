@@ -43,7 +43,6 @@
 
     h3 {
       font-size: 1.4rem;
-      color: $product-showcase-current-price-clr;
       font-weight: 600;
 
       @media (max-width: 1650px) {
@@ -53,7 +52,7 @@
 
     h4 {
       font-size: 1.2rem;
-      color: $product-showcase-old-price-clr;
+      color: $text-clr-6;
       text-decoration: line-through;
       font-weight: 600;
 
@@ -80,13 +79,13 @@
     }
 
     &.avaliable {
-      color: $product-showcase-stock-clr-avaliable;
+      color: $stock-avaliable-clr;
     }
     &.limited {
-      color: $product-showcase-stock-clr-limited;
+      color: $limited-stock-clr;
     }
     &.outOfStock {
-      color: $product-showcase-stock-clr-out-of-stock;
+      color: $out-of-stock-clr;
     }
   }
 }

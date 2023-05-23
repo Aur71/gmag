@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import Sort from '@/features/sort/Sort';
 import styles from './SortContainer.module.scss';
-import { mainClr } from '@/styles/themes/themes.module.scss';
+import { bkClr1 } from '@/styles/themes/themes.module.scss';
 import { FiSliders } from 'react-icons/fi';
 import { openProductFilteringSidebar } from '@/redux/reducers/productFilteringSidebarSlice';
 
@@ -24,7 +24,7 @@ const SortContainer = ({ sortBy, setSortBy }) => {
         options={sortOptions}
         activeSortBy={sortBy}
         setSortBy={setSortBy}
-        optionsStyle={{ backgroundColor: mainClr }}
+        optionsStyle={{ backgroundColor: bkClr1 }}
       />
       <button onClick={() => dispatch(openProductFilteringSidebar())}>
         <FiSliders className={styles.icon} />

@@ -9,10 +9,11 @@
   .favorites_link,
   .cart_link {
     font-size: 2rem;
-    color: $navbar-icons-clr;
+    color: $text-clr-3;
     padding: 5px;
     transition: 300ms color;
     position: relative;
+    font-weight: 500;
 
     @media (max-width: 800px) {
       font-size: 1.6rem;
@@ -22,7 +23,7 @@
       color: $acc-clr-1;
 
       span {
-        color: $navbar-products-count-clr;
+        color: $text-clr-3;
       }
     }
   }

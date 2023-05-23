@@ -22,7 +22,7 @@
       height: 150px;
       outline: transparent;
       padding: 10px;
-      border: 1px solid $product-questions-add-question-textarea-border-clr;
+      border: 1px solid $border-clr-2;
       border-radius: 3px;
       resize: vertical;
       position: relative;
@@ -31,7 +31,10 @@
       transition: border 300ms;
 
       &:focus {
-        border-color: $product-questions-add-question-textarea-border-clr-focus;
+        border-color: $acc-clr-1;
+      }
+      &::placeholder {
+        color: $text-clr-4;
       }
     }
 
@@ -40,7 +43,7 @@
       top: calc(100% + 10px);
       right: 0;
       font-size: 0.9rem;
-      color: $product-questions-add-question-word-count-clr;
+      color: $text-clr-4;
     }
   }
 
@@ -57,24 +60,22 @@
       font-size: 0.9rem;
 
       &:first-of-type {
-        background-color: $product-question-add-question-btn-bk-clr;
-        color: $product-question-add-question-btn-clr;
-        border: 1px solid $product-question-add-question-btn-border-clr;
-
+        background-color: $acc-clr-1;
+        color: $text-clr-3;
+        border: 1px solid $acc-clr-1;
         &:hover {
-          background-color: $product-question-add-question-btn-bk-clr-hover;
-          color: $product-question-add-question-btn-clr-hover;
+          background-color: transparent;
+          color: $acc-clr-1;
         }
       }
 
       &:last-of-type {
-        border: 1px solid $product-questions-cancel-add-question-btn-border-clr;
-        color: $product-questions-cancel-add-question-btn-clr;
-
+        border: 1px solid $border-clr-3;
+        color: $text-clr-4;
+        background-color: transparent;
         &:hover {
-          background-color: $product-questions-cancel-add-question-btn-bk-clr-hover;
-          color: $product-questions-cancel-add-question-btn-clr-hover;
-          border-color: $product-questions-cancel-add-question-btn-border-clr-hover;
+          background-color: $border-clr-3;
+          color: $text-clr-3;
         }
       }
     }

@@ -7,11 +7,10 @@
 
   p:first-of-type {
     font-size: 0.9rem;
-    color: $product-reviews-modal-first-paragraph-clr;
 
     a {
       display: inline-block;
-      color: $product-reviews-modal-first-paragraph-link-clr;
+      color: $acc-clr-1;
       font-weight: 600;
       font-size: 0.9rem;
 
@@ -23,11 +22,11 @@
 
   p:last-of-type {
     font-size: 0.75rem;
-    color: $product-reviews-modal-last-paragraph-clr;
+    color: $text-clr-4;
 
     a {
       font-size: 0.75rem;
-      color: $product-reviews-modal-last-paragraph-clr;
+      color: $text-clr-4;
       display: inline-block;
       text-decoration: underline;
     }

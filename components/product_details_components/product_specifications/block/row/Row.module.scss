@@ -12,12 +12,12 @@
   }
 
   &:nth-of-type(odd) {
-    background-color: $product-specifications-odd-row-bk-clr;
+    background-color: $bk-clr-9;
   }
 
   p {
     font-weight: 400;
-    color: $product-specifications-row-text-content-clr;
+    color: $text-clr-5;
 
     @media only screen and (max-width: 500px) {
       font-size: 0.9rem;

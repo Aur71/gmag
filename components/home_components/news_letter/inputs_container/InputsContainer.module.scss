@@ -17,11 +17,11 @@
 
   input {
     width: 100%;
-    border: 1px solid $news-letter-input-border-clr;
+    border: 1px solid $border-clr-3;
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 20px;
-    color: $news-letter-input-clr;
+    color: $text-clr-2;
     transition: border 300ms;
 
     &:focus {
@@ -37,7 +37,7 @@
     padding: 10px;
     border-radius: 20px;
     background-color: $acc-clr-1;
-    color: $news-letter-submit-btn-clr;
+    color: $text-clr-3;
     transition: background-color 300ms;
 
     &:hover {

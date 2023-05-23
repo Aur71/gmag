@@ -8,10 +8,10 @@
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 50%;
-  background-color: $favorites-btn-bk-clr;
-  color: $favorites-btn-clr;
+  background-color: $bk-clr-3;
+  color: $text-clr-4;
 
   &:hover {
-    color: $favorites-btn-clr-hover;
+    color: $acc-clr-1;
   }
 }

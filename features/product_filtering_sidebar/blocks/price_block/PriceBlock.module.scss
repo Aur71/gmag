@@ -2,9 +2,9 @@
 
 .price_block {
   width: 100%;
-  background-color: white;
+  background-color: $bk-clr-3;
   border-radius: 3px;
-  box-shadow: 0 0 5px #d6d6d6;
+  box-shadow: $box-shadow-2;
   overflow: hidden;
   transition: height 300ms;
 

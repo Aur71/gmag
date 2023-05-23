@@ -3,7 +3,7 @@
 .sidebar {
   grid-row: 1 / -1;
   padding: 15px;
-  border-right: 1px solid $image-viewer-border-clr;
+  border-right: 1px solid $border-clr-2;
 
   @media only screen and (max-width: 1000px) {
     grid-row: auto;
@@ -35,7 +35,7 @@
       border-radius: 3px;
       padding: 5px;
       overflow: hidden;
-      border: 1px solid $image-viewer-border-clr;
+      border: 1px solid $border-clr-2;
       flex-shrink: 0;
       flex-grow: 0;
 

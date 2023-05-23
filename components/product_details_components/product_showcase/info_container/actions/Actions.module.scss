@@ -34,23 +34,22 @@
 
   .cart_btn {
     background-color: $acc-clr-1;
-    color: $product-showcase-cart-btn-clr;
-    border: 1px solid $product-showcase-cart-btn-bk-clr;
+    color: $text-clr-3;
+    border: 1px solid $acc-clr-1;
 
     &:hover {
       background-color: transparent;
-      color: $product-showcase-cart-btn-bk-clr;
+      color: $acc-clr-1;
     }
   }
 
   .favorite_btn {
-    border: 1px solid $product-showcase-favorite-btn-clr;
-    color: $product-showcase-favorite-btn-clr;
+    border: 1px solid $border-clr-3;
+    color: $text-clr-4;
 
     &:hover {
-      background-color: $product-showcase-favorite-btn-bk-clr-hover;
-      color: $product-showcase-favorite-btn-clr-hover;
-      border-color: $product-showcase-favorite-btn-clr-hover;
+      background-color: $border-clr-3;
+      color: $text-clr-3;
     }
   }
 }

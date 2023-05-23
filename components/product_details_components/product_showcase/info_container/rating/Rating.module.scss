@@ -6,7 +6,7 @@
   align-items: flex-end;
   gap: 10px;
   padding: var(--row-padding-tb) 0;
-  border-bottom: 1px solid $product-showcase-border-clr;
+  border-bottom: 1px solid $border-clr-2;
 
   @media (max-width: 600px) {
     padding: var(--row-padding-tb) var(--padding-side);
@@ -15,20 +15,19 @@
   .icon {
     font-size: 1.3rem;
     align-items: center;
-    color: $product-showcase-rating-star-clr;
+    color: $text-clr-4;
 
     &.active {
-      color: $product-showcase-rating-star-clr-active;
+      color: $star-clr;
     }
   }
 
   p:first-of-type {
     font-weight: 500;
-    color: $product-showcase-rating-clr;
   }
 
   p:last-of-type {
     font-weight: 500;
-    color: $product-showcase-reviews-count-clr;
+    color: $text-clr-4;
   }
 }

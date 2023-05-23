@@ -20,10 +20,10 @@
   button {
     width: 20px;
     height: 20px;
-    border: 2px solid $promotion-slider-radio-btn-border-clr;
+    border: 2px solid $border-clr-1;
     border-radius: 50%;
-    background-color: $promotion-slider-radio-btn-bk-clr;
-    box-shadow: $promotion-slider-radio-btn-box-shadow;
+    background-color: $bk-clr-1;
+    box-shadow: $box-shadow-2;
 
     @media only screen and (max-width: 1200px) {
       width: 15px;

@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: white;
+  background-color: $bk-clr-3;
 
   @media (max-width: 450px) {
     grid-template-rows: auto;

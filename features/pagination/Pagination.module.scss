@@ -11,16 +11,16 @@
   }
 
   button {
-    border: 1px solid $pagination-btn-border-clr;
+    border: 1px solid $acc-clr-1;
     border-radius: 3px;
-    color: $pagination-btn-clr;
+    color: $acc-clr-1;
     align-items: center;
     font-size: 1rem;
     padding: 5px 8px;
 
     &.active {
-      background-color: $pagination-btn-active-bk-clr;
-      color: $pagination-btn-active-clr;
+      background-color: $acc-clr-1;
+      color: $text-clr-3;
     }
   }
 

@@ -7,20 +7,19 @@
   position: relative;
 
   label {
-    font-weight: 600;
-    color: $product-reviews-modal-label-clr;
+    font-weight: 500;
   }
 
   input {
     outline: transparent;
     padding: 8px;
-    border: 1px solid $product-reviews-modal-input-border-clr;
+    border: 1px solid $border-clr-3;
     border-radius: 3px;
     transition: 300ms border-color;
     background-color: transparent;
 
     &:focus {
-      border-color: $product-reviews-modal-input-border-clr-focus;
+      border-color: $acc-clr-1;
     }
 
     &::placeholder {
@@ -28,10 +27,10 @@
     }
 
     &.error {
-      border-color: $product-reviews-modal-input-error-clr;
+      border-color: $error-clr-1;
 
       &:focus {
-        border-color: $product-reviews-modal-input-error-clr;
+        border-color: $error-clr-1;
       }
     }
   }
@@ -43,7 +42,7 @@
 
     span:first-of-type {
       font-size: 0.9rem;
-      color: $product-reviews-modal-input-error-clr;
+      color: $error-clr-1;
       opacity: 0;
 
       &.active {
@@ -52,7 +51,7 @@
     }
 
     span:last-of-type {
-      color: $product-reviews-modal-input-word-count-clr;
+      color: $text-clr-4;
       font-size: 0.9rem;
     }
   }

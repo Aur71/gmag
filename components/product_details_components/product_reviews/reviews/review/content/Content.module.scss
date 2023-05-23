@@ -7,17 +7,16 @@
 
   h3 {
     font-size: 1.4rem;
-    color: $product-review-title-clr;
   }
 
   .stars_container {
     display: flex;
     gap: 3px;
     font-size: 1.1rem;
-    color: $product-review-star-clr;
+    color: $text-clr-4;
 
     .active_star {
-      color: $product-review-star-clr-active;
+      color: $star-clr;
     }
   }
 
@@ -25,6 +24,5 @@
     margin-top: 5px;
     font-size: 1rem;
     line-height: 1.3;
-    color: $product-review-clr;
   }
 }
