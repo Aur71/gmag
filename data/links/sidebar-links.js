@@ -7,34 +7,15 @@ export const sidebarLinks = [
   },
   {
     id: 2,
-    linkType: 'nested',
-    textContent: 'Components',
-    links: [
-      {
-        id: 2.1,
-        linkType: 'normal',
-        textContent: 'Graphic cards',
-        path: '/products/gpus',
-      },
-      {
-        id: 2.2,
-        linkType: 'normal',
-        textContent: 'Processors',
-        path: '/products/processors',
-      },
-      {
-        id: 2.3,
-        linkType: 'nested',
-        textContent: 'More',
-        links: [],
-      },
-    ],
+    linkType: 'normal',
+    textContent: 'Laptops',
+    path: '/products/laptops',
   },
   {
     id: 3,
     linkType: 'normal',
-    textContent: 'Laptops',
-    path: '/products/laptops',
+    textContent: 'Monitors',
+    path: '/products/monitors',
   },
   {
     id: 4,
@@ -45,31 +26,32 @@ export const sidebarLinks = [
   {
     id: 5,
     linkType: 'normal',
-    textContent: 'Monitors',
-    path: '/products/monitors',
-  },
-  {
-    id: 6,
-    linkType: 'normal',
     textContent: 'TV',
     path: '/products/tv',
   },
   {
-    id: 7,
-    linkType: 'normal',
-    textContent: 'Headphones',
-    path: '/products/headphones',
-  },
-  {
-    id: 8,
-    linkType: 'normal',
-    textContent: 'Keybaords',
-    path: '/products/keybaords',
-  },
-  {
-    id: 9,
-    linkType: 'normal',
-    textContent: 'Mouses',
-    path: '/products/mouses',
+    id: 6,
+    linkType: 'nested',
+    textContent: 'Peripherals',
+    links: [
+      {
+        id: 6.1,
+        linkType: 'normal',
+        textContent: 'Keybaords',
+        path: '/products/keybaords',
+      },
+      {
+        id: 2.2,
+        linkType: 'normal',
+        textContent: 'Mouses',
+        path: '/products/mouses',
+      },
+      {
+        id: 6.3,
+        linkType: 'normal',
+        textContent: 'Headphones',
+        path: '/products/headphones',
+      },
+    ],
   },
 ];

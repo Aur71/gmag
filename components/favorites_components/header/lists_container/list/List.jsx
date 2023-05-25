@@ -4,23 +4,19 @@ import { handleActiveListName } from '@/redux/reducers/favoritesSlice';
 
 const List = ({ list }) => {
   const dispatch = useDispatch();
-  const { listName, products } = list;
+  const { name, products } = list;
   const { activeListName, mainList } = useSelector((state) => state.favorites);
 
   return (
     <div
       className={styles.list}
-      onClick={() => dispatch(handleActiveListName(listName))}
+      onClick={() => dispatch(handleActiveListName(name))}
     >
       <div
-        className={`${styles.bar} ${
-          activeListName === listName && styles.active
-        }`}
+        className={`${styles.bar} ${activeListName === name && styles.active}`}
       ></div>
 
-      <h2 className={`${mainList === listName && styles.active}`}>
-        {listName}
-      </h2>
+      <h2 className={`${mainList === name && styles.active}`}>{name}</h2>
       <h3>
         {products.length} {products.length === 1 ? 'product' : 'products'}
       </h3>

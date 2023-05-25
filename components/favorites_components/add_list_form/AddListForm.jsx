@@ -1,57 +1,44 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './AddListForm.module.scss';
 import { VscChromeClose } from 'react-icons/vsc';
-import {
-  addList,
-  handleMainList,
-  handleAddListForm,
-} from '@/redux/reducers/favoritesSlice';
+import { closeAddListForm } from '@/redux/reducers/favoritesSlice';
+import { addNotification } from '@/redux/reducers/notificationsSlice';
 
 const AddListForm = () => {
-  const [listName, setListName] = useState('');
-  const [error, setError] = useState('');
+  const dispatch = useDispatch();
   const containerRef = useRef(null);
   const checkboxRef = useRef(null);
-  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
   const { showAddListForm, lists } = useSelector((state) => state.favorites);
+  const { user } = useSelector((state) => state.user);
 
   const clickOutside = (e) => {
     if (containerRef.current && !containerRef.current.contains(e.target))
-      dispatch(handleAddListForm(false));
+      dispatch(closeAddListForm());
   };
 
-  const checkListName = () => {
-    if (!listName) {
-      setError(`can't be empty`);
-      return false;
-    }
-    const isNameAlreadyUsed = lists.some((list) => list.listName === listName);
-    if (isNameAlreadyUsed) {
-      setError('name already used');
-      return false;
-    }
+  const checkName = () => {
+    if (!name) return setError("can't be empty");
+    const isNameUsed = lists.some(
+      (list) => list.name.toLowerCase() === name.toLowerCase()
+    );
+    if (isNameUsed) return setError('name is used');
     setError('');
-    return true;
   };
 
-  const handleSubmit = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    const isListNameValid = checkListName();
-    if (!isListNameValid) return;
-    dispatch(addList(listName));
-    if (checkboxRef.current.checked) dispatch(handleMainList(listName));
-    dispatch(handleAddListForm(false));
-    setListName('');
-    checkboxRef.current.checked = false;
+    checkName();
+    if (error) return;
+    if (!user) {
+      dispatch(
+        addNotification({ type: 'error', message: 'You must be logged in' })
+      );
+      return;
+    }
   };
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setError('');
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, [error]);
 
   return (
     <div
@@ -61,12 +48,12 @@ const AddListForm = () => {
       <div className={styles.container} ref={containerRef}>
         <div className={styles.header}>
           <h3>Add a new list</h3>
-          <button onClick={() => dispatch(handleAddListForm(false))}>
+          <button onClick={() => dispatch(closeAddListForm())}>
             <VscChromeClose />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submitForm}>
           <label htmlFor='list name'>
             List name: <span>{error}</span>
           </label>
@@ -74,8 +61,8 @@ const AddListForm = () => {
             type='text'
             name='list name'
             placeholder='Your list name'
-            value={listName}
-            onChange={(e) => setListName(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <div className={styles.checkbox_wrapper}>

@@ -4,14 +4,12 @@ import Filter from '@/features/filter/Filter';
 import MiniSearchbar from '@/features/mini_searchbar/MiniSearchbar';
 import styles from './FiltersContainer.module.scss';
 import {
-  handleSortProducts,
-  handleFilterProducts,
-  handleSearchProducts,
+  handleSortBy,
+  handleFilterBy,
+  handleSearchTerm,
 } from '@/redux/reducers/favoritesSlice';
 
 const sortByOptions = [
-  'Newest',
-  'Oldest',
   'Increasing price',
   'Decreasing price',
   'No. reviews',
@@ -28,35 +26,33 @@ const filterByOptions = [
 
 const FiltersContainer = () => {
   const dispatch = useDispatch();
-  const { sortProducts, filterProducts, searchProducts } = useSelector(
+  const { sortBy, filterBy, searchTerm } = useSelector(
     (state) => state.favorites
   );
 
-  const dispatchSortProducts = (option) => dispatch(handleSortProducts(option));
-
-  const dispatchFilterProducts = (option) =>
-    dispatch(handleFilterProducts(option));
-
-  const dispatchSearchProducts = (searchTerm) =>
-    dispatch(handleSearchProducts(searchTerm));
+  const dispatchSortBy = (option) => dispatch(handleSortBy(option));
+  const dispatchFilterBy = (option) => dispatch(handleFilterBy(option));
+  const dispatchSearchTerm = (searchTerm) =>
+    dispatch(handleSearchTerm(searchTerm));
 
   return (
     <div className={styles.filters_container}>
       <Sort
-        activeSortBy={sortProducts}
-        setSortBy={dispatchSortProducts}
+        activeSortBy={sortBy}
+        setSortBy={dispatchSortBy}
         options={sortByOptions}
         optionsStyle={{ backgroundColor: 'rgb(245, 245, 245)' }}
       />
       <Filter
-        activeFilterBy={filterProducts}
-        setFilterBy={dispatchFilterProducts}
+        activeFilterBy={filterBy}
+        setFilterBy={dispatchFilterBy}
         options={filterByOptions}
         optionsStyle={{ backgroundColor: 'rgb(245, 245, 245)' }}
       />
       <MiniSearchbar
-        search={searchProducts}
-        setSearch={dispatchSearchProducts}
+        search={searchTerm}
+        setSearch={dispatchSearchTerm}
+        placeholder='Search products...'
       />
     </div>
   );

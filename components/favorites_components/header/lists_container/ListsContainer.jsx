@@ -12,7 +12,7 @@ const ListsContainer = () => {
   return (
     <div className={styles.lists_container} ref={listContainerRef} {...events}>
       {lists.map((list) => {
-        return <List key={list.listName} list={list} />;
+        return <List key={list._id} list={list} />;
       })}
     </div>
   );
