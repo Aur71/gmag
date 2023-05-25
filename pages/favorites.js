@@ -16,9 +16,6 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.favorites);
 
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
-
   useEffect(() => {
     dispatch(fetchFavorites());
   }, [dispatch]);
@@ -28,6 +25,9 @@ const Favorites = () => {
     console.log(error);
     return <h1>Something went wrong.</h1>;
   }
+
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
 
   return (
     <div className={styles.favorites}>
