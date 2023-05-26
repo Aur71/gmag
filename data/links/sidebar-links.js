@@ -41,13 +41,7 @@ export const sidebarLinks = [
         path: '/products/keybaords',
       },
       {
-        id: 2.2,
-        linkType: 'normal',
-        textContent: 'Mouses',
-        path: '/products/mouses',
-      },
-      {
-        id: 6.3,
+        id: 6.2,
         linkType: 'normal',
         textContent: 'Headphones',
         path: '/products/headphones',
