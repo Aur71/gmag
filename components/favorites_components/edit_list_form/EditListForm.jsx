@@ -2,38 +2,37 @@ import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './EditListForm.module.scss';
 import { VscChromeClose } from 'react-icons/vsc';
-import {
-  handleEditListForm,
-  editList,
-  handleMainList,
-} from '@/redux/reducers/favoritesSlice';
+import { closeEditListForm, editList } from '@/redux/reducers/favoritesSlice';
 
 const EditListForm = () => {
   const dispatch = useDispatch();
-  const { mainList, lists, activeListName, showEditListForm } = useSelector(
-    (state) => state.favorites
-  );
-  const [listName, setListName] = useState(activeListName);
+  const { mainList, lists, activeListName, showEditListForm, loading } =
+    useSelector((state) => state.favorites);
+  const [name, setName] = useState(activeListName);
+  const [useAsMainList, setUseAsMainList] = useState(true);
   const [error, setError] = useState('');
   const containerRef = useRef(null);
-  const checkboxRef = useRef(null);
 
   useEffect(() => {
-    setListName(activeListName);
-  }, [activeListName, showEditListForm]);
+    if (activeListName === mainList) setUseAsMainList(true);
+    else setUseAsMainList(false);
+    setName(activeListName);
+  }, [activeListName, showEditListForm, mainList]);
 
   const clickOutside = (e) => {
     if (containerRef.current && !containerRef.current.contains(e.target))
-      dispatch(handleEditListForm(false));
+      dispatch(closeEditListForm());
   };
 
   const checkListName = () => {
-    if (!listName) {
+    if (!name) {
       setError(`can't be empty`);
       return false;
     }
-    if (listName === activeListName) return true;
-    const isNameAlreadyUsed = lists.some((list) => list.listName === listName);
+    if (name === activeListName) return true;
+    const isNameAlreadyUsed = lists.some(
+      (list) => list.name.toLowerCase() === name.toLowerCase()
+    );
     if (isNameAlreadyUsed) {
       setError('name already used');
       return false;
@@ -45,27 +44,13 @@ const EditListForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isListNameValid = checkListName();
-    if (!isListNameValid) return;
-    if (listName === mainList && !checkboxRef.current.checked)
-      dispatch(handleMainList('Favorite'));
-    dispatch(editList(listName));
-    if (checkboxRef.current.checked) dispatch(handleMainList(listName));
-    dispatch(handleEditListForm(false));
-    setListName('');
-    checkboxRef.current.checked = false;
+    if (isListNameValid) {
+      dispatch(editList({ name, useAsMainList }));
+      setName('');
+      setUseAsMainList(false);
+      dispatch(closeEditListForm());
+    }
   };
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setError('');
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, [error]);
-
-  useEffect(() => {
-    if (activeListName === mainList) checkboxRef.current.checked = true;
-    else checkboxRef.current.checked = false;
-  }, [activeListName, showEditListForm, mainList]);
 
   return (
     <div
@@ -77,7 +62,7 @@ const EditListForm = () => {
       <div className={styles.container} ref={containerRef}>
         <div className={styles.header}>
           <h3>Edit list</h3>
-          <button onClick={() => dispatch(handleEditListForm(false))}>
+          <button onClick={() => dispatch(closeEditListForm())}>
             <VscChromeClose />
           </button>
         </div>
@@ -90,12 +75,17 @@ const EditListForm = () => {
             type='text'
             name='list name'
             placeholder='Your list name'
-            value={listName}
-            onChange={(e) => setListName(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <div className={styles.checkbox_wrapper}>
-            <input type='checkbox' name='main list' ref={checkboxRef} />
+            <input
+              type='checkbox'
+              name='main list'
+              checked={useAsMainList}
+              onChange={(e) => setUseAsMainList(e.target.checked)}
+            />
             <label htmlFor='main list'>Use as main list</label>
           </div>
           <p>
@@ -103,7 +93,9 @@ const EditListForm = () => {
             can change the main list at any time.
           </p>
 
-          <button type='submit'>Save</button>
+          <button type='submit' disabled={loading}>
+            Save
+          </button>
         </form>
       </div>
     </div>

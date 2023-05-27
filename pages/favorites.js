@@ -9,9 +9,6 @@ import DeleteListForm from '@/components/favorites_components/delete_list_form/D
 import styles from '../styles/pages/Favorites.module.scss';
 import { fetchFavorites } from '@/redux/reducers/favoritesSlice';
 
-// temp
-import UnderDevelopment from '@/components/under_development/UnderDevelopment';
-
 const Favorites = () => {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.favorites);
@@ -25,9 +22,6 @@ const Favorites = () => {
     console.log(error);
     return <h1>Something went wrong.</h1>;
   }
-
-  const underDevelopment = true;
-  if (underDevelopment) return <UnderDevelopment />;
 
   return (
     <div className={styles.favorites}>

@@ -4,14 +4,17 @@ import styles from './AddListForm.module.scss';
 import { VscChromeClose } from 'react-icons/vsc';
 import { closeAddListForm } from '@/redux/reducers/favoritesSlice';
 import { addNotification } from '@/redux/reducers/notificationsSlice';
+import { addList } from '@/redux/reducers/favoritesSlice';
 
 const AddListForm = () => {
   const dispatch = useDispatch();
   const containerRef = useRef(null);
-  const checkboxRef = useRef(null);
   const [name, setName] = useState('');
+  const [useAsMainList, setUseAsMainList] = useState(false);
   const [error, setError] = useState('');
-  const { showAddListForm, lists } = useSelector((state) => state.favorites);
+  const { showAddListForm, lists, loading } = useSelector(
+    (state) => state.favorites
+  );
   const { user } = useSelector((state) => state.user);
 
   const clickOutside = (e) => {
@@ -20,23 +23,35 @@ const AddListForm = () => {
   };
 
   const checkName = () => {
-    if (!name) return setError("can't be empty");
+    if (!name) {
+      setError("can't be empty");
+      return false;
+    }
     const isNameUsed = lists.some(
       (list) => list.name.toLowerCase() === name.toLowerCase()
     );
-    if (isNameUsed) return setError('name is used');
+    if (isNameUsed) {
+      setError('name is used');
+      return false;
+    }
     setError('');
+    return true;
   };
 
   const submitForm = (e) => {
     e.preventDefault();
-    checkName();
-    if (error) return;
     if (!user) {
       dispatch(
         addNotification({ type: 'error', message: 'You must be logged in' })
       );
       return;
+    }
+    const isValidName = checkName();
+    if (isValidName) {
+      dispatch(addList({ name, useAsMainList }));
+      setName('');
+      setUseAsMainList(false);
+      dispatch(closeAddListForm());
     }
   };
 
@@ -66,7 +81,12 @@ const AddListForm = () => {
           />
 
           <div className={styles.checkbox_wrapper}>
-            <input type='checkbox' name='main list' ref={checkboxRef} />
+            <input
+              type='checkbox'
+              name='main list'
+              checked={useAsMainList}
+              onChange={(e) => setUseAsMainList(e.target.checked)}
+            />
             <label htmlFor='main list'>Use as main list</label>
           </div>
           <p>
@@ -74,7 +94,9 @@ const AddListForm = () => {
             can change the main list at any time.
           </p>
 
-          <button type='submit'>Save</button>
+          <button type='submit' disabled={loading}>
+            Save
+          </button>
         </form>
       </div>
     </div>
