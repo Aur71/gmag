@@ -2,18 +2,26 @@ import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './DeleteListForm.module.scss';
 import { VscChromeClose } from 'react-icons/vsc';
-import { handleDeleteForm, deleteList } from '@/redux/reducers/favoritesSlice';
+import {
+  closeDeleteListForm,
+  deleteList,
+} from '@/redux/reducers/favoritesSlice';
 
 const DeleteListForm = () => {
   const containerRef = useRef(null);
   const dispatch = useDispatch();
-  const { showDeleteListForm, activeListName } = useSelector(
+  const { showDeleteListForm, activeListName, loading } = useSelector(
     (state) => state.favorites
   );
 
   const clickOutside = (e) => {
     if (containerRef.current && !containerRef.current.contains(e.target))
-      dispatch(handleDeleteForm(false));
+      dispatch(closeDeleteListForm());
+  };
+
+  const dispatchAction = () => {
+    dispatch(deleteList());
+    dispatch(closeDeleteListForm());
   };
 
   return (
@@ -26,7 +34,7 @@ const DeleteListForm = () => {
       <div className={styles.container} ref={containerRef}>
         <div className={styles.header}>
           <h3>Delete list</h3>
-          <button onClick={() => dispatch(handleDeleteForm(false))}>
+          <button onClick={() => dispatch(closeDeleteListForm())}>
             <VscChromeClose />
           </button>
         </div>
@@ -37,8 +45,10 @@ const DeleteListForm = () => {
         </h4>
 
         <div className={styles.btns_container}>
-          <button onClick={() => dispatch(deleteList())}>Delete</button>
-          <button onClick={() => dispatch(handleDeleteForm(false))}>
+          <button onClick={dispatchAction} disabled={loading}>
+            Delete
+          </button>
+          <button onClick={() => dispatch(closeDeleteListForm())}>
             Cancel
           </button>
         </div>

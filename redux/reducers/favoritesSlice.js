@@ -66,29 +66,28 @@ export const editList = createAsyncThunk(
   }
 );
 
-// export const deleteList = createAsyncThunk(
-//   'favorites/deleteList',
-//   async (data, { rejectWithValue, getState }) => {
-//     const { user } = getState().user;
-//     if (!user.token) return null;
-//     const favorites = getState().favorites;
-//     const activeList = favorites.lists.find(
-//       (list) => list.name === favorites.activeListName
-//     );
-//     const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites/list/${activeList._id}`;
-//     const headers = {
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${user.token}`,
-//     };
-//     const body = data;
-//     try {
-//       const response = await axios.put(url, body, { headers });
-//       return response.data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const deleteList = createAsyncThunk(
+  'favorites/deleteList',
+  async (_, { rejectWithValue, getState }) => {
+    const { user } = getState().user;
+    if (!user.token) return null;
+    const favorites = getState().favorites;
+    const activeList = favorites.lists.find(
+      (list) => list.name === favorites.activeListName
+    );
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites/list/${activeList._id}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${user.token}`,
+    };
+    try {
+      const response = await axios.delete(url, { headers });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const favoritesSlice = createSlice({
   name: 'favorites',
@@ -204,6 +203,21 @@ const favoritesSlice = createSlice({
         state.loading = false;
       })
       .addCase(editList.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(deleteList.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteList.fulfilled, (state, action) => {
+        state.activeListName = state.lists[0].name;
+        const { mainList, lists } = action.payload;
+        state.mainList = mainList;
+        state.lists = lists;
+        state.loading = false;
+      })
+      .addCase(deleteList.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
