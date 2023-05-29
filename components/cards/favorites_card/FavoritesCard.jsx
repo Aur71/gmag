@@ -4,10 +4,10 @@ import styles from './FavoritesCard.module.scss';
 
 const FavoritesCard = ({ product }) => {
   return (
-    <div className={styles.favorites_card}>
+    <article className={styles.favorites_card}>
       <ImgContainer product={product} />
       <InfoContainer product={product} />
-    </div>
+    </article>
   );
 };
 

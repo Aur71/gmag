@@ -27,7 +27,6 @@ const ProductList = () => {
   return (
     <div className={styles.product_list}>
       {paginatedProducts.map((product) => {
-        console.log(product);
         return <FavoritesCard key={product._id} product={product} />;
       })}
 
