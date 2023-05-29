@@ -1,24 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useAddToFavorites } from '@/hooks/favorites/useAddToFavorites';
 import styles from './Actions.module.scss';
-import { addNotification } from '@/redux/reducers/notificationsSlice';
-import { addProductToFavorites } from '@/redux/reducers/favoritesSlice';
 
 const Actions = ({ product }) => {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
-  const favoritesLoading = useSelector((state) => state.favorites.loading);
+  const { addToFavorites, favoritesLoading } = useAddToFavorites();
 
   const addToCart = () => {
     console.log(product);
-  };
-  const addToFavorites = () => {
-    if (!user) {
-      dispatch(
-        addNotification({ type: 'error', message: 'You must be logged in' })
-      );
-      return;
-    }
-    dispatch(addProductToFavorites({ _id: product._id }));
   };
 
   return (
@@ -28,7 +15,7 @@ const Actions = ({ product }) => {
       </button>
       <button
         className={styles.favorite_btn}
-        onClick={addToFavorites}
+        onClick={() => addToFavorites(product._id)}
         disabled={favoritesLoading}
       >
         Add to favorite

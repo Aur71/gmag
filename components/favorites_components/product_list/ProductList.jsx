@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import FavoriteCard from './favorite_card/FavoriteCard';
+import FavoritesCard from '@/components/cards/favorites_card/FavoritesCard';
 import Pagination from '@/features/pagination/Pagination';
 import styles from './ProductList.module.scss';
 import sortProducts from './functions/sortProduct';
@@ -27,8 +27,8 @@ const ProductList = () => {
   return (
     <div className={styles.product_list}>
       {paginatedProducts.map((product) => {
-        // move favorites card to cards
-        return <FavoriteCard product={product} key={product._id} />;
+        console.log(product);
+        return <FavoritesCard key={product._id} product={product} />;
       })}
 
       {searchedProducts.length > productsPerPage ? (

@@ -1,1 +1,11 @@
 @import '/styles/themes/themes.module.scss';
+
+.favorites_card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
