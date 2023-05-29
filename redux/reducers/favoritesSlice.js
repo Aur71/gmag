@@ -89,6 +89,27 @@ export const deleteList = createAsyncThunk(
   }
 );
 
+export const addProductToFavorites = createAsyncThunk(
+  'favorites/addProductToFavorites',
+  async (productId, { rejectWithValue, getState }) => {
+    const { user } = getState().user;
+    if (!user.token) return null;
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites`;
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${user.token}`,
+    };
+    const body = productId;
+    // console.log(getState().notifications);
+    try {
+      const response = await axios.post(url, body, { headers });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: {
@@ -218,6 +239,23 @@ const favoritesSlice = createSlice({
         state.loading = false;
       })
       .addCase(deleteList.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(addProductToFavorites.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(addProductToFavorites.fulfilled, (state, action) => {
+        console.log(action.payload);
+
+        // state.activeListName = state.lists[0].name;
+        // const { mainList, lists } = action.payload;
+        // state.mainList = mainList;
+        // state.lists = lists;
+        state.loading = false;
+      })
+      .addCase(addProductToFavorites.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

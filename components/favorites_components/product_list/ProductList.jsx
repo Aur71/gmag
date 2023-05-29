@@ -26,9 +26,9 @@ const ProductList = () => {
 
   return (
     <div className={styles.product_list}>
-      {paginatedProducts.map((product, index) => {
-        const key = `${currentList.listName}_${index}`;
-        return <FavoriteCard product={product} key={key} />;
+      {paginatedProducts.map((product) => {
+        // move favorites card to cards
+        return <FavoriteCard product={product} key={product._id} />;
       })}
 
       {searchedProducts.length > productsPerPage ? (
