@@ -7,7 +7,8 @@ export const fetchFavorites = createAsyncThunk(
     const { user } = getState().user;
     if (!user.token) return null;
 
-    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites`;
+    const timestamp = Date.now();
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites?timestamp=${timestamp}`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${user.token}`,
