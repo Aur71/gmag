@@ -1,0 +1,19 @@
+@import '/styles/themes/themes.module.scss';
+
+.add_to_cart_btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: $acc-clr-1;
+  color: $text-clr-3;
+  border: 1px solid $acc-clr-1;
+  transition: 300ms background-color, 300ms color, 300ms border;
+
+  &:hover {
+    background-color: transparent;
+    color: $acc-clr-1;
+  }
+}

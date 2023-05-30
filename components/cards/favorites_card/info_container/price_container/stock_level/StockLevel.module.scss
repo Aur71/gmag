@@ -1,0 +1,15 @@
+@import '/styles/themes/themes.module.scss';
+
+.stock_level {
+  font-size: 0.9rem;
+
+  &.avaliable {
+    color: $stock-avaliable-clr;
+  }
+  &.limited {
+    color: $limited-stock-clr;
+  }
+  &.outOfStock {
+    color: $out-of-stock-clr;
+  }
+}

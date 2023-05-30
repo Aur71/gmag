@@ -38,6 +38,7 @@
     border-radius: 3px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
@@ -48,14 +49,18 @@
 
     & > button {
       font-size: 1rem;
-      padding: 5px 10px;
+      padding: 7.5px;
 
       &:hover {
         background-color: $acc-clr-1;
         color: white;
       }
       &.active {
-        background-color: rgba(128, 128, 128, 0.2);
+        background-color: rgba(128, 128, 128, 0.15);
+        &:hover {
+          background-color: black;
+          color: white;
+        }
       }
     }
   }

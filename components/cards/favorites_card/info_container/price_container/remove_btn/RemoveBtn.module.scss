@@ -1,0 +1,12 @@
+@import '/styles/themes/themes.module.scss';
+
+.remove_btn {
+  display: flex;
+  align-items: center;
+  color: $acc-clr-1;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
