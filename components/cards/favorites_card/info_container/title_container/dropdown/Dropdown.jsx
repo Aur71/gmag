@@ -3,17 +3,10 @@ import { useSelector } from 'react-redux';
 import styles from './Dropdown.module.scss';
 import { BiChevronDown } from 'react-icons/bi';
 
-const Dropdown = ({ product }) => {
-  const { _id } = product;
+const Dropdown = ({ product, currentProductList }) => {
   const { lists } = useSelector((state) => state.favorites);
   const [showDropdown, setShowDropdown] = useState(false);
   const optionsRef = useRef(null);
-
-  const currentProductList = lists.find((list) => {
-    if (list.name === lists[0].name) return;
-    const { products } = list;
-    return products.find((product) => product._id === _id);
-  });
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -26,6 +19,7 @@ const Dropdown = ({ product }) => {
     };
   }, []);
 
+  // add move to another list functionality and finish favorites card for mobile
   return (
     <div className={styles.dropdown}>
       <h5>

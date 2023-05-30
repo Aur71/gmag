@@ -89,6 +89,27 @@ export const deleteList = createAsyncThunk(
   }
 );
 
+export const removeProductFromFavorites = createAsyncThunk(
+  'favorites/removeProductFromFavorites',
+  async (data, { rejectWithValue, getState }) => {
+    const { user } = getState().user;
+    if (!user.token) return null;
+    const { productId, listId } = data;
+
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites/list/${listId}/${productId}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${user.token}`,
+    };
+    try {
+      const response = await axios.delete(url, { headers });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 // add remove & move product
 const favoritesSlice = createSlice({
   name: 'favorites',
@@ -219,6 +240,20 @@ const favoritesSlice = createSlice({
         state.loading = false;
       })
       .addCase(deleteList.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(removeProductFromFavorites.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(removeProductFromFavorites.fulfilled, (state, action) => {
+        const { mainList, lists } = action.payload;
+        state.mainList = mainList;
+        state.lists = lists;
+        state.loading = false;
+      })
+      .addCase(removeProductFromFavorites.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

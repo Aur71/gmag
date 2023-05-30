@@ -2,7 +2,7 @@ import styles from './Rating.module.scss';
 import { AiFillStar } from 'react-icons/ai';
 
 const Rating = ({ product }) => {
-  const rating = product.rating.toFixed(0);
+  const rating = product?.rating?.toFixed(0);
   const roundedRating = Math.round(rating);
   const reviewsCount = product.reviewsCount;
 

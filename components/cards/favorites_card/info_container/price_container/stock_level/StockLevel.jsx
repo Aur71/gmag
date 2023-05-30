@@ -3,7 +3,7 @@ import styles from './StockLevel.module.scss';
 const StockLevel = ({ product }) => {
   const { stock } = product;
   const avaliable = stock >= 7;
-  const limited = stock <= 6 && activeColor.stock >= 1;
+  const limited = stock <= 6 && stock >= 1;
   const outOfStock = stock <= 0;
 
   return (

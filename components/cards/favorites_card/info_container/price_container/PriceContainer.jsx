@@ -3,7 +3,7 @@ import AddToCartBtn from './add_to_cart_btn/AddToCartBtn';
 import RemoveBtn from './remove_btn/RemoveBtn';
 import styles from './PriceContainer.module.scss';
 
-const PriceContainer = ({ product }) => {
+const PriceContainer = ({ product, currentProductList }) => {
   const { oldPrice, currentPrice } = product;
 
   return (
@@ -16,7 +16,7 @@ const PriceContainer = ({ product }) => {
       </div>
 
       <AddToCartBtn product={product} />
-      <RemoveBtn product={product} />
+      <RemoveBtn product={product} currentProductList={currentProductList} />
     </div>
   );
 };

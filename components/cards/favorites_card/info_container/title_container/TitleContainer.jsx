@@ -3,13 +3,13 @@ import Rating from '@/components/cards/card_components/rating/Rating';
 import Link from 'next/link';
 import styles from './TitleContainer.module.scss';
 
-const TitleContainer = ({ product }) => {
+const TitleContainer = ({ product, currentProductList }) => {
   const { type, _id, name } = product;
   const link = `/products/${type}/${_id}`;
 
   return (
     <div className={styles.title_container}>
-      <Dropdown product={product} />
+      <Dropdown product={product} currentProductList={currentProductList} />
       <h4>
         <Link href={link}>{name}</Link>
       </h4>
