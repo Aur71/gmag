@@ -3,11 +3,16 @@
 .title_container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7.5px;
   border: 1px solid green;
 
-  h4 {
+  h4 a {
     font-size: 1.2rem;
     line-height: 1.2;
+    color: $text-clr-1;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

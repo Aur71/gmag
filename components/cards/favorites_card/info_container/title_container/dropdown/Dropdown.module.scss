@@ -1,0 +1,62 @@
+@import '/styles/themes/themes.module.scss';
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  width: max-content;
+
+  h5 {
+    font-size: 1rem;
+    span {
+      color: $acc-clr-1;
+    }
+  }
+
+  & > button {
+    font-size: 0.9rem;
+    color: $acc-clr-1;
+    display: flex;
+    align-items: center;
+    grid-area: 2.5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    z-index: 2;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: 300ms;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    & > button {
+      font-size: 1rem;
+      padding: 5px 10px;
+
+      &:hover {
+        background-color: $acc-clr-1;
+        color: white;
+      }
+      &.active {
+        background-color: rgba(128, 128, 128, 0.2);
+      }
+    }
+  }
+}
