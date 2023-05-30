@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Loading from '@/features/loading/Loading';
 import Header from '@/components/favorites_components/header/Header';
 import ProductList from '@/components/favorites_components/product_list/ProductList';
@@ -12,10 +13,11 @@ import { fetchFavorites } from '@/redux/reducers/favoritesSlice';
 const Favorites = () => {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.favorites);
+  const router = useRouter();
 
   useEffect(() => {
     dispatch(fetchFavorites());
-  }, [dispatch]);
+  }, [dispatch, router.isReady]);
 
   if (loading) return <Loading />;
   if (error) {
