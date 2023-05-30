@@ -13,6 +13,7 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.favorites);
 
+  // add local storage to fix cache busting
   useEffect(() => {
     dispatch(fetchFavorites());
   }, [dispatch]);
