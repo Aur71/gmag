@@ -7,10 +7,23 @@
   position: relative;
   width: max-content;
 
+  @media (max-width: 500px) {
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   h5 {
     font-size: 1rem;
-    span {
+    white-space: nowrap;
+    span:last-of-type {
       color: $acc-clr-1;
+    }
+
+    @media (max-width: 320px) {
+      span:first-of-type {
+        display: none;
+      }
     }
   }
 

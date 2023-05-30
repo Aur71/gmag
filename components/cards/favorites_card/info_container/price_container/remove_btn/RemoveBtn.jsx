@@ -21,7 +21,7 @@ const RemoveBtn = ({ product, currentProductList }) => {
       disabled={loading}
     >
       <VscTrash className={styles.icon} />
-      remove
+      <span>remove</span>
     </button>
   );
 };

@@ -110,7 +110,26 @@ export const removeProductFromFavorites = createAsyncThunk(
   }
 );
 
-// add remove & move product
+export const moveProduct = createAsyncThunk(
+  'favorites/moveProduct',
+  async (data, { rejectWithValue, getState }) => {
+    const { user } = getState().user;
+    if (!user.token) return null;
+    const { productId, listId, newListId } = data;
+    const url = `${process.env.NEXT_PUBLIC_API}/api/v1/favorites/list/${listId}/${productId}/${newListId}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${user.token}`,
+    };
+    try {
+      const response = await axios.put(url, {}, { headers });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: {
@@ -187,6 +206,9 @@ const favoritesSlice = createSlice({
             { name: 'All products', products: [], _id: 1 },
             { name: 'Favorites', products: [], _id: 2 },
           ];
+          state.sortBy = 'Increasing price';
+          state.filterBy = 'All products';
+          state.searchTerm = '';
           state.loading = false;
           return;
         }
@@ -207,6 +229,9 @@ const favoritesSlice = createSlice({
         const { mainList, lists } = action.payload;
         state.mainList = mainList;
         state.lists = lists;
+        state.sortBy = 'Increasing price';
+        state.filterBy = 'All products';
+        state.searchTerm = '';
         state.loading = false;
       })
       .addCase(addList.rejected, (state, action) => {
@@ -222,6 +247,9 @@ const favoritesSlice = createSlice({
         state.mainList = mainList;
         state.lists = lists;
         state.activeListName = state.lists[0].name;
+        state.sortBy = 'Increasing price';
+        state.filterBy = 'All products';
+        state.searchTerm = '';
         state.loading = false;
       })
       .addCase(editList.rejected, (state, action) => {
@@ -237,6 +265,9 @@ const favoritesSlice = createSlice({
         const { mainList, lists } = action.payload;
         state.mainList = mainList;
         state.lists = lists;
+        state.sortBy = 'Increasing price';
+        state.filterBy = 'All products';
+        state.searchTerm = '';
         state.loading = false;
       })
       .addCase(deleteList.rejected, (state, action) => {
@@ -251,9 +282,29 @@ const favoritesSlice = createSlice({
         const { mainList, lists } = action.payload;
         state.mainList = mainList;
         state.lists = lists;
+        state.sortBy = 'Increasing price';
+        state.filterBy = 'All products';
+        state.searchTerm = '';
         state.loading = false;
       })
       .addCase(removeProductFromFavorites.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(moveProduct.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(moveProduct.fulfilled, (state, action) => {
+        const { mainList, lists } = action.payload;
+        state.mainList = mainList;
+        state.lists = lists;
+        state.sortBy = 'Increasing price';
+        state.filterBy = 'All products';
+        state.searchTerm = '';
+        state.loading = false;
+      })
+      .addCase(moveProduct.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

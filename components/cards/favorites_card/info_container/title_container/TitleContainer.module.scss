@@ -9,6 +9,14 @@
     font-size: 1.2rem;
     line-height: 1.2;
     color: $text-clr-1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @media (max-width: 1000px) {
+      font-size: 1.1rem;
+    }
 
     &:hover {
       text-decoration: underline;

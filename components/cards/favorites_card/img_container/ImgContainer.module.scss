@@ -6,8 +6,16 @@
   align-items: center;
   padding: 15px;
 
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
+
   img {
     width: 130px;
     height: auto;
+
+    @media (max-width: 400px) {
+      width: 100px;
+    }
   }
 }

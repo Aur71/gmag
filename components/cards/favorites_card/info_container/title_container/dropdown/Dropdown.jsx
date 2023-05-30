@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Dropdown.module.scss';
 import { BiChevronDown } from 'react-icons/bi';
+import { moveProduct } from '@/redux/reducers/favoritesSlice';
 
 const Dropdown = ({ product, currentProductList }) => {
+  const dispatch = useDispatch();
   const { lists } = useSelector((state) => state.favorites);
   const [showDropdown, setShowDropdown] = useState(false);
   const optionsRef = useRef(null);
@@ -19,11 +21,21 @@ const Dropdown = ({ product, currentProductList }) => {
     };
   }, []);
 
-  // add move to another list functionality and finish favorites card for mobile
+  const dispatchMoveProduct = (newList) => {
+    setShowDropdown(false);
+    dispatch(
+      moveProduct({
+        productId: product._id,
+        listId: currentProductList._id,
+        newListId: newList._id,
+      })
+    );
+  };
+
   return (
     <div className={styles.dropdown}>
       <h5>
-        List: <span>{currentProductList?.name}</span>
+        <span>List:</span> <span>{currentProductList?.name}</span>
       </h5>
       <button onClick={() => setShowDropdown(!showDropdown)}>
         move <BiChevronDown className={styles.icon} />
@@ -31,6 +43,7 @@ const Dropdown = ({ product, currentProductList }) => {
 
       <div
         className={`${styles.options} ${showDropdown ? styles.active : null}`}
+        ref={optionsRef}
       >
         {lists.map((list) => {
           const { name } = list;
@@ -38,10 +51,11 @@ const Dropdown = ({ product, currentProductList }) => {
           return (
             <button
               key={list._id}
-              ref={optionsRef}
               className={
                 currentProductList?.name === name ? styles.active : null
               }
+              onClick={() => dispatchMoveProduct(list)}
+              disabled={list._id === currentProductList._id}
             >
               {list.name}
             </button>

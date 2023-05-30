@@ -15,8 +15,10 @@ const PriceContainer = ({ product, currentProductList }) => {
         <h5>${currentPrice}</h5>
       </div>
 
-      <AddToCartBtn product={product} />
-      <RemoveBtn product={product} currentProductList={currentProductList} />
+      <div className={styles.actions_wrapper}>
+        <AddToCartBtn product={product} />
+        <RemoveBtn product={product} currentProductList={currentProductList} />
+      </div>
     </div>
   );
 };
