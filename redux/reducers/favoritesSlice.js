@@ -152,6 +152,10 @@ const favoritesSlice = createSlice({
       const { mainList, lists } = action.payload;
       state.mainList = mainList;
       state.lists = lists;
+      state.sortBy = 'Increasing price';
+      state.filterBy = 'All products';
+      state.searchTerm = '';
+      state.loading = false;
     },
     handleSortBy: (state, action) => {
       state.sortBy = action.payload;
