@@ -8,7 +8,7 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(null);
 
   const login = async (email, password) => {
-    localStorage.removeItem('user');
+    localStorage.removeItem('favorites');
     setIsLoading(true);
     setError(null);
 

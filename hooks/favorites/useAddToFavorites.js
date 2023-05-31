@@ -9,6 +9,7 @@ export const useAddToFavorites = () => {
   const [favoritesLoading, setFavoritesLoading] = useState(false);
 
   const addToFavorites = async (productId) => {
+    localStorage.removeItem('favorites');
     if (!user) {
       dispatch(
         addNotification({ type: 'error', message: 'You must be logged in.' })
