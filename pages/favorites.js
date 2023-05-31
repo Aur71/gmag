@@ -7,7 +7,7 @@ import AddListForm from '@/components/favorites_components/add_list_form/AddList
 import EditListForm from '@/components/favorites_components/edit_list_form/EditListForm';
 import DeleteListForm from '@/components/favorites_components/delete_list_form/DeleteListForm';
 import styles from '../styles/pages/Favorites.module.scss';
-import { fetchFavorites } from '@/redux/reducers/favoritesSlice';
+import { setFavorites, fetchFavorites } from '@/redux/reducers/favoritesSlice';
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,12 @@ const Favorites = () => {
 
   // add local storage to fix cache busting
   useEffect(() => {
-    dispatch(fetchFavorites());
+    const storedFavorites = localStorage.getItem('favorites');
+    if (storedFavorites) {
+      dispatch(setFavorites(JSON.parse(storedFavorites)));
+    } else {
+      dispatch(fetchFavorites());
+    }
   }, [dispatch]);
 
   if (loading) return <Loading />;

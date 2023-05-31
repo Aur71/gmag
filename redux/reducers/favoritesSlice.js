@@ -148,6 +148,11 @@ const favoritesSlice = createSlice({
     searchTerm: '',
   },
   reducers: {
+    setFavorites: (state, action) => {
+      const { mainList, lists } = action.payload;
+      state.mainList = mainList;
+      state.lists = lists;
+    },
     handleSortBy: (state, action) => {
       state.sortBy = action.payload;
     },
@@ -191,6 +196,7 @@ const favoritesSlice = createSlice({
       ];
       state.mainList = 'Favorites';
       state.activeListName = 'All products';
+      localStorage.removeItem('favorites');
     },
   },
   extraReducers: (builder) => {
@@ -214,6 +220,7 @@ const favoritesSlice = createSlice({
         const { mainList, lists } = action.payload;
         state.mainList = mainList;
         state.lists = lists;
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(fetchFavorites.rejected, (state, action) => {
@@ -231,6 +238,7 @@ const favoritesSlice = createSlice({
         state.sortBy = 'Increasing price';
         state.filterBy = 'All products';
         state.searchTerm = '';
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(addList.rejected, (state, action) => {
@@ -249,6 +257,7 @@ const favoritesSlice = createSlice({
         state.sortBy = 'Increasing price';
         state.filterBy = 'All products';
         state.searchTerm = '';
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(editList.rejected, (state, action) => {
@@ -267,6 +276,7 @@ const favoritesSlice = createSlice({
         state.sortBy = 'Increasing price';
         state.filterBy = 'All products';
         state.searchTerm = '';
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(deleteList.rejected, (state, action) => {
@@ -284,6 +294,7 @@ const favoritesSlice = createSlice({
         state.sortBy = 'Increasing price';
         state.filterBy = 'All products';
         state.searchTerm = '';
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(removeProductFromFavorites.rejected, (state, action) => {
@@ -301,6 +312,7 @@ const favoritesSlice = createSlice({
         state.sortBy = 'Increasing price';
         state.filterBy = 'All products';
         state.searchTerm = '';
+        localStorage.setItem('favorites', JSON.stringify(action.payload));
         state.loading = false;
       })
       .addCase(moveProduct.rejected, (state, action) => {
@@ -312,6 +324,7 @@ const favoritesSlice = createSlice({
 
 export default favoritesSlice.reducer;
 export const {
+  setFavorites,
   handleSortBy,
   handleFilterBy,
   handleSearchTerm,

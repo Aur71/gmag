@@ -6,7 +6,6 @@ export const useLogout = () => {
   const dispatch = useDispatch();
 
   const logout = () => {
-    localStorage.removeItem('user');
     dispatch(LOGOUT());
     dispatch(resetFavorites());
   };

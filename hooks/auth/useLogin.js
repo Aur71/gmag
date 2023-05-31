@@ -8,6 +8,7 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(null);
 
   const login = async (email, password) => {
+    localStorage.removeItem('user');
     setIsLoading(true);
     setError(null);
 
