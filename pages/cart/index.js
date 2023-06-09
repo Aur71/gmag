@@ -1,17 +1,15 @@
-import Title from '@/components/cart_components/title/Title';
-import Cards from '@/components/cart_components/cards/Cards';
-import Ticket from '@/components/cart_components/ticket/Ticket';
-import axios from 'axios';
 import styles from '../../styles/pages/Cart.module.scss';
 
+// temp
+import UnderDevelopment from '@/components/under_development/UnderDevelopment';
+
 const Cart = () => {
+  const underDevelopment = true;
+  if (underDevelopment) return <UnderDevelopment />;
+
   return (
     <div className={styles.cart}>
-      <div className={styles.center}>
-        <Title />
-        <Cards />
-        <Ticket />
-      </div>
+      <div className={styles.center}></div>
     </div>
   );
 };
